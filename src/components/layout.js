@@ -1,7 +1,7 @@
 import React from 'react';
 import {css} from '@emotion/core';
 import {graphql, Link, StaticQuery} from 'gatsby';
-
+import 'semantic-ui-css/semantic.min.css';
 import {rhythm} from '../utils/typography';
 
 export default ({children}) => (
