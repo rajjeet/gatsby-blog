@@ -18,15 +18,14 @@ export default ({children}) => (
                  render={data => (
                      <Container style={{paddingTop: '1em'}}>
                          <Menu borderless>
-                             <Menu.Item as={Link} link to={'/'} active={window.location.pathname === '/'}>
+                             <Menu.Item as={Link} link to={'/'} active={true}>
                                  <div>
                                      <Header as={'h3'}
                                              style={{marginBottom: '0em'}}>{data.site.siteMetadata.title}</Header>
                                      <p style={{fontSize: '0.55em'}}>Write code that matters</p>
                                  </div>
                              </Menu.Item>
-                             <Menu.Item as={Link} to={'/about/'} link position={'right'}
-                                        active={window.location.pathname === '/about/'}>
+                             <Menu.Item as={Link} to={'/about/'} link position={'right'}>
                                  About
                              </Menu.Item>
                          </Menu>

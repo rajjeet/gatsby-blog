@@ -1,45 +1,28 @@
 import React from 'react';
 import {Link, graphql} from "gatsby";
 import Layout from '../components/layout';
-import {css} from "@emotion/core";
-import {rhythm} from "../utils/typography";
+import {Header, Item} from "semantic-ui-react";
 
 export default ({data}) => {
     return (
         <Layout>
             <div>
-                <h1
-                    css={css`
-                display: inline-block;
-                border-bottom: 1px solid;
-            `}
-                >
-                    Latest Posts
-                </h1>
-                <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-                {data.allMarkdownRemark.edges.map(({node}) => (
-                    <div key={node.id}>
-                        <Link
-                            to={node.fields.slug}
-                            css={css`
-                                text-decoration: none;
-                                color: inherit;
-                            `}
-                            >
-                        <h3
-                            css={css`
-                                margin-bottom: ${rhythm(1 / 4)}
-                            `}
-                        >{node.frontmatter.title}{" "}
-                            <span css={css`
-                            color: #bbb
-                            `}
-                            >- {node.frontmatter.date}</span>
-                        </h3>
-                        <p>{node.excerpt}</p>
-                        </Link>
-                    </div>
-                ))}
+                <Header as={'h4'} style={{marginBottom: '0em'}}>Latest Posts</Header>
+                <p style={{color: '#888'}}>{data.allMarkdownRemark.totalCount} Posts</p>
+                <Item.Group>
+                    {data.allMarkdownRemark.edges.map(({node}) => (
+                        <Item key={node.id}>
+                            <Item.Content>
+                                <Link to={node.fields.slug}
+                                      style={{textDecoration: 'none', color: 'inherit'}}>
+                                    <Item.Header as={'h2'} style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
+                                    <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
+                                    <Item.Description>{node.excerpt}</Item.Description>
+                                </Link>
+                            </Item.Content>
+                        </Item>
+                    ))}
+                </Item.Group>
             </div>
         </Layout>
     )
