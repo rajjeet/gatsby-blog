@@ -6,7 +6,7 @@ import {Grid, Image} from "semantic-ui-react";
 export default () => (
     <Layout>
         <h1>About Me</h1>
-        <Grid>
+        <Grid stackable>
             <Grid.Row>
                 <Grid.Column width={11}>
                     <div>
@@ -20,7 +20,7 @@ export default () => (
                     </div>
                 </Grid.Column>
                 <Grid.Column width={5}>
-                    <Image src={Headshot} alt={'Headshot'} rounded />
+                    <Image centered size={'small'} src={Headshot} alt={'Headshot'} rounded />
                 </Grid.Column>
             </Grid.Row>
         </Grid>
