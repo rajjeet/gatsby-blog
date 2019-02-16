@@ -1,7 +1,7 @@
 import React from 'react';
 import Headshot from '../images/headshot.jpg';
 import Layout from '../components/layout';
-import {Grid, Header, Icon, Image, Menu} from "semantic-ui-react";
+import {Grid, Header, Icon, Image} from "semantic-ui-react";
 
 export default () => (
     <Layout>
@@ -20,26 +20,26 @@ export default () => (
                     </div>
                 </Grid.Column>
                 <Grid.Column width={5}>
-                    <Image  centered size={'medium'} src={Headshot} alt={'Headshot'} rounded/>
+                    <Image centered size={'medium'} src={Headshot} alt={'Headshot'} rounded/>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column>
                     <Header as={'h4'} content={'Contact'}/>
-                    <Menu icon={'labeled'} borderless secondary compact stackable>
-                        <Menu.Item fitted style={{textAlign: 'left'}}>
+                    <Grid columns={3} stackable>
+                        <Grid.Column floated={'left'}>
                             <a href={'mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:'}>
                                 <Icon link name={'mail'} size={'big'}/>Email </a>
-                        </Menu.Item>
-                        <Menu.Item fitted>
+                        </Grid.Column>
+                        <Grid.Column floated={'left'}>
                             <a href={'https://github.com/rajjeet'} target={'_blank'}>
                                 <Icon link name={'github'} size={'big'}/>Github </a>
-                        </Menu.Item>
-                        <Menu.Item fitted>
+                        </Grid.Column>
+                        <Grid.Column floated={'left'}>
                             <a href={'https://linkedin.com/in/rajjeetphull'} target={'_blank'}>
                                 <Icon link name={'linkedin'} size={'big'}/>LinkedIn </a>
-                        </Menu.Item>
-                    </Menu>
+                        </Grid.Column>
+                    </Grid>
 
                 </Grid.Column>
             </Grid.Row>
