@@ -1,8 +1,7 @@
 import React from 'react';
-import {css} from '@emotion/core';
-import {graphql, Link, StaticQuery} from 'gatsby';
 import 'semantic-ui-css/semantic.min.css';
-import {rhythm} from '../utils/typography';
+import {graphql, Link, StaticQuery} from 'gatsby';
+import {Container, Header, Menu} from "semantic-ui-react";
 
 export default ({children}) => (
     <StaticQuery query={
@@ -17,33 +16,22 @@ export default ({children}) => (
         `
     }
                  render={data => (
-                     <div
-                         css={css`
-            margin: 0 auto;
-            max-width: 700px;
-            padding: ${rhythm(2)};
-            padding-top: ${rhythm(1.5)};
-        `}
-                     >
-                         <Link to={'/'}>
-                             <h3 css={css`
-                margin-bottom: ${rhythm(2)};
-                display: inline-block;
-                font-style: normal;
-            `}>
-                                 {data.site.siteMetadata.title}
-                             </h3>
-                         </Link>
-                         <Link
-                             to={'/about/'}
-                             css={css`
-                float: right;
-            `}
-                         >
-                             About
-                         </Link>
+                     <Container style={{paddingTop: '1em'}}>
+                         <Menu borderless>
+                             <Menu.Item as={Link} link to={'/'} active={window.location.pathname === '/'}>
+                                 <div>
+                                     <Header as={'h3'}
+                                             style={{marginBottom: '0em'}}>{data.site.siteMetadata.title}</Header>
+                                     <p style={{fontSize: '0.55em'}}>Write code that matters</p>
+                                 </div>
+                             </Menu.Item>
+                             <Menu.Item as={Link} to={'/about/'} link position={'right'}
+                                        active={window.location.pathname === '/about/'}>
+                                 About
+                             </Menu.Item>
+                         </Menu>
                          {children}
-                     </div>
+                     </Container>
                  )}
     />
 )
