@@ -1,4 +1,6 @@
-const path = require(`path`);
+const _ = require(`lodash`)
+const path = require(`path`)
+const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`)
 const {createFilePath} = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({node, getNode, actions}) => {
@@ -10,6 +12,14 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             name: `slug`,
             value: slug,
         });
+
+        if (node.frontmatter.tags) {
+            const tagSlugs = node.frontmatter.tags.map(
+                tag => `/tags/${_.kebabCase(tag)}/`
+            );
+            console.log(tagSlugs);
+            createNodeField({node, name: `tagSlugs`, value: tagSlugs})
+        }
     }
 };
 
@@ -22,7 +32,8 @@ exports.createPages = ({graphql, actions}) => {
           node {
             fields {
               slug
-            }
+              tagSlugs
+            }            
           }
         }
       }
@@ -36,6 +47,34 @@ exports.createPages = ({graphql, actions}) => {
                     slug: node.fields.slug
                 }
             })
-        })
+        });
+
+        let tagSlugs = [];
+        result.data.allMarkdownRemark.edges.forEach(({node}) => {
+            tagSlugs = tagSlugs.concat(node.fields.tagSlugs);
+        });
+
+        _.uniq(tagSlugs).forEach(tagSlug => {
+            createPage({
+                path: tagSlug,
+                component: path.resolve(`./src/templates/tag-page.js`),
+                context: {
+                    tagSlug: tagSlug
+                }
+            });
+        });
+
+
     });
+};
+
+
+// Sass and Lodash.
+exports.onCreateWebpackConfig = ({stage, actions}) => {
+    switch (stage) {
+        case `build-javascript`:
+            actions.setWebpackConfig({
+                plugins: [new LodashModuleReplacementPlugin()],
+            })
+    }
 };
