@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link, graphql} from "gatsby";
 import Layout from '../components/layout';
-import {Header, Item, Label} from "semantic-ui-react";
+import TagGroup from '../components/tagGroup';
+import {Header, Item} from "semantic-ui-react";
 
 export default ({data}) => {
     return (
@@ -20,11 +21,7 @@ export default ({data}) => {
                                     <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
                                     <Item.Description>{node.excerpt}</Item.Description>
                                     <Item.Extra>
-                                        <Label.Group tag size={'small'}>
-                                            {node.frontmatter.tags.map((tag) =>
-                                                <Label key={tag}>{tag}</Label>
-                                            )}
-                                        </Label.Group>
+                                        <TagGroup tags={node.frontmatter.tags}/>
                                     </Item.Extra>
                                 </Link>
                             </Item.Content>
