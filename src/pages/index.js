@@ -1,23 +1,31 @@
 import React from 'react';
 import {Link, graphql} from "gatsby";
 import Layout from '../components/layout';
-import {Header, Item} from "semantic-ui-react";
+import {Header, Item, Label} from "semantic-ui-react";
 
 export default ({data}) => {
     return (
         <Layout>
             <div>
-                <Header as={'h4'} style={{marginBottom: '0em'}}>Latest Posts</Header>
-                <p style={{color: '#888'}}>{data.allMarkdownRemark.totalCount} Posts</p>
+                <Header as={'h3'} style={{marginBottom: '0em'}}>Latest Posts</Header>
+                <p style={{color: '#888', marginBottom: '0em'}}>{data.allMarkdownRemark.totalCount} Posts</p>
                 <Item.Group>
                     {data.allMarkdownRemark.edges.map(({node}) => (
                         <Item key={node.id}>
                             <Item.Content>
                                 <Link to={node.fields.slug}
                                       style={{textDecoration: 'none', color: 'inherit'}}>
-                                    <Item.Header as={'h2'} style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
+                                    <Item.Header as={'h2'}
+                                                 style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
                                     <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
                                     <Item.Description>{node.excerpt}</Item.Description>
+                                    <Item.Extra>
+                                        <Label.Group tag size={'small'}>
+                                            {node.frontmatter.tags.map((tag) =>
+                                                <Label key={tag}>{tag}</Label>
+                                            )}
+                                        </Label.Group>
+                                    </Item.Extra>
                                 </Link>
                             </Item.Content>
                         </Item>
@@ -25,25 +33,26 @@ export default ({data}) => {
                 </Item.Group>
             </div>
         </Layout>
-    )
+    );
 }
 export const query = graphql`
-query {
-  allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC })  {
-    totalCount
-    edges {
-      node {
-        id,
-        frontmatter {
-          title
-          date(formatString: "DD MMMM, YYYY")
-        }
-        fields {
-            slug
-        }
-        excerpt
-      }
-    }
-  }
-}
-`;
+                    query {
+                    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC})  {
+                    totalCount
+                    edges {
+                    node {
+                    id,
+                    frontmatter {
+                    title
+                    date(formatString: "DD MMMM, YYYY")
+                    tags
+                }
+                    fields {
+                    slug
+                }
+                    excerpt
+                }
+                }
+                }
+                }
+                    `;
