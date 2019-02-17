@@ -10,7 +10,7 @@ export default ({posts, heading}) => (
         <Grid.Column width={11}>
             <Header as={'h1'} style={{marginBottom: '0em'}}>{heading}</Header>
             <p style={{color: '#888', marginBottom: '0em'}}>{posts.length} Posts</p>
-            <Item.Group>
+            <Item.Group link>
                 {posts.map(({node}) => (
                     <Item key={node.id}>
                         <Item.Content>
