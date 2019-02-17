@@ -1,10 +1,16 @@
-const _ = require(`lodash`)
-const path = require(`path`)
-const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`)
+const _ = require(`lodash`);
+const path = require(`path`);
+const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
 
+function getTagSlug(tag) {
+    return `/tags/${_.kebabCase(tag)}/`;
+}
+
 exports.onCreateNode = ({node, getNode, actions}) => {
+
     const {createNodeField} = actions;
+
     if (node.internal.type === `MarkdownRemark`) {
         const slug = createFilePath({node, getNode, basePath: `pages`});
         createNodeField({
@@ -15,7 +21,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
         if (node.frontmatter.tags) {
             const tagSlugs = node.frontmatter.tags.map(
-                tag => `/tags/${_.kebabCase(tag)}/`
+                tag => getTagSlug(tag)
             );
             createNodeField({node, name: `tagSlugs`, value: tagSlugs})
         }
@@ -40,10 +46,16 @@ exports.createPages = ({graphql, actions}) => {
       }
     }
     `).then(result => {
+
+        if (result.errors) {
+            throw result.errors
+        }
+
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
+            let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
             createPage({
                 path: node.fields.slug,
-                component: path.resolve(`./src/templates/blog-post.js`),
+                component: blogPostTemplate,
                 context: {
                     slug: node.fields.slug
                 }
@@ -55,21 +67,17 @@ exports.createPages = ({graphql, actions}) => {
             tags = tags.concat(node.frontmatter.tags);
         });
 
-        console.log(tags);
-
-
         _.uniq(tags).forEach(tag => {
-            const tagSlug = `/tags/${_.kebabCase(tag)}/`;
+            const tagSlug = getTagSlug(tag);
+            let tagPageTemplate = path.resolve(`./src/templates/tag-page.js`);
             createPage({
                 path: tagSlug,
-                component: path.resolve(`./src/templates/tag-page.js`),
+                component: tagPageTemplate,
                 context: {
                     tag: tag
                 }
             });
         });
-
-
     });
 };
 
