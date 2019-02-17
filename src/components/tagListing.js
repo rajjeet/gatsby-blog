@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql, StaticQuery} from "gatsby";
-import {Header, Label} from "semantic-ui-react";
-import {getTagSlug} from "../utils/helperFunctions";
+import {Header} from "semantic-ui-react";
+import TagGroup from './tagGroup';
 
 export default () => (
     <StaticQuery query={
@@ -19,13 +19,7 @@ export default () => (
                  render={data => (
                      <>
                          <Header as={'h5'}>Explore</Header>
-                         <Label.Group tag>
-                             {data.allMarkdownRemark.group.map(tagGroup =>
-                                 <Label as={'a'} key={tagGroup.fieldValue}
-                                        onClick={() => window.location.href = getTagSlug(tagGroup.fieldValue)}>{tagGroup.fieldValue}
-                                     <Label.Detail>{tagGroup.totalCount}</Label.Detail>
-                                 </Label>)}
-                         </Label.Group>
+                         <TagGroup tags={data.allMarkdownRemark.group} />
                      </>
                  )}
     />

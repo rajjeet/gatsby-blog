@@ -22,7 +22,7 @@ export default ({posts, heading}) => (
                                 <Item.Description>{node.excerpt}</Item.Description>
                             </Link>
                             <Item.Extra>
-                                <TagGroup tags={node.frontmatter.tags}/>
+                                <TagGroup tags={node.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
                             </Item.Extra>
                         </Item.Content>
                     </Item>

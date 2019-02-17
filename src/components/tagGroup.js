@@ -1,11 +1,13 @@
 import React from 'react';
-import {Label} from "semantic-ui-react";
 import {getTagSlug} from "../utils/helperFunctions";
+import {Label} from "semantic-ui-react";
 
 export default ({tags}) => (
-    <Label.Group tag size={'small'}>
-        {tags.map((tag) =>
-            <Label as={'a'} onClick={() => window.location.href = getTagSlug(tag)} key={tag}>{tag}</Label>
-        )}
+    <Label.Group>
+        {tags.map(tagGroup =>
+            <Label basic color={'blue'} as={'a'} key={tagGroup.fieldValue}
+                   onClick={() => window.location.href = getTagSlug(tagGroup.fieldValue)}>{tagGroup.fieldValue}
+                {tagGroup.totalCount && <Label.Detail>{tagGroup.totalCount}</Label.Detail>}
+            </Label>)}
     </Label.Group>
 )

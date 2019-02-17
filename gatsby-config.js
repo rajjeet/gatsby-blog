@@ -16,13 +16,14 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: 'GatsbyJS',
-                short_name: "GatsbyJS",
+                name: 'Ortmesh',
+                short_name: "Ortmesh",
                 start_url: '/',
                 background_color: '#6b37bf',
                 theme_color: '#6b37bf',
                 display: 'standalone',
-                icon: "src/images/icon.png"
+                icon: "src/images/logo.png",
+                include_favicon: true
             }
         },
         `gatsby-plugin-offline`
