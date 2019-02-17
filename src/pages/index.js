@@ -2,11 +2,20 @@ import React from 'react';
 import {graphql} from "gatsby";
 import Layout from '../components/layout';
 import PostListing from '../components/postListing';
+import TagListing from '../components/tagListing';
+import {Grid} from "semantic-ui-react";
 
 export default ({data}) => {
     return (
         <Layout>
-            <PostListing posts={data.allMarkdownRemark.edges} heading={'Latest Posts'}/>
+            <Grid stackable>
+                <Grid.Column width={12}>
+                    <PostListing posts={data.allMarkdownRemark.edges} heading={'Latest Posts'}/>
+                </Grid.Column>
+                <Grid.Column width={4}>
+                    <TagListing />
+                </Grid.Column>
+            </Grid>
         </Layout>
     );
 }
