@@ -12,11 +12,11 @@ export default ({data}) => {
 };
 
 export const query = graphql`
-    query($tagSlug: String!) {
+    query($tag: String!) {
       allMarkdownRemark (
         limit:1000
         sort: {fields: frontmatter___date, order: DESC}
-        filter: {fields: {tagSlugs: {in: [$tagSlug] }}}
+        filter: {frontmatter: {tags: {in: [$tag] }}}
       ) {
         edges{
           node {

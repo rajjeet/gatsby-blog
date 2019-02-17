@@ -17,7 +17,6 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             const tagSlugs = node.frontmatter.tags.map(
                 tag => `/tags/${_.kebabCase(tag)}/`
             );
-            console.log(tagSlugs);
             createNodeField({node, name: `tagSlugs`, value: tagSlugs})
         }
     }
@@ -31,8 +30,10 @@ exports.createPages = ({graphql, actions}) => {
         edges {
           node {
             fields {
-              slug
-              tagSlugs
+              slug              
+            }
+            frontmatter{
+              tags
             }            
           }
         }
@@ -49,17 +50,21 @@ exports.createPages = ({graphql, actions}) => {
             })
         });
 
-        let tagSlugs = [];
+        let tags = [];
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
-            tagSlugs = tagSlugs.concat(node.fields.tagSlugs);
+            tags = tags.concat(node.frontmatter.tags);
         });
 
-        _.uniq(tagSlugs).forEach(tagSlug => {
+        console.log(tags);
+
+
+        _.uniq(tags).forEach(tag => {
+            const tagSlug = `/tags/${_.kebabCase(tag)}/`;
             createPage({
                 path: tagSlug,
                 component: path.resolve(`./src/templates/tag-page.js`),
                 context: {
-                    tagSlug: tagSlug
+                    tag: tag
                 }
             });
         });
