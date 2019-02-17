@@ -2,10 +2,7 @@ const _ = require(`lodash`);
 const path = require(`path`);
 const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
-
-function getTagSlug(tag) {
-    return `/tags/${_.kebabCase(tag)}/`;
-}
+const getTagSlug = require('./src/utils/helperFunctions').getTagSlug;
 
 exports.onCreateNode = ({node, getNode, actions}) => {
 

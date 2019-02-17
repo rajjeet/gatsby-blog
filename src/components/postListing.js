@@ -17,10 +17,10 @@ export default ({posts, heading}) => (
                                          style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
                             <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
                             <Item.Description>{node.excerpt}</Item.Description>
-                            <Item.Extra>
-                                <TagGroup tags={node.frontmatter.tags}/>
-                            </Item.Extra>
                         </Link>
+                        <Item.Extra>
+                            <TagGroup tags={node.frontmatter.tags}/>
+                        </Item.Extra>
                     </Item.Content>
                 </Item>
             ))}
