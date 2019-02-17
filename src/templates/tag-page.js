@@ -3,10 +3,10 @@ import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import PostListing from "../components/postListing";
 
-export default ({data}) => {
+export default ({data, pageContext}) => {
     return (
         <Layout>
-            <PostListing posts={data.allMarkdownRemark.edges}/>
+            <PostListing posts={data.allMarkdownRemark.edges} heading={pageContext.tag}/>
         </Layout>
     );
 };
@@ -18,6 +18,7 @@ export const query = graphql`
         sort: {fields: frontmatter___date, order: DESC}
         filter: {frontmatter: {tags: {in: [$tag] }}}
       ) {
+        totalCount
         edges{
           node {
             id            

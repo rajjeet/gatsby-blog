@@ -2,16 +2,11 @@ import React from 'react';
 import {graphql} from "gatsby";
 import Layout from '../components/layout';
 import PostListing from '../components/postListing';
-import {Header} from "semantic-ui-react";
 
 export default ({data}) => {
     return (
         <Layout>
-            <div>
-                <Header as={'h3'} style={{marginBottom: '0em'}}>Latest Posts</Header>
-                <p style={{color: '#888', marginBottom: '0em'}}>{data.allMarkdownRemark.totalCount} Posts</p>
-                <PostListing posts={data.allMarkdownRemark.edges}/>
-            </div>
+            <PostListing posts={data.allMarkdownRemark.edges} heading={'Latest Posts'}/>
         </Layout>
     );
 }
