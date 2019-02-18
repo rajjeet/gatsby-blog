@@ -18,7 +18,7 @@ export default () => (
 
                  render={data => (
                      <>
-                         <Header as={'h5'}>Explore</Header>
+                         <Header as={'h5'}>Tags</Header>
                          <TagGroup tags={data.allMarkdownRemark.group} />
                      </>
                  )}
