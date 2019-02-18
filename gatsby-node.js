@@ -3,6 +3,7 @@ const path = require(`path`);
 const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
 const getTagSlug = require('./src/utils/helperFunctions').getTagSlug;
+const getCategorySlug = require('./src/utils/helperFunctions').getCategorySlug;
 
 exports.onCreateNode = ({node, getNode, actions}) => {
 
@@ -22,6 +23,11 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             );
             createNodeField({node, name: `tagSlugs`, value: tagSlugs})
         }
+
+        if (node.frontmatter.category) {
+            const categorySlug = getCategorySlug(node.frontmatter.category);
+            createNodeField({node, name: `categorySlug`, value: categorySlug})
+        }
     }
 };
 
@@ -37,6 +43,7 @@ exports.createPages = ({graphql, actions}) => {
             }
             frontmatter{
               tags
+              category
             }            
           }
         }
@@ -48,6 +55,7 @@ exports.createPages = ({graphql, actions}) => {
             throw result.errors
         }
 
+        // Blog posts
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
             createPage({
@@ -59,6 +67,7 @@ exports.createPages = ({graphql, actions}) => {
             })
         });
 
+        // Tags
         let tags = [];
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             tags = tags.concat(node.frontmatter.tags);
@@ -72,6 +81,24 @@ exports.createPages = ({graphql, actions}) => {
                 component: tagPageTemplate,
                 context: {
                     tag: tag
+                }
+            });
+        });
+
+        // Category
+        let categories = [];
+        result.data.allMarkdownRemark.edges.forEach(({node}) => {
+            categories = categories.concat(node.frontmatter.category);
+        });
+
+        _.uniq(categories).forEach(category => {
+            const categorySlug = getCategorySlug(category);
+            let categoryPageTemplate = path.resolve(`./src/templates/category-page.js`);
+            createPage({
+                path: categorySlug,
+                component: categoryPageTemplate,
+                context: {
+                    category: category
                 }
             });
         });

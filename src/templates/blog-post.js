@@ -56,7 +56,7 @@ export default class BlogPost extends Component {
                             <Grid.Column>
                                 <Header as={'h1'} style={{marginBottom: '0em'}}>{post.frontmatter.title}</Header>
                                 <div style={{marginBottom: '.7em'}}>{post.frontmatter.date}</div>
-                                <TagGroup tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
+                                <TagGroup categories={[{"fieldValue" : post.frontmatter.category}]} tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
                                 <Sticky context={contextRef} offset={10} bottomOffset={10} css={css`
                                                 #outline-btn {
                                                   display: none;
@@ -113,6 +113,7 @@ export const query = graphql`
           title
           tags
           date
+          category
         }
       }
     }

@@ -3,6 +3,7 @@ title: "My Top 10 Influential Books of 2018"
 date: "2018-08-21"
 draft: true
 author: Raj
+category: Funny
 tags: 
     - Self Improvement
     - Books

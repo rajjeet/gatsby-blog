@@ -1,9 +1,9 @@
 ---
-title: "How I built this website"
+title: "Review of Pluralight Course"
 date: "2018-10-21"
 draft: false
 author: Raj
-category: Portfolio
+category: Review
 tags: 
     - Self Improvement
     - Cats

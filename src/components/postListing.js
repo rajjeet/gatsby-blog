@@ -4,6 +4,7 @@ import {Link} from "gatsby";
 import TagGroup from "./tagGroup";
 import {Grid} from "semantic-ui-react";
 import TagListing from "./tagListing";
+import CategoryListing from './categoryListing';
 
 export default ({posts, heading}) => (
     <Grid stackable>
@@ -22,7 +23,7 @@ export default ({posts, heading}) => (
                                 <Item.Description>{node.excerpt}</Item.Description>
                             </Link>
                             <Item.Extra>
-                                <TagGroup tags={node.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
+                                <TagGroup categories={[{"fieldValue" : node.frontmatter.category}]} tags={node.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
                             </Item.Extra>
                         </Item.Content>
                     </Item>
@@ -30,7 +31,8 @@ export default ({posts, heading}) => (
             </Item.Group>
         </Grid.Column>
         <Grid.Column width={5}>
-            <TagListing />
+            <CategoryListing />
+            <TagListing/>
         </Grid.Column>
     </Grid>
 );
