@@ -1,7 +1,7 @@
 ---
 title: "My Top 10 Influential Books of 2018"
 date: "2018-08-21"
-draft: false
+draft: true
 author: Raj
 tags: 
     - Self Improvement
