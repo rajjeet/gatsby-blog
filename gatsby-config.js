@@ -4,13 +4,17 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-emotion`,
-        `gatsby-transformer-remark`,
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [`gatsby-remark-autolink-headers`]
+            }
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: 'src',
                 path: `${__dirname}/src`
-
             }
         },
         {
@@ -19,8 +23,8 @@ module.exports = {
                 name: 'Ortmesh',
                 short_name: "Ortmesh",
                 start_url: '/',
-                background_color: '#6b37bf',
-                theme_color: '#6b37bf',
+                background_color: '#ffffff' ,
+                theme_color: '#2185d0',
                 display: 'standalone',
                 icon: "src/images/logo.png",
                 include_favicon: true
