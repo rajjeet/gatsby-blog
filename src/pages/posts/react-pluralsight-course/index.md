@@ -1,5 +1,5 @@
 ---
-title: "Review of Pluralight Course"
+title: "React Pluralsight Course"
 date: "2018-10-21"
 draft: false
 author: Raj
