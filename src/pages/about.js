@@ -1,9 +1,10 @@
 import React from 'react';
-import Headshot from '../images/headshot.jpg';
 import Layout from '../components/layout';
-import {Grid, Header, Icon, Image} from "semantic-ui-react";
+import {Grid, Header, Icon} from "semantic-ui-react";
+import {graphql} from "gatsby";
+import Img from 'gatsby-image';
 
-export default () => (
+export default ({data}) => (
     <Layout>
         <Header as={'h1'} content={'About Me'}/>
         <Grid stackable>
@@ -22,7 +23,7 @@ export default () => (
                     </div>
                 </Grid.Column>
                 <Grid.Column width={5}>
-                    <Image centered size={'medium'} src={Headshot} alt={'Headshot'} rounded/>
+                    <Img style={{maxWidth: '300px', margin: 'auto'}} fluid={data.file.childImageSharp.fluid} />
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -48,3 +49,15 @@ export default () => (
         </Grid>
     </Layout>
 )
+
+export const query = graphql`
+query {
+  file(relativePath: {eq: "images/headshot.jpg"}) {
+    childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+    }
+  }
+}
+`;
