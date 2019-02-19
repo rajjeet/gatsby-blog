@@ -27,8 +27,11 @@ plugins: [
 ]
 ```
 
-## Outcomes
+## Certification
 Donec sagittis enim eget ipsum sodales, lobortis pellentesque nulla feugiat. In orci metus, mattis quis accumsan in, commodo vel dolor. Curabitur varius velit eget consequat posuere. Quisque egestas, nisl vel vestibulum tempor, ante tortor volutpat dui, nec gravida elit eros a sapien. Cras at augue blandit, cursus augue eu, sodales urna. Suspendisse maximus mauris placerat tellus hendrerit, ac commodo ipsum cursus. Proin finibus tincidunt lorem eget dictum. Morbi placerat interdum nunc, vel suscipit libero eleifend id. Donec nec mauris a nisi euismod fringilla.
+
+![](aws-solutions-architect-professional.png) 
+![](aws_sa_associate_badge.png)
 
 ### Challenges
 Curabitur consectetur suscipit felis, at vestibulum neque viverra in. Curabitur viverra metus quis varius convallis. Aliquam bibendum felis nisi, sit amet volutpat lacus posuere sed. Aliquam dignissim magna ut risus rhoncus sodales. Proin felis metus, dapibus id ultrices in, luctus non lorem. Pellentesque at est id lectus fringilla tincidunt non nec diam. Pellentesque non orci nec ligula gravida scelerisque nec non eros. Aliquam erat volutpat. Cras tristique elit et sem condimentum viverra. Mauris et enim erat.

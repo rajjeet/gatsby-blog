@@ -14,6 +14,12 @@ module.exports = {
                         options: {
                             inlineCodeMarker: '>'
                         }
+                    },
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 740,
+                        },
                     }
                 ]
             }
