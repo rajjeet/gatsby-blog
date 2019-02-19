@@ -7,7 +7,15 @@ module.exports = {
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-                plugins: [`gatsby-remark-autolink-headers`]
+                plugins: [
+                    `gatsby-remark-autolink-headers`,
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            inlineCodeMarker: '>'
+                        }
+                    }
+                ]
             }
         },
         {
@@ -23,7 +31,7 @@ module.exports = {
                 name: 'Ortmesh',
                 short_name: "Ortmesh",
                 start_url: '/',
-                background_color: '#ffffff' ,
+                background_color: '#ffffff',
                 theme_color: '#2185d0',
                 display: 'standalone',
                 icon: "src/images/logo.png",

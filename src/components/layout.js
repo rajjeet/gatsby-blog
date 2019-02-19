@@ -4,6 +4,8 @@ import {graphql, Link, StaticQuery} from 'gatsby';
 import {Container, Header, Image, Menu} from "semantic-ui-react";
 import Logo from '../images/logo.png';
 import colors from '../utils/colors';
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import '../styles/global.css';
 
 export default ({children}) => (
     <StaticQuery query={
