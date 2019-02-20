@@ -18,7 +18,7 @@ export default () => (
 
                  render={data => (
                      <>
-                         <Header as={'h5'}>Categories</Header>
+                         <Header style={{margin: '.5em auto'}} as={'h5'}>Categories</Header>
                          <TagGroup categories={data.allMarkdownRemark.group} />
                      </>
                  )}

@@ -4,6 +4,7 @@ date: "2018-08-21"
 draft: false
 author: Raj
 category: Funny
+image: './christopher-gower-291246-unsplash.jpg'
 tags: 
     - Self Improvement
     - Books

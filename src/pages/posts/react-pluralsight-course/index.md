@@ -4,6 +4,7 @@ date: "2018-10-21"
 draft: false
 author: Raj
 category: Review
+image: './fotis-fotopoulos-790373-unsplash.jpg'
 tags: 
     - Self Improvement
     - Cats

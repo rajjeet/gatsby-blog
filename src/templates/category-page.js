@@ -27,11 +27,18 @@ export const query = graphql`
               date(formatString: "DD MMMM, YYYY")
               tags
               category
+              image {
+                childImageSharp  {
+                   fixed(width: 250) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }               
             }
             fields{
               slug              
             }
-            excerpt
+            excerpt(pruneLength: 80)
           }
         }    
       }              
