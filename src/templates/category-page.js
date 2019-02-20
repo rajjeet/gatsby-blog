@@ -27,6 +27,7 @@ export const query = graphql`
               date(formatString: "DD MMMM, YYYY")
               tags
               category
+              description
               image {
                 childImageSharp  {
                    fixed(width: 250) {

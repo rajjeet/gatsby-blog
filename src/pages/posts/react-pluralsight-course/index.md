@@ -5,12 +5,11 @@ draft: false
 author: Raj
 category: Review
 image: './fotis-fotopoulos-790373-unsplash.jpg'
+description: This is a react pluralsight course dedicated to my blog. This is a react pluralsight course dedicated to my blog. This is a react pluralsight course dedicated to my blog
 tags: 
     - Self Improvement
     - Cats
 ---
-
-I just did it like this.
 
 ## Technology
 Lorem ipsum dolor sit amet, <span class="ui label compact">consectetur</span> adipiscing elit. Quisque quis dignissim nisi. Quisque dolor ipsum, hendrerit non rhoncus sit amet, efficitur vel risus. Mauris nec bibendum diam. Pellentesque eget odio consectetur, accumsan arcu in, euismod justo. Aliquam eu vehicula nisi. Praesent non est metus. Aliquam vel ligula accumsan, tempus ante eu, aliquam magna. Curabitur faucibus iaculis viverra. Morbi sit amet mi sit amet erat auctor consectetur. Donec et ligula felis. Etiam rutrum est ac lorem egestas, non venenatis orci euismod. Phasellus congue dolor fringilla mauris faucibus dapibus. In eu efficitur risus. Duis commodo blandit eros in volutpat.

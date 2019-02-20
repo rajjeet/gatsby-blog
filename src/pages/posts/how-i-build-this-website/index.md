@@ -5,6 +5,7 @@ draft: false
 author: Raj
 category: Portfolio
 image: './dlanor-s-703975-unsplash.jpg'
+description: This is a short description about how i build websites. This is a short description about how i build websites. This is a short description about how i build websites
 tags: 
     - Self Improvement
     - Cats

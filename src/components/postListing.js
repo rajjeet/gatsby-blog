@@ -25,7 +25,7 @@ export default ({posts, heading}) => (
                                 <Item.Header as={'h3'}
                                              style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
                                 <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
-                                <Item.Description>{node.excerpt}</Item.Description>
+                                <Item.Description>{node.frontmatter.description}</Item.Description>
                             </Link>
                             <Item.Extra>
                                 <TagGroup categories={[{"fieldValue": node.frontmatter.category}]}

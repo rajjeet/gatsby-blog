@@ -5,6 +5,7 @@ draft: false
 author: Raj
 category: Funny
 image: './christopher-gower-291246-unsplash.jpg'
+description: This is a random panda post I dont know even bro. This is a random panda post I dont know even bro. This is a random panda post I dont know even bro.
 tags: 
     - Self Improvement
     - Books
