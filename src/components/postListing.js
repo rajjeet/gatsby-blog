@@ -1,11 +1,13 @@
 import React from "react";
-import {Header, Item} from "semantic-ui-react";
+import {Divider, Header, Item} from "semantic-ui-react";
 import {Link} from "gatsby";
 import TagGroup from "./tagGroup";
 import {Grid} from "semantic-ui-react";
 import TagListing from "./tagListing";
 import CategoryListing from './categoryListing';
 import Img from 'gatsby-image';
+import {Headshot} from "./Headshot";
+import {SocialLinks} from "./SocialLinks";
 
 export default ({posts, heading}) => (
     <Grid stackable>
@@ -16,8 +18,7 @@ export default ({posts, heading}) => (
                 {posts.map(({node}) => (
                     <Item key={node.id}>
                         {node.frontmatter.image &&
-                            <Item.Image as={Img} fixed={node.frontmatter.image.childImageSharp.fixed} />
-
+                            <Item.Image style={{borderRadius: '3%' }} as={Img} fixed={node.frontmatter.image.childImageSharp.fixed} />
                         }
                         <Item.Content>
                             <Link to={node.fields.slug}
@@ -39,6 +40,11 @@ export default ({posts, heading}) => (
         <Grid.Column width={4}>
             <CategoryListing/>
             <TagListing />
+            <Divider hidden />
+            <Headshot/>
+            <Header as={'h3'} style={{margin: '0.2em 0em'}}>Rajjeet Phull</Header>
+            <p>Site Author</p>
+            <SocialLinks/>
         </Grid.Column>
     </Grid>
 );
