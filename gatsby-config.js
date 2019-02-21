@@ -1,6 +1,48 @@
 module.exports = {
     siteMetadata: {
-        title: 'Ortmesh'
+        title: 'Ortmesh',
+        description: `
+            Raj is a software developer from Toronto who loves to code, work on side projects and read audio books.
+            His specialities include SQL Server, React JS, and .NET Framework. Ortmesh is Raj's personal blogging site,
+             made by him to share his own ideas and tips.
+        `,
+        canonicalUrl: 'https://ortmesh.com',
+        image: 'https://ortmesh.com/headshot.jpg',
+        author: {
+            name: 'Rajjeet Phull',
+            minibio: `
+            Raj is a software developer from Toronto who loves to code, work on side projects and read audio books.
+            His specialities include SQL Server, React JS, and .NET Framework. Ortmesh is Raj's personal blogging site,
+             made by him to share his own ideas and tips.
+            `
+        },
+        organization: {
+            name: 'Ortmesh',
+            url: 'https://ortmesh.com',
+            logo: 'https://ortmesh.com/logo.png',
+        },
+        social: {
+            twitter: '@ortmesh',
+            fbAppID: ''
+        },
+        categories: [
+            {
+                slug: 'portfolio',
+                name: 'Portfolio',
+            },
+            {
+                slug: 'review',
+                name: 'Review'
+            },
+            {
+                slug: 'productivity',
+                name: 'Productivity'
+            },
+            {
+                slug: 'coding',
+                name: 'Coding'
+            }
+        ]
     },
     plugins: [
         `gatsby-plugin-emotion`,

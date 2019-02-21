@@ -6,6 +6,7 @@ import TagGroup from "../components/tagGroup";
 import * as PropTypes from "prop-types";
 import {css} from '@emotion/core';
 import colors from "../utils/colors";
+import SEO from "../components/SEO";
 
 function TableOfContents({post}) {
     return <>
@@ -50,6 +51,7 @@ export default class BlogPost extends Component {
 
         return (
             <Layout>
+                <SEO isBlogPost frontmatter={post.frontmatter} />
                 <div ref={this.handleContextRef}>
                     <Grid>
                         <Grid.Row>
@@ -117,6 +119,6 @@ export const query = graphql`
           category
           description
         }
-      }
+      }      
     }
 `;
