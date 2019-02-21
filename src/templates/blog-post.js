@@ -51,7 +51,7 @@ export default class BlogPost extends Component {
 
         return (
             <Layout>
-                <SEO isBlogPost frontmatter={post.frontmatter} />
+                <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL} />
                 <div ref={this.handleContextRef}>
                     <Grid>
                         <Grid.Row>
@@ -118,6 +118,9 @@ export const query = graphql`
           date
           category
           description
+          image {
+            publicURL
+          }
         }
       }      
     }
