@@ -2,10 +2,12 @@ import React from 'react';
 import {graphql} from "gatsby";
 import Layout from '../components/layout';
 import PostListing from '../components/postListing';
+import SEO from "../components/SEO";
 
 export default ({data}) => {
     return (
         <Layout>
+            <SEO />
             <PostListing posts={data.allMarkdownRemark.edges} heading={'Latest Posts'}/>
         </Layout>
     );

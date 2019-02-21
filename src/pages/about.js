@@ -3,9 +3,11 @@ import Layout from '../components/layout';
 import {SocialLinks} from "../components/SocialLinks";
 import {Headshot} from '../components/Headshot';
 import {Grid, Header} from "semantic-ui-react";
+import SEO from "../components/SEO";
 
 export default () => (
     <Layout>
+        <SEO />
         <Header as={'h1'} content={'About Me'}/>
         <Grid stackable>
             <Grid.Row>
