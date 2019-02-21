@@ -14,9 +14,16 @@ function TableOfContents({post}) {
         <div className={"ui list"} css={css`
                                             ul {
                                               padding-left: 0px;
+                                              font-weight: bold;
+                                              font-size: 1.1em;
                                             }
                                             ul ul {
                                               padding-left: 1em;
+                                              font-weight: normal;
+                                              font-size: 1em;
+                                            }
+                                            ul ul ul {
+                                              font-size: 0.8em;
                                             }
                                             ul {
                                               list-style-type: none;
@@ -111,7 +118,9 @@ export const query = graphql`
     query($slug: String!) {
       markdownRemark(fields: {slug: {eq: $slug}}) {
         html
-        tableOfContents
+        tableOfContents(
+          maxDepth: 4
+        )
         frontmatter {
           title
           tags
