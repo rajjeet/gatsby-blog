@@ -1,6 +1,6 @@
 import React from "react";
 import {Divider, Header, Item} from "semantic-ui-react";
-import {Link} from "gatsby";
+import {graphql, Link} from "gatsby";
 import TagGroup from "./tagGroup";
 import {Grid} from "semantic-ui-react";
 import TagListing from "./tagListing";
@@ -49,3 +49,27 @@ export default ({posts, heading}) => (
         </Grid.Column>
     </Grid>
 );
+
+export const query = graphql`
+    fragment PostListingMarkdownFragment on MarkdownRemark {                
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          tags
+          category
+          description
+          image {
+            childImageSharp  {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 80)          
+    }
+`;
