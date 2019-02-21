@@ -1,21 +1,28 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import {graphql, Link, StaticQuery} from 'gatsby';
-import {Container, Header, Image, Menu} from "semantic-ui-react";
-import Logo from '../images/logo.png';
+import {Container, Header, Menu} from "semantic-ui-react";
 import colors from '../utils/colors';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import '../styles/global.css';
+import Img from 'gatsby-image';
 
 export default ({children}) => (
     <StaticQuery query={
         graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                    }
+            {
+              site {
+                siteMetadata {
+                  title
                 }
+              }
+              file(relativePath: {eq: "images/logo.png"}) {
+                childImageSharp {
+                  fluid(maxWidth: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
         `
     }
@@ -23,7 +30,7 @@ export default ({children}) => (
                      <Container style={{paddingTop: '1em'}}>
                          <Menu borderless>
                              <Menu.Item as={Link} link to={'/'}>
-                                 <Image src={Logo} size={'mini'} alt={'Ortmesh'} />
+                                 <Img fluid={data.file.childImageSharp.fluid} style={{width: '3em'}} />
                              </Menu.Item>
                              <Menu.Item as={Link} link to={'/'} active={true}>
                                  <div>

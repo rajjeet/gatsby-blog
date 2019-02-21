@@ -28,8 +28,8 @@ export const query = graphql`
           description
           image {
             childImageSharp  {
-              fixed(width: 250) {
-                ...GatsbyImageSharpFixed
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

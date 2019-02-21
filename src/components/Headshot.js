@@ -8,7 +8,7 @@ export const Headshot = () => (
       file(relativePath: {eq: "images/headshot.jpg"}) {
         childImageSharp {
             fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid
             }
         }
       }

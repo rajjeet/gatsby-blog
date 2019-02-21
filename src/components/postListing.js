@@ -18,7 +18,8 @@ export default ({posts, heading}) => (
                 {posts.map(({node}) => (
                     <Item key={node.id}>
                         {node.frontmatter.image &&
-                            <Item.Image style={{borderRadius: '3%' }} as={Img} fixed={node.frontmatter.image.childImageSharp.fixed} />
+                        <Img style={{margin: '.5em', width: '400px', borderRadius: '3%'}}
+                             fluid={node.frontmatter.image.childImageSharp.fluid}/>
                         }
                         <Item.Content>
                             <Link to={node.fields.slug}
