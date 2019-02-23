@@ -89,7 +89,7 @@ export default class BlogPost extends Component {
                                         <div onClick={this.hideSideBar} dangerouslySetInnerHTML={{__html: post.html}}/>
                                     </Sidebar.Pusher>
                                     <Sticky context={contextRef} offset={25}>
-                                        <Sidebar as={Segment} color={'blue'} direction={'right'}
+                                        <Sidebar as={Segment} color={'blue'} direction={'right'} width={'thin'}
                                                  animation='overlay' visible={visible}>
                                             <TableOfContents post={post}/>
                                         </Sidebar>
