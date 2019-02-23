@@ -13,9 +13,9 @@ function TableOfContents({post}) {
         <Header as={"h4"}>Outline</Header>
         <div className={"ui list"} css={css`
                                             ul {
-                                              padding-left: 0px;
-                                              font-weight: bold;
+                                              padding-left: 1em;
                                               font-size: 1.1em;
+                                              list-style-type: circle;
                                             }
                                             ul ul {
                                               padding-left: 1em;
@@ -24,9 +24,6 @@ function TableOfContents({post}) {
                                             }
                                             ul ul ul {
                                               font-size: 0.8em;
-                                            }
-                                            ul {
-                                              list-style-type: none;
                                             }
                                             a {
                                               color: inherit;
@@ -86,20 +83,20 @@ export default class BlogPost extends Component {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                            <Grid.Column mobile={16} tablet={13} computer={13}>
+                            <Grid.Column mobile={16} tablet={12} computer={12}>
                                 <Sidebar.Pushable style={{transform: 'none'}}>
                                     <Sidebar.Pusher>
                                         <div onClick={this.hideSideBar} dangerouslySetInnerHTML={{__html: post.html}}/>
                                     </Sidebar.Pusher>
                                     <Sticky context={contextRef} offset={25}>
-                                        <Sidebar as={Segment} color={'blue'} direction={'right'} width={'thin'}
-                                                 animation='overlay' visible={visible} style={{padding: 'auto 100px'}}>
+                                        <Sidebar as={Segment} color={'blue'} direction={'right'}
+                                                 animation='overlay' visible={visible}>
                                             <TableOfContents post={post}/>
                                         </Sidebar>
                                     </Sticky>
                                 </Sidebar.Pushable>
                             </Grid.Column>
-                            <Grid.Column tablet={3} computer={3} only={'tablet computer'}>
+                            <Grid.Column tablet={4} computer={4} only={'tablet computer'}>
                                 <Sticky context={contextRef} offset={25}>
                                     <TableOfContents post={post}/>
                                 </Sticky>
