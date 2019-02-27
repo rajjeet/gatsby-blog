@@ -9,7 +9,9 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "prod": "npm run build && npm run serve"
+    "clean": "rm -rf .cache",
+    "prod": "npm run clean && npm run build && npm run serve",
+    "publish": "aws s3 sync public/ s3://ortmesh.com --acl public-read --delete --exclude CloudFrontLogs*"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
