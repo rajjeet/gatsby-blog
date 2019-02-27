@@ -1,7 +1,7 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import {graphql, Link, StaticQuery} from 'gatsby';
-import {Container, Header, Menu} from "semantic-ui-react";
+import {Container, Divider, Header, Menu} from "semantic-ui-react";
 import colors from '../utils/colors';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import '../styles/global.css';
@@ -44,6 +44,9 @@ export default ({children}) => (
                              </Menu.Item>
                          </Menu>
                          {children}
+                         <Divider hidden />
+                         <Divider hidden />
+                         <Divider hidden />
                      </Container>
                  )}
     />

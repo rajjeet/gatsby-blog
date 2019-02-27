@@ -7,7 +7,6 @@ category: Side Hustle
 image: './rawpixel-780494-unsplash.jpg'
 description: A desktop application that calculates a quotation for a high-end kitchen based on an client's algorithm and various input types. 
 tags: 
-    - Kitchen Quoter    
     - Electron 
     - React
 ---
@@ -26,7 +25,7 @@ should accomplish a few key objectives:
 So far, I prototyped a single page desktop application as shown below. 
 
 <div class="ui container">
-    <img class="ui image" src="/gifs/kitchen-quoter.gif" alt="Kitchen Quoter" />    
+    <img class="ui image" src="/gifs/kitchen-quoter-2.gif" alt="Kitchen Quoter" />    
 </div>
 
 _Kitchen Quotation Tool built using Electron JS_
