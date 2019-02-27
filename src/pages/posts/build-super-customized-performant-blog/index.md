@@ -3,12 +3,13 @@ title: Build A Super Customized and Performant Blog
 date: "2019-02-21"
 draft: false
 author: Rajjeet
-category: Portfolio
+category: Side Hustle
 image: './chuttersnap-776317-unsplash.jpg'
 description: Starting a blog seemed easy to me, but selecting the right tool was not straight forward for my goals. See why I decided to use Gatsby to host Ortmesh, and how you might benefit from doing the same.
 tags: 
-    - React
+    - Blog Site
     - Gatsby
+    - React
 ---
 
 ## Humble Beginnings
