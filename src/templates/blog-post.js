@@ -16,11 +16,12 @@ function TableOfContents({post}) {
                                               padding-left: 1em;
                                               font-size: 1.1em;
                                               list-style-type: circle;
+                                              font-weight: bolder
                                             }
                                             ul ul {
                                               padding-left: 1em;
                                               font-weight: normal;
-                                              font-size: 1em;
+                                              font-size: 0.9em;
                                             }
                                             ul ul ul {
                                               font-size: 0.8em;
