@@ -18,8 +18,10 @@ export default ({posts, heading}) => (
                 {posts.map(({node}) => (
                     <Item key={node.id}>
                         {node.frontmatter.image &&
-                        <Img style={{margin: '.5em 1em', width: '400px', maxWidth: '200px', borderRadius: '3%'}}
-                             fluid={node.frontmatter.image.childImageSharp.fluid}/>
+                        <Item.Image size={'medium'}>
+                            <Img style={{margin: '.5em 1em', borderRadius: '3%'}}
+                                 fluid={node.frontmatter.image.childImageSharp.fluid}/>
+                        </Item.Image>
                         }
                         <Item.Content>
                             <Link to={node.fields.slug}
@@ -40,18 +42,18 @@ export default ({posts, heading}) => (
         </Grid.Column>
         <Grid.Column width={4}>
             <CategoryListing/>
-            <TagListing />
-            <Divider hidden />
+            <TagListing/>
+            <Divider hidden/>
             <Headshot/>
             <Header as={'h3'} style={{margin: '0.2em 0em'}}>Rajjeet Phull</Header>
-            <p>Site Author</p>
+            <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
             <SocialLinks/>
         </Grid.Column>
     </Grid>
 );
 
 export const query = graphql`
-    fragment PostListingMarkdownFragment on MarkdownRemark {                
+    fragment PostListingMarkdownFragment on MarkdownRemark {
         id
         frontmatter {
           title
@@ -70,6 +72,6 @@ export const query = graphql`
         fields {
           slug
         }
-        excerpt(pruneLength: 80)          
+        excerpt(pruneLength: 80)
     }
 `;

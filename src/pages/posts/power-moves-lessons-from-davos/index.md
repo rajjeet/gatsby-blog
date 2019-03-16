@@ -3,7 +3,7 @@ title: Power Moves - Lessons from Davos (by Adam Grant)
 date: "2019-03-10"
 draft: false
 author: Rajjeet
-category: Takeaways
+category: Reading
 image: './lou-levit-1940-unsplash.jpg'
 description: Leadership is the exercise of power in influencing others to achieve a collective goal. At Davos, top leaders from all over the global gather to talk about the concept of power and how to use it effectively to run their companies and teams. These are my personal notes from this audio-book. 
 tags:  

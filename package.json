@@ -1,6 +1,5 @@
 {
   "name": "ortmesh-blog",
-  "private": true,
   "description": "A blog by Rajjeet Phull on software development",
   "version": "0.1.0",
   "license": "MIT",

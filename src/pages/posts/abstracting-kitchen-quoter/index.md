@@ -1,0 +1,67 @@
+---
+title: Abstracting the Kitchen Quoter  
+date: "2019-03-17"
+draft: false
+author: Rajjeet
+category: Side Project
+image: '../kitchen-quoter/rawpixel-780494-unsplash.jpg'
+description: The original kitchen quoter was specific to one business and use-case. I'm aiming to generalize that design, so it's reusable across different scenarios and businesses.    
+tags: 
+    - Kitchen Quoter 
+    - React
+---
+
+<div class="ui icon info message">
+    <i class="linkify icon"></i>
+    <div class="content">
+        <div class="header">Related Links</div>
+        <ul class="list">
+            <li><a target="_blank" href="https://d3c237k00uyj5k.cloudfront.net/">Live demo! Try out the features yourself</a></li>
+            <li><a target="_blank" href="//ortmesh.com/kitchen-quoter">Read my original post on the kitchen quoter</a></li>
+        </ul>
+    </div>
+</div>
+
+## Update
+So, I finished building most of the features of the original kitchen quoter a while back. I wasn't satisfied that it was specific 
+to one business and client.
+In an effort to make a successful side project with real tangible value, I decided to generalize it. 
+My goal is allow any user, who needs to generate quotes interactively, to build their own calculators on the fly.
+Here's my progress so far...
+<div class="ui container">
+    <img class="ui image" src="/gifs/kitchen-quoter-3.gif" alt="Kitchen Quoter" />    
+</div>
+
+## BYOC - Build Your Own Calculator
+Building a calculator for generating quotes involves three steps.
+### 1. Specifying the calculator fields
+Using a form, a user would create entries for each of the calculator fields and specify its 
+constraints and properties. This includes details like name, label, type, maximums, minimums, default value,
+and options.
+
+Let's use an example of a business that needs to build  boxes for their customers. 
+In order to accurately price their customers, the business owners need to know the height, width, length, material
+, thickness and extra add-ons (like hinges). For each of these factors, the user would create a calculator
+field and specify its properties. For example, height is a number between 0 ft and 100 ft with a default of 1 ft.
+
+### 2. Writing the algorithm
+Once the key input fields and their details are captured, the calculator needs to know
+how to combine them to generate a quote or dollar value. This step would includes writing an 
+algorithm that dictates how the fields are mathematically related to one another, in regards to price.
+
+For example, the box building business decides to price their customers based on adding the material cost,
+labour, and a certain profit margin. Here's an hypothetical equation:
+```javascript
+price = (length * width * height * material * thickness + accessories + labour_cost) 
+    * profit_margin  
+```
+The user would write this equation into the formula section to validate and save it. 
+
+### 3. Generating Quotes
+Once step 1 and 2 are finished, the user can start using the custom calculator on the home page for generating quotes using an interactive 
+form. This is similar to the form I built for <a target="_blank" href="//ortmesh.com/kitchen-quoter">Landmark Kitchens.</a>
+The quotation will update dynamically when the user changes any aspect of the form. 
+
+## Next Steps
+My next major step is to connect the two different mini-apps I've built so far, the Kitchen Quoter and this custom
+calculator tool. Once this is finished, it will be ready for use by anyone. 
