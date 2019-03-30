@@ -7,6 +7,7 @@ import * as PropTypes from "prop-types";
 import {css} from '@emotion/core';
 import colors from "../utils/colors";
 import SEO from "../components/SEO";
+import Disqus from 'disqus-react';
 
 function TableOfContents({post}) {
     return <>
@@ -54,17 +55,25 @@ export default class BlogPost extends Component {
         const post = data.markdownRemark;
         const {contextRef, visible} = this.state;
 
+        const disqusConfig = {
+            url: `http://ortmesh.com${post.fields.slug}`,
+            identifier: post.id,
+            title: post.frontmatter.title,
+        };
+
         return (
             <Layout>
-                <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL} />
+                <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL}/>
                 <div ref={this.handleContextRef}>
                     <Grid>
                         <Grid.Row>
                             <Grid.Column>
                                 <Header as={'h1'} style={{marginBottom: '0em'}}>{post.frontmatter.title}</Header>
-                                <div style={{marginBottom: '.7em'}}>{post.frontmatter.date}</div>
+                                <div style={{marginBottom: '.7em'}}>{post.frontmatter.date} - {post.timeToRead} min read
+                                    - <Disqus.CommentCount shortname={'ortmesh'} config={disqusConfig}>Comments</Disqus.CommentCount></div>
                                 <p>{post.frontmatter.description}</p>
-                                <TagGroup categories={[{"fieldValue" : post.frontmatter.category}]} tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
+                                <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
+                                          tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
                                 <Sticky context={contextRef} offset={10} bottomOffset={10} css={css`
                                                 #outline-btn {
                                                   display: none;
@@ -88,6 +97,8 @@ export default class BlogPost extends Component {
                                 <Sidebar.Pushable style={{transform: 'none'}}>
                                     <Sidebar.Pusher>
                                         <div onClick={this.hideSideBar} dangerouslySetInnerHTML={{__html: post.html}}/>
+                                        <br/>
+                                        <Disqus.DiscussionEmbed shortname={"ortmesh"} config={disqusConfig}/>
                                     </Sidebar.Pusher>
                                     <Sticky context={contextRef} offset={25}>
                                         <Sidebar as={Segment} color={'blue'} direction={'right'} width={'thin'}
@@ -105,30 +116,36 @@ export default class BlogPost extends Component {
                         </Grid.Row>
                     </Grid>
                 </div>
+
             </Layout>
-        )
+    );
     }
-}
+    }
 
-BlogPost.propTypes = {data: PropTypes.any};
+    BlogPost.propTypes = {data: PropTypes.any};
 
-export const query = graphql`
+    export const query = graphql`
     query($slug: String!) {
-      markdownRemark(fields: {slug: {eq: $slug}}) {
+        markdownRemark(fields: {slug: {eq: $slug}}) {
+        id
+        timeToRead
         html
         tableOfContents(
-          maxDepth: 4
+        maxDepth: 4
         )
-        frontmatter {
-          title
-          tags
-          date
-          category
-          description
-          image {
-            publicURL
-          }
-        }
-      }      
+        fields {
+        slug
     }
-`;
+        frontmatter {
+        title
+        tags
+        date
+        category
+        description
+        image {
+        publicURL
+    }
+    }
+    }
+    }
+    `;
