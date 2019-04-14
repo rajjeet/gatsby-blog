@@ -3,11 +3,11 @@ title: Top 5 Principles I Learned As a Software Developer
 date: "2019-04-13"
 draft: false
 author: Rajjeet
-category: Principles
+category: Concepts
 image: './christopher-gower-291246-unsplash.jpg'
-description: Entering software developer can be over-whelming and knowing what to focus is half the battle. In this post, I talk about some of the underlying principles I learned over my 3 years of development experience. 
+description: Entering software development can be over-whelming and knowing what to focus on is half the battle. In this post, I talk about some of the underlying principles I learned over my 3 years of development experience. 
 tags: 
-    - Concepts
+    - Productivity
 ---
 
 ## 1. Build Side Projects and Learn Only What You Need
@@ -91,7 +91,7 @@ can easily be flushed if something outside of work distracts you. Getting back t
 10 to 20 minutes. Once you have that productive level of focus, keep it for 90-120 minutes before taking a 10-20 minute break,
 to recharge your brain, eyes and body. Doing 3 to 6 of these cycles everyday is the sweet spot. 
 
-Here are my 3 ways of gaining deep concentrations:
+Here are my 3 ways of achieving deep concentration:
 1. Investing in noise cancelling headphones - helps me block out distracting conversations and noises
 2. Close all email/messaging clients (or change status to Do Not Disturb) - you will only get contacted if something is truly urgent. Set aide time for emails separately. 
 3. Have a personalized, prioritized list of tasks that need to be achieved and put all energy on a single item at a time        
