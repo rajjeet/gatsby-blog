@@ -1,5 +1,6 @@
 const _ = require(`lodash`);
 const path = require(`path`);
+const urlJoin = require('url-join');
 const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
 const getTagSlug = require('./src/utils/helperFunctions').getTagSlug;
@@ -10,7 +11,8 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
 
     if (node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({node, getNode, basePath: `pages/posts`});
+        const rawSlug = createFilePath({node, getNode, basePath: `pages/posts`});
+        const slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
         createNodeField({
             node,
             name: `slug`,
@@ -33,31 +35,33 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
+
     return graphql(`
-    {
-      allMarkdownRemark (
-        filter: { frontmatter: { draft: { ne: true } } } 
-      ){
-        edges {
-          node {
-            fields {
-              slug              
+        {
+          allMarkdownRemark(
+            filter: {frontmatter: {draft: {ne: true}}},
+            limit: 500,
+            sort: { fields: [frontmatter___date], order: DESC }) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  tags
+                  category          
+                }
+              }
             }
-            frontmatter{
-              tags
-              category
-            }            
           }
         }
-      }
-    }
     `).then(result => {
 
         if (result.errors) {
             throw result.errors
         }
 
-        // Blog posts
+        // Posts
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
             createPage({
@@ -69,21 +73,53 @@ exports.createPages = ({graphql, actions}) => {
             })
         });
 
+        // All Posts List
+        const allPosts = result.data.allMarkdownRemark.edges;
+        const postsPerPage = 5;
+        let numOfPosts = allPosts.length;
+        const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+        let blogPostListTemplate = path.resolve(`./src/templates/blog-post-listings.js`);
+        Array.from({length: numOfPages}).forEach((_, index) => {
+            createPage({
+                path: urlJoin('blog', `${index + 1}`),
+                component: blogPostListTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: index * postsPerPage,
+                    numOfPages,
+                    numOfPosts,
+                    currentPage: index + 1,
+                }
+            })
+        });
+
         // Tags
         let tags = [];
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             tags = tags.concat(node.frontmatter.tags);
         });
-
-        _.uniq(tags).forEach(tag => {
+        const uniqueTags = _.uniq(tags);
+        uniqueTags.forEach(tag => {
             const tagSlug = getTagSlug(tag);
-            let tagPageTemplate = path.resolve(`./src/templates/tag-page.js`);
-            createPage({
-                path: tagSlug,
-                component: tagPageTemplate,
-                context: {
-                    tag: tag
-                }
+            const tagPosts = result.data.allMarkdownRemark.edges
+                .filter(({node}) => node.frontmatter.tags.find(blogTag => blogTag === tag));
+            const postsPerPage = 5;
+            let numOfPosts = tagPosts.length;
+            const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+            let blogPostListTemplate = path.resolve(`./src/templates/tag-page.js`);
+            Array.from({length: numOfPages}).forEach((_, index) => {
+                createPage({
+                    path: urlJoin(tagSlug, `${index + 1}`),
+                    component: blogPostListTemplate,
+                    context: {
+                        limit: postsPerPage,
+                        skip: index * postsPerPage,
+                        numOfPages,
+                        numOfPosts,
+                        currentPage: index + 1,
+                        tag: tag
+                    }
+                })
             });
         });
 
@@ -94,14 +130,26 @@ exports.createPages = ({graphql, actions}) => {
         });
 
         _.uniq(categories).forEach(category => {
+            const categoryPosts = result.data.allMarkdownRemark.edges
+                .filter(({node}) => node.frontmatter.category === category);
+            const postsPerPage = 5;
             const categorySlug = getCategorySlug(category);
             let categoryPageTemplate = path.resolve(`./src/templates/category-page.js`);
-            createPage({
-                path: categorySlug,
-                component: categoryPageTemplate,
-                context: {
-                    category: category
-                }
+            let numOfPosts = categoryPosts.length;
+            const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+            Array.from({length: numOfPages}).forEach((_, index) => {
+                createPage({
+                    path: urlJoin(categorySlug, `${index + 1}`),
+                    component: categoryPageTemplate,
+                    context: {
+                        limit: postsPerPage,
+                        skip: index * postsPerPage,
+                        numOfPages,
+                        numOfPosts,
+                        currentPage: index + 1,
+                        category: category
+                    }
+                })
             });
         });
     });

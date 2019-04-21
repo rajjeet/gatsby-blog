@@ -49,5 +49,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "url-join": "^4.0.0"
   }
 }

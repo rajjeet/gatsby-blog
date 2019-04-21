@@ -17,12 +17,11 @@ export default ({data, pageContext}) => {
 };
 
 export const query = graphql`
-    query($tag: String!, $skip: Int!, $limit: Int!) {
+    query($skip: Int!, $limit: Int!) {
       allMarkdownRemark (
         limit: $limit
         skip: $skip
         sort: {fields: frontmatter___date, order: DESC}
-        filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} } }
       ) {        
         edges {
           node {
