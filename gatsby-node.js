@@ -100,8 +100,6 @@ exports.createPages = ({graphql, actions}) => {
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             tags = tags.concat(node.frontmatter.tags);
         });
-
-
         const uniqueTags = _.uniq(tags);
         uniqueTags.forEach(tag => {
             const tagSlug = getTagSlug(tag);
@@ -134,14 +132,26 @@ exports.createPages = ({graphql, actions}) => {
         });
 
         _.uniq(categories).forEach(category => {
+            const categoryPosts = result.data.allMarkdownRemark.edges
+                .filter(({node}) => node.frontmatter.category === category);
+            const postsPerPage = 5;
             const categorySlug = getCategorySlug(category);
             let categoryPageTemplate = path.resolve(`./src/templates/category-page.js`);
-            createPage({
-                path: categorySlug,
-                component: categoryPageTemplate,
-                context: {
-                    category: category
-                }
+            let numOfPosts = categoryPosts.length;
+            const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+            Array.from({length: numOfPages}).forEach((_, index) => {
+                createPage({
+                    path: path.join(categorySlug, `${index + 1}` ),
+                    component: categoryPageTemplate,
+                    context: {
+                        limit: postsPerPage,
+                        skip: index * postsPerPage,
+                        numOfPages,
+                        numOfPosts,
+                        currentPage: index + 1,
+                        category: category
+                    }
+                })
             });
         });
     });
