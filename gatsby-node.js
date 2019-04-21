@@ -34,26 +34,6 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
 
-    function createPaginatedPostListings(posts, urlPath) {
-        const postsPerPage = 5;
-        let numOfPosts = posts.length;
-        const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-        let blogPostListTemplate = path.resolve(`./src/templates/blog-post-listings.js`);
-        Array.from({length: numOfPages}).forEach((_, index) => {
-            createPage({
-                path: path.join(urlPath, `${index + 1}` ),
-                component: blogPostListTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: index * postsPerPage,
-                    numOfPages,
-                    numOfPosts,
-                    currentPage: index + 1,
-                }
-            })
-        });
-    }
-
     return graphql(`
         {
           allMarkdownRemark(
@@ -79,11 +59,7 @@ exports.createPages = ({graphql, actions}) => {
             throw result.errors
         }
 
-        // Blog Lists
-        const allPosts = result.data.allMarkdownRemark.edges;
-        createPaginatedPostListings(allPosts, 'blog');
-
-        // Blog pages
+        // Posts
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
             createPage({
@@ -91,6 +67,26 @@ exports.createPages = ({graphql, actions}) => {
                 component: blogPostTemplate,
                 context: {
                     slug: node.fields.slug
+                }
+            })
+        });
+
+        // All Posts List
+        const allPosts = result.data.allMarkdownRemark.edges;
+        const postsPerPage = 5;
+        let numOfPosts = allPosts.length;
+        const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+        let blogPostListTemplate = path.resolve(`./src/templates/blog-post-listings.js`);
+        Array.from({length: numOfPages}).forEach((_, index) => {
+            createPage({
+                path: path.join('blog', `${index + 1}`),
+                component: blogPostListTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: index * postsPerPage,
+                    numOfPages,
+                    numOfPosts,
+                    currentPage: index + 1,
                 }
             })
         });
@@ -111,7 +107,7 @@ exports.createPages = ({graphql, actions}) => {
             let blogPostListTemplate = path.resolve(`./src/templates/tag-page.js`);
             Array.from({length: numOfPages}).forEach((_, index) => {
                 createPage({
-                    path: path.join(tagSlug, `${index + 1}` ),
+                    path: path.join(tagSlug, `${index + 1}`),
                     component: blogPostListTemplate,
                     context: {
                         limit: postsPerPage,
@@ -141,7 +137,7 @@ exports.createPages = ({graphql, actions}) => {
             const numOfPages = Math.ceil(numOfPosts / postsPerPage);
             Array.from({length: numOfPages}).forEach((_, index) => {
                 createPage({
-                    path: path.join(categorySlug, `${index + 1}` ),
+                    path: path.join(categorySlug, `${index + 1}`),
                     component: categoryPageTemplate,
                     context: {
                         limit: postsPerPage,
