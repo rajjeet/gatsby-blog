@@ -34,30 +34,51 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 exports.createPages = ({graphql, actions}) => {
     const {createPage} = actions;
     return graphql(`
-    {
-      allMarkdownRemark (
-        filter: { frontmatter: { draft: { ne: true } } } 
-      ){
-        edges {
-          node {
-            fields {
-              slug              
+        {
+          allMarkdownRemark(
+            filter: {frontmatter: {draft: {ne: true}}},
+            limit: 500,
+            sort: { fields: [frontmatter___date], order: DESC }) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  tags
+                  category          
+                }
+              }
             }
-            frontmatter{
-              tags
-              category
-            }            
           }
         }
-      }
-    }
     `).then(result => {
 
         if (result.errors) {
             throw result.errors
         }
 
-        // Blog posts
+        // Blog Lists
+        const posts = result.data.allMarkdownRemark.edges;
+        const postsPerPage = 5;
+        let numOfPosts = posts.length;
+        const numOfPages = Math.ceil(numOfPosts / postsPerPage);
+        let blogPostListTemplate = path.resolve(`./src/templates/blog-post-listings.js`);
+        Array.from({length: numOfPages}).forEach((_, index) => {
+            createPage({
+                path: `/blog/${index + 1}`,
+                component: blogPostListTemplate,
+                context: {
+                    limit: postsPerPage,
+                    skip: index * postsPerPage,
+                    numOfPages,
+                    numOfPosts,
+                    currentPage: index + 1,
+                }
+            })
+        });
+
+        // Blog pages
         result.data.allMarkdownRemark.edges.forEach(({node}) => {
             let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
             createPage({

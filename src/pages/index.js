@@ -7,8 +7,11 @@ import SEO from "../components/SEO";
 export default ({data}) => {
     return (
         <Layout>
-            <SEO />
-            <PostListing posts={data.allMarkdownRemark.edges} heading={'Latest Posts'}/>
+            <SEO/>
+            <PostListing
+                posts={data.allMarkdownRemark.edges}
+                heading={'Latest Posts'}
+            />
         </Layout>
     );
 }
@@ -17,6 +20,7 @@ export const query = graphql`
   allMarkdownRemark(
       sort: {fields: [frontmatter___date], order: DESC}
       filter: {frontmatter: {draft: {ne: true} } }
+      limit: 3
     ) {    
     edges {
       node {

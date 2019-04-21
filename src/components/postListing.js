@@ -1,5 +1,5 @@
 import React from "react";
-import {Divider, Header, Item} from "semantic-ui-react";
+import {Button, Divider, Header, Icon, Item} from "semantic-ui-react";
 import {graphql, Link} from "gatsby";
 import TagGroup from "./tagGroup";
 import {Grid} from "semantic-ui-react";
@@ -9,12 +9,42 @@ import Img from 'gatsby-image';
 import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";
 
-export default ({posts, heading}) => (
+function PostNavigationButtons(currentPage, numOfPages) {
+    return <>
+        <Button
+            disabled={currentPage <= 1}
+            compact
+            as={Link}
+            to={`blog/${currentPage - 1}`}>
+            <Icon name={'chevron left'}/>See Newer Posts
+        </Button>
+        <Button
+            disabled={currentPage >= numOfPages}
+            compact as={Link}
+            to={`blog/${currentPage + 1}`}>
+            See Older Posts<Icon name={'chevron right'}/>
+        </Button>
+    </>;
+}
+
+export default ({posts, heading, numOfPages, currentPage}) => (
     <Grid stackable>
         <Grid.Column width={12}>
-            <Header as={'h1'} style={{marginBottom: '0em'}}>{heading}</Header>
-            <p style={{color: '#888', marginBottom: '0em'}}>{posts.length} Posts</p>
-            <Item.Group link unstackable>
+            <Header as={'h1'} style={{marginBottom: '0em'}}>{heading || 'Posts'}</Header>
+            {
+                currentPage && numOfPages ?
+                    <div>
+                        <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
+                        {PostNavigationButtons(currentPage, numOfPages)}
+                    </div>
+                    :
+                    <Button compact as={Link} to={'/blog/1'}>See All Posts</Button>
+
+            }
+            {
+
+            }
+            <Item.Group link unstackable style={{backgroundColor: '#eee', padding: '1em'}}>
                 {posts.map(({node}) => (
                     <Item key={node.id}>
                         {node.frontmatter.image &&
@@ -39,6 +69,7 @@ export default ({posts, heading}) => (
                     </Item>
                 ))}
             </Item.Group>
+            {PostNavigationButtons(currentPage, numOfPages)}
         </Grid.Column>
         <Grid.Column width={4}>
             <CategoryListing/>
