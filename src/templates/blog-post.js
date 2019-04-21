@@ -79,7 +79,8 @@ export default class BlogPost extends Component {
                             <Grid.Column>
                                 <Header as={'h1'} style={{marginBottom: '0em'}}>{post.frontmatter.title}</Header>
                                 <div style={{marginBottom: '.7em'}}>{post.frontmatter.date} - {post.timeToRead} min read
-                                    - <Disqus.CommentCount shortname={'ortmesh'} config={disqusConfig}>Comments</Disqus.CommentCount></div>
+                                    - <Disqus.CommentCount shortname={'ortmesh'}
+                                                           config={disqusConfig}>Comments</Disqus.CommentCount></div>
                                 <p>{post.frontmatter.description}</p>
                                 <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
                                           tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
@@ -127,13 +128,13 @@ export default class BlogPost extends Component {
                 </div>
 
             </Layout>
-    );
+        );
     }
-    }
+}
 
-    BlogPost.propTypes = {data: PropTypes.any};
+BlogPost.propTypes = {data: PropTypes.any};
 
-    export const query = graphql`
+export const query = graphql`
     query($slug: String!) {
         markdownRemark(fields: {slug: {eq: $slug}}) {
         id

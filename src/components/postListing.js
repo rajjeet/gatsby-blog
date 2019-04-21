@@ -60,7 +60,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                                       style={{textDecoration: 'none', color: 'inherit'}}>
                                     <Item.Header as={'h3'}
                                                  style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
-                                    <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date}</Item.Meta>
+                                    <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date} - {`${node.timeToRead} min read`}</Item.Meta>
                                     <Item.Description>{node.frontmatter.description}</Item.Description>
                                 </Link>
                                 <Item.Extra>
@@ -89,6 +89,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
 export const query = graphql`
     fragment PostListingMarkdownFragment on MarkdownRemark {
         id
+        timeToRead
         frontmatter {
           title
           date(formatString: "DD MMMM, YYYY")
