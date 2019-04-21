@@ -6,15 +6,21 @@ import PostListing from "../components/postListing";
 export default ({data, pageContext}) => {
     return (
         <Layout>
-            <PostListing posts={data.allMarkdownRemark.edges} heading={pageContext.tag}/>
+            <PostListing
+                posts={data.allMarkdownRemark.edges}
+                heading={pageContext.tag}
+                numOfPages={pageContext.numOfPages}
+                currentPage={pageContext.currentPage}
+            />
         </Layout>
     );
 };
 
 export const query = graphql`
-    query($tag: String!) {
+    query($tag: String!, $skip: Int!, $limit: Int!) {
       allMarkdownRemark (
-        limit:1000
+        limit: $limit
+        skip: $skip
         sort: {fields: frontmatter___date, order: DESC}
         filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} } }
       ) {        
