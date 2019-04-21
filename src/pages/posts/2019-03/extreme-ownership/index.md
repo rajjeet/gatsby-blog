@@ -6,8 +6,6 @@ author: Rajjeet
 category: Reading
 image: './markus-spiske-1142262-unsplash.jpg'
 description: Extreme ownership is all about focusing the attention on one's owns thoughts and actions, and how that translates to leading effective teams and accomplishing the mission. 
-tags:         
-    - Leadership    
 ---
 
 <div class="ui icon info message">

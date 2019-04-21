@@ -83,7 +83,7 @@ export default class BlogPost extends Component {
                                                            config={disqusConfig}>Comments</Disqus.CommentCount></div>
                                 <p>{post.frontmatter.description}</p>
                                 <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
-                                          tags={post.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
+                                          tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})): null}/>
                                 <Sticky context={contextRef} offset={10} bottomOffset={10} css={css`
                                                 #outline-btn {
                                                   display: none;

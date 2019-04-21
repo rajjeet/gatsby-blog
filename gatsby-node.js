@@ -102,7 +102,7 @@ exports.createPages = ({graphql, actions}) => {
         uniqueTags.forEach(tag => {
             const tagSlug = getTagSlug(tag);
             const tagPosts = result.data.allMarkdownRemark.edges
-                .filter(({node}) => node.frontmatter.tags.find(blogTag => blogTag === tag));
+                .filter(({node}) => node.frontmatter.tags && node.frontmatter.tags.find(blogTag => blogTag === tag));
             const postsPerPage = 5;
             let numOfPosts = tagPosts.length;
             const numOfPages = Math.ceil(numOfPosts / postsPerPage);

@@ -65,7 +65,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                                 </Link>
                                 <Item.Extra>
                                     <TagGroup categories={[{"fieldValue": node.frontmatter.category}]}
-                                              tags={node.frontmatter.tags.map(tag => ({"fieldValue": tag}))}/>
+                                              tags={node.frontmatter.tags ? node.frontmatter.tags.map(tag => ({"fieldValue": tag})) : null}/>
                                 </Item.Extra>
                             </Item.Content>
                         </Item>

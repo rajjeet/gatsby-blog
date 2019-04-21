@@ -3,11 +3,9 @@ title: Top 5 Principles I Learned As a Software Developer
 date: "2019-04-13"
 draft: false
 author: Rajjeet
-category: Concepts
+category: Experience
 image: './christopher-gower-291246-unsplash.jpg'
 description: Entering software development can be over-whelming and knowing what to focus on is half the battle. In this post, I talk about some of the underlying principles I learned over my 3 years of development experience. 
-tags: 
-    - Productivity
 ---
 
 ## 1. Build Side Projects and Learn Only What You Need
