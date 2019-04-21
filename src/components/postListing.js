@@ -41,15 +41,18 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                 }
                 {
                     !showPostNavigationButtons &&
-                    <Button style={{marginTop: '.4em'}} compact onClick={() => navigate('/blog/1')}>See All Posts</Button>
+                    <Button style={{marginTop: '.4em'}} compact onClick={() => navigate('/blog/1')}>See All
+                        Posts</Button>
                 }
                 <Item.Group link unstackable style={{backgroundColor: '#eee', padding: '1em', marginTop: '.4em'}}>
                     {posts.map(({node}) => (
                         <Item key={node.id}>
                             {node.frontmatter.image &&
                             <Item.Image size={'medium'}>
-                                <Img style={{margin: '.5em 1em', borderRadius: '3%'}}
-                                     fluid={node.frontmatter.image.childImageSharp.fluid}/>
+                                <Link to={node.fields.slug}>
+                                    <Img style={{margin: '.5em 1em', borderRadius: '3%'}}
+                                         fluid={node.frontmatter.image.childImageSharp.fluid}/>
+                                </Link>
                             </Item.Image>
                             }
                             <Item.Content>
