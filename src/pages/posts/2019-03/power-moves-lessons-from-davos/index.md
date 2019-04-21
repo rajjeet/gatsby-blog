@@ -10,7 +10,7 @@ tags:
     - Influence
 ---
 
-![](./book-cover.png) _Book Cover_ (Source: <a href="https://www.amazon.com/Power-Moves-Lessons-from-Davos/dp/B07H4WPSS2" target="_blank">Amazon Link</a>)
+![](book-cover.png) _Book Cover_ (Source: <a href="https://www.amazon.com/Power-Moves-Lessons-from-Davos/dp/B07H4WPSS2" target="_blank">Amazon Link</a>)
 
 # Understanding Power
 ## Power Structure
