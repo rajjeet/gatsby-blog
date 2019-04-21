@@ -41,7 +41,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                 }
                 {
                     !showPostNavigationButtons &&
-                    <Button compact onClick={() => navigate('/blog/1')}>See All Posts</Button>
+                    <Button style={{marginTop: '.4em'}} compact onClick={() => navigate('/blog/1')}>See All Posts</Button>
                 }
                 <Item.Group link unstackable style={{backgroundColor: '#eee', padding: '1em', marginTop: '.4em'}}>
                     {posts.map(({node}) => (
@@ -68,7 +68,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                         </Item>
                     ))}
                 </Item.Group>
-                {currentPage && numOfPages && PostNavigationButtons(currentPage, numOfPages)}
+                {showPostNavigationButtons && PostNavigationButtons(currentPage, numOfPages)}
             </Grid.Column>
             <Grid.Column width={4}>
                 <CategoryListing/>
