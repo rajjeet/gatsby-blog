@@ -15,9 +15,8 @@ function TableOfContents({post}) {
         <div className={"ui list"} css={css`
                                             ul {
                                               padding-left: 1em;
-                                              font-size: 1.1em;
+                                              font-size: 1.2em;
                                               list-style-type: circle;
-                                              font-weight: bolder
                                             }
                                             ul ul {
                                               padding-left: 1em;
@@ -26,6 +25,16 @@ function TableOfContents({post}) {
                                             }
                                             ul ul ul {
                                               font-size: 0.8em;
+                                            }
+                                            ul > li {
+                                                margin: .3em auto;
+                                            }
+                                            ul > li > ul > li {
+                                                margin: 0 auto;
+                                                color: #888;
+                                            }
+                                            ul > ul > ul > li {
+                                                margin: 0 auto;
                                             }
                                             a {
                                               color: inherit;
