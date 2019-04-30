@@ -1,5 +1,6 @@
-* How keyboard shortcuts make coding easier 
+* How low does it cost to run website?
 * Deploying Gatsby JS code on Amazon S3
+* How keyboard shortcuts make coding easier 
 * Redirecting S3 Public Traffic through CloudFront Only
 * Testing with Jest on React Hooks
 * Why React Hooks will reduce technical debt
@@ -60,7 +61,6 @@
 * AWS Kinesis in Plain English
 * AWS X-Ray in Plain English
 * S3 URL Signing in Plain English
-* How low does it cost to run website?
 * AWS Amplify in Plain English
 * Iterate and Incrementing towards a Solution 
 * Persistence - Mindset when Stuck
