@@ -51,6 +51,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
+    "styled-components": "^4.2.0",
     "url-join": "^4.0.0"
   }
 }

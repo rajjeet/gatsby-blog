@@ -3,6 +3,8 @@ import {graphql} from "gatsby";
 import Layout from '../components/layout';
 import PostListing from '../components/postListing';
 import SEO from "../components/SEO";
+import {PortfolioPreview} from "../components/PortfolioPreview";
+
 
 export default ({data}) => {
     return (
@@ -12,6 +14,7 @@ export default ({data}) => {
                 posts={data.allMarkdownRemark.edges}
                 heading={'Latest Posts'}
             />
+            <PortfolioPreview />
         </Layout>
     );
 }
