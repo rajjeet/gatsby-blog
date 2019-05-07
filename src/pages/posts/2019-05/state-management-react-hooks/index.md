@@ -125,4 +125,4 @@ Here's what it looks like:
 
 ![](ghetto-redux-logger.png)
 
-Note that I've composed the root reducer using the ```countReducer``` specified before, so the state related to this reducer will be comparementalize in a slice called ```count```. Now, every state change will invoke 3 ```console.log```, which will output the before, action, and after information in the dev tools.
+Note that I've composed the root reducer using the ```countReducer``` specified before, so the state related to this reducer will be contained in a slice called ```count```. Now, every state change will invoke 3 ```console.log```, which will output the before, action, and after information in the dev tools.
