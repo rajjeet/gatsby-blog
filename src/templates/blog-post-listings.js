@@ -11,6 +11,7 @@ export default ({data, pageContext}) => {
                 heading={pageContext.tag}
                 numOfPages={pageContext.numOfPages}
                 currentPage={pageContext.currentPage}
+                paginationSlug={'/blog/'}
             />
         </Layout>
     );

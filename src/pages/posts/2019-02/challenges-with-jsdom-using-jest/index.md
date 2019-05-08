@@ -3,7 +3,7 @@ title: Challenges with JSDOM using Jest
 date: "2019-02-28"
 draft: false
 author: Rajjeet
-category: Code
+category: Guide
 image: './dlanor-s-703975-unsplash.jpg'
 description: While integration testing my project, I discovered that tests would randomly fail. The culprit was a leaky JSDOM that needed to be reinitialized between tests.     
 tags: 

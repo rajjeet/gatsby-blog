@@ -9,24 +9,24 @@ import Img from 'gatsby-image';
 import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";
 
-function PostNavigationButtons(currentPage, numOfPages) {
+function PostNavigationButtons(currentPage, numOfPages, paginationSlug) {
     return <>
         <Button
             disabled={currentPage <= 1}
             compact
-            onClick={() => navigate(`/blog/${currentPage - 1}`)}>
+            onClick={() => navigate(`${paginationSlug}${currentPage - 1}`)}>
             <Icon name={'chevron left'}/>Newer Posts
         </Button>
         <Button
             disabled={currentPage >= numOfPages}
             compact
-            onClick={() => navigate(`/blog/${currentPage + 1}`)}>
+            onClick={() => navigate(`${paginationSlug}${currentPage + 1}`)}>
             Older Posts<Icon name={'chevron right'}/>
         </Button>
     </>;
 }
 
-export default ({posts, heading, numOfPages, currentPage}) => {
+export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
     const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
     return (
         <Grid stackable>
@@ -36,7 +36,7 @@ export default ({posts, heading, numOfPages, currentPage}) => {
                     showPostNavigationButtons &&
                     <div>
                         <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
-                        {PostNavigationButtons(currentPage, numOfPages)}
+                        {PostNavigationButtons(currentPage, numOfPages, paginationSlug)}
                     </div>
                 }
                 {

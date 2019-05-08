@@ -11,6 +11,7 @@ export default ({data, pageContext}) => {
                 heading={pageContext.category}
                 numOfPages={pageContext.numOfPages}
                 currentPage={pageContext.currentPage}
+                paginationSlug={pageContext.paginationSlug}
             />
         </Layout>
     );

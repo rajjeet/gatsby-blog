@@ -88,7 +88,7 @@ exports.createPages = ({graphql, actions}) => {
                     skip: index * postsPerPage,
                     numOfPages,
                     numOfPosts,
-                    currentPage: index + 1,
+                    currentPage: index + 1
                 }
             })
         });
@@ -117,7 +117,8 @@ exports.createPages = ({graphql, actions}) => {
                         numOfPages,
                         numOfPosts,
                         currentPage: index + 1,
-                        tag: tag
+                        tag: tag,
+                        paginationSlug: tagSlug
                     }
                 })
             });
@@ -147,7 +148,8 @@ exports.createPages = ({graphql, actions}) => {
                         numOfPages,
                         numOfPosts,
                         currentPage: index + 1,
-                        category: category
+                        category: category,
+                        paginationSlug: categorySlug
                     }
                 })
             });
