@@ -136,7 +136,7 @@ BlogPost.propTypes = {data: PropTypes.any};
 
 export const query = graphql`
     query($slug: String!) {
-        markdownRemark(fields: {slug: {eq: $slug}}) {
+        markdownRemark(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
         id
         timeToRead
         html

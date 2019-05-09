@@ -23,7 +23,7 @@ export const query = graphql`
         limit: $limit
         skip: $skip
         sort: {fields: frontmatter___date, order: DESC}
-        filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} } }
+        filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} }, fields: { contentType: { eq: "post" } } }
       ) {        
         edges {
           node {

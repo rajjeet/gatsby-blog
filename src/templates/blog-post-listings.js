@@ -23,6 +23,7 @@ export const query = graphql`
         limit: $limit
         skip: $skip
         sort: {fields: frontmatter___date, order: DESC}
+        filter: { fields: { contentType: { eq: "post" } } }
       ) {        
         edges {
           node {

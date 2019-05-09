@@ -14,15 +14,14 @@ export default ({data}) => {
                 posts={data.allMarkdownRemark.edges}
                 heading={'Latest Posts'}
             />
-            <PortfolioPreview />
         </Layout>
     );
 }
 export const query = graphql`
 {
   allMarkdownRemark(
-      sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {draft: {ne: true} } }
+      sort: { fields: [ frontmatter___date ], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } }
       limit: 3
     ) {    
     edges {

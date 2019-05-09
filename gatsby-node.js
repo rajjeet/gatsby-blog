@@ -11,13 +11,31 @@ exports.onCreateNode = ({node, getNode, actions}) => {
     const {createNodeField} = actions;
 
     if (node.internal.type === `MarkdownRemark`) {
-        const rawSlug = createFilePath({node, getNode, basePath: `pages/posts`});
-        const slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
+        let basePath, contentType, slug, rawSlug;
+
+        if (node.fileAbsolutePath.includes('src/pages/posts')) {
+            basePath = 'pages/posts';
+            contentType = 'post';
+            rawSlug = createFilePath({node, getNode, basePath: basePath});
+            slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
+        }
+
+        if (node.fileAbsolutePath.includes('src/pages/projects')) {
+            basePath = 'pages/projects';
+            contentType = 'project';
+            slug = createFilePath({node, getNode, basePath: basePath});
+        }
+
         createNodeField({
             node,
             name: `slug`,
             value: slug,
         });
+        createNodeField({
+            node,
+            name: 'contentType',
+            value: contentType
+        })
     }
 };
 
@@ -34,6 +52,7 @@ exports.createPages = ({graphql, actions}) => {
               node {
                 fields {
                   slug
+                  contentType
                 }
                 frontmatter {
                   tags
@@ -50,19 +69,21 @@ exports.createPages = ({graphql, actions}) => {
         }
 
         // Posts
-        result.data.allMarkdownRemark.edges.forEach(({node}) => {
-            let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
-            createPage({
-                path: node.fields.slug,
-                component: blogPostTemplate,
-                context: {
-                    slug: node.fields.slug
-                }
-            })
-        });
+        const allPosts = result.data.allMarkdownRemark.edges
+            .filter(({node}) => node.fields.contentType === 'post');
+        allPosts
+            .forEach(({node}) => {
+                let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+                createPage({
+                    path: node.fields.slug,
+                    component: blogPostTemplate,
+                    context: {
+                        slug: node.fields.slug
+                    }
+                })
+            });
 
-        // All Posts List
-        const allPosts = result.data.allMarkdownRemark.edges;
+        // All Posts Listing
         const postsPerPage = 5;
         let numOfPosts = allPosts.length;
         const numOfPages = Math.ceil(numOfPosts / postsPerPage);
@@ -83,7 +104,7 @@ exports.createPages = ({graphql, actions}) => {
 
         // Tags
         let tags = [];
-        result.data.allMarkdownRemark.edges.forEach(({node}) => {
+        allPosts.forEach(({node}) => {
             tags = tags.concat(node.frontmatter.tags);
         });
         const uniqueTags = _.uniq(tags);
@@ -114,7 +135,7 @@ exports.createPages = ({graphql, actions}) => {
 
         // Category
         let categories = [];
-        result.data.allMarkdownRemark.edges.forEach(({node}) => {
+        allPosts.forEach(({node}) => {
             categories = categories.concat(node.frontmatter.category);
         });
 
