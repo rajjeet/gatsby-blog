@@ -18,18 +18,6 @@ exports.onCreateNode = ({node, getNode, actions}) => {
             name: `slug`,
             value: slug,
         });
-
-        if (node.frontmatter.tags) {
-            const tagSlugs = node.frontmatter.tags.map(
-                tag => getTagSlug(tag)
-            );
-            createNodeField({node, name: `tagSlugs`, value: tagSlugs})
-        }
-
-        if (node.frontmatter.category) {
-            const categorySlug = getCategorySlug(node.frontmatter.category);
-            createNodeField({node, name: `categorySlug`, value: categorySlug})
-        }
     }
 };
 
