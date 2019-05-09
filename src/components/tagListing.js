@@ -7,7 +7,7 @@ export default () => (
     <StaticQuery query={
         graphql`
          query {
-          allMarkdownRemark(limit: 2000, filter: {frontmatter: {draft: {ne: true}}}) {
+          allMarkdownRemark(limit: 2000, filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } } ) {
             group(field: frontmatter___tags) {
               fieldValue
               totalCount
