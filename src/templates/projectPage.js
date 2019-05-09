@@ -21,7 +21,7 @@ export const query = graphql`
           tags
           date      
           description
-          image {
+          thumbnail {
             publicURL
           }
         }

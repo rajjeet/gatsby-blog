@@ -3,16 +3,19 @@ import {graphql} from "gatsby";
 import Layout from '../components/layout';
 import PostListing from '../components/postListing';
 import SEO from "../components/SEO";
-import {PortfolioPreview} from "../components/PortfolioPreview";
+import ProjectListing from "../components/ProjectListing";
 
 
 export default ({data}) => {
     return (
         <Layout>
             <SEO/>
-            <PortfolioPreview/>
+            <ProjectListing
+                projects={data.projects.edges}
+                heading={'Side Projects'}
+            />
             <PostListing
-                posts={data.allMarkdownRemark.edges}
+                posts={data.posts.edges}
                 heading={'Latest Posts'}
             />
         </Layout>
@@ -20,14 +23,30 @@ export default ({data}) => {
 }
 export const query = graphql`
 {
-  allMarkdownRemark(
-      sort: { fields: [ frontmatter___date ], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } }
-      limit: 3
-    ) {    
+  posts: allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 3) {
     edges {
       node {
         ...PostListingMarkdownFragment
+      }
+    }
+  }
+  projects: allMarkdownRemark(limit: 3, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          description
+          thumbnail {
+            childImageSharp  {
+              fluid(maxWidth: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        fields {
+          slug
+        }
       }
     }
   }
