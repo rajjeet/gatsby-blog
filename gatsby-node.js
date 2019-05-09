@@ -21,7 +21,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
         }
 
         if (node.fileAbsolutePath.includes('src/pages/projects')) {
-            basePath = 'pages/projects';
+            basePath = 'pages';
             contentType = 'project';
             slug = createFilePath({node, getNode, basePath: basePath});
         }
@@ -68,9 +68,26 @@ exports.createPages = ({graphql, actions}) => {
             throw result.errors
         }
 
-        // Posts
+
         const allPosts = result.data.allMarkdownRemark.edges
             .filter(({node}) => node.fields.contentType === 'post');
+        const allProjects = result.data.allMarkdownRemark.edges
+            .filter(({node}) => node.fields.contentType === 'project');
+
+
+        allProjects
+            .forEach(({node}) => {
+                let template = path.resolve(`./src/templates/projectPage.js`);
+                createPage({
+                    path: node.fields.slug,
+                    component: template,
+                    context: {
+                        slug: node.fields.slug
+                    }
+                })
+            });
+
+        // Posts
         allPosts
             .forEach(({node}) => {
                 let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);

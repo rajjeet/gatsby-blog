@@ -10,6 +10,7 @@ export default ({data}) => {
     return (
         <Layout>
             <SEO/>
+            <PortfolioPreview/>
             <PostListing
                 posts={data.allMarkdownRemark.edges}
                 heading={'Latest Posts'}
