@@ -30,7 +30,7 @@ export const query = graphql`
       }
     }
   }
-  projects: allMarkdownRemark(limit: 3, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
+  projects: allMarkdownRemark(limit: 2, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
     edges {
       node {
         ...ProjectListingMarkdownFragment

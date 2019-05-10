@@ -31,14 +31,16 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
     return (
         <Grid stackable>
             <Grid.Column width={12}>
-                <Header as={'h1'} style={{marginBottom: '0em'}}>
+                <Header as={'h1'} style={{marginBottom: '0em', display: 'inline-block'}}>
                     {heading || 'Posts'}
                 </Header>
                 {
                     !showPostNavigationButtons &&
-                    <Button as={Link} basic style={{marginTop: '.4em'}} to={'/blog/1'}>
-                        See All Posts
-                    </Button>
+                    <span>&emsp;
+                        <Button as={Link} basic color={'blue'} compact style={{marginTop: '.4em'}} to={'/blog/1'}>
+                            See All Posts
+                        </Button>
+                    </span>
                 }
                 {
                     showPostNavigationButtons &&

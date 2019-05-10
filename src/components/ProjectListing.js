@@ -42,7 +42,9 @@ export const query = graphql`
         `;
 
 const StyledProjectListing = styled(ProjectListing)`
-        margin-bottom: 1em;
+        margin: auto auto 1em auto;
+        width: 99%;
+        
 `;
 
 export default StyledProjectListing;
