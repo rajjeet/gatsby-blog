@@ -31,7 +31,14 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
     return (
         <Grid stackable>
             <Grid.Column width={12}>
-                <Header as={'h1'} style={{marginBottom: '0em'}}>{heading || 'Posts'}</Header>
+                <Header as={'h1'} style={{marginBottom: '0em'}}>
+                    {heading || 'Posts'}
+                </Header>
+                {
+                    !showPostNavigationButtons &&
+                    <a style={{marginTop: '.4em'}} onClick={() => navigate('/blog/1')}>See All
+                        Posts</a>
+                }
                 {
                     showPostNavigationButtons &&
                     <div>
@@ -39,11 +46,7 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                         {PostNavigationButtons(currentPage, numOfPages, paginationSlug)}
                     </div>
                 }
-                {
-                    !showPostNavigationButtons &&
-                    <Button style={{marginTop: '.4em'}} compact onClick={() => navigate('/blog/1')}>See All
-                        Posts</Button>
-                }
+
                 <Item.Group link unstackable style={{backgroundColor: '#eee', padding: '1em', marginTop: '.4em'}}>
                     {posts.map(({node}) => (
                         <Item key={node.id}>
