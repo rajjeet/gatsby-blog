@@ -1,29 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import {navigate} from "gatsby";
+import {Link} from "gatsby";
 
-function Project({header, description, link}) {
-    return <a onClick={() => navigate(link)}>
-        <h3>{header}</h3>
+const Project = ({heading, link, description, className}) =>
+    <Link className={className} to={link}>
+        <h3>{heading}</h3>
         <p>{description}</p>
-    </a>;
-}
+    </Link>;
 
 const StyledProject = styled(Project)`
-  display: inline-block;
+        display: inline-block;
         border: 1px solid gray;
         padding: 1em;
-        margin-right: 1em;
         cursor: pointer;
         width: 40%;
-        :hover {
-            background-color: #eee;
-            transform: translateY(-5px);
-        }
-        transition: transform .5s ease;
+        margin: 0 0 2em 0;
+        text-decoration: none;
+        
         h3 {
           margin-bottom: .2em;
-        }
+        }        
+        
 `;
 
 export default StyledProject;

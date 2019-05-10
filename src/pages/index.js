@@ -33,21 +33,8 @@ export const query = graphql`
   projects: allMarkdownRemark(limit: 3, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
     edges {
       node {
-        frontmatter {
-          title
-          description
-          thumbnail {
-            childImageSharp  {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        fields {
-          slug
-        }
-      }
+        ...ProjectListingMarkdownFragment
+       }      
     }
   }
 }
