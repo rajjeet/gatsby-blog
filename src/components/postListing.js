@@ -36,8 +36,9 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                 </Header>
                 {
                     !showPostNavigationButtons &&
-                    <a style={{marginTop: '.4em'}} onClick={() => navigate('/blog/1')}>See All
-                        Posts</a>
+                    <Button as={Link} basic style={{marginTop: '.4em'}} to={'/blog/1'}>
+                        See All Posts
+                    </Button>
                 }
                 {
                     showPostNavigationButtons &&
@@ -63,7 +64,8 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                                       style={{textDecoration: 'none', color: 'inherit'}}>
                                     <Item.Header as={'h3'}
                                                  style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
-                                    <Item.Meta style={{marginTop: '0em'}}>{node.frontmatter.date} - {`${node.timeToRead} min read`}</Item.Meta>
+                                    <Item.Meta
+                                        style={{marginTop: '0em'}}>{node.frontmatter.date} - {`${node.timeToRead} min read`}</Item.Meta>
                                     <Item.Description>{node.frontmatter.description}</Item.Description>
                                 </Link>
                                 <Item.Extra>
