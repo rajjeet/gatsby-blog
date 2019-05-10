@@ -1,8 +1,8 @@
 ---
-title: Project A 
-date: "2019-05-02"
-description: I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.
-thumbnail: './Screenshot from 2019-05-09 06-58-58.png'
+title: Kitchen Quoter 
+date: "2019-03-02"
+description: A do-it-yourself calculator that generates dollar quotes based on user-specified fields and formula.
+thumbnail: './Screenshot_2.png'
 tags: 
     - ReactJS + Redux
     - Jest
@@ -10,4 +10,20 @@ tags:
     - AWS CloudFront
 ---
 
-## Kitchen Quoter
+### Step 1: Create the fields
+
+![](Screenshot_1.png) 
+_Add weighted fields that influence the quote. 
+There are 3 types of field: (1) number picker, (2) select dropdown, 
+and (3) multi-select dropdown. Located: Designer > Fields._
+
+### Step 2: Build a Formula
+
+![](Screenshot_4.png)
+_Formulas are built using the fields specified from the prior step. Use math to compute how 
+different fields impact the quote. Located: Designer > Formula._
+
+### Step 3: Generate the Quotes
+
+![](Screenshot_3.png)
+_Dynamically change the value of the fields to update the quote. Located: Home._

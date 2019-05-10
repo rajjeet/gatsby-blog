@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Project from "./Project";
 import {graphql} from "gatsby";
 
-const ProjectListing = ({projects, heading}) => (
-    <>
+const ProjectListing = ({className, projects, heading}) => (
+    <div className={className}>
         <h1>{heading}</h1>
         {
             projects.map(({node}) =>
@@ -12,12 +12,13 @@ const ProjectListing = ({projects, heading}) => (
                     key={node.fields.slug}
                     heading={node.frontmatter.title}
                     description={node.frontmatter.description}
+                    thumbnail={node.frontmatter.thumbnail.childImageSharp.fluid}
                     tags={node.frontmatter.tags}
                     link={node.fields.slug}
                 />
             )
         }
-    </>
+    </div>
 );
 
 export const query = graphql`
@@ -25,6 +26,14 @@ export const query = graphql`
             frontmatter {
               title
               description
+              tags
+              thumbnail {
+                childImageSharp  {
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             fields {
               slug
@@ -33,8 +42,7 @@ export const query = graphql`
         `;
 
 const StyledProjectListing = styled(ProjectListing)`
-        width: 50%;
-        margin: 1em 0;
+        margin-bottom: 1em;
 `;
 
 export default StyledProjectListing;
