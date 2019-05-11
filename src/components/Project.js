@@ -32,7 +32,7 @@ const StyledProject = styled(Project)`
         text-decoration: none;
         border-radius: 5px;
         height: 200px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: ${theme.boxShadow};
         
         @media (max-width: ${theme.computerBreakpoint}){
             width: 47%;

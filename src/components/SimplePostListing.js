@@ -1,6 +1,7 @@
 import {Link} from "gatsby";
 import React from "react";
 import styled from 'styled-components';
+import * as theme from '../utils/colors';
 
 const SimplePostListing = ({posts, className}) => (
     <div className={className}>
@@ -44,7 +45,7 @@ const StyledSimplePostListing = styled(SimplePostListing)`
     padding-left: 0;
     li {
         margin-bottom: .25em;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: ${theme.boxShadow};
         padding: .7em;
         border-radius: 5px;
     }

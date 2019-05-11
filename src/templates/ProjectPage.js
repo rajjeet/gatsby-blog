@@ -37,6 +37,8 @@ const S = {
         border-radius: 5px;
         display: inline-block;    
         width: 67%;
+        box-shadow: ${theme.boxShadow};
+        
         @media (max-width: ${theme.tabletBreakpoint}) {
           width: 100%;          
         }
@@ -45,6 +47,9 @@ const S = {
         display: inline-block;
         vertical-align: top;
         width: 29%;
+        @media (max-width: ${theme.tabletBreakpoint}) {
+          width: 100%;          
+        }
       }
 `
 };
