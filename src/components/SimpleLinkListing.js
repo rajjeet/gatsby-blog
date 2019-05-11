@@ -7,11 +7,11 @@ export default ({links}) => (
         <S.ul>
             {
                 links.map(link => (
-                    <li key={link.value}>
-                        <a href={link.value} target={'_blank'}>
+                    <a href={link.value} target={'_blank'}>
+                        <li key={link.value}>
                             {link.label}
-                        </a>
-                    </li>
+                        </li>
+                    </a>
                 ))
             }
         </S.ul>

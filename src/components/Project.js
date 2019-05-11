@@ -4,14 +4,12 @@ import {Link} from "gatsby";
 import GatsbyImage from 'gatsby-image';
 import * as theme from '../utils/colors'
 
-const Project = ({heading, link, description, className, thumbnail, tags}) =>
-    <div className={className}>
-        <Link to={link}>
-            <h3>{heading}</h3>
-            <S.GatsbyImage fluid={thumbnail}/>
-            <p>{description}</p>
-        </Link>
-    </div>;
+const Project = ({heading, link, description, className, thumbnail}) =>
+    <Link to={link} className={className}>
+        <h3>{heading}</h3>
+        <S.GatsbyImage fluid={thumbnail}/>
+        <p>{description}</p>
+    </Link>;
 
 const S = {
     GatsbyImage: styled(GatsbyImage)`

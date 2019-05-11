@@ -9,15 +9,15 @@ export default ({posts}) => (
         <S.ul>
             {
                 posts.map(({node}) => (
-                    <li>
-                        <S.Link to={node.fields.slug}>
+                    <S.Link to={node.fields.slug}>
+                        <li>
                             <h4>{node.frontmatter.title}</h4>
                             <div>
                                 <span>{node.frontmatter.date}</span>
                                 <span>&emsp;{node.timeToRead} mins read</span>
                             </div>
-                        </S.Link>
-                    </li>
+                        </li>
+                    </S.Link>
                 ))
             }
         </S.ul>

@@ -5,9 +5,9 @@ description: An automated process for building fast, responsive landing pages fo
 thumbnail: './Screenshot_1.png'
 links: 
     - label: Charisma Condos
-      value: dgftd2qqywjy1.cloudfront.net      
+      value: https://dgftd2qqywjy1.cloudfront.net      
     - label: SXSW South Woodbridge
-      value: d1n2vqbqyes277.cloudfront.net
+      value: https://d1n2vqbqyes277.cloudfront.net
 techStackTags: 
     - label: ReactJS
       type: JavaScript
