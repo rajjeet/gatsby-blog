@@ -7,7 +7,7 @@ links:
     - label: Live Demo
       value: https://d3c237k00uyj5k.cloudfront.net/    
 techStackTags: 
-    - label: ReactJS
+    - label: React
       type: JavaScript
     - label: Redux
       type: JavaScript
@@ -16,7 +16,7 @@ techStackTags:
     - label: AWS S3
       type: AWS
     - label: AWS CloudFront
-      type: AWS
+      type: AWS      
 ---
 
 ### Step 1: Create the fields

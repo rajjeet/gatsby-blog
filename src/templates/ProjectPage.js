@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import * as theme from '../utils/colors'
 import SimplePostListing from "../components/SimplePostListing";
 import SimpleLinkListing from "../components/SimpleLinkListing";
-
+import TechStackTagListing from "../components/TechStackTagListing";
 
 export default ({data}) => {
     return (
@@ -13,17 +13,8 @@ export default ({data}) => {
             <StyledProject>
                 <h1>{data.project.frontmatter.title}</h1>
                 <span>{data.project.frontmatter.date}</span>
-                <p>{data.project.frontmatter.description}</p>
-                <div>
-                    <ul>
-                        {
-                            data.project.frontmatter.techStackTags.map(tag => (
-
-                                <li key={tag.label}>{tag.type} - {tag.label}</li>
-                            ))
-                        }
-                    </ul>
-                </div>
+                <div>{data.project.frontmatter.description}</div>
+                {data.project.frontmatter.techStackTags && <TechStackTagListing tags={data.project.frontmatter.techStackTags} />}
                 <S.ContentContainer>
                     <div dangerouslySetInnerHTML={{__html: data.project.html}}/>
                     <div>
