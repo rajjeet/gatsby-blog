@@ -37,8 +37,7 @@ const S = {
 `
 };
 
-const StyledSimplePostListing = styled(SimplePostListing)`
-  padding: .7em;
+const StyledSimplePostListing = styled(SimplePostListing)`  
   ul {
     list-style: none;
     margin-left: 0;

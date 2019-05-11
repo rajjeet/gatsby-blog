@@ -3,12 +3,20 @@ title: Kitchen Quoter
 date: "2019-03-02"
 description: A do-it-yourself calculator that generates dollar quotes based on user-specified fields and formula.
 thumbnail: './Screenshot_2.png'
-tags: 
-    - ReactJS
-    - Redux
-    - Jest
-    - AWS S3
-    - AWS CloudFront
+links: 
+    - label: Live Demo
+      value: https://d3c237k00uyj5k.cloudfront.net/    
+techStackTags: 
+    - label: ReactJS
+      type: JavaScript
+    - label: Redux
+      type: JavaScript
+    - label: Jest
+      type: JavaScript
+    - label: AWS S3
+      type: AWS
+    - label: AWS CloudFront
+      type: AWS
 ---
 
 ### Step 1: Create the fields

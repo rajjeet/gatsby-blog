@@ -13,9 +13,32 @@ export default ({data}) => {
                 <h1>{data.project.frontmatter.title}</h1>
                 <span>{data.project.frontmatter.date}</span>
                 <p>{data.project.frontmatter.description}</p>
+                <div>
+                    <ul>
+                        {
+                            data.project.frontmatter.techStackTags.map(tag => (
+
+                                <li key={tag.label}>{tag.type} - {tag.label}</li>
+                            ))
+                        }
+                    </ul>
+                </div>
                 <S.ContentContainer>
                     <div dangerouslySetInnerHTML={{__html: data.project.html}}/>
-                    { data.posts && <SimplePostListing posts={data.posts.edges} /> }
+                    <div>
+                        {data.posts && <SimplePostListing posts={data.posts.edges}/>}
+                        <div>
+                            <h3>Links</h3>
+                            <ul>
+                                {
+                                    data.project.frontmatter.links.map(link => (
+
+                                        <li key={link.value}>{link.label} - {link.value}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </S.ContentContainer>
             </StyledProject>
         </Layout>
@@ -43,10 +66,14 @@ const S = {
           width: 100%;          
         }
       }
-      > div:last-of-type {
+      > div:not(:first-child) {
+        padding: .7em;        
         display: inline-block;
-        vertical-align: top;
+        vertical-align: top;                
         width: 29%;
+        > div {
+          margin-bottom: 2em;
+        }
         @media (max-width: ${theme.tabletBreakpoint}) {
           width: 100%;          
         }
@@ -55,7 +82,7 @@ const S = {
 };
 
 export const query = graphql`
-query ($slug: String = "/projects/kitchen-quoter/") {
+query ($slug: String!) {
   project: markdownRemark(fields: {slug: {eq: $slug}, contentType: {eq: "project"}}) {
     html
     frontmatter {
@@ -63,6 +90,14 @@ query ($slug: String = "/projects/kitchen-quoter/") {
       tags
       date
       description
+      techStackTags {
+        type
+        label
+      }
+      links {
+        label
+        value
+      }
     }
   }
   posts: allMarkdownRemark(sort:{fields: frontmatter___date, order: DESC}, filter: {frontmatter: {projectSlug: {eq: $slug}}, fields: {contentType: {eq: "post"}}}) {
@@ -71,7 +106,7 @@ query ($slug: String = "/projects/kitchen-quoter/") {
         timeToRead
         frontmatter {
           title
-          date
+          date          
         }
       fields {
         slug
