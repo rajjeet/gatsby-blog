@@ -8,6 +8,7 @@ import CategoryListing from './categoryListing';
 import Img from 'gatsby-image';
 import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";
+import * as theme from '../utils/colors'
 
 function PostNavigationButtons(currentPage, numOfPages, paginationSlug) {
     return <>
@@ -50,7 +51,7 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                     </div>
                 }
 
-                <Item.Group link unstackable style={{backgroundColor: '#eee', padding: '1em', marginTop: '.4em'}}>
+                <Item.Group link unstackable style={{backgroundColor: 'whitesmoke', padding: '1em', marginTop: '.4em', boxShadow: theme.boxShadow}}>
                     {posts.map(({node}) => (
                         <Item key={node.id}>
                             {node.frontmatter.image &&
