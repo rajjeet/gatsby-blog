@@ -5,11 +5,13 @@ import GatsbyImage from 'gatsby-image';
 import * as theme from '../utils/colors'
 
 const Project = ({heading, link, description, className, thumbnail}) =>
-    <Link to={link} className={className}>
-        <h3>{heading}</h3>
-        <S.GatsbyImage fluid={thumbnail}/>
-        <p>{description}</p>
-    </Link>;
+    <div className={className}>
+        <S.Link to={link}>
+            <h3>{heading}</h3>
+            <S.GatsbyImage fluid={thumbnail}/>
+            <p>{description}</p>
+        </S.Link>
+    </div>;
 
 const S = {
     GatsbyImage: styled(GatsbyImage)`
@@ -19,37 +21,23 @@ const S = {
       max-height: 83%;        
       overflow: hidden;  
   `,
-};
-
-const StyledProject = styled(Project)`
+    Link: styled(Link)`        
         display: inline-block;
         padding: 1em;
+        margin: .3em 2.5%;
+        width: 95%;
         cursor: pointer;
-        width: 47%;
-        margin: 0 1em 0 0;
         text-decoration: none;
         border-radius: 5px;
-        height: 200px;
         box-shadow: ${theme.boxShadow};
-        
-        @media (max-width: ${theme.computerBreakpoint}){
-            width: 47%;
-         }
-        
+        height: 200px;
         @media (max-width: ${theme.tabletBreakpoint}){
             height: 170px;
-            width: 45%;
-         }
-                  
-         @media (max-width: 700px){
-          width: 95%;
-          margin: .5em 0 .5em 0;
-         }
-        
+            margin: .5em 2.5%;  
+         }        
         h3 {
           margin-bottom: .3em;
-        }        
-        
+        }                
         p {
           display: inline-block;
           width: 50%;
@@ -63,6 +51,20 @@ const StyledProject = styled(Project)`
             font-size: .7em;
           }          
         }
+      
+  `
+};
+
+const StyledProject = styled(Project)`
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 1em;
+        height: 200px;        
+        
+        @media (max-width: ${theme.tabletBreakpoint}){
+            width: 100%;
+            height: 170px;
+         }
 `;
 
 export default StyledProject;
