@@ -43,6 +43,10 @@ export const S = {
             box-shadow: ${theme.boxShadow};
             padding: .7em;
             border-radius: 5px;
+            :hover {
+              transform: translateY(-3px);
+              transition: ease .3s;
+            }
         }
         a {
             color: black;
