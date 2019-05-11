@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 import * as theme from '../utils/colors'
 import SimplePostListing from "../components/SimplePostListing";
+import SimpleLinkListing from "../components/SimpleLinkListing";
 
 
 export default ({data}) => {
@@ -26,18 +27,8 @@ export default ({data}) => {
                 <S.ContentContainer>
                     <div dangerouslySetInnerHTML={{__html: data.project.html}}/>
                     <div>
+                        {data.project.frontmatter.links && <SimpleLinkListing links={data.project.frontmatter.links} />}
                         {data.posts && <SimplePostListing posts={data.posts.edges}/>}
-                        <div>
-                            <h3>Links</h3>
-                            <ul>
-                                {
-                                    data.project.frontmatter.links.map(link => (
-
-                                        <li key={link.value}>{link.label} - {link.value}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
                     </div>
                 </S.ContentContainer>
             </StyledProject>
