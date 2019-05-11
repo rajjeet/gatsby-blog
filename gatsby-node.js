@@ -77,7 +77,7 @@ exports.createPages = ({graphql, actions}) => {
 
         allProjects
             .forEach(({node}) => {
-                let template = path.resolve(`./src/templates/projectPage.js`);
+                let template = path.resolve(`./src/templates/ProjectPage.js`);
                 createPage({
                     path: node.fields.slug,
                     component: template,
