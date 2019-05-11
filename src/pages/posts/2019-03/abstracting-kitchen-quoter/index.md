@@ -2,12 +2,11 @@
 title: Abstracting the Kitchen Quoter  
 date: "2019-03-17"
 draft: false
-author: Rajjeet
+projectSlug: /projects/kitchen-quoter/
 category: Side Project
 image: '../../2019-02/kitchen-quoter/rawpixel-780494-unsplash.jpg'
 description: The original kitchen quoter was specific to one business and use-case. I'm aiming to generalize that design, so it's reusable across different scenarios and businesses.    
-tags: 
-    - Kitchen Quoter 
+tags:  
     - React
 ---
 

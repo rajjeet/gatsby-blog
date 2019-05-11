@@ -4,7 +4,8 @@ date: "2019-03-02"
 description: A do-it-yourself calculator that generates dollar quotes based on user-specified fields and formula.
 thumbnail: './Screenshot_2.png'
 tags: 
-    - ReactJS + Redux
+    - ReactJS
+    - Redux
     - Jest
     - AWS S3
     - AWS CloudFront

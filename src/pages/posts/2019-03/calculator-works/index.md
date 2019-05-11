@@ -2,12 +2,11 @@
 title: The Calculator Works
 date: "2019-03-31"
 draft: false
-author: Rajjeet
+projectSlug: /projects/kitchen-quoter/
 category: Side Project
 image: '../../2019-02/kitchen-quoter/rawpixel-780494-unsplash.jpg'
 description: The first working copy of the abstracted quoting calculator is done, but there are multiple issues that need fixing. In this post I talk about the areas for improvement.    
-tags: 
-    - Kitchen Quoter 
+tags:      
     - React
 ---
 

@@ -2,12 +2,11 @@
 title: Quoting a Kitchen with Style 
 date: "2019-02-23"
 draft: false
-author: Rajjeet
+projectSlug: /projects/kitchen-quoter/
 category: Side Project
 image: './rawpixel-780494-unsplash.jpg'
 description: A desktop application that calculates a quotation for a high-end kitchen based on an client's algorithm and various input types. 
-tags: 
-    - Kitchen Quoter
+tags:     
     - React
 ---
 
