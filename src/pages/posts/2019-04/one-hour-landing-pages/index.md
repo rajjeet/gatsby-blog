@@ -2,12 +2,10 @@
 title: One Hour Landing Pages 
 date: "2019-04-22"
 draft: false
-author: Rajjeet
+projectSlug: /projects/condo-landing-pages/
 category: Side Project
 image: './lukas-blazek-263122-unsplash.jpg'
 description: Are you a ReactJS developer? Do you need to build fully customizable and extensible landing pages within an hour or two? If so, you must read this!
-tags:
-    - Landing Pages 
 ---
 
 <div class="ui icon info message">

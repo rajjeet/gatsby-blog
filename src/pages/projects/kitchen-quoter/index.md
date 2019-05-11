@@ -1,6 +1,6 @@
 ---
 title: Kitchen Quoter 
-date: "2019-03-02"
+date: "2019-02-23"
 description: A do-it-yourself calculator that generates dollar quotes based on user-specified fields and formula.
 thumbnail: './Screenshot_2.png'
 links: 
