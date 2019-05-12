@@ -4,7 +4,7 @@ import {graphql, navigate, Link} from "gatsby";
 import TagGroup from "./tagGroup";
 import {Grid} from "semantic-ui-react";
 import TagListing from "./tagListing";
-import CategoryListing from './categoryListing';
+import CategoryListing from './CategoryListing';
 import Img from 'gatsby-image';
 import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";

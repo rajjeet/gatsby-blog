@@ -1,9 +1,9 @@
 import React from 'react';
 import {graphql, StaticQuery} from "gatsby";
-import {Header} from "semantic-ui-react";
 import TagGroup from './tagGroup';
+import styled from 'styled-components';
 
-export default () => (
+const CategoryListing = ({className}) => (
     <StaticQuery query={
         graphql`
          query {
@@ -17,10 +17,19 @@ export default () => (
         `}
 
                  render={data => (
-                     <>
-                         <Header style={{margin: '.5em auto'}} as={'h5'}>Categories</Header>
-                         <TagGroup categories={data.allMarkdownRemark.group} />
-                     </>
+                     <div className={className}>
+                         <h5>Categories</h5>
+                         <TagGroup categories={data.allMarkdownRemark.group}/>
+                     </div>
                  )}
     />
 );
+
+const StyledCategoryListing = styled(CategoryListing)`
+  h5 {
+    margin: .5em auto;
+  } 
+`
+
+
+export default StyledCategoryListing;
