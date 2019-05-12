@@ -1,7 +1,8 @@
 import React from 'react';
 import {graphql, StaticQuery} from "gatsby";
-import TagGroup from './tagGroup';
+import TagGroup from './TagGroup';
 import styled from 'styled-components';
+import {getCategorySlug} from "../utils/helperFunctions";
 
 const CategoryListing = ({className}) => (
     <StaticQuery query={
@@ -19,7 +20,7 @@ const CategoryListing = ({className}) => (
                  render={data => (
                      <div className={className}>
                          <h5>Categories</h5>
-                         <TagGroup categories={data.allMarkdownRemark.group}/>
+                         <TagGroup tags={data.allMarkdownRemark.group} getSlug={getCategorySlug} />
                      </div>
                  )}
     />
@@ -29,7 +30,7 @@ const StyledCategoryListing = styled(CategoryListing)`
   h5 {
     margin: .5em auto;
   } 
-`
+`;
 
 
 export default StyledCategoryListing;

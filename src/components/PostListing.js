@@ -1,14 +1,15 @@
 import React from "react";
 import {Button, Divider, Header, Icon, Item} from "semantic-ui-react";
 import {graphql, navigate, Link} from "gatsby";
-import TagGroup from "./tagGroup";
+import TagGroup from "./TagGroup";
 import {Grid} from "semantic-ui-react";
-import TagListing from "./tagListing";
+import TagListing from "./TagListing";
 import CategoryListing from './CategoryListing';
 import Img from 'gatsby-image';
 import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";
 import * as theme from '../utils/colors'
+import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
 
 function PostNavigationButtons(currentPage, numOfPages, paginationSlug) {
     return <>
@@ -72,8 +73,9 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                                     <Item.Description>{node.frontmatter.description}</Item.Description>
                                 </Link>
                                 <Item.Extra>
-                                    <TagGroup categories={[{"fieldValue": node.frontmatter.category}]}
-                                              tags={node.frontmatter.tags ? node.frontmatter.tags.map(tag => ({"fieldValue": tag})) : null}/>
+                                    <TagGroup tags={[{fieldValue: node.frontmatter.category}]} getSlug={getCategorySlug} inline={true} />
+                                    <TagGroup tags={node.frontmatter.tags && node.frontmatter.tags.map(tag => ({fieldValue: tag}))}
+                                              getSlug={getTagSlug} inline={true} />
                                 </Item.Extra>
                             </Item.Content>
                         </Item>

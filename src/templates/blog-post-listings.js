@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
-import PostListing from "../components/postListing";
+import PostListing from "../components/PostListing";
 
 export default ({data, pageContext}) => {
     return (

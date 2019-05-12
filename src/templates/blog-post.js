@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import {Button, Grid, Header, Icon, Segment, Sidebar, Sticky} from "semantic-ui-react";
-import TagGroup from "../components/tagGroup";
+import TagGroup from "../components/TagGroup";
 import * as PropTypes from "prop-types";
 import {css} from '@emotion/core';
 import colors from "../utils/colors";
