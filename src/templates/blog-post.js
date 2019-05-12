@@ -12,7 +12,7 @@ import Disqus from 'disqus-react';
 function TableOfContents({post}) {
     return <>
         <Header as={"h4"}>Outline</Header>
-        <div className={"ui list"} css={css`
+        <div className={"ui list tableOfContents"} css={css`
                                             ul {
                                               padding-left: 1em;
                                               font-size: 1.2em;
@@ -84,17 +84,7 @@ export default class BlogPost extends Component {
                                 <p>{post.frontmatter.description}</p>
                                 <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
                                           tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})): null}/>
-                                <Sticky context={contextRef} offset={10} bottomOffset={10} css={css`
-                                                #outline-btn {
-                                                  display: none;
-                                                }
-
-                                                @media only screen and (max-width: 767px) {
-                                                  #outline-btn {
-                                                    display: block;
-                                                  }
-                                                }
-                                            `}>
+                                <Sticky context={contextRef} offset={10} bottomOffset={10} >
                                     <Button id={'outline-btn'} onClick={this.toggleSidebar} size={'small'} compact
                                             positive={this.state.visible}>
                                         <Icon name={'content'}/>Outline
