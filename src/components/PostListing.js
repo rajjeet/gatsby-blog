@@ -1,8 +1,7 @@
 import React from "react";
-import {Button, Divider, Header, Icon, Item} from "semantic-ui-react";
-import {graphql, navigate, Link} from "gatsby";
+import {Button, Grid, Header, Item} from "semantic-ui-react";
+import {graphql, Link} from "gatsby";
 import TagGroup from "./TagGroup";
-import {Grid} from "semantic-ui-react";
 import TagListing from "./TagListing";
 import CategoryListing from './CategoryListing';
 import Img from 'gatsby-image';
@@ -10,23 +9,7 @@ import {Headshot} from "./Headshot";
 import {SocialLinks} from "./SocialLinks";
 import * as theme from '../utils/colors'
 import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
-
-function PostNavigationButtons(currentPage, numOfPages, paginationSlug) {
-    return <>
-        <Button
-            disabled={currentPage <= 1}
-            compact
-            onClick={() => navigate(`${paginationSlug}${currentPage - 1}`)}>
-            <Icon name={'chevron left'}/>Newer Posts
-        </Button>
-        <Button
-            disabled={currentPage >= numOfPages}
-            compact
-            onClick={() => navigate(`${paginationSlug}${currentPage + 1}`)}>
-            Older Posts<Icon name={'chevron right'}/>
-        </Button>
-    </>;
-}
+import PaginationButtonGroup from "./PaginationButtonGroup";
 
 export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
     const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
@@ -48,11 +31,17 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                     showPostNavigationButtons &&
                     <div>
                         <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
-                        {PostNavigationButtons(currentPage, numOfPages, paginationSlug)}
+                        <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
+                                               paginationSlug={paginationSlug}/>
                     </div>
                 }
 
-                <Item.Group link unstackable style={{backgroundColor: 'whitesmoke', padding: '1em', marginTop: '.4em', boxShadow: theme.boxShadow}}>
+                <Item.Group link unstackable style={{
+                    backgroundColor: 'whitesmoke',
+                    padding: '1em',
+                    marginTop: '.4em',
+                    boxShadow: theme.boxShadow
+                }}>
                     {posts.map(({node}) => (
                         <Item key={node.id}>
                             {node.frontmatter.image &&
@@ -73,20 +62,26 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                                     <Item.Description>{node.frontmatter.description}</Item.Description>
                                 </Link>
                                 <Item.Extra>
-                                    <TagGroup tags={[{fieldValue: node.frontmatter.category}]} getSlug={getCategorySlug} inline={true} />
-                                    <TagGroup tags={node.frontmatter.tags && node.frontmatter.tags.map(tag => ({fieldValue: tag}))}
-                                              getSlug={getTagSlug} inline={true} />
+                                    <TagGroup tags={[{fieldValue: node.frontmatter.category}]} getSlug={getCategorySlug}
+                                              inline={true}/>
+                                    <TagGroup
+                                        tags={node.frontmatter.tags && node.frontmatter.tags.map(tag => ({fieldValue: tag}))}
+                                        getSlug={getTagSlug} inline={true}/>
                                 </Item.Extra>
                             </Item.Content>
                         </Item>
                     ))}
                 </Item.Group>
-                {showPostNavigationButtons && PostNavigationButtons(currentPage, numOfPages)}
+                {
+                    showPostNavigationButtons &&
+                    <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
+                                           paginationSlug={paginationSlug}/>
+                }
             </Grid.Column>
             <Grid.Column width={4}>
                 <CategoryListing/>
                 <TagListing/>
-                <Divider hidden/>
+                <br/>
                 <Headshot/>
                 <Header as={'h3'} style={{margin: '0.2em 0em'}}>Rajjeet Phull</Header>
                 <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>

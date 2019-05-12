@@ -24,7 +24,7 @@ const StyledTagGroup = styled(TagGroup)`
     padding: .2em .55em;
     margin-right: .5em;
     margin-bottom: .5em;
-    box-shadow: ${theme.lightbBoxShadow};
+    box-shadow: ${theme.lightBoxShadow};
     display: inline-block;
     border-radius: 5px;
     color: white;
