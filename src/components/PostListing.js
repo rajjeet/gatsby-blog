@@ -1,10 +1,10 @@
 import React from "react";
-import {Grid, Header, Item} from "semantic-ui-react";
+import {Grid} from "semantic-ui-react";
 import {graphql, Link} from "gatsby";
 import TagGroup from "./TagGroup";
 import TagListing from "./TagListing";
 import CategoryListing from './CategoryListing';
-import Img from 'gatsby-image';
+import GatsbyImage from 'gatsby-image';
 import AuthorCard from "./AuthorCard";
 import AuthorSocialLinkGroup from "./AuthorSocialLinkGroup";
 import * as theme from '../utils/colors'
@@ -12,84 +12,128 @@ import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
 import PaginationButtonGroup from "./PaginationButtonGroup";
 import {navigate} from "gatsby";
 import Button from "./Button";
+import styled from 'styled-components';
 
-export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
+const PostListing = ({className, posts, heading, numOfPages, currentPage, paginationSlug}) => {
     const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
     return (
-        <Grid stackable>
-            <Grid.Column width={12}>
-                <Header as={'h1'} style={{marginBottom: '0em', display: 'inline-block'}}>
-                    {heading || 'Posts'}
-                </Header>
-                {
-                    !showPostNavigationButtons &&
-                    <span>&emsp;
-                        <Button onClick={() => navigate('/blog/1')}>
+        <div className={className}>
+            <Grid stackable>
+                <Grid.Column width={12}>
+                    <h1>{heading || 'Posts'}</h1>
+                    {
+                        !showPostNavigationButtons &&
+                        <span>&emsp;
+                            <Button onClick={() => navigate('/blog/1')}>
                             See All Posts
                         </Button>
                     </span>
-                }
-                {
-                    showPostNavigationButtons &&
-                    <div>
-                        <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
-                        <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
-                                               paginationSlug={paginationSlug}/>
-                    </div>
-                }
+                    }
+                    {
+                        showPostNavigationButtons &&
+                        <div>
+                            <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
+                            <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
+                                                   paginationSlug={paginationSlug}/>
+                        </div>
+                    }
 
-                <Item.Group link unstackable style={{
-                    backgroundColor: 'whitesmoke',
-                    padding: '1em',
-                    marginTop: '.4em',
-                    boxShadow: theme.boxShadow
-                }}>
-                    {posts.map(({node}) => (
-                        <Item key={node.id}>
-                            {node.frontmatter.image &&
-                            <Item.Image size={'medium'}>
-                                <Link to={node.fields.slug}>
-                                    <Img style={{margin: '.5em 1em', borderRadius: '3%'}}
-                                         fluid={node.frontmatter.image.childImageSharp.fluid}/>
-                                </Link>
-                            </Item.Image>
-                            }
-                            <Item.Content>
-                                <Link to={node.fields.slug}
-                                      style={{textDecoration: 'none', color: 'inherit'}}>
-                                    <Item.Header as={'h3'}
-                                                 style={{marginBottom: '0em'}}>{node.frontmatter.title}</Item.Header>
-                                    <Item.Meta
-                                        style={{marginTop: '0em'}}>{node.frontmatter.date} - {`${node.timeToRead} min read`}</Item.Meta>
-                                    <Item.Description>{node.frontmatter.description}</Item.Description>
-                                </Link>
-                                <Item.Extra>
-                                    <TagGroup tags={[{fieldValue: node.frontmatter.category}]} getSlug={getCategorySlug}
+                    <div style={{
+                        backgroundColor: 'whitesmoke',
+                        padding: '1em',
+                        marginTop: '.4em',
+                        boxShadow: theme.boxShadow
+                    }}>
+                        {posts.map(({node}) => (
+                            <div className={'post'} key={node.id}>
+                                <div className={'image-container'}>
+                                    <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid}/>
+                                </div>
+                                <div className={'post-summary'}>
+                                    <Link to={node.fields.slug}>
+                                        <h3 style={{marginBottom: '0em'}}>{node.frontmatter.title}</h3>
+                                        <div style={{marginTop: '0em'}}>
+                                            {node.frontmatter.date} - {`${node.timeToRead} min read`}
+                                        </div>
+                                        <div>{node.frontmatter.description}</div>
+                                    </Link>
+                                    <TagGroup tags={[{fieldValue: node.frontmatter.category}]}
+                                              getSlug={getCategorySlug}
                                               inline={true}/>
                                     <TagGroup
                                         tags={node.frontmatter.tags && node.frontmatter.tags.map(tag => ({fieldValue: tag}))}
                                         getSlug={getTagSlug} inline={true}/>
-                                </Item.Extra>
-                            </Item.Content>
-                        </Item>
-                    ))}
-                </Item.Group>
-                {
-                    showPostNavigationButtons &&
-                    <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
-                                           paginationSlug={paginationSlug}/>
-                }
-            </Grid.Column>
-            <Grid.Column width={4}>
-                <CategoryListing/>
-                <TagListing/>
-                <br/>
-                <AuthorCard/>
-                <AuthorSocialLinkGroup/>
-            </Grid.Column>
-        </Grid>
+                                </div>
+                            </div>
+
+                        ))}
+                    </div>
+                    {
+                        showPostNavigationButtons &&
+                        <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
+                                               paginationSlug={paginationSlug}/>
+                    }
+                </Grid.Column>
+                <Grid.Column width={4}>
+                    <CategoryListing/>
+                    <TagListing/>
+                    <br/>
+                    <AuthorCard/>
+                    <AuthorSocialLinkGroup/>
+                </Grid.Column>
+            </Grid>
+        </div>
     )
 };
+
+const S = {
+    GatsbyImage: styled(GatsbyImage)`
+      margin: .5em 1em;
+      border-radius: 5px;
+  `
+};
+
+const StyledPostListing = styled(PostListing)`
+  h1 {
+      margin-bottom: 0;
+      display: inline-block;
+  }
+  .post {
+    margin: .7em auto;
+    box-shadow: ${theme.lightBoxShadow};
+    padding: .7em;
+    background-color: white;
+    border-radius: 5px;
+    :hover {
+      box-shadow: ${theme.boxShadow};
+      transform: translateY(-2px);
+      transition: ease .3s;
+      pointer: cursor;
+    }
+  }
+  .image-container {
+    display: inline-block;
+    width: 30%;
+    @media (max-width: ${theme.bigMobileBreakpoint}){
+      display: none;
+    }
+  }
+  .post-summary {
+      width: 65%;
+      vertical-align: top;
+      color: black;
+      display: inline-block;
+      text-decoration: none;
+      div {
+        margin: .3em auto;
+      }
+      @media (max-width: ${theme.bigMobileBreakpoint}){
+       width: 100%;
+      }
+    }
+`;
+
+export default StyledPostListing;
 
 export const query = graphql`
     fragment PostListingMarkdownFragment on MarkdownRemark {
