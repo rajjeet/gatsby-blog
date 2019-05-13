@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Grid, Header, Item} from "semantic-ui-react";
+import {Grid, Header, Item} from "semantic-ui-react";
 import {graphql, Link} from "gatsby";
 import TagGroup from "./TagGroup";
 import TagListing from "./TagListing";
@@ -10,6 +10,8 @@ import AuthorSocialLinkGroup from "./AuthorSocialLinkGroup";
 import * as theme from '../utils/colors'
 import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
 import PaginationButtonGroup from "./PaginationButtonGroup";
+import {navigate} from "gatsby";
+import Button from "./Button";
 
 export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
     const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
@@ -22,7 +24,7 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                 {
                     !showPostNavigationButtons &&
                     <span>&emsp;
-                        <Button as={Link} basic color={'blue'} compact style={{marginTop: '.4em'}} to={'/blog/1'}>
+                        <Button onClick={() => navigate('/blog/1')}>
                             See All Posts
                         </Button>
                     </span>
