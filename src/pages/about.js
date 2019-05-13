@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import AuthorSocialLinkGroup from "../components/AuthorSocialLinkGroup";
 import AuthorCard from '../components/AuthorCard';
 import {Grid, Header} from "semantic-ui-react";
