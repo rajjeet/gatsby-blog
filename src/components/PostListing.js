@@ -38,9 +38,8 @@ const PostListing = ({className, posts, heading, numOfPages, currentPage, pagina
 
                 <div style={{
                     backgroundColor: 'whitesmoke',
-                    padding: '.5em',
+                    padding: '.5em 1em',
                     marginTop: '.4em',
-                    boxShadow: theme.boxShadow
                 }}>
                     {posts.map(({node}) => (
                         <div className={'post'} key={node.id}>

@@ -1,11 +1,27 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import {graphql, Link, StaticQuery} from 'gatsby';
-import {Container, Divider, Header, Menu} from "semantic-ui-react";
-import colors from '../utils/colors';
+import {graphql, StaticQuery} from 'gatsby';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import '../styles/global.css';
-import Img from 'gatsby-image';
+import styled from 'styled-components';
+import * as theme from '../utils/colors';
+import TopNavBar from "./TopNavBar";
+
+const Layout = ({className, data, children}) => (
+    <div className={className}>
+        <TopNavBar data={data}/>
+        {children}
+    </div>
+);
+
+const StyledLayout = styled(Layout)`
+  width: 80%;
+  margin: .5em auto 3em auto;
+  @media (max-width: ${theme.tabletBreakpoint}){
+    width: 95%;
+    margin: 0 auto 1em auto;
+    }
+`;
 
 export default ({children}) => (
     <StaticQuery query={
@@ -26,30 +42,7 @@ export default ({children}) => (
             }
         `
     }
-                 render={data => (
-                     <Container style={{paddingTop: '1em'}}>
-                         <Menu borderless>
-                             <Menu.Item as={Link} link to={'/'}>
-                                 <Img fluid={data.file.childImageSharp.fluid} style={{width: '3em'}} />
-                             </Menu.Item>
-                             <Menu.Item as={Link} link to={'/'} active={true}>
-                                 <div>
-                                     <Header as={'h3'} textAlign={'center'}
-                                             style={{marginBottom: '0em', color: colors.primaryColor}}>{data.site.siteMetadata.title}</Header>
-                                     <p style={{fontSize: '0.55em'}}>Write code that matters</p>
-                                 </div>
-                             </Menu.Item>
-                             <Menu.Item as={Link} to={'/about/'} link position={'right'}>
-                                 About
-                             </Menu.Item>
-                         </Menu>
-                         {children}
-                         <Divider hidden />
-                         <Divider hidden />
-                         <Divider hidden />
-                     </Container>
-                 )}
+                 render={data => <StyledLayout data={data} children={children}/>}
     />
 )
-
 
