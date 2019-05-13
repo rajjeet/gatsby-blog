@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
-import {SocialLinks} from "../components/SocialLinks";
-import {AuthorCard} from '../components/AuthorCard';
+import AuthorSocialLinkGroup from "../components/AuthorSocialLinkGroup";
+import AuthorCard from '../components/AuthorCard';
 import {Grid, Header} from "semantic-ui-react";
 import SEO from "../components/SEO";
 
@@ -44,7 +44,7 @@ export default () => (
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column>
-                    <SocialLinks includeLabel={true} stackable={false}/>
+                    <AuthorSocialLinkGroup />
                 </Grid.Column>
             </Grid.Row>
         </Grid>

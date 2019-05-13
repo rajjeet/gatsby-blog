@@ -6,7 +6,7 @@ import TagListing from "./TagListing";
 import CategoryListing from './CategoryListing';
 import Img from 'gatsby-image';
 import AuthorCard from "./AuthorCard";
-import {SocialLinks} from "./SocialLinks";
+import AuthorSocialLinkGroup from "./AuthorSocialLinkGroup";
 import * as theme from '../utils/colors'
 import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
 import PaginationButtonGroup from "./PaginationButtonGroup";
@@ -83,7 +83,7 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                 <TagListing/>
                 <br/>
                 <AuthorCard/>
-                <SocialLinks/>
+                <AuthorSocialLinkGroup/>
             </Grid.Column>
         </Grid>
     )
