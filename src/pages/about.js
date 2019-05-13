@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import {SocialLinks} from "../components/SocialLinks";
-import {Headshot} from '../components/Headshot';
+import {AuthorCard} from '../components/AuthorCard';
 import {Grid, Header} from "semantic-ui-react";
 import SEO from "../components/SEO";
 
@@ -39,7 +39,7 @@ export default () => (
                     </div>
                 </Grid.Column>
                 <Grid.Column width={5}>
-                    <Headshot/>
+                    <AuthorCard/>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>

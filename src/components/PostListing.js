@@ -5,7 +5,7 @@ import TagGroup from "./TagGroup";
 import TagListing from "./TagListing";
 import CategoryListing from './CategoryListing';
 import Img from 'gatsby-image';
-import {Headshot} from "./Headshot";
+import AuthorCard from "./AuthorCard";
 import {SocialLinks} from "./SocialLinks";
 import * as theme from '../utils/colors'
 import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
@@ -82,9 +82,7 @@ export default ({posts, heading, numOfPages, currentPage, paginationSlug}) => {
                 <CategoryListing/>
                 <TagListing/>
                 <br/>
-                <Headshot/>
-                <Header as={'h3'} style={{margin: '0.2em 0em'}}>Rajjeet Phull</Header>
-                <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
+                <AuthorCard/>
                 <SocialLinks/>
             </Grid.Column>
         </Grid>
