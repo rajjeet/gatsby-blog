@@ -83,7 +83,7 @@ const PostListing = ({className, posts, heading, numOfPages, currentPage, pagina
     )
 };
 
-const S = {
+export const S = {
     GatsbyImage: styled(GatsbyImage)`
       margin: .5em 1em;
       border-radius: 5px;
