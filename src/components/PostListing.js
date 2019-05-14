@@ -6,7 +6,7 @@ import CategoryListing from './CategoryListing';
 import GatsbyImage from 'gatsby-image';
 import AuthorCard from "./AuthorCard";
 import AuthorSocialLinkGroup from "./AuthorSocialLinkGroup";
-import * as theme from '../utils/colors'
+import * as theme from '../utils/theme'
 import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
 import PaginationButtonGroup from "./PaginationButtonGroup";
 import {navigate} from "gatsby";

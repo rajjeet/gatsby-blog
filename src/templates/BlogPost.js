@@ -5,7 +5,7 @@ import TagGroup from "../components/TagGroup";
 import SEO from "../components/SEO";
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
-import * as theme from '../utils/colors';
+import * as theme from '../utils/theme';
 
 const TableOfContents = ({className, post}) => (
     <div className={className}>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as theme from "../utils/colors";
+import * as theme from "../utils/theme";
 import {Link, navigate} from "gatsby";
 import GatsbyImage from "gatsby-image";
 import Button from "./Button";

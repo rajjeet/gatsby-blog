@@ -90,7 +90,7 @@ exports.createPages = ({graphql, actions}) => {
         // Posts
         allPosts
             .forEach(({node}) => {
-                let blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+                let blogPostTemplate = path.resolve(`./src/templates/BlogPost.js`);
                 createPage({
                     path: node.fields.slug,
                     component: blogPostTemplate,
@@ -104,7 +104,7 @@ exports.createPages = ({graphql, actions}) => {
         const postsPerPage = 5;
         let numOfPosts = allPosts.length;
         const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-        let blogPostListTemplate = path.resolve(`./src/templates/blog-post-listings.js`);
+        let blogPostListTemplate = path.resolve(`./src/templates/BlogPostListing.js`);
         Array.from({length: numOfPages}).forEach((_, index) => {
             createPage({
                 path: urlJoin('blog', `${index + 1}`),
@@ -132,7 +132,7 @@ exports.createPages = ({graphql, actions}) => {
             const postsPerPage = 5;
             let numOfPosts = tagPosts.length;
             const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-            let blogPostListTemplate = path.resolve(`./src/templates/tag-page.js`);
+            let blogPostListTemplate = path.resolve(`./src/templates/TagPage.js`);
             Array.from({length: numOfPages}).forEach((_, index) => {
                 createPage({
                     path: urlJoin(tagSlug, `${index + 1}`),
@@ -161,7 +161,7 @@ exports.createPages = ({graphql, actions}) => {
                 .filter(({node}) => node.frontmatter.category === category);
             const postsPerPage = 5;
             const categorySlug = getCategorySlug(category);
-            let categoryPageTemplate = path.resolve(`./src/templates/category-page.js`);
+            let categoryPageTemplate = path.resolve(`./src/templates/CategoryPage.js`);
             let numOfPosts = categoryPosts.length;
             const numOfPages = Math.ceil(numOfPosts / postsPerPage);
             Array.from({length: numOfPages}).forEach((_, index) => {

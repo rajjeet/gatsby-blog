@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import * as theme from '../utils/colors'
+import * as theme from '../utils/theme'
 import SimplePostListing from "../components/SimplePostListing";
 import SimpleLinkListing from "../components/SimpleLinkListing";
 import TechStackTagListing from "../components/TechStackTagListing";

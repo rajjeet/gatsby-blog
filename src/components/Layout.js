@@ -4,7 +4,7 @@ import {graphql, StaticQuery} from 'gatsby';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import '../styles/global.css';
 import styled from 'styled-components';
-import * as theme from '../utils/colors';
+import * as theme from '../utils/theme';
 import TopNavBar from "./TopNavBar";
 
 const Layout = ({className, data, children}) => (

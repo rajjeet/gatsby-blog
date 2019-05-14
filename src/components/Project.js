@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from "gatsby";
 import GatsbyImage from 'gatsby-image';
-import * as theme from '../utils/colors'
+import * as theme from '../utils/theme'
 
 const Project = ({heading, link, description, className, thumbnail}) =>
     <div className={className}>
