@@ -8,6 +8,7 @@ import colors from "../utils/colors";
 import SEO from "../components/SEO";
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
+import * as theme from '../utils/colors';
 
 function TableOfContents({post}) {
     return <>
@@ -75,9 +76,9 @@ const BlogPost = ({className, data}) => {
                               tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})) : null}/>
                 </div>
                 <br />
-                <div>
+                <div >
                     <TableOfContents post={post}/>
-                    <div dangerouslySetInnerHTML={{__html: post.html}}/>
+                    <div  dangerouslySetInnerHTML={{__html: post.html}}/>
                     <br/>
                     <Disqus.DiscussionEmbed shortname={"ortmesh"} config={disqusConfig}/>
                 </div>
@@ -87,14 +88,19 @@ const BlogPost = ({className, data}) => {
 };
 
 const StyledBlogPost = styled(BlogPost)`
-  h1 {
-    margin-bottom: 0;    
-  }
-  .post-summary {
-    span {
-      font-size: .9em;      
+    width: 80%;
+    margin: auto;   
+    @media (max-width: ${theme.bigMobileBreakpoint}){
+      width: 95%;
     }
-  }
+      h1 {
+        margin-bottom: 0;    
+      }
+      .post-summary {
+        span {
+          font-size: .9em;      
+        }
+      }
 `;
 
 export default StyledBlogPost;
