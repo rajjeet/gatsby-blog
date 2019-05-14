@@ -90,6 +90,14 @@ module.exports = {
             }
         },
         `gatsby-plugin-offline`,
-        `gatsby-plugin-styled-components`
+        `gatsby-plugin-styled-components`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: "UA-138684782-3",
+                head: false,
+                anonymize: true
+            }
+        }
     ]
 };
