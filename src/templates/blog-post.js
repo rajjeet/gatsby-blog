@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
-import {Button, Grid, Header, Icon, Segment, Sidebar, Sticky} from "semantic-ui-react";
 import TagGroup from "../components/TagGroup";
 import * as PropTypes from "prop-types";
 import {css} from '@emotion/core';
 import colors from "../utils/colors";
 import SEO from "../components/SEO";
 import Disqus from 'disqus-react';
+import styled from 'styled-components';
 
 function TableOfContents({post}) {
     return <>
-        <Header as={"h4"}>Outline</Header>
+        <h4>Outline</h4>
         <div className={"ui list tableOfContents"} css={css`
                                             ul {
                                               padding-left: 1em;
@@ -52,77 +52,52 @@ function TableOfContents({post}) {
 
 TableOfContents.propTypes = {post: PropTypes.any};
 
-export default class BlogPost extends Component {
-    state = {visible: false};
 
-    handleContextRef = contextRef => this.setState({contextRef});
-    toggleSidebar = () => this.setState({visible: !this.state.visible});
-    hideSideBar = () => this.setState({visible: false});
 
-    render() {
-        let {data} = this.props;
-        const post = data.markdownRemark;
-        const {contextRef, visible} = this.state;
-
-        const disqusConfig = {
-            url: `http://ortmesh.com${post.fields.slug}`,
-            identifier: post.id,
-            title: post.frontmatter.title,
-        };
-
-        return (
-            <Layout>
-                <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL}/>
-                <div ref={this.handleContextRef}>
-                    <Grid>
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Header as={'h1'} style={{marginBottom: '0em'}}>{post.frontmatter.title}</Header>
-                                <div style={{marginBottom: '.7em'}}>{post.frontmatter.date} - {post.timeToRead} min read
-                                    - <Disqus.CommentCount shortname={'ortmesh'}
-                                                           config={disqusConfig}>Comments</Disqus.CommentCount></div>
-                                <p>{post.frontmatter.description}</p>
-                                <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
-                                          tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})): null}/>
-                                <Sticky context={contextRef} offset={10} bottomOffset={10} >
-                                    <Button id={'outline-btn'} onClick={this.toggleSidebar} size={'small'} compact
-                                            positive={this.state.visible}>
-                                        <Icon name={'content'}/>Outline
-                                    </Button>
-                                </Sticky>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column mobile={16} tablet={12} computer={12}>
-                                <Sidebar.Pushable style={{transform: 'none'}}>
-                                    <Sidebar.Pusher>
-                                        <div onClick={this.hideSideBar} dangerouslySetInnerHTML={{__html: post.html}}/>
-                                        <br/>
-                                        <Disqus.DiscussionEmbed shortname={"ortmesh"} config={disqusConfig}/>
-                                    </Sidebar.Pusher>
-                                    <Sticky context={contextRef} offset={25}>
-                                        <Sidebar as={Segment} color={'blue'} direction={'right'} width={'thin'}
-                                                 animation='overlay' visible={visible}>
-                                            <TableOfContents post={post}/>
-                                        </Sidebar>
-                                    </Sticky>
-                                </Sidebar.Pushable>
-                            </Grid.Column>
-                            <Grid.Column tablet={4} computer={4} only={'tablet computer'}>
-                                <Sticky context={contextRef} offset={25}>
-                                    <TableOfContents post={post}/>
-                                </Sticky>
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+const BlogPost = ({className, data}) => {
+    const post = data.markdownRemark;
+    const disqusConfig = {
+        url: `http://ortmesh.com${post.fields.slug}`,
+        identifier: post.id,
+        title: post.frontmatter.title,
+    };
+    return (
+        <Layout>
+            <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL}/>
+            <div className={className}>
+                <div className={'post-summary'}>
+                    <h1>{post.frontmatter.title}</h1>
+                    <span>{post.frontmatter.date} - {post.timeToRead} min read
+                        - <Disqus.CommentCount shortname={'ortmesh'}
+                                               config={disqusConfig}>Comments</Disqus.CommentCount></span>
+                    <p>{post.frontmatter.description}</p>
+                    <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
+                              tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})) : null}/>
                 </div>
+                <br />
+                <div>
+                    <TableOfContents post={post}/>
+                    <div dangerouslySetInnerHTML={{__html: post.html}}/>
+                    <br/>
+                    <Disqus.DiscussionEmbed shortname={"ortmesh"} config={disqusConfig}/>
+                </div>
+            </div>
+        </Layout>
+    );
+};
 
-            </Layout>
-        );
+const StyledBlogPost = styled(BlogPost)`
+  h1 {
+    margin-bottom: 0;    
+  }
+  .post-summary {
+    span {
+      font-size: .9em;      
     }
-}
+  }
+`;
 
-BlogPost.propTypes = {data: PropTypes.any};
+export default StyledBlogPost;
 
 export const query = graphql`
     query($slug: String!) {
