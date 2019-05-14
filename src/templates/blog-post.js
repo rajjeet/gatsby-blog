@@ -2,58 +2,38 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/Layout';
 import TagGroup from "../components/TagGroup";
-import * as PropTypes from "prop-types";
-import {css} from '@emotion/core';
-import colors from "../utils/colors";
 import SEO from "../components/SEO";
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as theme from '../utils/colors';
 
-function TableOfContents({post}) {
-    return <>
+const TableOfContents = ({className, post}) => (
+    <div className={className}>
         <h4>Outline</h4>
-        <div className={"ui list tableOfContents"} css={css`
-                                            ul {
-                                              padding-left: 1em;
-                                              font-size: 1.2em;
-                                              list-style-type: circle;
-                                            }
-                                            ul ul {
-                                              padding-left: 1em;
-                                              font-weight: normal;
-                                              font-size: 0.9em;
-                                            }
-                                            ul ul ul {
-                                              font-size: 0.8em;
-                                            }
-                                            ul > li {
-                                                margin: .3em auto;
-                                            }
-                                            ul > li > ul > li {
-                                                margin: 0 auto;
-                                                color: #888;
-                                            }
-                                            ul > ul > ul > li {
-                                                margin: 0 auto;
-                                            }
-                                            a {
-                                              color: inherit;
-                                            }
-                                            a:hover {
-                                              color: ${colors.secondaryColor};
-                                            }
-                                            p {
-                                              margin-bottom: 0em;
-                                            }
-                                        `}
-             dangerouslySetInnerHTML={{__html: post.tableOfContents}}/>
-    </>;
-}
+        <div dangerouslySetInnerHTML={{__html: post.tableOfContents}}/>
+    </div>
+);
 
-TableOfContents.propTypes = {post: PropTypes.any};
-
-
+const StyledTableOfContents = styled(TableOfContents)`
+    a {
+      color: #444;
+      :hover {
+        color: ${theme.primaryColor};
+        cursor: pointer;
+      }
+    } 
+       
+    > div > ul {
+      list-style-type: none;
+      padding-left: 0;
+      > li {
+        margin-bottom: .3em;
+        > p {
+        margin-bottom: 0;
+        }
+      }              
+    }
+`;
 
 const BlogPost = ({className, data}) => {
     const post = data.markdownRemark;
@@ -75,10 +55,10 @@ const BlogPost = ({className, data}) => {
                     <TagGroup categories={[{"fieldValue": post.frontmatter.category}]}
                               tags={post.frontmatter.tags ? post.frontmatter.tags.map(tag => ({"fieldValue": tag})) : null}/>
                 </div>
-                <br />
-                <div >
-                    <TableOfContents post={post}/>
-                    <div  dangerouslySetInnerHTML={{__html: post.html}}/>
+                <br/>
+                <div>
+                    <StyledTableOfContents post={post}/>
+                    <div dangerouslySetInnerHTML={{__html: post.html}}/>
                     <br/>
                     <Disqus.DiscussionEmbed shortname={"ortmesh"} config={disqusConfig}/>
                 </div>

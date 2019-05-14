@@ -53,12 +53,3 @@ body {
     padding-left: 2.8em;
 }
 
-#outline-btn {
-    display: none;
-}
-
-@media only screen and (max-width: 767px) {
-    #outline-btn {
-        display: block;
-    }
-}
