@@ -7,7 +7,7 @@ const TechStackTagListing = ({className, tags}) => (
         Tech Tags:
         {
             tags.map(tag => (
-                <span key={tag.label}>{tag.label}</span>
+                <div key={tag.label}>{tag.label}</div>
             ))
         }
     </div>
@@ -15,14 +15,15 @@ const TechStackTagListing = ({className, tags}) => (
 
 const StyledTechStackTagListing = styled(TechStackTagListing)`
   margin: .5em auto;
-   span {
+   div {
+   display: inline-block;
    background-color: ${theme.primaryColor};
     color: white;
     border-radius: 5px;
     font-size: .8em;
     font-weight: bolder;
     padding: .2em .5em;
-    margin: .2em .4em;
+    margin: .2em .2em;
    }
 `;
 

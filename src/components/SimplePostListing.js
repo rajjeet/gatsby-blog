@@ -29,7 +29,7 @@ export const S = {
           text-decoration: none;
           color: black;
         h4 {
-            margin-bottom: 0;        
+            margin: 0 auto;        
         }
         div {
            font-size: .8em;
