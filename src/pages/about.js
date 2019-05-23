@@ -14,8 +14,25 @@ const AboutPage = ({className}) => (
             <S.Main>
                 <div>
                     <p>
-                        I'm Raj and welcome to my personal blog site, Ortmesh! The purpose of my website is to
-                        share my ideas with others and connect.
+                        I'm Raj and welcome to my blog site, Ortmesh! The purpose of Ortmesh is to
+                        share my journey of learning to build web applications that help businesses growth drastically.
+                    </p>
+                    <p>
+                        So, how does this work?
+                    </p>
+                    <p>
+                        This blog shares the details of my side projects. The blog posts broken down by categories that
+                        describe key
+                        aspects of a web application. These categories are User Experience (UX), User
+                        Interface (UI), Frontend, Backend, and DevOps.
+                    </p>
+                    <p>
+                        Don't care about categories? Just want to know what the project is about?
+                    </p>
+                    <p>
+                        That's why I have Project pages. These web pages concisely summarize the project and connect to
+                        all related blog posts, ordered by posted date. The categories help narrow blog posts to a
+                        specific specialization or skill.
                     </p>
                     <h3>Work Experience</h3>
                     <p>
@@ -42,10 +59,10 @@ const AboutPage = ({className}) => (
                     </p>
                 </div>
 
-                <AuthorSocialLinkGroup/>
             </S.Main>
             <S.Sidebar>
                 <AuthorCard/>
+                <AuthorSocialLinkGroup/>
             </S.Sidebar>
 
         </div>
