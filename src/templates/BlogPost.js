@@ -68,8 +68,6 @@ const BlogPost = ({className, data}) => {
 };
 
 const StyledBlogPost = styled(BlogPost)`
-    width: 80%;
-    margin: auto;   
     @media (max-width: ${theme.bigMobileBreakpoint}){
       width: 95%;
     }

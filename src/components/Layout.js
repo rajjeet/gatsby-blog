@@ -1,5 +1,4 @@
 import React from 'react';
-import 'semantic-ui-css/semantic.min.css';
 import {graphql, StaticQuery} from 'gatsby';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import '../styles/global.css';

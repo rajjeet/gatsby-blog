@@ -15,38 +15,46 @@ const Project = ({heading, link, description, className, thumbnail}) =>
 
 const S = {
     GatsbyImage: styled(GatsbyImage)`
-      width: 50%;
+      width: 40%;
       position: relative;
       float: left;
       max-height: 83%;        
       overflow: hidden;  
   `,
-    Link: styled(Link)`        
+    Link: styled(Link)`
+        color: ${theme.primaryTextColor};        
         display: inline-block;
-        padding: 1em;
-        margin: .3em 2.5%;
+        padding: .7em;
+        box-sizing: border-box;
+        margin:   1em auto;
         width: 95%;
         cursor: pointer;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: ${theme.borderRadius};
         box-shadow: ${theme.boxShadow};
-        height: 200px;
+        height: 90%;        
+        :hover {
+          box-shadow: ${theme.boxShadow};
+          transform: translateY(-2px);
+          transition: ease .3s;
+          pointer: cursor;
+        }
         @media (max-width: ${theme.tabletBreakpoint}){
-            height: 170px;
             margin: .5em 2.5%;  
          }        
         h3 {
-          margin-bottom: .3em;
+          margin: .3em auto .3em auto;
+          font-size: .9em;
         }                
         p {
           display: inline-block;
-          width: 50%;
+          max-width: 50%;
+          float:left;
+          margin-top: .5em;
           padding-left: 1em;
-          vertical-align: top;
+          vertical-align: text-top;
+          font-size: ${theme.smallFontSize};
           
-          @media (max-width: ${theme.computerBreakpoint}){
-            font-size: .8em;
-          }
           @media (max-width: ${theme.bigMobileBreakpoint}){
             font-size: .7em;
           }          
@@ -57,13 +65,12 @@ const S = {
 
 const StyledProject = styled(Project)`
         width: 50%;
-        display: inline-block;
+        display: inline-block;        
         margin-bottom: 1em;
-        height: 200px;        
-        
+        height: 190px;        
+
         @media (max-width: ${theme.tabletBreakpoint}){
             width: 100%;
-            height: 170px;
          }
 `;
 

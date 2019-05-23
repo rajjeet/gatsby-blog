@@ -24,27 +24,32 @@ const TopNavBar = ({className, data}) => (
 );
 
 const StyledTopNavBar = styled(TopNavBar)`
+  box-shadow: ${theme.lightBoxShadow};
+  a {
+    text-decoration: none;
+    margin: 0;    
+  }
    > a:nth-of-type(1){
         display: inline-block;
-        padding: .5em;
-        margin: .5em 0;
+        padding: 1em;        
         
    }
    > a:nth-of-type(2){
         display: inline-block;
-        padding: .5em;
-        margin: .5em 0;
+        padding: 1em .5em;
         h2 {
-            margin-bottom: 0;
+            margin: 0;
             color: ${theme.primaryColor}
         }
         p {
-          font-size: 0.8em
+          font-size: 0.8em;
+          margin: 0;
+          color: ${theme.secondaryColor}
         }
    }
    > button{
-         margin: 1.5em auto;
-         float: right;
+         margin: 1.5em;
+         float: right;          
    }
 `;
 

@@ -43,7 +43,7 @@ const S = {
         display: inline-block;    
         width: 67%;
         box-shadow: ${theme.boxShadow};
-        
+        box-sizing: border-box;        
         @media (max-width: ${theme.tabletBreakpoint}) {
           width: 100%;          
         }
@@ -53,6 +53,7 @@ const S = {
         display: inline-block;
         vertical-align: top;                
         width: 29%;
+        box-sizing: border-box;
         > div {
           margin-bottom: 2em;
         }

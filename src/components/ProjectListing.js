@@ -42,7 +42,9 @@ export const query = graphql`
         `;
 
 const StyledProjectListing = styled(ProjectListing)`
-        margin: auto auto 1em auto;
+  h1 {
+   margin-bottom: 0; 
+  }
 `;
 
 export default StyledProjectListing;

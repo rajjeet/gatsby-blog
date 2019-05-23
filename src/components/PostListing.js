@@ -47,12 +47,12 @@ const PostListing = ({className, posts, heading, numOfPages, currentPage, pagina
                                 <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid}/>
                             </div>
                             <div className={'post-summary'}>
-                                <Link to={node.fields.slug}>
+                                <Link to={node.fields.slug} style={{color: 'black', textDecoration: 'none'}}>
                                     <h3 style={{marginBottom: '0em'}}>{node.frontmatter.title}</h3>
-                                    <div style={{marginTop: '0em'}}>
+                                    <div style={{marginTop: '0em', color: 'dimgray', fontSize: '.8em'}}>
                                         {node.frontmatter.date} - {`${node.timeToRead} min read`}
                                     </div>
-                                    <div>{node.frontmatter.description}</div>
+                                    <div style={{fontSize: theme.smallFontSize}}>{node.frontmatter.description}</div>
                                 </Link>
                                 <TagGroup tags={[{fieldValue: node.frontmatter.category}]}
                                           getSlug={getCategorySlug}
@@ -90,16 +90,18 @@ export const S = {
     Main: styled.div`
       width: 70%;
       display: inline-block;
-      @media (max-width: ${theme.tabletBreakpoint}) {
+      vertical-align: top;
+      @media (max-width: ${theme.computerBreakpoint}) {
         width: 100%;
-      }
+      }      
       
   `,
     Sidebar: styled.div`
       width: 30%;
       display: inline-block;
       padding: 1em;
-      @media (max-width: ${theme.tabletBreakpoint}) {
+      box-sizing: border-box;
+      @media (max-width: ${theme.computerBreakpoint}) {
         width: 100%;
       }
   `
@@ -136,6 +138,9 @@ const StyledPostListing = styled(PostListing)`
       color: black;
       display: inline-block;
       text-decoration: none;
+      h3 {
+        margin-top: 0;
+      }
       div {
         margin: .3em auto;
       }
