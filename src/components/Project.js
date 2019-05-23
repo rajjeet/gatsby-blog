@@ -18,7 +18,7 @@ const S = {
       width: 40%;
       position: relative;
       float: left;
-      max-height: 83%;        
+      max-height: 80%;        
       overflow: hidden;  
   `,
     Link: styled(Link)`
@@ -44,7 +44,6 @@ const S = {
          }        
         h3 {
           margin: .3em auto .3em auto;
-          font-size: .9em;
         }                
         p {
           display: inline-block;
