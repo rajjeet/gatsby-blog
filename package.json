@@ -48,7 +48,8 @@
     "react-typography": "^0.16.18",
     "slash": "^2.0.0",
     "typography": "^0.16.18",
-    "typography-theme-kirkham": "^0.16.18"
+    "typography-theme-kirkham": "^0.16.18",
+    "url-join": "^4.0.1"
   },
   "repository": {
     "type": "git",
@@ -58,7 +59,12 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
-    "styled-components": "^4.2.0",
-    "url-join": "^4.0.0"
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "styled-components": "^4.2.0"
   }
 }

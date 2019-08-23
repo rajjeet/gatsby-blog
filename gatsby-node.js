@@ -1,48 +1,51 @@
-const _ = require(`lodash`);
-const path = require(`path`);
+const { uniq } = require('lodash');
+const path = require('path');
 const urlJoin = require('url-join');
-const LodashModuleReplacementPlugin = require(`lodash-webpack-plugin`);
-const {createFilePath} = require(`gatsby-source-filesystem`);
-const getTagSlug = require('./src/utils/helperFunctions').getTagSlug;
-const getCategorySlug = require('./src/utils/helperFunctions').getCategorySlug;
 
-exports.onCreateNode = ({node, getNode, actions}) => {
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { getTagSlug } = require('./src/utils/helperFunctions');
+const { getCategorySlug } = require('./src/utils/helperFunctions');
 
-    const {createNodeField} = actions;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
 
-    if (node.internal.type === `MarkdownRemark`) {
-        let basePath, contentType, slug, rawSlug;
+  if (node.internal.type === 'MarkdownRemark') {
+    let basePath;
+    let contentType;
+    let slug;
+    let rawSlug;
 
-        if (node.fileAbsolutePath.includes('src/pages/posts')) {
-            basePath = 'pages/posts';
-            contentType = 'post';
-            rawSlug = createFilePath({node, getNode, basePath: basePath});
-            slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
-        }
-
-        if (node.fileAbsolutePath.includes('src/pages/projects')) {
-            basePath = 'pages';
-            contentType = 'project';
-            slug = createFilePath({node, getNode, basePath: basePath});
-        }
-
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug,
-        });
-        createNodeField({
-            node,
-            name: 'contentType',
-            value: contentType
-        })
+    if (node.fileAbsolutePath.includes('src/pages/posts')) {
+      basePath = 'pages/posts';
+      contentType = 'post';
+      rawSlug = createFilePath({ node, getNode, basePath });
+      slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
     }
+
+    if (node.fileAbsolutePath.includes('src/pages/projects')) {
+      basePath = 'pages';
+      contentType = 'project';
+      slug = createFilePath({ node, getNode, basePath });
+    }
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug,
+    });
+    createNodeField({
+      node,
+      name: 'contentType',
+      value: contentType,
+    });
+  }
 };
 
-exports.createPages = ({graphql, actions}) => {
-    const {createPage} = actions;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-    return graphql(`
+  return graphql(`
         {
           allMarkdownRemark(
             filter: {frontmatter: {draft: {ne: true}}},
@@ -62,134 +65,129 @@ exports.createPages = ({graphql, actions}) => {
             }
           }
         }
-    `).then(result => {
+    `).then((result) => {
+    if (result.errors) {
+      throw result.errors;
+    }
 
-        if (result.errors) {
-            throw result.errors
-        }
+    const allPosts = result.data.allMarkdownRemark.edges
+      .filter(({ node }) => node.fields.contentType === 'post');
+    const allProjects = result.data.allMarkdownRemark.edges
+      .filter(({ node }) => node.fields.contentType === 'project');
 
-
-        const allPosts = result.data.allMarkdownRemark.edges
-            .filter(({node}) => node.fields.contentType === 'post');
-        const allProjects = result.data.allMarkdownRemark.edges
-            .filter(({node}) => node.fields.contentType === 'project');
-
-
-        allProjects
-            .forEach(({node}) => {
-                let template = path.resolve(`./src/templates/ProjectPage.js`);
-                createPage({
-                    path: node.fields.slug,
-                    component: template,
-                    context: {
-                        slug: node.fields.slug
-                    }
-                })
-            });
-
-        // Posts
-        allPosts
-            .forEach(({node}) => {
-                let blogPostTemplate = path.resolve(`./src/templates/BlogPost.js`);
-                createPage({
-                    path: node.fields.slug,
-                    component: blogPostTemplate,
-                    context: {
-                        slug: node.fields.slug
-                    }
-                })
-            });
-
-        // All Posts Listing
-        const postsPerPage = 5;
-        let numOfPosts = allPosts.length;
-        const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-        let blogPostListTemplate = path.resolve(`./src/templates/BlogPostListing.js`);
-        Array.from({length: numOfPages}).forEach((_, index) => {
-            createPage({
-                path: urlJoin('blog', `${index + 1}`),
-                component: blogPostListTemplate,
-                context: {
-                    limit: postsPerPage,
-                    skip: index * postsPerPage,
-                    numOfPages,
-                    numOfPosts,
-                    currentPage: index + 1
-                }
-            })
+    allProjects
+      .forEach(({ node }) => {
+        const template = path.resolve('./src/templates/ProjectPage.js');
+        createPage({
+          path: node.fields.slug,
+          component: template,
+          context: {
+            slug: node.fields.slug,
+          },
         });
+      });
 
-        // Tags
-        let tags = [];
-        allPosts.forEach(({node}) => {
-            tags = tags.concat(node.frontmatter.tags);
+    // Posts
+    allPosts
+      .forEach(({ node }) => {
+        const blogPostTemplate = path.resolve('./src/templates/BlogPost.js');
+        createPage({
+          path: node.fields.slug,
+          component: blogPostTemplate,
+          context: {
+            slug: node.fields.slug,
+          },
         });
-        const uniqueTags = _.uniq(tags);
-        uniqueTags.forEach(tag => {
-            const tagSlug = getTagSlug(tag);
-            const tagPosts = result.data.allMarkdownRemark.edges
-                .filter(({node}) => node.frontmatter.tags && node.frontmatter.tags.find(blogTag => blogTag === tag));
-            const postsPerPage = 5;
-            let numOfPosts = tagPosts.length;
-            const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-            let blogPostListTemplate = path.resolve(`./src/templates/TagPage.js`);
-            Array.from({length: numOfPages}).forEach((_, index) => {
-                createPage({
-                    path: urlJoin(tagSlug, `${index + 1}`),
-                    component: blogPostListTemplate,
-                    context: {
-                        limit: postsPerPage,
-                        skip: index * postsPerPage,
-                        numOfPages,
-                        numOfPosts,
-                        currentPage: index + 1,
-                        tag: tag,
-                        paginationSlug: tagSlug
-                    }
-                })
-            });
-        });
+      });
 
-        // Category
-        let categories = [];
-        allPosts.forEach(({node}) => {
-            categories = categories.concat(node.frontmatter.category);
-        });
-
-        _.uniq(categories).forEach(category => {
-            const categoryPosts = result.data.allMarkdownRemark.edges
-                .filter(({node}) => node.frontmatter.category === category);
-            const postsPerPage = 5;
-            const categorySlug = getCategorySlug(category);
-            let categoryPageTemplate = path.resolve(`./src/templates/CategoryPage.js`);
-            let numOfPosts = categoryPosts.length;
-            const numOfPages = Math.ceil(numOfPosts / postsPerPage);
-            Array.from({length: numOfPages}).forEach((_, index) => {
-                createPage({
-                    path: urlJoin(categorySlug, `${index + 1}`),
-                    component: categoryPageTemplate,
-                    context: {
-                        limit: postsPerPage,
-                        skip: index * postsPerPage,
-                        numOfPages,
-                        numOfPosts,
-                        currentPage: index + 1,
-                        category: category,
-                        paginationSlug: categorySlug
-                    }
-                })
-            });
-        });
+    const POSTS_PER_PAGE = 5;
+    // All Posts Listing
+    const numOfPostsPerPostListing = allPosts.length;
+    const numOfPages = Math.ceil(numOfPostsPerPostListing / POSTS_PER_PAGE);
+    const postListingTemplate = path.resolve('./src/templates/BlogPostListing.js');
+    Array.from({ length: numOfPages }).forEach((_, index) => {
+      createPage({
+        path: urlJoin('blog', `${index + 1}`),
+        component: postListingTemplate,
+        context: {
+          limit: POSTS_PER_PAGE,
+          skip: index * POSTS_PER_PAGE,
+          numOfPages,
+          numOfPosts: numOfPostsPerPostListing,
+          currentPage: index + 1,
+        },
+      });
     });
+
+    // Tags
+    let allTags = [];
+    allPosts.forEach(({ node }) => {
+      allTags = allTags.concat(node.frontmatter.tags);
+    });
+    const uniqueTags = uniq(allTags);
+    uniqueTags.forEach((tag) => {
+      const tagSlug = getTagSlug(tag);
+      const tagPosts = allPosts.filter(({ node }) => {
+        const { tags } = node.frontmatter;
+        return tags && tags.find((blogTag) => blogTag === tag);
+      });
+      const totalNumOfTaggedPosts = tagPosts.length;
+      const numOfPagesPerTag = Math.ceil(totalNumOfTaggedPosts / POSTS_PER_PAGE);
+      const tagPageTemplate = path.resolve('./src/templates/TagPage.js');
+      Array.from({ length: numOfPagesPerTag }).forEach((_, index) => {
+        createPage({
+          path: urlJoin(tagSlug, `${index + 1}`),
+          component: tagPageTemplate,
+          context: {
+            limit: POSTS_PER_PAGE,
+            skip: index * POSTS_PER_PAGE,
+            numOfPages: numOfPagesPerTag,
+            numOfPosts: totalNumOfTaggedPosts,
+            currentPage: index + 1,
+            tag,
+            paginationSlug: tagSlug,
+          },
+        });
+      });
+    });
+
+    // Category
+    let categories = [];
+    allPosts.forEach(({ node }) => {
+      categories = categories.concat(node.frontmatter.category);
+    });
+
+    uniq(categories).forEach((category) => {
+      const categoryPosts = result.data.allMarkdownRemark.edges
+        .filter(({ node }) => node.frontmatter.category === category);
+      const categorySlug = getCategorySlug(category);
+      const categoryPageTemplate = path.resolve('./src/templates/CategoryPage.js');
+      const totalNumOfPostsPerCategory = categoryPosts.length;
+      const numOfPagesPerCategory = Math.ceil(totalNumOfPostsPerCategory / POSTS_PER_PAGE);
+      Array.from({ length: numOfPagesPerCategory }).forEach((_, index) => {
+        createPage({
+          path: urlJoin(categorySlug, `${index + 1}`),
+          component: categoryPageTemplate,
+          context: {
+            limit: POSTS_PER_PAGE,
+            skip: index * POSTS_PER_PAGE,
+            numOfPages: numOfPagesPerCategory,
+            numOfPosts: totalNumOfPostsPerCategory,
+            currentPage: index + 1,
+            category,
+            paginationSlug: categorySlug,
+          },
+        });
+      });
+    });
+  });
 };
 
-
 // Sass and Lodash.
-exports.onCreateWebpackConfig = ({stage, actions}) => {
-    switch (stage) {
-        case `build-javascript`:
-            actions.setWebpackConfig({
-                plugins: [new LodashModuleReplacementPlugin()],
-            })
-    }
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      plugins: [new LodashModuleReplacementPlugin()],
+    });
+  }
 };

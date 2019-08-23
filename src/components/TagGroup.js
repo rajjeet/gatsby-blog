@@ -4,17 +4,17 @@ import styled from 'styled-components';
 import * as theme from '../utils/theme'
 
 const TagGroup = ({className, tags, getSlug}) => (
-    <div className={className}>
-        {
-            tags &&
-            tags.map(tag =>
-                    <span key={tag.fieldValue}
-                          onClick={() => navigate(getSlug(tag.fieldValue) + '1')}>{tag.fieldValue}
-                        {tag.totalCount && <span>{tag.totalCount}</span>}
+  <div className={className}>
+    {
+      tags &&
+      tags.map(tag =>
+        <span key={tag.fieldValue}
+              onClick={() => navigate(getSlug(tag.fieldValue) + '1')}>{tag.fieldValue}
+          {tag.totalCount && <span>{tag.totalCount}</span>}
             </span>
-            )
-        }
-    </div>
+      )
+    }
+  </div>
 );
 
 const StyledTagGroup = styled(TagGroup)`
