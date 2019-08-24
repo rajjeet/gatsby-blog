@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import AuthorSocialLinkGroup from '../components/AuthorSocialLinkGroup';
-import AuthorCard from '../components/AuthorCard';
+import AuthorSocialLinkGroup from '../components/author-social-link-group';
+import AuthorCard from '../components/author-card';
 import SEO from '../components/SEO';
-import { S } from '../components/PostListing';
+import { S } from '../components/post-listing';
 
 const AboutPage = ({ className }) => (
   <Layout>

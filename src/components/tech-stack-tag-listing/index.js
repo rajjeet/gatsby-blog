@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../utils/theme';
 
 const TechStackTagListing = ({ className, tags }) => (
   <div className={className}>

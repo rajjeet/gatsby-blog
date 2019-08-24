@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../utils/theme';
 
 export default ({ posts }) => (
   <div>

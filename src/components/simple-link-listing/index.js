@@ -1,5 +1,5 @@
 import React from 'react';
-import { S } from './SimplePostListing';
+import { S } from '../simple-post-listing';
 
 export default ({ links }) => (
   <div>

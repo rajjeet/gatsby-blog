@@ -1,7 +1,7 @@
 import React from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../utils/theme';
 
 const TagGroup = ({ className, tags, getSlug }) => (
   <div className={className}>

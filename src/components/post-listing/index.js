@@ -2,16 +2,15 @@ import React from 'react';
 import { graphql, Link, navigate } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
-import TagGroup from './TagGroup';
-import TagListing from './TagListing';
-import CategoryListing from './CategoryListing';
-import AuthorCard from './AuthorCard';
-import AuthorSocialLinkGroup from './AuthorSocialLinkGroup';
-import * as theme from '../utils/theme';
-import { getCategorySlug, getTagSlug } from '../utils/helperFunctions';
-import PaginationButtonGroup from './PaginationButtonGroup';
-
-import Button from './Button';
+import TagGroup from '../tag-group';
+import TagListing from '../tag-listing';
+import CategoryListing from '../category-listing';
+import AuthorCard from '../author-card';
+import AuthorSocialLinkGroup from '../author-social-link-group';
+import * as theme from '../../utils/theme';
+import { getCategorySlug, getTagSlug } from '../../utils/helperFunctions';
+import PaginationButtonGroup from '../pagination-button-group';
+import Button from '../primitives/button';
 
 const PostListing = ({
   className, posts, heading, numOfPages, currentPage, paginationSlug,

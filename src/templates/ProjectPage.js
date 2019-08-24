@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import * as theme from '../utils/theme';
-import SimplePostListing from '../components/SimplePostListing';
-import SimpleLinkListing from '../components/SimpleLinkListing';
-import TechStackTagListing from '../components/TechStackTagListing';
+import SimplePostListing from '../components/simple-post-listing';
+import SimpleLinkListing from '../components/simple-link-listing';
+import TechStackTagListing from '../components/tech-stack-tag-listing';
 
 export default ({ data }) => (
   <Layout>

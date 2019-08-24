@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import TagGroup from '../components/TagGroup';
+import TagGroup from '../components/tag-group';
 import SEO from '../components/SEO';
 import * as theme from '../utils/theme';
 

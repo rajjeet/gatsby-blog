@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../utils/theme';
 
 const SocialLink = ({ className, link, icon }) => (
   <span className={className}>

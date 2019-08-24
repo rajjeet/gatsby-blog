@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../../utils/theme';
 
 const StyledButton = styled.button`
     background-color: white;

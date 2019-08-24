@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
+import * as theme from '../../utils/theme';
 
 const AuthorCard = ({ className }) => (
   <StaticQuery

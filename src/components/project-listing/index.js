@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Project from './Project';
+import Project from '../project';
 
-const ProjectListing = ({ className, projects, heading }) => (
+const ProductListing = ({ className, projects, heading }) => (
   <div className={className}>
     <h1>{heading}</h1>
     {
@@ -41,7 +41,7 @@ export const query = graphql`
     }
 `;
 
-const StyledProjectListing = styled(ProjectListing)`
+const StyledProjectListing = styled(ProductListing)`
   h1 {
    margin-bottom: 0; 
   }

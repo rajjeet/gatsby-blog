@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import PostListing from '../components/PostListing';
+import PostListing from '../components/post-listing';
 
 const TagPage = ({ data, pageContext }) => (
   <Layout>

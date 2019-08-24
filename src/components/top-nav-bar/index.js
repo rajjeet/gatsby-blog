@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link, navigate } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import React from 'react';
-import Button from './Button';
-import * as theme from '../utils/theme';
+import Button from '../primitives/button';
+import * as theme from '../../utils/theme';
 
 const TopNavBar = ({ className, data }) => (
   <div className={className}>
