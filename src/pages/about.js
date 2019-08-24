@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import AuthorSocialLinkGroup from '../components/author-social-link-group';
 import AuthorCard from '../components/author-card';
-import SEO from '../components/SEO';
+import Seo from '../components/seo';
 import { S } from '../components/post-listing';
 
 const AboutPage = ({ className }) => (
   <Layout>
     <div className={className}>
-      <SEO />
+      <Seo />
       <h1>About Me</h1>
       <S.Main>
         <div>

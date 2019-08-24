@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import * as theme from '../utils/theme';
 import SimplePostListing from '../components/simple-post-listing';
 import SimpleLinkListing from '../components/simple-link-listing';

@@ -63,7 +63,7 @@ exports[`<TopNavBar /> should render 1`] = `
     href="/"
   >
     <h2>
-      Sample Title
+      Ortmesh
     </h2>
     <p>
       Write code that matters

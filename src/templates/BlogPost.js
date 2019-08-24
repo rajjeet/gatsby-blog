@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import TagGroup from '../components/tag-group';
-import SEO from '../components/SEO';
+import Seo from '../components/seo';
 import * as theme from '../utils/theme';
 
 const TableOfContents = ({ className, post }) => (
@@ -47,7 +47,7 @@ const BlogPost = ({ className, data }) => {
   } = post.frontmatter;
   return (
     <Layout>
-      <SEO isBlogPost frontmatter={post.frontmatter} postImage={image.publicURL} />
+      <Seo isBlogPost frontmatter={post.frontmatter} postImage={image.publicURL} />
       <div className={className}>
         <div className="post-summary">
           <h1>{title}</h1>

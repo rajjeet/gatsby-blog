@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import '../styles/global.css';
+import '../../styles/global.css';
 import styled from 'styled-components';
-import * as theme from '../utils/theme';
-import TopNavBar from './top-nav-bar';
+import * as theme from '../../utils/theme';
+import TopNavBar from '../top-nav-bar';
 
 const Layout = ({ className, data, children }) => (
   <div className={className}>

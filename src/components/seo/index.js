@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import SchemaOrg from './SchemaOrg';
 
-const SEO = ({
+const Seo = ({
   postData, frontmatter = {}, postImage, isBlogPost,
 }) => (
   <StaticQuery
@@ -84,10 +84,10 @@ const SEO = ({
   />
 );
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   isBlogPost: false,
   postData: { childMarkdownRemark: {} },
   postImage: null,
 };
 
-export default SEO;
+export default Seo;

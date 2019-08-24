@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import PostListing from '../components/post-listing';
-import SEO from '../components/SEO';
+import Seo from '../components/seo';
 import ProjectListing from '../components/project-listing';
 
 export default ({ data }) => (
   <Layout>
-    <SEO />
+    <Seo />
     <ProjectListing
       projects={data.projects.edges}
       heading="Side Projects"
