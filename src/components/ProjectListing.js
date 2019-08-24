@@ -7,39 +7,39 @@ const ProjectListing = ({ className, projects, heading }) => (
   <div className={className}>
     <h1>{heading}</h1>
     {
-            projects.map(({ node }) => (
-              <Project
-                key={node.fields.slug}
-                heading={node.frontmatter.title}
-                description={node.frontmatter.description}
-                thumbnail={node.frontmatter.thumbnail.childImageSharp.fluid}
-                tags={node.frontmatter.tags}
-                link={node.fields.slug}
-              />
-            ))
-        }
+      projects.map(({ node }) => (
+        <Project
+          key={node.fields.slug}
+          heading={node.frontmatter.title}
+          description={node.frontmatter.description}
+          thumbnail={node.frontmatter.thumbnail.childImageSharp.fluid}
+          tags={node.frontmatter.tags}
+          link={node.fields.slug}
+        />
+      ))
+    }
   </div>
 );
 
 export const query = graphql`
-        fragment ProjectListingMarkdownFragment on MarkdownRemark {
-            frontmatter {
-              title
-              description
-              tags
-              thumbnail {
+    fragment ProjectListingMarkdownFragment on MarkdownRemark {
+        frontmatter {
+            title
+            description
+            tags
+            thumbnail {
                 childImageSharp  {
-                  fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid
-                  }
+                    fluid(maxWidth: 400) {
+                        ...GatsbyImageSharpFluid
+                    }
                 }
-              }
             }
-            fields {
-              slug
-            }          
         }
-        `;
+        fields {
+            slug
+        }
+    }
+`;
 
 const StyledProjectListing = styled(ProjectListing)`
   h1 {

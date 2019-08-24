@@ -25,7 +25,7 @@ const StyledLayout = styled(Layout)`
 export default ({ children }) => (
   <StaticQuery
     query={
-        graphql`
+      graphql`
             {
               site {
                 siteMetadata {
@@ -42,6 +42,6 @@ export default ({ children }) => (
             }
         `
     }
-    render={(data) => <StyledLayout data={data} children={children} />}
+    render={(data) => <StyledLayout data={data}>{children}</StyledLayout>}
   />
 );

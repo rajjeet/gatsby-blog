@@ -22,37 +22,37 @@ const PostListing = ({
       <S.Main>
         <h1>{heading || 'Posts'}</h1>
         {
-                    !showPostNavigationButtons
-                    && (
-                    <span>
+          !showPostNavigationButtons
+          && (
+            <span>
 &emsp;
-                      <Button onClick={() => navigate('/blog/1')}>
+              <Button onClick={() => navigate('/blog/1')}>
                             See All Posts
-                      </Button>
-                    </span>
-                    )
-                }
+              </Button>
+            </span>
+          )
+        }
         {
-                    showPostNavigationButtons
-                    && (
-                    <div>
-                      <p style={{ color: '#888', marginBottom: '.3em' }}>
-                        {currentPage}
-                        {' '}
-of
-                        {' '}
-                        {numOfPages}
-                        {' '}
-Pages
-                      </p>
-                      <PaginationButtonGroup
-                        currentPage={currentPage}
-                        numOfPages={numOfPages}
-                        paginationSlug={paginationSlug}
-                      />
-                    </div>
-                    )
-                }
+          showPostNavigationButtons
+          && (
+            <div>
+              <p style={{ color: '#888', marginBottom: '.3em' }}>
+                {currentPage}
+                {' '}
+                of
+                {' '}
+                {numOfPages}
+                {' '}
+                Pages
+              </p>
+              <PaginationButtonGroup
+                currentPage={currentPage}
+                numOfPages={numOfPages}
+                paginationSlug={paginationSlug}
+              />
+            </div>
+          )
+        }
 
         <div style={{
           backgroundColor: 'whitesmoke',
@@ -60,47 +60,52 @@ Pages
           marginTop: '.4em',
         }}
         >
-          {posts.map(({ node }) => (
-            <div className="post" key={node.id}>
-              <div className="image-container">
-                <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid} />
+          {posts.map(({ node }) => {
+            const tags = node.frontmatter.tags
+              && node.frontmatter.tags.map((tag) => ({ fieldValue: tag }));
+            const category = { fieldValue: node.frontmatter.category };
+            return (
+              <div className="post" key={node.id}>
+                <div className="image-container">
+                  <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid} />
+                </div>
+                <div className="post-summary">
+                  <Link to={node.fields.slug} style={{ color: 'black', textDecoration: 'none' }}>
+                    <h3 style={{ marginBottom: '0em' }}>{node.frontmatter.title}</h3>
+                    <div style={{ marginTop: '0em', color: 'dimgray', fontSize: '.8em' }}>
+                      {node.frontmatter.date}
+                      {' - '}
+                      {`${node.timeToRead} min read`}
+                    </div>
+                    <div style={{ fontSize: theme.smallFontSize }}>
+                      {node.frontmatter.description}
+                    </div>
+                  </Link>
+                  <TagGroup
+                    tags={[category]}
+                    getSlug={getCategorySlug}
+                    inline
+                  />
+                  <TagGroup
+                    tags={tags}
+                    getSlug={getTagSlug}
+                    inline
+                  />
+                </div>
               </div>
-              <div className="post-summary">
-                <Link to={node.fields.slug} style={{ color: 'black', textDecoration: 'none' }}>
-                  <h3 style={{ marginBottom: '0em' }}>{node.frontmatter.title}</h3>
-                  <div style={{ marginTop: '0em', color: 'dimgray', fontSize: '.8em' }}>
-                    {node.frontmatter.date}
-                    {' '}
--
-                    {`${node.timeToRead} min read`}
-                  </div>
-                  <div style={{ fontSize: theme.smallFontSize }}>{node.frontmatter.description}</div>
-                </Link>
-                <TagGroup
-                  tags={[{ fieldValue: node.frontmatter.category }]}
-                  getSlug={getCategorySlug}
-                  inline
-                />
-                <TagGroup
-                  tags={node.frontmatter.tags && node.frontmatter.tags.map((tag) => ({ fieldValue: tag }))}
-                  getSlug={getTagSlug}
-                  inline
-                />
-              </div>
-            </div>
-
-          ))}
+            );
+          })}
         </div>
         {
-                    showPostNavigationButtons
-                    && (
-                    <PaginationButtonGroup
-                      currentPage={currentPage}
-                      numOfPages={numOfPages}
-                      paginationSlug={paginationSlug}
-                    />
-                    )
-                }
+          showPostNavigationButtons
+          && (
+            <PaginationButtonGroup
+              currentPage={currentPage}
+              numOfPages={numOfPages}
+              paginationSlug={paginationSlug}
+            />
+          )
+        }
       </S.Main>
       <S.Sidebar>
         <CategoryListing />
@@ -188,21 +193,21 @@ export const query = graphql`
         id
         timeToRead
         frontmatter {
-          title
-          date(formatString: "DD MMMM, YYYY")
-          tags
-          category
-          description
-          image {
-            childImageSharp  {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
-              }
+            title
+            date(formatString: "DD MMMM, YYYY")
+            tags
+            category
+            description
+            image {
+                childImageSharp  {
+                    fluid(maxWidth: 400) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
             }
-          }
         }
         fields {
-          slug
+            slug
         }
         excerpt(pruneLength: 80)
     }

@@ -1,14 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import * as theme from '../utils/theme';
 
-const Button = (props) => (
-  <button {...props}>
-    {props.children}
-  </button>
-);
-
-const StyledButton = styled(Button)`
+const StyledButton = styled.button`
     background-color: white;
     outline: none;
     border: none;

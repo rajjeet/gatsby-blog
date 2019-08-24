@@ -7,7 +7,7 @@ import { getTagSlug } from '../utils/helperFunctions';
 const TagListing = ({ className }) => (
   <StaticQuery
     query={
-        graphql`
+      graphql`
          query {
           allMarkdownRemark(limit: 2000, filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } } ) {
             group(field: frontmatter___tags) {
@@ -17,7 +17,7 @@ const TagListing = ({ className }) => (
           }
         }
         `
-}
+    }
 
     render={(data) => (
       <div className={className}>

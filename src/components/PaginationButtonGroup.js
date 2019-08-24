@@ -14,16 +14,16 @@ const PaginationButtonGroup = ({
       onClick={() => navigate(`${paginationSlug}${currentPage - 1}`)}
     >
       <FontAwesomeIcon icon={faChevronLeft} />
-            &nbsp;
-            Newer Posts
+      &nbsp;
+      Newer Posts
     </Button>
     <Button
       disabled={currentPage >= numOfPages}
       onClick={() => navigate(`${paginationSlug}${currentPage + 1}`)}
       icon={faChevronRight}
     >
-            Older Posts
-            &nbsp;
+      Older Posts
+      &nbsp;
       <FontAwesomeIcon icon={faChevronRight} />
     </Button>
   </div>

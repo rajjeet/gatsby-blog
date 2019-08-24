@@ -4,12 +4,12 @@ import * as theme from '../utils/theme';
 
 const TechStackTagListing = ({ className, tags }) => (
   <div className={className}>
-        Tech Tags:
+    Tech Tags:
     {
-            tags.map((tag) => (
-              <div key={tag.label}>{tag.label}</div>
-            ))
-        }
+      tags.map((tag) => (
+        <div key={tag.label}>{tag.label}</div>
+      ))
+    }
   </div>
 );
 

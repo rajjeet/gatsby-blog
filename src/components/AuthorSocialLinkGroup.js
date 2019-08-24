@@ -19,7 +19,6 @@ const AuthorSocialLinkGroup = ({ className }) => (
   </div>
 );
 
-
 const StyledAuthorSocialLinkGroup = styled(AuthorSocialLinkGroup)`
   h4 {
     margin: 1em auto .25em auto;

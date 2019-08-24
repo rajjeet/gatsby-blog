@@ -17,17 +17,17 @@ export default ({ data, pageContext }) => (
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
-      allMarkdownRemark (
-        limit: $limit
-        skip: $skip
-        sort: {fields: frontmatter___date, order: DESC}
-        filter: { fields: { contentType: { eq: "post" } } }
-      ) {        
-        edges {
-          node {
-            ...PostListingMarkdownFragment
-          }
-        }    
-      }              
+        allMarkdownRemark (
+            limit: $limit
+            skip: $skip
+            sort: {fields: frontmatter___date, order: DESC}
+            filter: { fields: { contentType: { eq: "post" } } }
+        ) {
+            edges {
+                node {
+                    ...PostListingMarkdownFragment
+                }
+            }
+        }
     }
 `;

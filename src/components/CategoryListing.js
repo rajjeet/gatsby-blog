@@ -7,7 +7,7 @@ import { getCategorySlug } from '../utils/helperFunctions';
 const CategoryListing = ({ className }) => (
   <StaticQuery
     query={
-        graphql`
+      graphql`
          query {
           allMarkdownRemark( limit: 2000, filter: { frontmatter: {draft: {ne: true} }, fields: { contentType: { eq: "post" } } } ) {
             group( field: frontmatter___category ) {
@@ -17,7 +17,7 @@ const CategoryListing = ({ className }) => (
           }
         }
         `
-}
+    }
 
     render={(data) => (
       <div className={className}>
@@ -33,6 +33,5 @@ const StyledCategoryListing = styled(CategoryListing)`
     margin: .5em auto;
   } 
 `;
-
 
 export default StyledCategoryListing;

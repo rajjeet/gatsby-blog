@@ -42,33 +42,28 @@ const BlogPost = ({ className, data }) => {
     identifier: post.id,
     title: post.frontmatter.title,
   };
+  const {
+    tags, image, title, date, description, category,
+  } = post.frontmatter;
   return (
     <Layout>
-      <SEO isBlogPost frontmatter={post.frontmatter} postImage={post.frontmatter.image.publicURL} />
+      <SEO isBlogPost frontmatter={post.frontmatter} postImage={image.publicURL} />
       <div className={className}>
         <div className="post-summary">
-          <h1>{post.frontmatter.title}</h1>
+          <h1>{title}</h1>
           <span>
-            {post.frontmatter.date}
-            {' '}
--
-            {' '}
+            {date}
+            {' - '}
             {post.timeToRead}
-            {' '}
-min read
-                        -
-            {' '}
-            <Disqus.CommentCount
-              shortname="ortmesh"
-              config={disqusConfig}
-            >
-Comments
+            {' min read - '}
+            <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
+              Comments
             </Disqus.CommentCount>
           </span>
-          <p>{post.frontmatter.description}</p>
+          <p>{description}</p>
           <TagGroup
-            categories={[{ fieldValue: post.frontmatter.category }]}
-            tags={post.frontmatter.tags ? post.frontmatter.tags.map((tag) => ({ fieldValue: tag })) : null}
+            categories={[{ fieldValue: category }]}
+            tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
           />
         </div>
         <br />
@@ -102,25 +97,25 @@ export default StyledBlogPost;
 export const query = graphql`
     query($slug: String!) {
         markdownRemark(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
-        id
-        timeToRead
-        html
-        tableOfContents(
-        maxDepth: 4
-        )
-        fields {
-        slug
+            id
+            timeToRead
+            html
+            tableOfContents(
+                maxDepth: 4
+            )
+            fields {
+                slug
+            }
+            frontmatter {
+                title
+                tags
+                date
+                category
+                description
+                image {
+                    publicURL
+                }
+            }
+        }
     }
-        frontmatter {
-        title
-        tags
-        date
-        category
-        description
-        image {
-        publicURL
-    }
-    }
-    }
-    }
-    `;
+`;

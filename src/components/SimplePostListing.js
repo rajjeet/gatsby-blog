@@ -8,22 +8,22 @@ export default ({ posts }) => (
     <h3>Blog Posts</h3>
     <S.ul>
       {
-                posts.map(({ node }) => (
-                  <S.Link to={node.fields.slug}>
-                    <li>
-                      <h4>{node.frontmatter.title}</h4>
-                      <div>
-                        <span>{node.frontmatter.date}</span>
-                        <span>
-                          {node.timeToRead}
-                          {' '}
-mins read
-                        </span>
-                      </div>
-                    </li>
-                  </S.Link>
-                ))
-            }
+        posts.map(({ node }) => (
+          <S.Link to={node.fields.slug}>
+            <li>
+              <h4>{node.frontmatter.title}</h4>
+              <div>
+                <span>{node.frontmatter.date}</span>
+                <span>
+                  {node.timeToRead}
+                  {' '}
+                  mins read
+                </span>
+              </div>
+            </li>
+          </S.Link>
+        ))
+      }
     </S.ul>
   </div>
 );
@@ -55,7 +55,5 @@ export const S = {
         a {
             color: black;
         }
-        
 `,
-
 };

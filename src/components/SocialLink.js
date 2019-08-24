@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import * as theme from '../utils/theme';
 
-
 const SocialLink = ({ className, link, icon }) => (
   <span className={className}>
-    <a href={link} target="_blank">
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon size="2x" icon={icon} />
     </a>
   </span>

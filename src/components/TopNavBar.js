@@ -15,11 +15,11 @@ const TopNavBar = ({ className, data }) => (
         {data.site.siteMetadata.title}
       </h2>
       <p>
-                Write code that matters
+        Write code that matters
       </p>
     </Link>
     <Button onClick={() => navigate('/about/')}>
-            About
+      About
     </Button>
   </div>
 );
