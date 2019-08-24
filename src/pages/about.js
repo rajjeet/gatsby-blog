@@ -18,15 +18,17 @@ const AboutPage = ({ className }) => (
             journey of learning to build amazing web applications that have impact.
           </p>
           <p>
-            My website shares my blog posts and side projects. There's isn't much content yet as I'm
-            focusing on building this website. See the code at
-            <a href={"https://github.com/rajjeet/gatsby-blog"}> GitHub</a>.
+            My website shares my blog posts and side projects. There&apos;s isn&apos;t much content
+            yet as I&apos;m focusing on building this website. See the code at
+            <a href="https://github.com/rajjeet/gatsby-blog"> GitHub</a>
+            .
           </p>
           <h3>Work Experience</h3>
           <p>
             For the past few years, I was working as a full stack web developer at TD Canada Trust
             in Toronto. My areas of specialties are in React JS web apps, SQL Server databases, .NET
-            APIs, and AWS design and automation. Recently, I've joined Walmart Labs and focusing
+            APIs, and AWS design and automation. Recently, I&apos;ve joined Walmart Labs and
+            focusing
             heavily on React Native development.
           </p>
           <p>

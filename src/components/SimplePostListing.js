@@ -9,7 +9,7 @@ export default ({ posts }) => (
     <S.ul>
       {
         posts.map(({ node }) => {
-          const {fields, frontmatter, timeToRead} = node;
+          const { fields, frontmatter, timeToRead } = node;
           return (
             <S.Link key={fields.slug} to={fields.slug}>
               <li>
@@ -17,10 +17,10 @@ export default ({ posts }) => (
                 <div>
                   <span>{frontmatter.date}</span>
                   <span>
-                  {timeToRead}
+                    {timeToRead}
                     {' '}
                     mins read
-                </span>
+                  </span>
                 </div>
               </li>
             </S.Link>
