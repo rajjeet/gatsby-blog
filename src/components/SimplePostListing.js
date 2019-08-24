@@ -8,21 +8,24 @@ export default ({ posts }) => (
     <h3>Blog Posts</h3>
     <S.ul>
       {
-        posts.map(({ node }) => (
-          <S.Link to={node.fields.slug}>
-            <li>
-              <h4>{node.frontmatter.title}</h4>
-              <div>
-                <span>{node.frontmatter.date}</span>
-                <span>
-                  {node.timeToRead}
-                  {' '}
-                  mins read
+        posts.map(({ node }) => {
+          const {fields, frontmatter, timeToRead} = node;
+          return (
+            <S.Link key={fields.slug} to={fields.slug}>
+              <li>
+                <h4>{frontmatter.title}</h4>
+                <div>
+                  <span>{frontmatter.date}</span>
+                  <span>
+                  {timeToRead}
+                    {' '}
+                    mins read
                 </span>
-              </div>
-            </li>
-          </S.Link>
-        ))
+                </div>
+              </li>
+            </S.Link>
+          );
+        })
       }
     </S.ul>
   </div>

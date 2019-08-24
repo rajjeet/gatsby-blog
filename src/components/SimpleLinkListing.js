@@ -7,8 +7,8 @@ export default ({ links }) => (
     <S.ul>
       {
         links.map((link) => (
-          <a href={link.value} target="_blank" rel="noopener noreferrer">
-            <li key={link.value}>
+          <a key={link.value} href={link.value} target="_blank" rel="noopener noreferrer">
+            <li>
               {link.label}
             </li>
           </a>
