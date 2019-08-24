@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SimplePostListing /> should render 1`] = `
+<div>
+  <h3>
+    Blog Posts
+  </h3>
+  <ul
+    className="sc-bwzfXH dVzAqp"
+  />
+</div>
+`;

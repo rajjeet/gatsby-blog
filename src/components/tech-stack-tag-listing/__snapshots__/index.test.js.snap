@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TechStackTagListing /> should render 1`] = `
+<div
+  className="[object Object] sc-bdVaJa kDwnaI"
+>
+  Tech Tags:
+</div>
+`;
