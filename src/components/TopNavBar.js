@@ -1,26 +1,27 @@
-import styled from "styled-components";
-import * as theme from "../utils/theme";
-import {Link, navigate} from "gatsby";
-import GatsbyImage from "gatsby-image";
-import Button from "./Button";
-import React from "react";
+import styled from 'styled-components';
+import { Link, navigate } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
+import React from 'react';
+import Button from './Button';
+import * as theme from '../utils/theme';
 
-const TopNavBar = ({className, data}) => (
-    <div className={className}>
-        <Link link to={'/'}>
-            <GatsbyImage fluid={data.file.childImageSharp.fluid} style={{width: '3em'}}/>
-        </Link>
-        <Link link to={'/'}>
-            <h2
-            >{data.site.siteMetadata.title}</h2>
-            <p>
+const TopNavBar = ({ className, data }) => (
+  <div className={className}>
+    <Link link to="/">
+      <GatsbyImage fluid={data.file.childImageSharp.fluid} style={{ width: '3em' }} />
+    </Link>
+    <Link link to="/">
+      <h2>
+        {data.site.siteMetadata.title}
+      </h2>
+      <p>
                 Write code that matters
-            </p>
-        </Link>
-        <Button onClick={() => navigate('/about/')}>
+      </p>
+    </Link>
+    <Button onClick={() => navigate('/about/')}>
             About
-        </Button>
-    </div>
+    </Button>
+  </div>
 );
 
 const StyledTopNavBar = styled(TopNavBar)`

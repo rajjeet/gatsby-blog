@@ -1,16 +1,16 @@
 import React from 'react';
-import {graphql, StaticQuery} from 'gatsby';
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import { graphql, StaticQuery } from 'gatsby';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../styles/global.css';
 import styled from 'styled-components';
 import * as theme from '../utils/theme';
-import TopNavBar from "./TopNavBar";
+import TopNavBar from './TopNavBar';
 
-const Layout = ({className, data, children}) => (
-    <div className={className}>
-        <TopNavBar data={data}/>
-        {children}
-    </div>
+const Layout = ({ className, data, children }) => (
+  <div className={className}>
+    <TopNavBar data={data} />
+    {children}
+  </div>
 );
 
 const StyledLayout = styled(Layout)`
@@ -22,8 +22,9 @@ const StyledLayout = styled(Layout)`
     }
 `;
 
-export default ({children}) => (
-    <StaticQuery query={
+export default ({ children }) => (
+  <StaticQuery
+    query={
         graphql`
             {
               site {
@@ -41,7 +42,6 @@ export default ({children}) => (
             }
         `
     }
-                 render={data => <StyledLayout data={data} children={children}/>}
-    />
-)
-
+    render={(data) => <StyledLayout data={data} children={children} />}
+  />
+);

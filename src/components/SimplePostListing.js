@@ -1,31 +1,35 @@
-import {Link} from "gatsby";
-import React from "react";
+import { Link } from 'gatsby';
+import React from 'react';
 import styled from 'styled-components';
 import * as theme from '../utils/theme';
 
-export default ({posts}) => (
-    <div>
-        <h3>Blog Posts</h3>
-        <S.ul>
-            {
-                posts.map(({node}) => (
-                    <S.Link to={node.fields.slug}>
-                        <li>
-                            <h4>{node.frontmatter.title}</h4>
-                            <div>
-                                <span>{node.frontmatter.date}</span>
-                                <span>&emsp;{node.timeToRead} mins read</span>
-                            </div>
-                        </li>
-                    </S.Link>
+export default ({ posts }) => (
+  <div>
+    <h3>Blog Posts</h3>
+    <S.ul>
+      {
+                posts.map(({ node }) => (
+                  <S.Link to={node.fields.slug}>
+                    <li>
+                      <h4>{node.frontmatter.title}</h4>
+                      <div>
+                        <span>{node.frontmatter.date}</span>
+                        <span>
+                          {node.timeToRead}
+                          {' '}
+mins read
+                        </span>
+                      </div>
+                    </li>
+                  </S.Link>
                 ))
             }
-        </S.ul>
-    </div>
+    </S.ul>
+  </div>
 );
 
 export const S = {
-    Link: styled(Link)`
+  Link: styled(Link)`
           text-decoration: none;
           color: black;
         h4 {
@@ -34,7 +38,7 @@ export const S = {
         div {
            font-size: .8em;
         }`,
-    ul: styled.ul`
+  ul: styled.ul`
         list-style: none;
         margin-left: 0;
         padding-left: 0;
@@ -52,6 +56,6 @@ export const S = {
             color: black;
         }
         
-`
+`,
 
 };

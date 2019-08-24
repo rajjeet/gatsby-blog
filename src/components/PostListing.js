@@ -1,93 +1,124 @@
-import React from "react";
-import {graphql, Link} from "gatsby";
-import TagGroup from "./TagGroup";
-import TagListing from "./TagListing";
-import CategoryListing from './CategoryListing';
+import React from 'react';
+import { graphql, Link, navigate } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
-import AuthorCard from "./AuthorCard";
-import AuthorSocialLinkGroup from "./AuthorSocialLinkGroup";
-import * as theme from '../utils/theme'
-import {getCategorySlug, getTagSlug} from "../utils/helperFunctions";
-import PaginationButtonGroup from "./PaginationButtonGroup";
-import {navigate} from "gatsby";
-import Button from "./Button";
 import styled from 'styled-components';
+import TagGroup from './TagGroup';
+import TagListing from './TagListing';
+import CategoryListing from './CategoryListing';
+import AuthorCard from './AuthorCard';
+import AuthorSocialLinkGroup from './AuthorSocialLinkGroup';
+import * as theme from '../utils/theme';
+import { getCategorySlug, getTagSlug } from '../utils/helperFunctions';
+import PaginationButtonGroup from './PaginationButtonGroup';
 
-const PostListing = ({className, posts, heading, numOfPages, currentPage, paginationSlug}) => {
-    const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
-    return (
-        <div className={className}>
-            <S.Main>
-                <h1>{heading || 'Posts'}</h1>
-                {
-                    !showPostNavigationButtons &&
-                    <span>&emsp;
-                        <Button onClick={() => navigate('/blog/1')}>
+import Button from './Button';
+
+const PostListing = ({
+  className, posts, heading, numOfPages, currentPage, paginationSlug,
+}) => {
+  const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
+  return (
+    <div className={className}>
+      <S.Main>
+        <h1>{heading || 'Posts'}</h1>
+        {
+                    !showPostNavigationButtons
+                    && (
+                    <span>
+&emsp;
+                      <Button onClick={() => navigate('/blog/1')}>
                             See All Posts
-                        </Button>
+                      </Button>
                     </span>
+                    )
                 }
-                {
-                    showPostNavigationButtons &&
+        {
+                    showPostNavigationButtons
+                    && (
                     <div>
-                        <p style={{color: '#888', marginBottom: '.3em'}}>{currentPage} of {numOfPages} Pages</p>
-                        <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
-                                               paginationSlug={paginationSlug}/>
+                      <p style={{ color: '#888', marginBottom: '.3em' }}>
+                        {currentPage}
+                        {' '}
+of
+                        {' '}
+                        {numOfPages}
+                        {' '}
+Pages
+                      </p>
+                      <PaginationButtonGroup
+                        currentPage={currentPage}
+                        numOfPages={numOfPages}
+                        paginationSlug={paginationSlug}
+                      />
                     </div>
+                    )
                 }
 
-                <div style={{
-                    backgroundColor: 'whitesmoke',
-                    padding: '.5em 1em',
-                    marginTop: '.4em',
-                }}>
-                    {posts.map(({node}) => (
-                        <div className={'post'} key={node.id}>
-                            <div className={'image-container'}>
-                                <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid}/>
-                            </div>
-                            <div className={'post-summary'}>
-                                <Link to={node.fields.slug} style={{color: 'black', textDecoration: 'none'}}>
-                                    <h3 style={{marginBottom: '0em'}}>{node.frontmatter.title}</h3>
-                                    <div style={{marginTop: '0em', color: 'dimgray', fontSize: '.8em'}}>
-                                        {node.frontmatter.date} - {`${node.timeToRead} min read`}
-                                    </div>
-                                    <div style={{fontSize: theme.smallFontSize}}>{node.frontmatter.description}</div>
-                                </Link>
-                                <TagGroup tags={[{fieldValue: node.frontmatter.category}]}
-                                          getSlug={getCategorySlug}
-                                          inline={true}/>
-                                <TagGroup
-                                    tags={node.frontmatter.tags && node.frontmatter.tags.map(tag => ({fieldValue: tag}))}
-                                    getSlug={getTagSlug} inline={true}/>
-                            </div>
-                        </div>
+        <div style={{
+          backgroundColor: 'whitesmoke',
+          padding: '.5em 1em',
+          marginTop: '.4em',
+        }}
+        >
+          {posts.map(({ node }) => (
+            <div className="post" key={node.id}>
+              <div className="image-container">
+                <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid} />
+              </div>
+              <div className="post-summary">
+                <Link to={node.fields.slug} style={{ color: 'black', textDecoration: 'none' }}>
+                  <h3 style={{ marginBottom: '0em' }}>{node.frontmatter.title}</h3>
+                  <div style={{ marginTop: '0em', color: 'dimgray', fontSize: '.8em' }}>
+                    {node.frontmatter.date}
+                    {' '}
+-
+                    {`${node.timeToRead} min read`}
+                  </div>
+                  <div style={{ fontSize: theme.smallFontSize }}>{node.frontmatter.description}</div>
+                </Link>
+                <TagGroup
+                  tags={[{ fieldValue: node.frontmatter.category }]}
+                  getSlug={getCategorySlug}
+                  inline
+                />
+                <TagGroup
+                  tags={node.frontmatter.tags && node.frontmatter.tags.map((tag) => ({ fieldValue: tag }))}
+                  getSlug={getTagSlug}
+                  inline
+                />
+              </div>
+            </div>
 
-                    ))}
-                </div>
-                {
-                    showPostNavigationButtons &&
-                    <PaginationButtonGroup currentPage={currentPage} numOfPages={numOfPages}
-                                           paginationSlug={paginationSlug}/>
-                }
-            </S.Main>
-            <S.Sidebar>
-                <CategoryListing/>
-                <TagListing/>
-                <br/>
-                <AuthorCard/>
-                <AuthorSocialLinkGroup/>
-            </S.Sidebar>
+          ))}
         </div>
-    )
+        {
+                    showPostNavigationButtons
+                    && (
+                    <PaginationButtonGroup
+                      currentPage={currentPage}
+                      numOfPages={numOfPages}
+                      paginationSlug={paginationSlug}
+                    />
+                    )
+                }
+      </S.Main>
+      <S.Sidebar>
+        <CategoryListing />
+        <TagListing />
+        <br />
+        <AuthorCard />
+        <AuthorSocialLinkGroup />
+      </S.Sidebar>
+    </div>
+  );
 };
 
 export const S = {
-    GatsbyImage: styled(GatsbyImage)`
+  GatsbyImage: styled(GatsbyImage)`
       margin: .5em 1em;
       border-radius: 5px;
   `,
-    Main: styled.div`
+  Main: styled.div`
       width: 70%;
       display: inline-block;
       vertical-align: top;
@@ -96,7 +127,7 @@ export const S = {
       }      
       
   `,
-    Sidebar: styled.div`
+  Sidebar: styled.div`
       width: 30%;
       display: inline-block;
       padding: 1em;
@@ -104,7 +135,7 @@ export const S = {
       @media (max-width: ${theme.computerBreakpoint}) {
         width: 100%;
       }
-  `
+  `,
 };
 
 const StyledPostListing = styled(PostListing)`

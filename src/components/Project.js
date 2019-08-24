@@ -1,27 +1,30 @@
-import React from "react";
-import styled from "styled-components";
-import {Link} from "gatsby";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
-import * as theme from '../utils/theme'
+import * as theme from '../utils/theme';
 
-const Project = ({heading, link, description, className, thumbnail}) =>
-    <div className={className}>
-        <S.Link to={link}>
-            <h3>{heading}</h3>
-            <S.GatsbyImage fluid={thumbnail}/>
-            <p>{description}</p>
-        </S.Link>
-    </div>;
+const Project = ({
+  heading, link, description, className, thumbnail,
+}) => (
+  <div className={className}>
+    <S.Link to={link}>
+      <h3>{heading}</h3>
+      <S.GatsbyImage fluid={thumbnail} />
+      <p>{description}</p>
+    </S.Link>
+  </div>
+);
 
 const S = {
-    GatsbyImage: styled(GatsbyImage)`
+  GatsbyImage: styled(GatsbyImage)`
       width: 40%;
       position: relative;
       float: left;
       max-height: 80%;        
       overflow: hidden;  
   `,
-    Link: styled(Link)`
+  Link: styled(Link)`
         color: ${theme.primaryTextColor};        
         display: inline-block;
         padding: .7em;
@@ -59,7 +62,7 @@ const S = {
           }          
         }
       
-  `
+  `,
 };
 
 const StyledProject = styled(Project)`

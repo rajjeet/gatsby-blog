@@ -1,11 +1,10 @@
-const _ = require(`lodash`);
+const _ = require('lodash');
 
 module.exports = {
-    getTagSlug: function (tag) {
-        return `/tags/${_.kebabCase(tag)}/`
-    },
-    getCategorySlug: function(category){
-        return `/${_.kebabCase(category)}/`
-    }
+  getTagSlug(tag) {
+    return `/tags/${_.kebabCase(tag)}/`;
+  },
+  getCategorySlug(category) {
+    return `/${_.kebabCase(category)}/`;
+  },
 };
-

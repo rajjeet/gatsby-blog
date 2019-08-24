@@ -10,7 +10,9 @@
     "serve": "gatsby serve",
     "clean": "rm -rf .cache",
     "prod": "npm run clean && npm run build && npm run serve",
-    "publish": "aws s3 sync public/ s3://ortmesh.com --acl public-read --delete --exclude CloudFrontLogs*"
+    "publish": "aws s3 sync public/ s3://ortmesh.com --acl public-read --delete --exclude CloudFrontLogs*",
+    "lint": "eslint '**/*.{js,jsx}'",
+    "lint:fix": "eslint '**/*.{js,jsx}'"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",

@@ -1,21 +1,19 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import PostListing from "../components/PostListing";
+import PostListing from '../components/PostListing';
 
-export default ({data, pageContext}) => {
-    return (
-        <Layout>
-            <PostListing
-                posts={data.allMarkdownRemark.edges}
-                heading={pageContext.tag}
-                numOfPages={pageContext.numOfPages}
-                currentPage={pageContext.currentPage}
-                paginationSlug={'/blog/'}
-            />
-        </Layout>
-    );
-};
+export default ({ data, pageContext }) => (
+  <Layout>
+    <PostListing
+      posts={data.allMarkdownRemark.edges}
+      heading={pageContext.tag}
+      numOfPages={pageContext.numOfPages}
+      currentPage={pageContext.currentPage}
+      paginationSlug="/blog/"
+    />
+  </Layout>
+);
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {

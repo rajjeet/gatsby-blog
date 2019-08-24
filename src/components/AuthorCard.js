@@ -1,11 +1,12 @@
 import React from 'react';
-import {graphql, StaticQuery} from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { graphql, StaticQuery } from 'gatsby';
+import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
 import * as theme from '../utils/theme';
 
-const AuthorCard = ({className}) => (
-    <StaticQuery query={graphql`
+const AuthorCard = ({ className }) => (
+  <StaticQuery
+    query={graphql`
     query {
       file(relativePath: {eq: "images/headshot.jpg"}) {
         childImageSharp {
@@ -16,22 +17,22 @@ const AuthorCard = ({className}) => (
       }
     }
     `}
-                 render={data => (
-                     <div className={className}>
-                         <S.GatsbyImage fluid={data.file.childImageSharp.fluid}/>
-                         <h3>Rajjeet Phull</h3>
-                         <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
-                     </div>
-                 )}
-    />
+    render={(data) => (
+      <div className={className}>
+        <S.GatsbyImage fluid={data.file.childImageSharp.fluid} />
+        <h3>Rajjeet Phull</h3>
+        <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
+      </div>
+    )}
+  />
 );
 
 const S = {
-    GatsbyImage: styled(GatsbyImage)`
+  GatsbyImage: styled(GatsbyImage)`
       max-width: 300px;
       margin: auto;
       border-radius: 5px;
-  `
+  `,
 };
 
 const StyledAuthorCard = styled(AuthorCard)`

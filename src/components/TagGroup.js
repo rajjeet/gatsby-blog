@@ -1,24 +1,27 @@
 import React from 'react';
-import {navigate} from "gatsby";
+import { navigate } from 'gatsby';
 import styled from 'styled-components';
-import * as theme from '../utils/theme'
+import * as theme from '../utils/theme';
 
-const TagGroup = ({className, tags, getSlug}) => (
+const TagGroup = ({ className, tags, getSlug }) => (
   <div className={className}>
     {
-      tags &&
-      tags.map(tag =>
-        <span key={tag.fieldValue}
-              onClick={() => navigate(getSlug(tag.fieldValue) + '1')}>{tag.fieldValue}
+      tags
+      && tags.map((tag) => (
+        <span
+          key={tag.fieldValue}
+          onClick={() => navigate(`${getSlug(tag.fieldValue)}1`)}
+        >
+          {tag.fieldValue}
           {tag.totalCount && <span>{tag.totalCount}</span>}
-            </span>
-      )
+        </span>
+      ))
     }
   </div>
 );
 
 const StyledTagGroup = styled(TagGroup)`
-  display: ${props => props.inline ? 'inline' : 'inline-block'};
+  display: ${(props) => (props.inline ? 'inline' : 'inline-block')};
   
   > span {
     padding: .2em .55em;

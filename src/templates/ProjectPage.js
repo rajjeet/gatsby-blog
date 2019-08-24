@@ -1,31 +1,29 @@
 import React from 'react';
-import {graphql} from 'gatsby';
-import Layout from '../components/Layout';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import * as theme from '../utils/theme'
-import SimplePostListing from "../components/SimplePostListing";
-import SimpleLinkListing from "../components/SimpleLinkListing";
-import TechStackTagListing from "../components/TechStackTagListing";
+import Layout from '../components/Layout';
+import * as theme from '../utils/theme';
+import SimplePostListing from '../components/SimplePostListing';
+import SimpleLinkListing from '../components/SimpleLinkListing';
+import TechStackTagListing from '../components/TechStackTagListing';
 
-export default ({data}) => {
-    return (
-        <Layout>
-            <StyledProject>
-                <h1>{data.project.frontmatter.title}</h1>
-                <span>{data.project.frontmatter.date}</span>
-                <div>{data.project.frontmatter.description}</div>
-                {data.project.frontmatter.techStackTags && <TechStackTagListing tags={data.project.frontmatter.techStackTags} />}
-                <S.ContentContainer>
-                    <div dangerouslySetInnerHTML={{__html: data.project.html}}/>
-                    <div>
-                        {data.project.frontmatter.links && <SimpleLinkListing links={data.project.frontmatter.links} />}
-                        {data.posts && <SimplePostListing posts={data.posts.edges}/>}
-                    </div>
-                </S.ContentContainer>
-            </StyledProject>
-        </Layout>
-    );
-};
+export default ({ data }) => (
+  <Layout>
+    <StyledProject>
+      <h1>{data.project.frontmatter.title}</h1>
+      <span>{data.project.frontmatter.date}</span>
+      <div>{data.project.frontmatter.description}</div>
+      {data.project.frontmatter.techStackTags && <TechStackTagListing tags={data.project.frontmatter.techStackTags} />}
+      <S.ContentContainer>
+        <div dangerouslySetInnerHTML={{ __html: data.project.html }} />
+        <div>
+          {data.project.frontmatter.links && <SimpleLinkListing links={data.project.frontmatter.links} />}
+          {data.posts && <SimplePostListing posts={data.posts.edges} />}
+        </div>
+      </S.ContentContainer>
+    </StyledProject>
+  </Layout>
+);
 
 const StyledProject = styled.div`    
   h1 {
@@ -34,7 +32,7 @@ const StyledProject = styled.div`
 `;
 
 const S = {
-    ContentContainer: styled.div`          
+  ContentContainer: styled.div`          
       > div:first-child {        
         padding: .7em;
         background-color: whitesmoke;
@@ -61,7 +59,7 @@ const S = {
           width: 100%;          
         }
       }
-`
+`,
 };
 
 export const query = graphql`

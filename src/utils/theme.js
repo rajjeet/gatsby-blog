@@ -1,6 +1,6 @@
 export default {
-    primaryColor: '#2185d0',
-    secondaryColor: '#f3711c',
+  primaryColor: '#2185d0',
+  secondaryColor: '#f3711c',
 };
 
 export const computerBreakpoint = '1023px';
