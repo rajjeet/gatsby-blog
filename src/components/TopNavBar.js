@@ -7,10 +7,10 @@ import * as theme from '../utils/theme';
 
 const TopNavBar = ({ className, data }) => (
   <div className={className}>
-    <Link link to="/">
+    <Link to="/">
       <GatsbyImage fluid={data.file.childImageSharp.fluid} style={{ width: '3em' }} />
     </Link>
-    <Link link to="/">
+    <Link to="/">
       <h2>
         {data.site.siteMetadata.title}
       </h2>
