@@ -29,7 +29,6 @@
       "react/no-danger": [0],
       "jsx-a11y/click-events-have-key-events": [0],
       "jsx-a11y/no-static-element-interactions": [0],
-      "no-multiple-empty-lines": [2, {"max": 1}],
-      "jest/no-disabled-tests": [1]
+      "no-multiple-empty-lines": [2, {"max": 1}]
     }
 }
