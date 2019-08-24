@@ -15,31 +15,19 @@ const AboutPage = ({ className }) => (
         <div>
           <p>
             I&apos;m Raj and welcome to my blog site, Ortmesh! The purpose of Ortmesh is to share my
-            journey of learning to build web applications that help businesses growth drastically.
+            journey of learning to build amazing web applications that have impact.
           </p>
           <p>
-            So, how does this work?
-          </p>
-          <p>
-            This blog shares the details of my side projects. The blog posts broken down by
-            categories that describe key aspects of a web application. These categories are User
-            Experience (UX), User Interface (UI), Frontend, Backend, and DevOps.
-          </p>
-          <p>
-            Don&apos;t care about categories? Just want to know what the project is about?
-          </p>
-          <p>
-            That&apos;s why I have Project pages. These web pages concisely summarize the project
-            and connect to all related blog posts, ordered by posted date. The categories help
-            narrow blog posts to a specific specialization or skill.
+            My website shares my blog posts and side projects. There's isn't much content yet as I'm
+            focusing on building this website. See the code at
+            <a href={"https://github.com/rajjeet/gatsby-blog"}> GitHub</a>.
           </p>
           <h3>Work Experience</h3>
           <p>
-            For the past few years, I&apos;ve been a full stack web developer at TD Canada Trust in
-            Toronto. My areas of specialties are in React JS web apps, SQL Server databases, .NET
-            APIs, and AWS design and automation. At work, I&apos;m focused on delivering high
-            quality features for an internal project that involves data warehouse automation,
-            reporting, data analytics/visualization, and web applications.
+            For the past few years, I was working as a full stack web developer at TD Canada Trust
+            in Toronto. My areas of specialties are in React JS web apps, SQL Server databases, .NET
+            APIs, and AWS design and automation. Recently, I've joined Walmart Labs and focusing
+            heavily on React Native development.
           </p>
           <p>
             My current certifications are Certified AWS Solutions Architect and Microsoft Certified
