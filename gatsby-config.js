@@ -1,3 +1,5 @@
+const secrets = require('./secrets');
+
 module.exports = {
   siteMetadata: {
     title: 'Ortmesh',
@@ -94,7 +96,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-138684782-3',
+        trackingId: secrets.GOOGLE_ANALYTICS_TRACKING_ID,
         head: false,
         anonymize: true,
       },
