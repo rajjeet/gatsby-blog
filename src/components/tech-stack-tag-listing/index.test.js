@@ -4,7 +4,7 @@ import TechStackTagListing from './index';
 
 const makeProps = () => ({
   className: {},
-  tags: [],
+  tags: [{ label: 'React' }, { label: 'GatsbyJS' }],
 });
 
 describe('<TechStackTagListing />', () => {

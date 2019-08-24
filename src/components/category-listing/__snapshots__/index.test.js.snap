@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CategoryListing /> should render 1`] = `
+<div
+  className="[object Object] sc-bwzfXH fbiJJR"
+>
+  <h5>
+    Categories
+  </h5>
+  <div
+    className="sc-bdVaJa fdxsEr"
+  >
+    <span
+      onClick={[Function]}
+    >
+      Experience
+      <span>
+        1
+      </span>
+    </span>
+    <span
+      onClick={[Function]}
+    >
+      Guide
+      <span>
+        2
+      </span>
+    </span>
+  </div>
+</div>
+`;

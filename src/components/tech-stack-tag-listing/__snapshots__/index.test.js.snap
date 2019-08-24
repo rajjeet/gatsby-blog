@@ -5,5 +5,11 @@ exports[`<TechStackTagListing /> should render 1`] = `
   className="[object Object] sc-bdVaJa kDwnaI"
 >
   Tech Tags:
+  <div>
+    React
+  </div>
+  <div>
+    GatsbyJS
+  </div>
 </div>
 `;

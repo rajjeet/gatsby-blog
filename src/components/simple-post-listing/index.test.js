@@ -1,9 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import SimplePostListing from './index';
+import { createMockPosts } from '../../utils/testing';
 
 const makeProps = () => ({
-  posts: [],
+  posts: createMockPosts,
 });
 
 describe('<SimplePostListing />', () => {

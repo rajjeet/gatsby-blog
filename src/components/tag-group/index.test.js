@@ -1,9 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import TagGroup from './index';
+import { createMockGroups } from '../../utils/testing';
 
 const makeProps = () => ({
-  className: {}, tags: [], getSlug: jest.fn(),
+  className: {}, tags: createMockGroups.allMarkdownRemark.group, getSlug: jest.fn(),
 });
 
 describe('<TagGroup />', () => {

@@ -2,11 +2,11 @@
 
 exports[`<PaginationButtonGroup /> should render 1`] = `
 <div
-  className="sc-bwzfXH bFHdpU"
+  className="[object Object] sc-bwzfXH bFHdpU"
 >
   <button
     className="sc-bdVaJa jCUGPA"
-    disabled={false}
+    disabled={true}
     onClick={[Function]}
   >
     <svg
