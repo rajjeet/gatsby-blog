@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PostListing from '../components/post-listing';
+import Layout from '../../components/layout';
+import PostListing from '../../components/post-listing';
 
-export default ({ data, pageContext }) => (
+const TagPage = ({ data, pageContext }) => (
   <Layout>
     <PostListing
-      posts={data.allMarkdownRemark.edges}
-      heading={pageContext.category}
+      posts={data.posts.edges}
+      heading={pageContext.tag}
       numOfPages={pageContext.numOfPages}
       currentPage={pageContext.currentPage}
       paginationSlug={pageContext.paginationSlug}
@@ -16,14 +16,14 @@ export default ({ data, pageContext }) => (
 );
 
 export const query = graphql`
-    query($category: String!, $skip: Int!, $limit: Int!) {
-        allMarkdownRemark (
+    query($tag: String!, $skip: Int!, $limit: Int!) {
+        posts: allMarkdownRemark (
             limit: $limit
             skip: $skip
             sort: {fields: frontmatter___date, order: DESC}
-            filter: {frontmatter: {category: {eq: $category }, draft: {ne: true} }, fields: { contentType: { eq: "post" } } }
+            filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} }, fields: { contentType: { eq: "post" } } }
         ) {
-            edges{
+            edges {
                 node {
                     ...PostListingMarkdownFragment
                 }
@@ -31,3 +31,5 @@ export const query = graphql`
         }
     }
 `;
+
+export default TagPage;

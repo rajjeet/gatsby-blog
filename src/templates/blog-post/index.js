@@ -2,10 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
-import Layout from '../components/layout';
-import TagGroup from '../components/tag-group';
-import Seo from '../components/seo';
-import * as theme from '../utils/theme';
+import Layout from '../../components/layout';
+import TagGroup from '../../components/tag-group';
+import Seo from '../../components/seo';
+import * as theme from '../../utils/theme';
 
 const TableOfContents = ({ className, post }) => (
   <div className={className}>
@@ -36,7 +36,7 @@ const StyledTableOfContents = styled(TableOfContents)`
 `;
 
 const BlogPost = ({ className, data }) => {
-  const post = data.markdownRemark;
+  const { post } = data;
   const disqusConfig = {
     url: `http://ortmesh.com${post.fields.slug}`,
     identifier: post.id,
@@ -96,7 +96,7 @@ export default StyledBlogPost;
 
 export const query = graphql`
     query($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
+        post: markdownRemark(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
             id
             timeToRead
             html

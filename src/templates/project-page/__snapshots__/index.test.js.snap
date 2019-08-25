@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectPage should render 1`] = `
+<div
+  className="sc-htpNat faJHDz"
+>
+  <div
+    className="sc-bwzfXH bmdiOC"
+  >
+    <a
+      href="/"
+    >
+      <div
+        className=" gatsby-image-wrapper"
+        style={
+          Object {
+            "overflow": "hidden",
+            "position": "relative",
+            "width": "3em",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "paddingBottom": "100%",
+              "width": "100%",
+            }
+          }
+        />
+        
+        <picture>
+          <source
+            sizes=""
+            srcSet=""
+          />
+          <img
+            alt=""
+            onLoad={[Function]}
+            src=""
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 0.5s",
+                "width": "100%",
+              }
+            }
+          />
+        </picture>
+        <noscript
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+            }
+          }
+        />
+      </div>
+    </a>
+    <a
+      href="/"
+    >
+      <h2>
+        Ortmesh
+      </h2>
+      <p>
+        Write code that matters
+      </p>
+    </a>
+    <button
+      className="sc-bdVaJa jCUGPA"
+      onClick={[Function]}
+    >
+      About
+    </button>
+  </div>
+  <div
+    className="sc-bZQynM jWfclC"
+  >
+    <h1>
+      Condo Landing Pages
+    </h1>
+    <span />
+    <div>
+      An automated process for building fast, responsive landing pages for pre-construction condos.
+    </div>
+    <div
+      className="sc-gzVnrw hNDKZk"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": undefined,
+          }
+        }
+      />
+      <div>
+        <div>
+          <h3>
+            Blog Posts
+          </h3>
+          <ul
+            className="sc-ifAKCX fITWFm"
+          >
+            <a
+              className="sc-bxivhb iVfRmq"
+              href="/adding-project-section-to-website/"
+            >
+              <li>
+                <h4>
+                  Adding a Project Section to My Website
+                </h4>
+                <div>
+                  <span>
+                    11 May, 2019
+                  </span>
+                  <span>
+                    2
+                     
+                    mins read
+                  </span>
+                </div>
+              </li>
+            </a>
+            <a
+              className="sc-bxivhb iVfRmq"
+              href="/state-management-react-hooks/"
+            >
+              <li>
+                <h4>
+                  State Management using React Hooks
+                </h4>
+                <div>
+                  <span>
+                    02 May, 2019
+                  </span>
+                  <span>
+                    4
+                     
+                    mins read
+                  </span>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,29 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PostListing from '../components/post-listing';
+import Layout from '../../components/layout';
+import PostListing from '../../components/post-listing';
 
 export default ({ data, pageContext }) => (
   <Layout>
     <PostListing
-      posts={data.allMarkdownRemark.edges}
-      heading={pageContext.tag}
+      posts={data.posts.edges}
+      heading={pageContext.category}
       numOfPages={pageContext.numOfPages}
       currentPage={pageContext.currentPage}
-      paginationSlug="/blog/"
+      paginationSlug={pageContext.paginationSlug}
     />
   </Layout>
 );
 
 export const query = graphql`
-    query($skip: Int!, $limit: Int!) {
-        allMarkdownRemark (
+    query($category: String!, $skip: Int!, $limit: Int!) {
+        posts: allMarkdownRemark (
             limit: $limit
             skip: $skip
             sort: {fields: frontmatter___date, order: DESC}
-            filter: { fields: { contentType: { eq: "post" } } }
+            filter: {frontmatter: {category: {eq: $category }, draft: {ne: true} }, fields: { contentType: { eq: "post" } } }
         ) {
-            edges {
+            edges{
                 node {
                     ...PostListingMarkdownFragment
                 }
