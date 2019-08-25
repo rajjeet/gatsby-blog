@@ -11,7 +11,7 @@ import {
 beforeEach(() => {
   StaticQuery.mockImplementation(({ render }) => render(
     {
-      allMarkdownRemark: createMockGroups,
+      categoryGrouping: createMockGroups.categoryGrouping,
       file: createMockGatsbyImageSharpFluid.file,
     },
   ));

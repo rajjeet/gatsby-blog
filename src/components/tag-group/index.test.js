@@ -4,7 +4,7 @@ import TagGroup from './index';
 import { createMockGroups } from '../../utils/testing';
 
 const makeProps = () => ({
-  className: {}, tags: createMockGroups.allMarkdownRemark.group, getSlug: jest.fn(),
+  className: {}, tags: createMockGroups.categoryGrouping.group, getSlug: jest.fn(),
 });
 
 describe('<TagGroup />', () => {

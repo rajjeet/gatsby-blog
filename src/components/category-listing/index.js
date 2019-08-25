@@ -9,7 +9,7 @@ const CategoryListing = ({ className }) => (
     query={
       graphql`
          query {
-          allMarkdownRemark( limit: 2000, filter: { frontmatter: {draft: {ne: true} }, fields: { contentType: { eq: "post" } } } ) {
+          categoryGrouping: allMarkdownRemark( limit: 2000, filter: { frontmatter: {draft: {ne: true} }, fields: { contentType: { eq: "post" } } } ) {
             group( field: frontmatter___category ) {
               fieldValue
               totalCount
@@ -22,7 +22,7 @@ const CategoryListing = ({ className }) => (
     render={(data) => (
       <div className={className}>
         <h5>Categories</h5>
-        <TagGroup tags={data.allMarkdownRemark.group} getSlug={getCategorySlug} />
+        <TagGroup tags={data.categoryGrouping.group} getSlug={getCategorySlug} />
       </div>
     )}
   />

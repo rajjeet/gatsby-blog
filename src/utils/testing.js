@@ -13,7 +13,7 @@ export const createMockGatsbyImageSharpFluid = {
 };
 
 export const createMockGroups = {
-  allMarkdownRemark: {
+  categoryGrouping: {
     group: [
       {
         fieldValue: 'Experience',

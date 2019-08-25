@@ -396,7 +396,24 @@ exports[`<PaginationButtonGroup /> should render 1`] = `
       </h5>
       <div
         className="sc-bdVaJa fdxsEr"
-      />
+      >
+        <span
+          onClick={[Function]}
+        >
+          Experience
+          <span>
+            1
+          </span>
+        </span>
+        <span
+          onClick={[Function]}
+        >
+          Guide
+          <span>
+            2
+          </span>
+        </span>
+      </div>
     </div>
     <div
       className="sc-bwzfXH cFXNVJ"
@@ -406,7 +423,24 @@ exports[`<PaginationButtonGroup /> should render 1`] = `
       </h5>
       <div
         className="sc-bdVaJa fdxsEr"
-      />
+      >
+        <span
+          onClick={[Function]}
+        >
+          Experience
+          <span>
+            1
+          </span>
+        </span>
+        <span
+          onClick={[Function]}
+        >
+          Guide
+          <span>
+            2
+          </span>
+        </span>
+      </div>
     </div>
     <br />
     <div
