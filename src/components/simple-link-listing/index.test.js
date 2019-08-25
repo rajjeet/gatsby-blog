@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import SimpleLinkListing from './index';
-import { createMockProjectLinks } from '../../utils/testing';
-
-const makeProps = () => ({
-  links: createMockProjectLinks,
-});
+import { makeProps } from './mock';
 
 describe('<SimpleLinkListing />', () => {
   it('should render', () => {

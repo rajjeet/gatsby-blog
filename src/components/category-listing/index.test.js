@@ -3,10 +3,7 @@ import renderer from 'react-test-renderer';
 import { StaticQuery } from 'gatsby';
 import CategoryListing from './index';
 import { createMockGroups } from '../../utils/testing';
-
-const makeProps = () => ({
-  className: {},
-});
+import { makeProps } from './mock';
 
 beforeEach(() => {
   StaticQuery.mockImplementationOnce(({ render }) => render(

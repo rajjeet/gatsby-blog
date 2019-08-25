@@ -62,7 +62,7 @@ exports[`<Project /> should render 1`] = `
       />
     </div>
     <p>
-      
+      This is a sample description
     </p>
   </a>
 </div>

@@ -1,13 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  faFacebook,
-} from '@fortawesome/free-brands-svg-icons';
 import SocialLink from './index';
-
-const makeProps = () => ({
-  className: '', link: '', icon: faFacebook,
-});
+import { makeProps } from './mock';
 
 describe('<SocialLink />', () => {
   it('should render', () => {

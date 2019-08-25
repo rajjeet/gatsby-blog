@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import ProjectListing from './index';
-import { createMockProjects } from '../../utils/testing';
-
-const makeProps = () => ({
-  className: {}, projects: createMockProjects, heading: '',
-});
+import { makeProps } from './mock';
 
 describe('<ProjectListing />', () => {
   it('should render', () => {

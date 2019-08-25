@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import TagGroup from './index';
-import { createMockGroups } from '../../utils/testing';
-
-const makeProps = () => ({
-  className: {}, tags: createMockGroups.categoryGrouping.group, getSlug: jest.fn(),
-});
+import { makeProps } from './mock';
 
 describe('<TagGroup />', () => {
   it('should render', () => {

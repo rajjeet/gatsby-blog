@@ -2,11 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { StaticQuery } from 'gatsby';
 import ProjectListing from './index';
-import {
-  createMockGatsbyImageSharpFluid,
-  createMockGroups,
-  createMockPosts,
-} from '../../utils/testing';
+import { createMockGatsbyImageSharpFluid, createMockGroups } from '../../utils/testing';
+import { makeProps } from './mock';
 
 beforeEach(() => {
   StaticQuery.mockImplementation(({ render }) => render(
@@ -15,15 +12,6 @@ beforeEach(() => {
       file: createMockGatsbyImageSharpFluid.file,
     },
   ));
-});
-
-const makeProps = () => ({
-  className: {},
-  posts: createMockPosts,
-  heading: 'Post Listing',
-  numOfPages: 5,
-  currentPage: 1,
-  paginationSlug: '/sample_slug/',
 });
 
 describe('<PaginationButtonGroup />', () => {

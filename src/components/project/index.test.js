@@ -1,15 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Project from './index';
-import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
-
-const makeProps = () => ({
-  heading: 'Sample Heading',
-  link: '',
-  description: '',
-  className: {},
-  thumbnail: createMockGatsbyImageSharpFluid.file.childImageSharp.fluid,
-});
+import { makeProps } from './mock';
 
 describe('<Project />', () => {
   it('should render', () => {

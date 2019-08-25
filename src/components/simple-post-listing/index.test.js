@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import SimplePostListing from './index';
-import { createMockPosts } from '../../utils/testing';
-
-const makeProps = () => ({
-  posts: createMockPosts,
-});
+import { makeProps } from './mock';
 
 describe('<SimplePostListing />', () => {
   it('should render', () => {

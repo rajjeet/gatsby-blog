@@ -1,11 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import TechStackTagListing from './index';
-
-const makeProps = () => ({
-  className: {},
-  tags: [{ label: 'React' }, { label: 'GatsbyJS' }],
-});
+import { makeProps } from './mock';
 
 describe('<TechStackTagListing />', () => {
   it('should render', () => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Button from './index';
-
-const makeProps = () => ({});
+import { makeProps } from './mock';
 
 describe('<Button />', () => {
   it('should render', () => {

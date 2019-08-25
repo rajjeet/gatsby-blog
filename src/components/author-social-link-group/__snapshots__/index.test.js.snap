@@ -2,7 +2,7 @@
 
 exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 <div
-  className="sc-bwzfXH louHSu"
+  className="[object Object] sc-bwzfXH louHSu"
 >
   <h4>
     Links

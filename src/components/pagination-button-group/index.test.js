@@ -1,10 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import PaginationButtonGroup from './index';
-
-const makeProps = () => ({
-  className: {}, currentPage: 1, numOfPages: 5, paginationSlug: '',
-});
+import { makeProps } from './mock';
 
 describe('<PaginationButtonGroup />', () => {
   it('should render', () => {
