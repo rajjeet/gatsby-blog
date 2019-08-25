@@ -8,7 +8,7 @@ import CategoryListing from '../category-listing';
 import AuthorCard from '../author-card';
 import AuthorSocialLinkGroup from '../author-social-link-group';
 import * as theme from '../../utils/theme';
-import { getCategorySlug, getTagSlug } from '../../utils/helperFunctions';
+import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 import PaginationButtonGroup from '../pagination-button-group';
 import Button from '../primitives/button';
 

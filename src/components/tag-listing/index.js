@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import TagGroup from '../tag-group';
-import { getTagSlug } from '../../utils/helperFunctions';
+import { getTagSlug } from '../../utils/slugs';
 
 const TagListing = ({ className }) => (
   <StaticQuery

@@ -4,8 +4,8 @@ const urlJoin = require('url-join');
 
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { getTagSlug } = require('./src/utils/helperFunctions');
-const { getCategorySlug } = require('./src/utils/helperFunctions');
+const { getTagSlug } = require('./src/utils/slugs');
+const { getCategorySlug } = require('./src/utils/slugs');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
