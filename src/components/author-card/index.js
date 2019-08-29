@@ -12,14 +12,14 @@ const AuthorCard = ({ className }) => (
         childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
-            }
+            }   
         }
       }
     }
     `}
     render={(data) => (
       <div className={className}>
-        <S.GatsbyImage fluid={data.file.childImageSharp.fluid} />
+        <S.GatsbyImage alt="Author headshot" fluid={data.file.childImageSharp.fluid} />
         <h3>Rajjeet Phull</h3>
         <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
       </div>

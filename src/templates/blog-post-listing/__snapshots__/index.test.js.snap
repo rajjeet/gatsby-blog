@@ -548,7 +548,7 @@ exports[`BlogPostListing should render 1`] = `
               srcSet=""
             />
             <img
-              alt=""
+              alt="Author headshot"
               onLoad={[Function]}
               src=""
               style={
@@ -569,7 +569,7 @@ exports[`BlogPostListing should render 1`] = `
           <noscript
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+                "__html": "<picture><img src=\\"\\" alt=\\"Author headshot\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
               }
             }
           />

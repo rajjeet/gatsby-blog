@@ -1,64 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AuthorCard /> should render 1`] = `
-<div
-  className="[object Object] sc-bwzfXH bBObBL"
->
+<DocumentFragment>
   <div
-    className="sc-bdVaJa erGNdq gatsby-image-wrapper"
-    style={
-      Object {
-        "overflow": "hidden",
-        "position": "relative",
-      }
-    }
+    class="[object Object] sc-bwzfXH bBObBL"
   >
     <div
-      style={
-        Object {
-          "paddingBottom": "100%",
-          "width": "100%",
-        }
-      }
-    />
-    
-    <picture>
-      <source
-        sizes=""
-        srcSet=""
+      class="sc-bdVaJa erGNdq gatsby-image-wrapper"
+      style="position: relative; overflow: hidden;"
+    >
+      <div
+        style="width: 100%; padding-bottom: 100%;"
       />
-      <img
-        alt=""
-        onLoad={[Function]}
-        src=""
-        style={
-          Object {
-            "height": "100%",
-            "left": 0,
-            "objectFit": "cover",
-            "objectPosition": "center",
-            "opacity": 0,
-            "position": "absolute",
-            "top": 0,
-            "transition": "opacity 0.5s",
-            "width": "100%",
-          }
-        }
-      />
-    </picture>
-    <noscript
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-        }
-      }
-    />
+      <picture>
+        <source
+          sizes=""
+          srcset=""
+        />
+        <img
+          alt="Author headshot"
+          src=""
+          style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+        />
+      </picture>
+      <noscript>
+        &lt;picture&gt;&lt;img src="" alt="Author headshot" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+      </noscript>
+    </div>
+    <h3>
+      Rajjeet Phull
+    </h3>
+    <p>
+      Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.
+    </p>
   </div>
-  <h3>
-    Rajjeet Phull
-  </h3>
-  <p>
-    Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.
-  </p>
-</div>
+</DocumentFragment>
 `;
