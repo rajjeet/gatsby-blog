@@ -1,3 +1,3 @@
-export const makeProps = () => ({
-  className: {}, currentPage: 1, numOfPages: 5, paginationSlug: '',
+export const makeProps = ({ currentPage = 1, numOfPages = 5 } = {}) => ({
+  className: {}, currentPage, numOfPages, paginationSlug: '',
 });

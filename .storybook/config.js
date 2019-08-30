@@ -1,5 +1,8 @@
 import { configure } from '@storybook/react';
 import { action } from "@storybook/addon-actions"
+import { addDecorator } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /stories\.js$/);
@@ -22,5 +25,7 @@ global.__PATH_PREFIX__ = "";
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 };
+
+addDecorator(withKnobs);
 
 configure(loadStories, module);
