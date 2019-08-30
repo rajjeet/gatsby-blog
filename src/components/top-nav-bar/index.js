@@ -7,8 +7,8 @@ import * as theme from '../../utils/theme';
 
 const TopNavBar = ({ className, data }) => (
   <div className={className}>
-    <Link to="/">
-      <GatsbyImage fluid={data.file.childImageSharp.fluid} style={{ width: '3em' }} />
+    <Link to="/" aria-label="See Home">
+      <GatsbyImage alt="Ortmesh logo" fluid={data.file.childImageSharp.fluid} style={{ width: '3em' }} />
     </Link>
     <Link to="/">
       <h2>
@@ -17,6 +17,7 @@ const TopNavBar = ({ className, data }) => (
       <p>
         Write code that matters
       </p>
+u
     </Link>
     <Button onClick={() => navigate('/about/')}>
       About

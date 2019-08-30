@@ -8,6 +8,7 @@ exports[`404 Page should render 1`] = `
     className="sc-bwzfXH bmdiOC"
   >
     <a
+      aria-label="See Home"
       href="/"
     >
       <div
@@ -35,7 +36,7 @@ exports[`404 Page should render 1`] = `
             srcSet=""
           />
           <img
-            alt=""
+            alt="Ortmesh logo"
             onLoad={[Function]}
             src=""
             style={
@@ -56,7 +57,7 @@ exports[`404 Page should render 1`] = `
         <noscript
           dangerouslySetInnerHTML={
             Object {
-              "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+              "__html": "<picture><img src=\\"\\" alt=\\"Ortmesh logo\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
             }
           }
         />
@@ -71,6 +72,7 @@ exports[`404 Page should render 1`] = `
       <p>
         Write code that matters
       </p>
+      u
     </a>
     <button
       className="sc-bdVaJa jCUGPA"
