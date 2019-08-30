@@ -5,6 +5,7 @@ exports[`<SocialLink /> should render 1`] = `
   className="sc-bdVaJa jcyxoK"
 >
   <a
+    aria-label="See undefined (opens new tab)"
     href=""
     rel="noopener noreferrer"
     target="_blank"

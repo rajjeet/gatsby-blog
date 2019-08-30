@@ -592,6 +592,7 @@ exports[`CategoryPage should render 1`] = `
             className="sc-htoDjs LBGjh"
           >
             <a
+              aria-label="See Email (opens new tab)"
               href="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
               rel="noopener noreferrer"
               target="_blank"
@@ -619,6 +620,7 @@ exports[`CategoryPage should render 1`] = `
             className="sc-htoDjs LBGjh"
           >
             <a
+              aria-label="See GitHub (opens new tab)"
               href="https://github.com/rajjeet"
               rel="noopener noreferrer"
               target="_blank"
@@ -646,6 +648,7 @@ exports[`CategoryPage should render 1`] = `
             className="sc-htoDjs LBGjh"
           >
             <a
+              aria-label="See LinkedIn (opens new tab)"
               href="https://www.linkedin.com/in/rajjeetphull/"
               rel="noopener noreferrer"
               target="_blank"
@@ -673,6 +676,7 @@ exports[`CategoryPage should render 1`] = `
             className="sc-htoDjs LBGjh"
           >
             <a
+              aria-label="See Facebook (opens new tab)"
               href="https://www.facebook.com/ortmesh/"
               rel="noopener noreferrer"
               target="_blank"
@@ -700,6 +704,7 @@ exports[`CategoryPage should render 1`] = `
             className="sc-htoDjs LBGjh"
           >
             <a
+              aria-label="See Twitter (opens new tab)"
               href="https://twitter.com/ortmesh"
               rel="noopener noreferrer"
               target="_blank"

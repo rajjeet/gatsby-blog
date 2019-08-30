@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 
-const SocialLink = ({ className, link, icon }) => (
+const SocialLink = ({
+  className, link, icon, name,
+}) => (
   <span className={className}>
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`See ${name} (opens new tab)`}>
       <FontAwesomeIcon size="2x" icon={icon} />
     </a>
   </span>
