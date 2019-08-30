@@ -109,6 +109,8 @@ exports[`BlogPost should render 1`] = `
       >
         <span
           onClick={[Function]}
+          role="link"
+          tabIndex={0}
         >
           Gatsby JS
         </span>

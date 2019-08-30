@@ -9,6 +9,8 @@ const TagGroup = ({ className, tags, getSlug }) => (
       tags
       && tags.map((tag) => (
         <span
+          role="link"
+          tabIndex={0}
           key={tag.fieldValue}
           onClick={() => navigate(`${getSlug(tag.fieldValue)}1`)}
         >

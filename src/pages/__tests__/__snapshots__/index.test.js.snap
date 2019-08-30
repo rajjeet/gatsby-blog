@@ -349,6 +349,8 @@ exports[`Index Page should render 1`] = `
             >
               <span
                 onClick={[Function]}
+                role="link"
+                tabIndex={0}
               >
                 Side Project
               </span>
@@ -358,6 +360,8 @@ exports[`Index Page should render 1`] = `
             >
               <span
                 onClick={[Function]}
+                role="link"
+                tabIndex={0}
               >
                 Gatsby JS
               </span>
@@ -470,6 +474,8 @@ exports[`Index Page should render 1`] = `
             >
               <span
                 onClick={[Function]}
+                role="link"
+                tabIndex={0}
               >
                 Guide
               </span>
@@ -479,6 +485,8 @@ exports[`Index Page should render 1`] = `
             >
               <span
                 onClick={[Function]}
+                role="link"
+                tabIndex={0}
               >
                 React
               </span>
