@@ -90,6 +90,7 @@ export const createMockPosts = [
         slug: '/adding-project-section-to-website/',
       },
       excerpt: 'Original Intent My original intent was to connect related blog posts using…',
+      html: 'This is blog content 101',
     },
   },
   {
@@ -111,6 +112,7 @@ export const createMockPosts = [
         slug: '/state-management-react-hooks/',
       },
       excerpt: 'Introduction This blog post is inspired by \n another post , that demonstrates…',
+      html: 'This is blog content 102',
     },
   },
 ];

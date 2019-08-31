@@ -1,150 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlogPost should render 1`] = `
-<div
-  className="sc-htpNat faJHDz"
->
+<DocumentFragment>
   <div
-    className="sc-bwzfXH bmdiOC"
-  >
-    <a
-      aria-label="See Home"
-      href="/"
-    >
-      <div
-        className=" gatsby-image-wrapper"
-        style={
-          Object {
-            "overflow": "hidden",
-            "position": "relative",
-            "width": "3em",
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "paddingBottom": "100%",
-              "width": "100%",
-            }
-          }
-        />
-        
-        <picture>
-          <source
-            sizes=""
-            srcSet=""
-          />
-          <img
-            alt="Ortmesh logo"
-            onLoad={[Function]}
-            src=""
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 0,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "width": "100%",
-              }
-            }
-          />
-        </picture>
-        <noscript
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<picture><img src=\\"\\" alt=\\"Ortmesh logo\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-            }
-          }
-        />
-      </div>
-    </a>
-    <a
-      href="/"
-    >
-      <h2>
-        Ortmesh
-      </h2>
-      <p>
-        Write code that matters
-      </p>
-    </a>
-    <button
-      className="sc-bdVaJa jCUGPA"
-      onClick={[Function]}
-    >
-      About
-    </button>
-  </div>
-  <div
-    className="[object Object] sc-EHOje inCCSA"
+    class="sc-htpNat faJHDz"
   >
     <div
-      className="post-summary"
+      class="sc-bwzfXH bmdiOC"
     >
-      <h1>
-        Adding a Project Section to My Website
-      </h1>
-      <span>
-        11 May, 2019
-         - 
-        2
-         min read - 
-        <span
-          className="disqus-comment-count"
-          data-disqus-identifier="13cd14f6-36e9-55cd-8a4e-4bf1aea2c9e6"
-          data-disqus-url="http://ortmesh.com/adding-project-section-to-website/"
-        >
-          Comments
-        </span>
-      </span>
-      <p>
-        Over the past year, I truly learned the importance of building side projects as a software developer. Besides building projects, showing them to the world is just as important. That's why I created the project section.
-      </p>
-      <div
-        className="sc-bxivhb fXNsAS"
+      <a
+        aria-label="See Home"
+        href="/"
       >
-        <span
-          onClick={[Function]}
-          role="link"
-          tabIndex={0}
-        >
-          Gatsby JS X
-        </span>
-      </div>
-    </div>
-    <br />
-    <div>
-      <div
-        className="sc-ifAKCX bZyvYn"
-      >
-        <h4>
-          Outline
-        </h4>
         <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": undefined,
-            }
-          }
+          class=" gatsby-image-wrapper"
+          style="position: relative; overflow: hidden; width: 3em;"
+        >
+          <div
+            style="width: 100%; padding-bottom: 100%;"
+          />
+          <picture>
+            <source
+              sizes=""
+              srcset=""
+            />
+            <img
+              alt="Ortmesh logo"
+              src=""
+              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+            />
+          </picture>
+          <noscript>
+            &lt;picture&gt;&lt;img src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+          </noscript>
+        </div>
+      </a>
+      <a
+        href="/"
+      >
+        <h2>
+          Ortmesh
+        </h2>
+        <p>
+          Write code that matters
+        </p>
+      </a>
+      <button
+        class="sc-bdVaJa jCUGPA"
+      >
+        About
+      </button>
+    </div>
+    <div
+      class="[object Object] sc-EHOje inCCSA"
+    >
+      <div
+        class="post-summary"
+      >
+        <h1>
+          State Management using React Hooks
+        </h1>
+        <span>
+          02 May, 2019 - 4 min read - 
+          <span
+            class="disqus-comment-count"
+            data-disqus-identifier="5f2933ac-25ed-5ae0-84d7-c5d59fc4448e"
+            data-disqus-url="http://ortmesh.com/state-management-react-hooks/"
+          >
+            Comments
+          </span>
+        </span>
+        <p>
+          I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.
+        </p>
+        <div
+          class="sc-bxivhb fXNsAS"
+        >
+          <span
+            role="link"
+            tabindex="0"
+          >
+            React X
+          </span>
+          <span
+            role="link"
+            tabindex="0"
+          >
+            Angular X
+          </span>
+        </div>
+      </div>
+      <br />
+      <div>
+        <div
+          class="sc-ifAKCX bZyvYn"
+        >
+          <h4>
+            Outline
+          </h4>
+          <div />
+        </div>
+        <div>
+          This is blog content 102
+        </div>
+        <br />
+        <div
+          id="disqus_thread"
         />
       </div>
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": undefined,
-          }
-        }
-      />
-      <br />
-      <div
-        id="disqus_thread"
-      />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
