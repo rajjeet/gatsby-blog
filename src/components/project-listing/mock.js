@@ -1,5 +1,5 @@
 import { createMockProjects } from '../../utils/testing';
 
 export const makeProps = () => ({
-  className: {}, projects: createMockProjects, heading: '',
+  className: {}, projects: createMockProjects, heading: 'List of Projects',
 });
