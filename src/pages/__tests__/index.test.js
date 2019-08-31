@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import IndexPage from '../index';
 import {
@@ -9,8 +9,10 @@ import {
 } from '../../utils/testing';
 import siteMetadata from '../../../gatsby-config';
 
+afterEach(cleanup);
+
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) => render({
+  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery({
     file: createMockGatsbyImageSharpFluid.file,
     site: siteMetadata,
     categoryGrouping: createMockGroups,
@@ -28,7 +30,17 @@ const makeProps = () => ({
 
 describe('Index Page', () => {
   it('should render', () => {
-    const tree = renderer.create(<IndexPage data={makeProps()} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<IndexPage data={makeProps()} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should have side projects', () => {
+    const { getByText } = render(<IndexPage data={makeProps()} />);
+    expect(getByText('Side Projects')).toMatchSnapshot();
+  });
+
+  it('should have latest posts', () => {
+    const { getByText } = render(<IndexPage data={makeProps()} />);
+    expect(getByText('Latest Posts')).toMatchSnapshot();
   });
 });
