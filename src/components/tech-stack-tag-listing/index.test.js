@@ -1,11 +1,25 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import TechStackTagListing from './index';
 import { makeProps } from './mock';
 
+afterEach(cleanup);
+
 describe('<TechStackTagListing />', () => {
   it('should render', () => {
-    const tree = renderer.create(<TechStackTagListing {...makeProps()} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<TechStackTagListing {...makeProps()} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should have "Tech Tags" label', () => {
+    const { getByText } = render(<TechStackTagListing {...makeProps()} />);
+    expect(getByText('Tech Tags:')).toBeDefined();
+  });
+
+  it('should have text for each tech', () => {
+    const { getByText } = render(<TechStackTagListing {...makeProps()} />);
+    expect(getByText('React')).toBeDefined();
+    expect(getByText('GatsbyJS')).toBeDefined();
   });
 });
+

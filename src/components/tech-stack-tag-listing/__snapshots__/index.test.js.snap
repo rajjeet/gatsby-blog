@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TechStackTagListing /> should render 1`] = `
-<div
-  className="[object Object] sc-bdVaJa kDwnaI"
->
-  Tech Tags:
-  <div>
-    React
+<DocumentFragment>
+  <div
+    class="[object Object] sc-bdVaJa kDwnaI"
+  >
+    <span>
+      Tech Tags:
+    </span>
+    <div>
+      React
+    </div>
+    <div>
+      GatsbyJS
+    </div>
   </div>
-  <div>
-    GatsbyJS
-  </div>
-</div>
+</DocumentFragment>
 `;
