@@ -17,7 +17,6 @@ const TopNavBar = ({ className, data }) => (
       <p>
         Write code that matters
       </p>
-u
     </Link>
     <Button onClick={() => navigate('/about/')}>
       About

@@ -44,7 +44,6 @@ exports[`<Layout /> should render 1`] = `
         <p>
           Write code that matters
         </p>
-        u
       </a>
       <button
         class="sc-bdVaJa jCUGPA"

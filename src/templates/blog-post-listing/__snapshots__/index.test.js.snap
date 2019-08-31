@@ -72,7 +72,6 @@ exports[`BlogPostListing should render 1`] = `
       <p>
         Write code that matters
       </p>
-      u
     </a>
     <button
       className="sc-bdVaJa jCUGPA"
