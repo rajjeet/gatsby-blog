@@ -1,20 +1,32 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import AboutPage from '../about';
 import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
 import siteMetadata from '../../../gatsby-config';
 
+afterEach(cleanup);
+
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) => render({
+  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery({
     file: createMockGatsbyImageSharpFluid.file,
     site: siteMetadata,
   }));
 });
 
-describe('404 Page', () => {
+describe('About page', () => {
   it('should render', () => {
-    const tree = renderer.create(<AboutPage />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<AboutPage />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should have About Me heading', () => {
+    const { getByText } = render(<AboutPage />);
+    expect(getByText('About Me')).toBeDefined();
+  });
+
+  it('should have a heading for author name', () => {
+    const { getByText } = render(<AboutPage />);
+    expect(getByText('Rajjeet Phull')).toBeDefined();
   });
 });

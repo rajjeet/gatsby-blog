@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index Page should have latest posts 1`] = `
-<h1>
-  Latest Posts
-</h1>
-`;
-
-exports[`Index Page should have side projects 1`] = `
-<h1>
-  Side Projects
-</h1>
-`;
-
 exports[`Index Page should render 1`] = `
 <DocumentFragment>
   <div
