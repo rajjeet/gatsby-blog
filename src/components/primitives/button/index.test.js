@@ -1,11 +1,13 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import Button from './index';
 import { makeProps } from './mock';
 
+afterEach(cleanup);
+
 describe('<Button />', () => {
   it('should render', () => {
-    const tree = renderer.create(<Button {...makeProps()}>Click Me</Button>).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Button {...makeProps()}>Click Me</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
