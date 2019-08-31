@@ -3,14 +3,18 @@ import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import PostListing from '../../components/post-listing';
 
-const TagPage = ({ data, pageContext }) => (
+const TagPage = ({
+  data: { posts: { edges: taggedPosts } }, pageContext: {
+    tag, numOfPages, currentPage, paginationSlug,
+  },
+}) => (
   <Layout>
     <PostListing
-      posts={data.posts.edges}
-      heading={pageContext.tag}
-      numOfPages={pageContext.numOfPages}
-      currentPage={pageContext.currentPage}
-      paginationSlug={pageContext.paginationSlug}
+      posts={taggedPosts}
+      heading={tag}
+      numOfPages={numOfPages}
+      currentPage={currentPage}
+      paginationSlug={paginationSlug}
     />
   </Layout>
 );
