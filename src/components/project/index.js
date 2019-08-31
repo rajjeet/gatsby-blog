@@ -8,9 +8,9 @@ const Project = ({
   heading, link, description, className, thumbnail,
 }) => (
   <div className={className}>
-    <S.Link to={link}>
+    <S.Link aria-label={`See ${heading}`} to={link}>
       <h3>{heading}</h3>
-      <S.GatsbyImage fluid={thumbnail} />
+      <S.GatsbyImage alt={heading} fluid={thumbnail} />
       <p>{description}</p>
     </S.Link>
   </div>

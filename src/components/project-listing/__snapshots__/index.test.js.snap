@@ -11,6 +11,7 @@ exports[`<ProjectListing /> should render 1`] = `
     className="sc-htpNat cDaIEp"
   >
     <a
+      aria-label="See Condo Landing Pages"
       className="sc-bwzfXH kTyWdp"
       href="/projects/condo-landing-pages/"
     >
@@ -41,7 +42,7 @@ exports[`<ProjectListing /> should render 1`] = `
             srcSet=""
           />
           <img
-            alt=""
+            alt="Condo Landing Pages"
             onLoad={[Function]}
             src=""
             style={
@@ -62,7 +63,7 @@ exports[`<ProjectListing /> should render 1`] = `
         <noscript
           dangerouslySetInnerHTML={
             Object {
-              "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+              "__html": "<picture><img src=\\"\\" alt=\\"Condo Landing Pages\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
             }
           }
         />
@@ -76,6 +77,7 @@ exports[`<ProjectListing /> should render 1`] = `
     className="sc-htpNat cDaIEp"
   >
     <a
+      aria-label="See Kitchen Quoter"
       className="sc-bwzfXH kTyWdp"
       href="/projects/kitchen-quoter/"
     >
@@ -106,7 +108,7 @@ exports[`<ProjectListing /> should render 1`] = `
             srcSet=""
           />
           <img
-            alt=""
+            alt="Kitchen Quoter"
             onLoad={[Function]}
             src=""
             style={
@@ -127,7 +129,7 @@ exports[`<ProjectListing /> should render 1`] = `
         <noscript
           dangerouslySetInnerHTML={
             Object {
-              "__html": "<picture><img src=\\"\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+              "__html": "<picture><img src=\\"\\" alt=\\"Kitchen Quoter\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
             }
           }
         />
