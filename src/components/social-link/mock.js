@@ -1,5 +1,5 @@
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 export const makeProps = () => ({
-  className: '', link: '', icon: faFacebook,
+  className: '', link: '', icon: faFacebook, name: 'facebook',
 });
