@@ -110,6 +110,7 @@ exports[`ProjectPage should render 1`] = `
             className="sc-ifAKCX fITWFm"
           >
             <a
+              aria-label="See post: Adding a Project Section to My Website"
               className="sc-bxivhb iVfRmq"
               href="/adding-project-section-to-website/"
             >
@@ -130,6 +131,7 @@ exports[`ProjectPage should render 1`] = `
               </li>
             </a>
             <a
+              aria-label="See post: State Management using React Hooks"
               className="sc-bxivhb iVfRmq"
               href="/state-management-react-hooks/"
             >

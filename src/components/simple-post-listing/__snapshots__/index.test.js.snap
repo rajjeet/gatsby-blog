@@ -1,53 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SimplePostListing /> should render 1`] = `
-<div>
-  <h3>
-    Blog Posts
-  </h3>
-  <ul
-    className="sc-bwzfXH dVzAqp"
-  >
-    <a
-      className="sc-bdVaJa jpiBPE"
-      href="/adding-project-section-to-website/"
+<DocumentFragment>
+  <div>
+    <h3>
+      Blog Posts
+    </h3>
+    <ul
+      class="sc-bwzfXH dVzAqp"
     >
-      <li>
-        <h4>
-          Adding a Project Section to My Website
-        </h4>
-        <div>
-          <span>
-            11 May, 2019
-          </span>
-          <span>
-            2
-             
-            mins read
-          </span>
-        </div>
-      </li>
-    </a>
-    <a
-      className="sc-bdVaJa jpiBPE"
-      href="/state-management-react-hooks/"
-    >
-      <li>
-        <h4>
-          State Management using React Hooks
-        </h4>
-        <div>
-          <span>
-            02 May, 2019
-          </span>
-          <span>
-            4
-             
-            mins read
-          </span>
-        </div>
-      </li>
-    </a>
-  </ul>
-</div>
+      <a
+        aria-label="See post: Adding a Project Section to My Website"
+        class="sc-bdVaJa jpiBPE"
+        href="/adding-project-section-to-website/"
+      >
+        <li>
+          <h4>
+            Adding a Project Section to My Website
+          </h4>
+          <div>
+            <span>
+              11 May, 2019
+            </span>
+            <span>
+              2 mins read
+            </span>
+          </div>
+        </li>
+      </a>
+      <a
+        aria-label="See post: State Management using React Hooks"
+        class="sc-bdVaJa jpiBPE"
+        href="/state-management-react-hooks/"
+      >
+        <li>
+          <h4>
+            State Management using React Hooks
+          </h4>
+          <div>
+            <span>
+              02 May, 2019
+            </span>
+            <span>
+              4 mins read
+            </span>
+          </div>
+        </li>
+      </a>
+    </ul>
+  </div>
+</DocumentFragment>
 `;

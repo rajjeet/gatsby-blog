@@ -8,24 +8,21 @@ export default ({ posts }) => (
     <h3>Blog Posts</h3>
     <S.ul>
       {
-        posts.map(({ node }) => {
-          const { fields, frontmatter, timeToRead } = node;
-          return (
-            <S.Link key={fields.slug} to={fields.slug}>
-              <li>
-                <h4>{frontmatter.title}</h4>
-                <div>
-                  <span>{frontmatter.date}</span>
-                  <span>
-                    {timeToRead}
-                    {' '}
+        posts.map(({ node: { fields: { slug }, frontmatter: { title, date }, timeToRead } }) => (
+          <S.Link aria-label={`See post: ${title}`} key={slug} to={slug}>
+            <li>
+              <h4>{title}</h4>
+              <div>
+                <span>{date}</span>
+                <span>
+                  {timeToRead}
+                  {' '}
                     mins read
-                  </span>
-                </div>
-              </li>
-            </S.Link>
-          );
-        })
+                </span>
+              </div>
+            </li>
+          </S.Link>
+        ))
       }
     </S.ul>
   </div>
