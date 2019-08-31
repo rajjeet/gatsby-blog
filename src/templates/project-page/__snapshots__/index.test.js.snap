@@ -1,163 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProjectPage should render 1`] = `
-<div
-  className="sc-htpNat faJHDz"
->
+<DocumentFragment>
   <div
-    className="sc-bwzfXH bmdiOC"
+    class="sc-htpNat faJHDz"
   >
-    <a
-      aria-label="See Home"
-      href="/"
+    <div
+      class="sc-bwzfXH bmdiOC"
     >
-      <div
-        className=" gatsby-image-wrapper"
-        style={
-          Object {
-            "overflow": "hidden",
-            "position": "relative",
-            "width": "3em",
-          }
-        }
+      <a
+        aria-label="See Home"
+        href="/"
       >
         <div
-          style={
-            Object {
-              "paddingBottom": "100%",
-              "width": "100%",
-            }
-          }
-        />
-        
-        <picture>
-          <source
-            sizes=""
-            srcSet=""
+          class=" gatsby-image-wrapper"
+          style="position: relative; overflow: hidden; width: 3em;"
+        >
+          <div
+            style="width: 100%; padding-bottom: 100%;"
           />
-          <img
-            alt="Ortmesh logo"
-            onLoad={[Function]}
-            src=""
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 0,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 0.5s",
-                "width": "100%",
-              }
-            }
-          />
-        </picture>
-        <noscript
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<picture><img src=\\"\\" alt=\\"Ortmesh logo\\" style=\\"position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-            }
-          }
-        />
-      </div>
-    </a>
-    <a
-      href="/"
-    >
-      <h2>
-        Ortmesh
-      </h2>
-      <p>
-        Write code that matters
-      </p>
-    </a>
-    <button
-      className="sc-bdVaJa jCUGPA"
-      onClick={[Function]}
-    >
-      About
-    </button>
-  </div>
-  <div
-    className="sc-gzVnrw jgilSY"
-  >
-    <h1>
-      Condo Landing Pages
-    </h1>
-    <span />
-    <div>
-      An automated process for building fast, responsive landing pages for pre-construction condos.
+          <picture>
+            <source
+              sizes=""
+              srcset=""
+            />
+            <img
+              alt="Ortmesh logo"
+              src=""
+              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+            />
+          </picture>
+          <noscript>
+            &lt;picture&gt;&lt;img src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+          </noscript>
+        </div>
+      </a>
+      <a
+        href="/"
+      >
+        <h2>
+          Ortmesh
+        </h2>
+        <p>
+          Write code that matters
+        </p>
+      </a>
+      <button
+        class="sc-bdVaJa jCUGPA"
+      >
+        About
+      </button>
     </div>
     <div
-      className="sc-htoDjs LtFSS"
+      class="sc-gzVnrw jgilSY"
     >
-      <div
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": undefined,
-          }
-        }
-      />
+      <h1>
+        Condo Landing Pages
+      </h1>
       <div>
+        An automated process for building fast, responsive landing pages for pre-construction condos.
+      </div>
+      <div
+        class="sc-bZQynM kZGmCz"
+      >
+        <span>
+          Tech Tags:
+        </span>
         <div>
-          <h3>
-            Blog Posts
-          </h3>
-          <ul
-            className="sc-ifAKCX eaAsdb"
+          AWS CloudFormation
+        </div>
+      </div>
+      <div
+        class="sc-htoDjs LtFSS"
+      >
+        <div>
+          <ol
+            start="\\\\\\"2\\\\\\""
           >
-            <a
-              aria-label="See post: Adding a Project Section to My Website"
-              className="sc-bxivhb iVfRmq"
-              href="/adding-project-section-to-website/"
+            
+
+ 
+            <p>
+              This is sample content for sample project
+            </p>
+              
+            <li>
+              The build phase of GatsbyJS yields HTML/CSS/JS that's production ready.\\nUsing AWS CLI and npm, I copy the build
+    files to an AWS S3 bucket configured as a website.\\nAWS S3 (Simple Storage Service) allows for very cheap web
+    hosting of static content.
+  
+            </li>
+            
+  
+
+
+          </ol>
+        </div>
+        <div>
+          <div>
+            <h3>
+              Links
+            </h3>
+            <ul
+              class="sc-ifAKCX eaAsdb"
             >
-              <li>
-                <h4>
-                  Adding a Project Section to My Website
-                </h4>
-                <div>
-                  <span
-                    className="sc-EHOje kjAiMu"
-                  >
-                    11 May, 2019
-                  </span>
-                  <span>
-                    2
-                     
-                    mins read
-                  </span>
-                </div>
-              </li>
-            </a>
-            <a
-              aria-label="See post: State Management using React Hooks"
-              className="sc-bxivhb iVfRmq"
-              href="/state-management-react-hooks/"
+              <a
+                aria-label="Github Code"
+                href="https://github.com/rajjeet/charismacondos"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <li>
+                  Github Code
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div>
+            <h3>
+              Blog Posts
+            </h3>
+            <ul
+              class="sc-ifAKCX eaAsdb"
             >
-              <li>
-                <h4>
-                  State Management using React Hooks
-                </h4>
-                <div>
-                  <span
-                    className="sc-EHOje kjAiMu"
-                  >
-                    02 May, 2019
-                  </span>
-                  <span>
-                    4
-                     
-                    mins read
-                  </span>
-                </div>
-              </li>
-            </a>
-          </ul>
+              <a
+                aria-label="See post: Adding a Project Section to My Website"
+                class="sc-bxivhb iVfRmq"
+                href="/adding-project-section-to-website/"
+              >
+                <li>
+                  <h4>
+                    Adding a Project Section to My Website
+                  </h4>
+                  <div>
+                    <span
+                      class="sc-EHOje kjAiMu"
+                    >
+                      11 May, 2019
+                    </span>
+                    <span>
+                      2 mins read
+                    </span>
+                  </div>
+                </li>
+              </a>
+              <a
+                aria-label="See post: State Management using React Hooks"
+                class="sc-bxivhb iVfRmq"
+                href="/state-management-react-hooks/"
+              >
+                <li>
+                  <h4>
+                    State Management using React Hooks
+                  </h4>
+                  <div>
+                    <span
+                      class="sc-EHOje kjAiMu"
+                    >
+                      02 May, 2019
+                    </span>
+                    <span>
+                      4 mins read
+                    </span>
+                  </div>
+                </li>
+              </a>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

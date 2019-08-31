@@ -7,20 +7,25 @@ import SimplePostListing from '../../components/simple-post-listing';
 import SimpleLinkListing from '../../components/simple-link-listing';
 import TechStackTagListing from '../../components/tech-stack-tag-listing';
 
-export default ({ data }) => (
+export default ({
+  data: {
+    project: {
+      frontmatter: {
+        title, description, techStackTags, links,
+      }, html,
+    }, posts: { edges: linkedPosts },
+  },
+}) => (
   <Layout>
     <StyledProject>
-      <h1>{data.project.frontmatter.title}</h1>
-      <span>{data.project.frontmatter.date}</span>
-      <div>{data.project.frontmatter.description}</div>
-      {data.project.frontmatter.techStackTags
-      && <TechStackTagListing tags={data.project.frontmatter.techStackTags} />}
+      <h1>{title}</h1>
+      <div>{description}</div>
+      {techStackTags && <TechStackTagListing tags={techStackTags} />}
       <S.ContentContainer>
-        <div dangerouslySetInnerHTML={{ __html: data.project.html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
         <div>
-          {data.project.frontmatter.links
-          && <SimpleLinkListing links={data.project.frontmatter.links} />}
-          {data.posts && <SimplePostListing posts={data.posts.edges} />}
+          {links && <SimpleLinkListing links={links} />}
+          {linkedPosts && <SimplePostListing posts={linkedPosts} />}
         </div>
       </S.ContentContainer>
     </StyledProject>
