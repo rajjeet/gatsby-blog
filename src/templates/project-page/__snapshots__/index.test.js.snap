@@ -81,7 +81,7 @@ exports[`ProjectPage should render 1`] = `
     </button>
   </div>
   <div
-    className="sc-bZQynM jWfclC"
+    className="sc-gzVnrw jgilSY"
   >
     <h1>
       Condo Landing Pages
@@ -91,7 +91,7 @@ exports[`ProjectPage should render 1`] = `
       An automated process for building fast, responsive landing pages for pre-construction condos.
     </div>
     <div
-      className="sc-gzVnrw hNDKZk"
+      className="sc-htoDjs LtFSS"
     >
       <div
         dangerouslySetInnerHTML={
@@ -106,7 +106,7 @@ exports[`ProjectPage should render 1`] = `
             Blog Posts
           </h3>
           <ul
-            className="sc-ifAKCX fITWFm"
+            className="sc-ifAKCX eaAsdb"
           >
             <a
               aria-label="See post: Adding a Project Section to My Website"
@@ -118,7 +118,9 @@ exports[`ProjectPage should render 1`] = `
                   Adding a Project Section to My Website
                 </h4>
                 <div>
-                  <span>
+                  <span
+                    className="sc-EHOje kjAiMu"
+                  >
                     11 May, 2019
                   </span>
                   <span>
@@ -139,7 +141,9 @@ exports[`ProjectPage should render 1`] = `
                   State Management using React Hooks
                 </h4>
                 <div>
-                  <span>
+                  <span
+                    className="sc-EHOje kjAiMu"
+                  >
                     02 May, 2019
                   </span>
                   <span>

@@ -13,11 +13,11 @@ export default ({ posts }) => (
             <li>
               <h4>{title}</h4>
               <div>
-                <span>{date}</span>
+                <S.Date>{date}</S.Date>
                 <span>
                   {timeToRead}
                   {' '}
-                    mins read
+                  mins read
                 </span>
               </div>
             </li>
@@ -55,5 +55,8 @@ export const S = {
         a {
             color: black;
         }
-`,
+        `,
+  Date: styled.span`
+      padding-right: .5rem;
+    `,
 };

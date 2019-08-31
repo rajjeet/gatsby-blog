@@ -7,7 +7,7 @@ exports[`<SimplePostListing /> should render 1`] = `
       Blog Posts
     </h3>
     <ul
-      class="sc-bwzfXH dVzAqp"
+      class="sc-bwzfXH HtuBo"
     >
       <a
         aria-label="See post: Adding a Project Section to My Website"
@@ -19,7 +19,9 @@ exports[`<SimplePostListing /> should render 1`] = `
             Adding a Project Section to My Website
           </h4>
           <div>
-            <span>
+            <span
+              class="sc-htpNat bDzDlX"
+            >
               11 May, 2019
             </span>
             <span>
@@ -38,7 +40,9 @@ exports[`<SimplePostListing /> should render 1`] = `
             State Management using React Hooks
           </h4>
           <div>
-            <span>
+            <span
+              class="sc-htpNat bDzDlX"
+            >
               02 May, 2019
             </span>
             <span>

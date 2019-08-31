@@ -7,7 +7,7 @@ exports[`<SimpleLinkListing /> should render 1`] = `
       Links
     </h3>
     <ul
-      class="sc-bwzfXH dVzAqp"
+      class="sc-bwzfXH HtuBo"
     >
       <a
         aria-label="ex. CharismaCondos.net"
