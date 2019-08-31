@@ -7,7 +7,7 @@ export default ({ links }) => (
     <S.ul>
       {
         links.map((link) => (
-          <a key={link.value} href={link.value} target="_blank" rel="noopener noreferrer">
+          <a key={link.value} aria-label={link.label} href={link.value} target="_blank" rel="noopener noreferrer">
             <li>
               {link.label}
             </li>

@@ -1,40 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SimpleLinkListing /> should render 1`] = `
-<div>
-  <h3>
-    Links
-  </h3>
-  <ul
-    className="sc-bwzfXH dVzAqp"
-  >
-    <a
-      href="https://dgftd2qqywjy1.cloudfront.net"
-      rel="noopener noreferrer"
-      target="_blank"
+<DocumentFragment>
+  <div>
+    <h3>
+      Links
+    </h3>
+    <ul
+      class="sc-bwzfXH dVzAqp"
     >
-      <li>
-        ex. CharismaCondos.net
-      </li>
-    </a>
-    <a
-      href="https://d1n2vqbqyes277.cloudfront.net"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <li>
-        ex. SouthWoodbridge.com
-      </li>
-    </a>
-    <a
-      href="https://github.com/rajjeet/charismacondos"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <li>
-        Github Code
-      </li>
-    </a>
-  </ul>
-</div>
+      <a
+        aria-label="ex. CharismaCondos.net"
+        href="https://dgftd2qqywjy1.cloudfront.net"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <li>
+          ex. CharismaCondos.net
+        </li>
+      </a>
+      <a
+        aria-label="ex. SouthWoodbridge.com"
+        href="https://d1n2vqbqyes277.cloudfront.net"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <li>
+          ex. SouthWoodbridge.com
+        </li>
+      </a>
+      <a
+        aria-label="Github Code"
+        href="https://github.com/rajjeet/charismacondos"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <li>
+          Github Code
+        </li>
+      </a>
+    </ul>
+  </div>
+</DocumentFragment>
 `;
