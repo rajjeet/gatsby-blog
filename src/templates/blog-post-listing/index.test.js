@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { cleanup, render } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import BlogPostListing from './index';
 import {
@@ -8,6 +8,8 @@ import {
   createMockPosts,
 } from '../../utils/testing';
 import siteMetadata from '../../../gatsby-config';
+
+afterEach(cleanup);
 
 const makeProps = () => ({
   data: {
@@ -25,7 +27,7 @@ const makeProps = () => ({
 });
 
 beforeEach(() => {
-  StaticQuery.mockImplementation(({ render }) => render(
+  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery(
     {
       file: createMockGatsbyImageSharpFluid.file,
       site: siteMetadata,
@@ -36,7 +38,18 @@ beforeEach(() => {
 
 describe('BlogPostListing', () => {
   it('should render', () => {
-    const tree = renderer.create(<BlogPostListing {...makeProps()} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<BlogPostListing {...makeProps()} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should have the layout header', () => {
+    const { getByText } = render(<BlogPostListing {...makeProps()} />);
+    expect(getByText('Ortmesh')).toBeDefined();
+  });
+
+  it('should contain the blog posts', () => {
+    const { getByText } = render(<BlogPostListing {...makeProps()} />);
+    expect(getByText('Adding a Project Section to My Website')).toBeDefined();
+    expect(getByText('State Management using React Hooks')).toBeDefined();
   });
 });
