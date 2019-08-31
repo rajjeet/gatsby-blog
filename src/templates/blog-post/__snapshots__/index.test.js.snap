@@ -114,7 +114,7 @@ exports[`BlogPost should render 1`] = `
           role="link"
           tabIndex={0}
         >
-          Gatsby JS
+          Gatsby JS X
         </span>
       </div>
     </div>

@@ -59,34 +59,42 @@ const PostListing = ({
           marginTop: '.4em',
         }}
         >
-          {posts.map(({ node }) => {
-            const tags = node.frontmatter.tags
-              && node.frontmatter.tags.map((tag) => ({ fieldValue: tag }));
-            const category = { fieldValue: node.frontmatter.category };
+          {posts.map(({
+            node: {
+              id, fields, timeToRead, frontmatter: {
+                title, tags, category, image, date, description,
+              },
+            },
+          }) => {
+            const processedTags = tags && tags.map((tag) => ({ fieldValue: tag }));
+            const processedCategory = { fieldValue: category };
             return (
-              <div className="post" key={node.id}>
+              <div className="post" key={id}>
                 <div className="image-container">
-                  <S.GatsbyImage fluid={node.frontmatter.image.childImageSharp.fluid} />
+                  <S.GatsbyImage
+                    alt={title}
+                    fluid={image.childImageSharp.fluid}
+                  />
                 </div>
                 <div className="post-summary">
-                  <Link to={node.fields.slug} style={{ color: 'black', textDecoration: 'none' }}>
-                    <h3 style={{ marginBottom: '0em' }}>{node.frontmatter.title}</h3>
+                  <Link to={fields.slug} style={{ color: 'black', textDecoration: 'none' }}>
+                    <h3 style={{ marginBottom: '0em' }}>{title}</h3>
                     <div style={{ marginTop: '0em', color: 'dimgray', fontSize: '.8em' }}>
-                      {node.frontmatter.date}
+                      {date}
                       {' - '}
-                      {`${node.timeToRead} min read`}
+                      {`${timeToRead} min read`}
                     </div>
                     <div style={{ fontSize: theme.smallFontSize }}>
-                      {node.frontmatter.description}
+                      {description}
                     </div>
                   </Link>
                   <TagGroup
-                    tags={[category]}
+                    tags={[processedCategory]}
                     getSlug={getCategorySlug}
                     inline
                   />
                   <TagGroup
-                    tags={tags}
+                    tags={processedTags}
                     getSlug={getTagSlug}
                     inline
                   />
