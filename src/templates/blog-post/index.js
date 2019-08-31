@@ -6,34 +6,7 @@ import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
 import * as theme from '../../utils/theme';
-
-const TableOfContents = ({ className, post }) => (
-  <div className={className}>
-    <h4>Outline</h4>
-    <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
-  </div>
-);
-
-const StyledTableOfContents = styled(TableOfContents)`
-    a {
-      color: #444;
-      :hover {
-        color: ${theme.primaryColor};
-        cursor: pointer;
-      }
-    } 
-       
-    > div > ul {
-      list-style-type: none;
-      padding-left: 0;
-      > li {
-        margin-bottom: .3em;
-        > p {
-        margin-bottom: 0;
-        }
-      }              
-    }
-`;
+import TableOfContentContainer from './TableOfContentContainer';
 
 const BlogPost = ({ className, data }) => {
   const { post } = data;
@@ -68,7 +41,7 @@ const BlogPost = ({ className, data }) => {
         </div>
         <br />
         <div>
-          <StyledTableOfContents post={post} />
+          <TableOfContentContainer htmlContent={post.tableOfContents} />
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <br />
           <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />

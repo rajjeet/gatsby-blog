@@ -101,7 +101,9 @@ exports[`BlogPost should render 1`] = `
           <div />
         </div>
         <div>
-          This is blog content 102
+          <p>
+            This is blog content 102
+          </p>
         </div>
         <br />
         <div
