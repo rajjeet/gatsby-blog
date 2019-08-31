@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TagListing /> should render 1`] = `
+<DocumentFragment>
+  <div
+    class="[object Object] sc-bwzfXH cFXNVJ"
+  >
+    <h5>
+      Tags
+    </h5>
+    <div
+      class="sc-bdVaJa fdxsEr"
+    >
+      <span
+        role="link"
+        tabindex="0"
+      >
+        Experience
+        <span>
+          1
+        </span>
+      </span>
+      <span
+        role="link"
+        tabindex="0"
+      >
+        Guide
+        <span>
+          2
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
