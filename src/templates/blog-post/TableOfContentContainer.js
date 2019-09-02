@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 
 const TableOfContentContainer = ({ className, htmlContent }) => (
-  <div className={className}>
-    <h4>Outline</h4>
+  <div id="static-toc" className={className}>
     <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
   </div>
 );

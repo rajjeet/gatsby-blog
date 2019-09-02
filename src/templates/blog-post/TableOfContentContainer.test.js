@@ -10,11 +10,6 @@ describe('BlogPost', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should have a heading', () => {
-    const { getByText } = render(<TableOfContentContainer htmlContent={'<h1>test</h1>'} />);
-    expect(getByText('Outline')).toBeDefined();
-  });
-
   it('should display the html markup', () => {
     const { getByText } = render(<TableOfContentContainer htmlContent={'<h1>This blog</h1>'} />);
     expect(getByText('This blog')).toBeDefined();

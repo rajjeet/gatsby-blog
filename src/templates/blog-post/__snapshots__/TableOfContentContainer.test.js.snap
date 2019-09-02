@@ -4,10 +4,8 @@ exports[`BlogPost should render 1`] = `
 <DocumentFragment>
   <div
     class="sc-bdVaJa fGalvb"
+    id="static-toc"
   >
-    <h4>
-      Outline
-    </h4>
     <div>
       <h1>
         test

@@ -52,7 +52,7 @@ exports[`BlogPost should render 1`] = `
       </button>
     </div>
     <div
-      class="[object Object] sc-EHOje inCCSA"
+      class="[object Object] sc-dnqmqq gqVHVH"
     >
       <div
         class="post-summary"
@@ -91,24 +91,44 @@ exports[`BlogPost should render 1`] = `
         </div>
       </div>
       <br />
-      <div>
+      <div
+        class="sc-EHOje iiWQLE"
+      >
         <div
-          class="sc-ifAKCX bZyvYn"
+          class="sc-htoDjs DTxst"
         >
-          <h4>
-            Outline
-          </h4>
-          <div />
+          <div
+            class="js-toc-content"
+          >
+            <div>
+              <p>
+                This is blog content 102
+              </p>
+            </div>
+          </div>
+          <br />
+          <div
+            id="disqus_thread"
+          />
         </div>
-        <div>
-          <p>
-            This is blog content 102
-          </p>
-        </div>
-        <br />
         <div
-          id="disqus_thread"
-        />
+          class="sc-gzVnrw kgiurD"
+        >
+          <div
+            class="sc-bZQynM ggMgbg"
+          >
+            <h4>
+              Outline
+            </h4>
+            <div
+              class="sc-ifAKCX bZyvYn"
+              id="static-toc"
+            />
+            <div
+              class="js-toc"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
