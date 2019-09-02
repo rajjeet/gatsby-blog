@@ -11,6 +11,7 @@ import Seo from '../../components/seo';
 import * as theme from '../../utils/theme';
 import StaticTableOfContentContainer from './StaticTableOfContentContainer';
 import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
+import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 
 class BlogPost extends Component {
   state = {
@@ -64,8 +65,12 @@ class BlogPost extends Component {
             </span>
             <p>{description}</p>
             <TagGroup
-              categories={[{ fieldValue: category }]}
+              tags={[{ fieldValue: category }]}
+              getSlug={getCategorySlug}
+            />
+            <TagGroup
               tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
+              getSlug={getTagSlug}
             />
           </div>
           <br />

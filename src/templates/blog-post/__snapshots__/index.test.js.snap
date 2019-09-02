@@ -80,6 +80,16 @@ exports[`BlogPost should render 1`] = `
             role="link"
             tabindex="0"
           >
+            Guide X
+          </span>
+        </div>
+        <div
+          class="sc-bxivhb fXNsAS"
+        >
+          <span
+            role="link"
+            tabindex="0"
+          >
             React X
           </span>
           <span

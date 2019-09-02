@@ -53,6 +53,11 @@ describe('BlogPost', () => {
     expect(getByText(/I was learning about the new React Hooks/)).toBeDefined();
   });
 
+  it('should show the blog category', () => {
+    const { getByText } = render(<BlogPost {...makeProps()} />);
+    expect(getByText('Guide X')).toBeDefined();
+  });
+
   it('should shows the blog tag', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText('React X')).toBeDefined();
