@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import BlogPost from './index';
 import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
@@ -62,5 +62,36 @@ describe('BlogPost', () => {
   it('should shows the blog html', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText('This is blog content 102')).toBeDefined();
+  });
+
+  // TODO: make mobile tests valid
+  // it.skip('should not show the floating button', () => {
+  //   const { queryByLabelText } = render(<BlogPost {...makeProps()} />);
+  //   console.log(window.innerWidth);
+  //   expect(queryByLabelText('Open Table of Contents')).toBeNull();
+  // });
+
+  describe('mobile view', () => {
+    beforeEach(() => {
+      window.innerWidth = 200;
+      window.dispatchEvent(new Event('resize'));
+    });
+
+    // TODO: make mobile tests valid
+    // it.skip('should not show the table of contents in sidebar', () => {
+    //   const { queryByText, debug } = render(<BlogPost {...makeProps()} />);
+    //   expect(queryByText('Outline')).toBeNull();
+    // });
+
+    it('should show the floating button', () => {
+      const { getByLabelText } = render(<BlogPost {...makeProps()} />);
+      expect(getByLabelText('Open Table of Contents')).toBeDefined();
+    });
+
+    it('should open the table of contents modal when floating button is clicked', () => {
+      const { getByLabelText, getByTestId } = render(<BlogPost {...makeProps()} />);
+      fireEvent.click(getByLabelText('Open Table of Contents'));
+      expect(getByTestId('mobile-toc')).toBeDefined();
+    });
   });
 });

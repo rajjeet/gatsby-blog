@@ -52,7 +52,7 @@ exports[`BlogPost should render 1`] = `
       </button>
     </div>
     <div
-      class="[object Object] sc-dnqmqq gqVHVH"
+      class="[object Object] sc-gqjmRU dwKeDu"
     >
       <div
         class="post-summary"
@@ -92,10 +92,10 @@ exports[`BlogPost should render 1`] = `
       </div>
       <br />
       <div
-        class="sc-EHOje iiWQLE"
+        class="sc-htoDjs flPsSB"
       >
         <div
-          class="sc-htoDjs DTxst"
+          class="sc-gZMcBi hcbwrE"
         >
           <div
             class="js-toc-content"
@@ -112,21 +112,47 @@ exports[`BlogPost should render 1`] = `
           />
         </div>
         <div
-          class="sc-gzVnrw kgiurD"
+          class="sc-iwsKbI cEcYcW"
         >
           <div
-            class="sc-bZQynM ggMgbg"
+            class="sc-dnqmqq gCNeSl"
           >
             <h4>
               Outline
             </h4>
             <div
-              class="sc-ifAKCX bZyvYn"
+              class="sc-ifAKCX lgeAVx"
               id="static-toc"
             />
             <div
               class="js-toc"
             />
+          </div>
+          <div
+            class="sc-gzVnrw EYroT"
+          >
+            <button
+              aria-label="Open Table of Contents"
+              class="sc-EHOje gOhtvJ"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-list fa-w-16 fa-2x "
+                color="white"
+                data-icon="list"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M128 116V76c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16v40c0 8.837-7.163 16-16 16H144c-8.837 0-16-7.163-16-16zm16 176h352c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H144c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h352c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H144c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zM16 144h64c8.837 0 16-7.163 16-16V64c0-8.837-7.163-16-16-16H16C7.163 48 0 55.163 0 64v64c0 8.837 7.163 16 16 16zm0 160h64c8.837 0 16-7.163 16-16v-64c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v64c0 8.837 7.163 16 16 16zm0 160h64c8.837 0 16-7.163 16-16v-64c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v64c0 8.837 7.163 16 16 16z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

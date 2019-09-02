@@ -4,13 +4,19 @@ import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
+import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
 import * as theme from '../../utils/theme';
-import StaticTableOfContentContainer from './TableOfContentContainer';
+import StaticTableOfContentContainer from './StaticTableOfContentContainer';
+import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
 
 class BlogPost extends Component {
+  state = {
+    showMobileToc: false,
+  };
+
   componentDidMount() {
     document.getElementById('static-toc').innerHTML = '';
     tocbot.init({
@@ -21,6 +27,11 @@ class BlogPost extends Component {
       orderedList: false,
     });
   }
+
+  toggleTableOfContentModal = () => {
+    const { showMobileToc } = this.state;
+    this.setState({ showMobileToc: !showMobileToc });
+  };
 
   render() {
     const { className, data } = this.props;
@@ -33,6 +44,9 @@ class BlogPost extends Component {
     const {
       tags, image, title, date, description, category,
     } = post.frontmatter;
+    const {
+      showMobileToc,
+    } = this.state;
     return (
       <Layout>
         <Seo isBlogPost frontmatter={post.frontmatter} postImage={image.publicURL} />
@@ -69,13 +83,60 @@ class BlogPost extends Component {
                 <StaticTableOfContentContainer htmlContent={post.tableOfContents} />
                 <div className="js-toc" />
               </TableOfContents>
+              <FloatingButton>
+                <FloatingMobileButton
+                  aria-label="Open Table of Contents"
+                  icon={faList}
+                  onClick={this.toggleTableOfContentModal}
+                />
+              </FloatingButton>
             </SideBar>
           </MainColumn>
+          {
+            showMobileToc && (
+              <div data-testid="mobile-toc">
+                {' '}
+                <MobileTableOfContentsModal
+                  htmlContent={post.tableOfContents}
+                  onClick={this.toggleTableOfContentModal}
+                  includeHeading
+                />
+                <FloatingButton zIndex={3}>
+                  <FloatingMobileButton
+                    icon={faTimes}
+                    onClick={this.toggleTableOfContentModal}
+                  />
+                </FloatingButton>
+              </div>
+            )
+          }
         </div>
       </Layout>
     );
   }
 }
+
+const MobileTableOfContentsModal = styled(StaticTableOfContentContainer)`
+  padding: 1rem;
+  z-index: 2;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+`;
+
+const FloatingButton = styled.div`
+  display: none;
+  @media (max-width: ${theme.bigMobileBreakpoint}){
+    display: block;
+  }
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: ${(props) => props.zIndex || 1}
+`;
 
 const MainColumn = styled.div`
   display: flex;

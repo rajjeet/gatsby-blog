@@ -11,9 +11,11 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "classes": true
         },
         "ecmaVersion": 2018,
         "sourceType": "module"
@@ -31,6 +33,7 @@
       "jsx-a11y/no-static-element-interactions": [0],
       "no-multiple-empty-lines": [2, {"max": 1}],
       "import/prefer-default-export": [0],
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/setup-test-env.js"]}]
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/setup-test-env.js"]}],
+      "react/state-in-constructor": [0]
     }
 }
