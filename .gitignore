@@ -76,3 +76,6 @@ secrets.js
 
 # Storybook
 storybook-static/
+
+# E2E
+output/

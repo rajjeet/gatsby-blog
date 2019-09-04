@@ -145,7 +145,7 @@ exports[`BlogPost should render 1`] = `
             class="sc-gzVnrw EYroT"
           >
             <button
-              aria-label="Open Table of Contents"
+              aria-label="Open table of contents"
               class="sc-EHOje gOhtvJ"
               type="button"
             >

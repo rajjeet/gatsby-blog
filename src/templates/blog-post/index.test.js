@@ -73,7 +73,7 @@ describe('BlogPost', () => {
   // it.skip('should not show the floating button', () => {
   //   const { queryByLabelText } = render(<BlogPost {...makeProps()} />);
   //   console.log(window.innerWidth);
-  //   expect(queryByLabelText('Open Table of Contents')).toBeNull();
+  //   expect(queryByLabelText('Open table of contents')).toBeNull();
   // });
 
   describe('mobile view', () => {
@@ -90,12 +90,12 @@ describe('BlogPost', () => {
 
     it('should show the floating button', () => {
       const { getByLabelText } = render(<BlogPost {...makeProps()} />);
-      expect(getByLabelText('Open Table of Contents')).toBeDefined();
+      expect(getByLabelText('Open table of contents')).toBeDefined();
     });
 
     it('should open the table of contents modal when floating button is clicked', () => {
       const { getByLabelText, getByTestId } = render(<BlogPost {...makeProps()} />);
-      fireEvent.click(getByLabelText('Open Table of Contents'));
+      fireEvent.click(getByLabelText('Open table of contents'));
       expect(getByTestId('mobile-toc')).toBeDefined();
     });
   });

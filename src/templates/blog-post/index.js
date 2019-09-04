@@ -90,7 +90,7 @@ class BlogPost extends Component {
               </TableOfContents>
               <FloatingButton>
                 <FloatingMobileButton
-                  aria-label="Open Table of Contents"
+                  aria-label="Open table of contents"
                   icon={faList}
                   onClick={this.toggleTableOfContentModal}
                 />
@@ -108,6 +108,7 @@ class BlogPost extends Component {
                 />
                 <FloatingButton zIndex={3}>
                   <FloatingMobileButton
+                    aria-label="Close table of contents"
                     icon={faTimes}
                     onClick={this.toggleTableOfContentModal}
                   />
