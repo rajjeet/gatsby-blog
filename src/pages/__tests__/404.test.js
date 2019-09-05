@@ -1,12 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import NotFoundPage from '../404';
 import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
 import siteMetadata from '../../../gatsby-config';
 
+afterEach(cleanup);
+
 beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render }) => render({
+  StaticQuery.mockImplementationOnce(({ render: renderQuery }) => renderQuery({
     file: createMockGatsbyImageSharpFluid.file,
     site: siteMetadata,
   }));
@@ -14,7 +16,7 @@ beforeEach(() => {
 
 describe('404 Page', () => {
   it('should render', () => {
-    const tree = renderer.create(<NotFoundPage />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<NotFoundPage />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

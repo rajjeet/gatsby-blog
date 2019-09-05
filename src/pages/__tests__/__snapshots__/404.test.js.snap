@@ -1,98 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`404 Page should render 1`] = `
-<div
-  className="sc-htpNat faJHDz"
->
+<DocumentFragment>
   <div
-    className="sc-bwzfXH bmdiOC"
+    class="sc-htpNat faJHDz"
   >
-    <a
-      aria-label="See Home"
-      href="/"
+    <div
+      class="sc-bwzfXH bmdiOC"
     >
-      <div
-        className=" gatsby-image-wrapper"
-        style={
-          Object {
-            "overflow": "hidden",
-            "position": "relative",
-            "width": "3em",
-          }
-        }
+      <a
+        aria-label="See Home"
+        href="/"
       >
         <div
-          style={
-            Object {
-              "paddingBottom": "100%",
-              "width": "100%",
-            }
-          }
-        />
-        
-        <picture>
-          <source
-            sizes=""
-            srcSet=""
+          class=" gatsby-image-wrapper"
+          style="position: relative; overflow: hidden; width: 3em;"
+        >
+          <div
+            style="width: 100%; padding-bottom: 100%;"
           />
-          <img
-            alt="Ortmesh logo"
-            loading="lazy"
-            onLoad={[Function]}
-            sizes=""
-            src=""
-            srcSet=""
-            style={
-              Object {
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "opacity": 0,
-                "position": "absolute",
-                "top": 0,
-                "transition": "opacity 500ms",
-                "width": "100%",
-              }
-            }
-          />
-        </picture>
-        <noscript
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<picture><source srcset=\\"\\" /><img loading=\\"lazy\\" src=\\"\\" alt=\\"Ortmesh logo\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-            }
-          }
-        />
-      </div>
-    </a>
+          <picture>
+            <source
+              sizes=""
+              srcset=""
+            />
+            <img
+              alt="Ortmesh logo"
+              loading="lazy"
+              sizes=""
+              src=""
+              srcset=""
+              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
+            />
+          </picture>
+          <noscript>
+            &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+          </noscript>
+        </div>
+      </a>
+      <a
+        href="/"
+      >
+        <h2>
+          Ortmesh
+        </h2>
+        <p>
+          Write code that matters
+        </p>
+      </a>
+      <button
+        class="sc-bdVaJa jCUGPA"
+      >
+        About
+      </button>
+    </div>
+    <h4>
+      Error 404:
+    </h4>
+    <p>
+      This page is not found. Please enter a valid URL path into the address bar.
+    </p>
     <a
       href="/"
     >
-      <h2>
-        Ortmesh
-      </h2>
-      <p>
-        Write code that matters
-      </p>
+      Go to Home
     </a>
-    <button
-      className="sc-bdVaJa jCUGPA"
-      onClick={[Function]}
-    >
-      About
-    </button>
   </div>
-  <h4>
-    Error 404:
-  </h4>
-  <p>
-    This page is not found. Please enter a valid URL path into the address bar.
-  </p>
-  <a
-    href="/"
-  >
-    Go to Home
-  </a>
-</div>
+</DocumentFragment>
 `;

@@ -1,18 +1,20 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, cleanup } from '@testing-library/react';
 import { StaticQuery } from 'gatsby';
 import Seo from './index';
 import siteMetadata from '../../../gatsby-config';
 
+afterEach(cleanup);
+
 beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render }) => render({
+  StaticQuery.mockImplementationOnce(({ render: renderQuery }) => renderQuery({
     site: siteMetadata,
   }));
 });
 
 describe('<Seo />', () => {
   it('should render', () => {
-    const tree = renderer.create(<Seo />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Seo />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
