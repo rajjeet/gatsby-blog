@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "clean": "rm -rf .cache",
     "dev": "gatsby develop",
     "start": "npm run dev",
-    "serve": "gatsby serve",
-    "clean": "rm -rf .cache",
-    "prod": "npm run clean && npm run build && npm run serve",
-    "publish": "aws s3 sync public/ s3://ortmesh.com --acl public-read --delete --exclude CloudFrontLogs*",
+    "build": "npm run clean && gatsby build",
+    "start:prod": "npm run build && gatsby serve",
+    "deploy:aws-s3": "aws s3 sync public/ s3://ortmesh.com --acl public-read --delete --exclude CloudFrontLogs*",
+    "deploy": "npm run test:e2e && npm run deploy:aws-s3",
     "lint": "eslint '**/*.{js,jsx}'",
     "lint:fix": "eslint --fix '**/*.{js,jsx}'",
     "test": "jest",
@@ -18,7 +18,7 @@
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s public",
     "build-storybook": "NODE_ENV=production build-storybook -s public",
     "run:codeceptjs": "npx codeceptjs run",
-    "test:e2e": "start-server-and-test dev http://localhost:8000 run:codeceptjs"
+    "test:e2e": "start-server-and-test start:prod http://localhost:9000 run:codeceptjs"
   },
   "husky": {
     "hooks": {
