@@ -26,12 +26,15 @@ exports[`CategoryPage should render 1`] = `
             />
             <img
               alt="Ortmesh logo"
+              loading="lazy"
+              sizes=""
               src=""
-              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+              srcset=""
+              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
             />
           </picture>
           <noscript>
-            &lt;picture&gt;&lt;img src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+            &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
           </noscript>
         </div>
       </a>
@@ -135,12 +138,15 @@ exports[`CategoryPage should render 1`] = `
                   />
                   <img
                     alt="Adding a Project Section to My Website"
+                    loading="lazy"
+                    sizes=""
                     src=""
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+                    srcset=""
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
                   />
                 </picture>
                 <noscript>
-                  &lt;picture&gt;&lt;img src="" alt="Adding a Project Section to My Website" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+                  &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="Adding a Project Section to My Website" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
                 </noscript>
               </div>
             </div>
@@ -209,12 +215,15 @@ exports[`CategoryPage should render 1`] = `
                   />
                   <img
                     alt="State Management using React Hooks"
+                    loading="lazy"
+                    sizes=""
                     src=""
-                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+                    srcset=""
+                    style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
                   />
                 </picture>
                 <noscript>
-                  &lt;picture&gt;&lt;img src="" alt="State Management using React Hooks" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+                  &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="State Management using React Hooks" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
                 </noscript>
               </div>
             </div>
@@ -395,12 +404,15 @@ exports[`CategoryPage should render 1`] = `
               />
               <img
                 alt="Author headshot"
+                loading="lazy"
+                sizes=""
                 src=""
-                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 0.5s;"
+                srcset=""
+                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
               />
             </picture>
             <noscript>
-              &lt;picture&gt;&lt;img src="" alt="Author headshot" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+              &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="Author headshot" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
             </noscript>
           </div>
           <h3>
