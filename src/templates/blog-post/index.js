@@ -144,12 +144,6 @@ const FloatingButton = styled.div`
   z-index: ${(props) => props.zIndex || 1}
 `;
 
-const MainColumn = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
 const TableOfContents = styled.div`  
   @media (max-width: ${theme.bigMobileBreakpoint}){
       display: none;
@@ -175,6 +169,11 @@ const TableOfContents = styled.div`
   font-size: 1rem;
 `;
 
+const MainColumn = styled.div`
+  display: flex;
+  flex-direction: row;    
+`;
+
 const SideBar = styled.div`
   flex: 1;
     @media (max-width: ${theme.bigMobileBreakpoint}){
@@ -182,10 +181,12 @@ const SideBar = styled.div`
      padding: 0;
     }
   padding-left: 1rem;
+  min-width: 0;
 `;
 
 const MainContent = styled.div`
-  flex: 4;
+  flex: 3;  
+  min-width: 0;
 `;
 
 const StyledBlogPost = styled(BlogPost)`
