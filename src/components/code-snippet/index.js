@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Prism from 'prismjs';
 
-const CodeSnippet = ({ children }) => (
-  <pre>
-    <code>
-      {children}
-    </code>
-  </pre>
-);
+class CodeSnippet extends Component {
+  componentDidMount() {
+    Prism.highlightAll();
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+      <>
+        <pre>
+          <code className="language-javascript">
+            {children.trim()}
+          </code>
+        </pre>
+      </>
+    );
+  }
+}
 
 export default CodeSnippet;
