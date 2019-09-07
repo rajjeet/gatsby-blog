@@ -55,7 +55,7 @@ exports[`BlogPost should render 1`] = `
       </button>
     </div>
     <div
-      class="[object Object] sc-gqjmRU dwKeDu"
+      class="[object Object] sc-VigVT gNeyZm"
     >
       <div
         class="post-summary"
@@ -105,10 +105,10 @@ exports[`BlogPost should render 1`] = `
       </div>
       <br />
       <div
-        class="sc-dnqmqq eUHjSJ"
+        class="sc-iwsKbI OzSrb"
       >
         <div
-          class="sc-gZMcBi jPKsIV"
+          class="sc-gqjmRU fmitny"
         >
           <div
             class="js-toc-content"
@@ -119,16 +119,16 @@ exports[`BlogPost should render 1`] = `
           />
         </div>
         <div
-          class="sc-iwsKbI jBxQuH"
+          class="sc-gZMcBi dzpiJb"
         >
           <div
-            class="sc-htoDjs hfFrGK"
+            class="sc-dnqmqq gCNeSl"
           >
             <h4>
               Outline
             </h4>
-            <div
-              class="sc-ifAKCX lgeAVx"
+            <ul
+              class="sc-EHOje kngaEo"
               id="static-toc"
             />
             <div
@@ -136,11 +136,11 @@ exports[`BlogPost should render 1`] = `
             />
           </div>
           <div
-            class="sc-gzVnrw EYroT"
+            class="sc-htoDjs eIKyiD"
           >
             <button
               aria-label="Open table of contents"
-              class="sc-EHOje gOhtvJ"
+              class="sc-ifAKCX hxQEAp"
               type="button"
             >
               <svg

@@ -9,10 +9,10 @@ import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
 import * as theme from '../../utils/theme';
-import StaticTableOfContentContainer from './StaticTableOfContentContainer';
 import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
 import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
+import TableOfContents from '../../components/table-of-contents';
 
 class BlogPost extends Component {
   state = {
@@ -84,11 +84,10 @@ class BlogPost extends Component {
               <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
             </MainContent>
             <SideBar>
-              <TableOfContents>
-                <h4>Outline</h4>
-                <StaticTableOfContentContainer htmlContent={post.tableOfContents} />
+              <TocWrapper>
+                <TableOfContents items={post.tableOfContents.items} />
                 <div className="js-toc" />
-              </TableOfContents>
+              </TocWrapper>
               <FloatingButton>
                 <FloatingMobileButton
                   aria-label="Open table of contents"
@@ -103,17 +102,18 @@ class BlogPost extends Component {
               <div data-testid="mobile-toc">
                 {' '}
                 <MobileTableOfContentsModal
-                  htmlContent={post.tableOfContents}
                   onClick={this.toggleTableOfContentModal}
-                  includeHeading
-                />
-                <FloatingButton zIndex={3}>
-                  <FloatingMobileButton
-                    aria-label="Close table of contents"
-                    icon={faTimes}
-                    onClick={this.toggleTableOfContentModal}
-                  />
-                </FloatingButton>
+                >
+                  <TableOfContents items={post.tableOfContents.items} />
+                  <FloatingButton>
+                    <FloatingMobileButton
+                      aria-label="Close table of contents"
+                      icon={faTimes}
+                      onClick={this.toggleTableOfContentModal}
+                    />
+                  </FloatingButton>
+                </MobileTableOfContentsModal>
+
               </div>
             )
           }
@@ -123,7 +123,7 @@ class BlogPost extends Component {
   }
 }
 
-const MobileTableOfContentsModal = styled(StaticTableOfContentContainer)`
+const MobileTableOfContentsModal = styled.div`
   padding: 1rem;
   z-index: 2;
   position: fixed;
@@ -142,10 +142,9 @@ const FloatingButton = styled.div`
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: ${(props) => props.zIndex || 1}
 `;
 
-const TableOfContents = styled.div`  
+const TocWrapper = styled.div`  
   @media (max-width: ${theme.bigMobileBreakpoint}){
       display: none;
     }

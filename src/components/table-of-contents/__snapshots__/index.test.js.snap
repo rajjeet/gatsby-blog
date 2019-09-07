@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableOfContents /> should render 1`] = `
+<DocumentFragment>
+  <h4>
+    Outline
+  </h4>
+  <ul
+    class="sc-bdVaJa cSwstg"
+    id="static-toc"
+  >
+    <div>
+      <a
+        class="sc-bwzfXH dLeDxw"
+        href="#introduction"
+      >
+        <li>
+          Introduction
+        </li>
+      </a>
+    </div>
+    <div>
+      <a
+        class="sc-bwzfXH dLeDxw"
+        href="#the-basics"
+      >
+        <li>
+          The Basics
+        </li>
+      </a>
+      <ul
+        class="sc-bdVaJa cSwstg"
+        id="static-toc"
+      >
+        <div>
+          <a
+            class="sc-bwzfXH dLeDxw"
+            href="#state-management-redux"
+          >
+            <li>
+              State Management (Redux)
+            </li>
+          </a>
+        </div>
+        <div>
+          <a
+            class="sc-bwzfXH dLeDxw"
+            href="#context-api"
+          >
+            <li>
+              Context API
+            </li>
+          </a>
+        </div>
+      </ul>
+    </div>
+    <div>
+      <a
+        class="sc-bwzfXH dLeDxw"
+        href="#manage-global-state-in-react-hooks"
+      >
+        <li>
+          Manage Global State in React Hooks
+        </li>
+      </a>
+    </div>
+    <div>
+      <a
+        class="sc-bwzfXH dLeDxw"
+        href="#middleware-logger"
+      >
+        <li>
+          Middleware: Logger
+        </li>
+      </a>
+    </div>
+  </ul>
+</DocumentFragment>
+`;
