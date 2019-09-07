@@ -101,5 +101,18 @@ module.exports = {
         anonymize: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 650,
+            },
+          },
+        ],
+      },
+    },
   ],
 };

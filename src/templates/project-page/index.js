@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import * as theme from '../../utils/theme';
 import SimplePostListing from '../../components/simple-post-listing';
@@ -12,7 +13,7 @@ export default ({
     project: {
       frontmatter: {
         title, description, techStackTags, links,
-      }, html,
+      }, body,
     }, posts: { edges: linkedPosts },
   },
 }) => (
@@ -22,7 +23,7 @@ export default ({
       <div>{description}</div>
       {techStackTags && <TechStackTagListing tags={techStackTags} />}
       <S.ContentContainer>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        {body && <MDXRenderer>{body}</MDXRenderer>}
         <div>
           {links && <SimpleLinkListing links={links} />}
           {linkedPosts && <SimplePostListing posts={linkedPosts} />}
@@ -71,8 +72,8 @@ const S = {
 
 export const query = graphql`
     query ($slug: String!) {
-        project: markdownRemark(fields: {slug: {eq: $slug}, contentType: {eq: "project"}}) {
-            html
+        project: mdx(fields: {slug: {eq: $slug}, contentType: {eq: "project"}}) {
+            body
             frontmatter {
                 title
                 tags
@@ -88,7 +89,7 @@ export const query = graphql`
                 }
             }
         }
-        posts: allMarkdownRemark(sort:{fields: frontmatter___date, order: DESC}, filter: {frontmatter: {projectSlug: {eq: $slug}}, fields: {contentType: {eq: "post"}}}) {
+        posts: allMdx(sort:{fields: frontmatter___date, order: DESC}, filter: {frontmatter: {projectSlug: {eq: $slug}}, fields: {contentType: {eq: "post"}}}) {
             edges {
                 node {
                     timeToRead

@@ -22,7 +22,7 @@ const ProductListing = ({ className, projects, heading }) => (
 );
 
 export const query = graphql`
-    fragment ProjectListingMarkdownFragment on MarkdownRemark {
+    fragment ProjectListingMarkdownFragment on Mdx {
         frontmatter {
             title
             description

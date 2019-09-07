@@ -17,7 +17,7 @@ export default ({ data, pageContext }) => (
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
-        posts: allMarkdownRemark (
+        posts: allMdx (
             limit: $limit
             skip: $skip
             sort: {fields: frontmatter___date, order: DESC}

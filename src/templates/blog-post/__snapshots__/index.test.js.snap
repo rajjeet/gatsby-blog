@@ -112,13 +112,7 @@ exports[`BlogPost should render 1`] = `
         >
           <div
             class="js-toc-content"
-          >
-            <div>
-              <p>
-                This is blog content 102
-              </p>
-            </div>
-          </div>
+          />
           <br />
           <div
             id="disqus_thread"

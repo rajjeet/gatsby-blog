@@ -9,7 +9,7 @@ const TagListing = ({ className }) => (
     query={
       graphql`
          query {
-          categoryGrouping: allMarkdownRemark(limit: 2000, filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } } ) {
+          categoryGrouping: allMdx(limit: 2000, filter: { frontmatter: { draft: { ne: true } }, fields: { contentType: { eq: "post" } } } ) {
             group(field: frontmatter___tags) {
               fieldValue
               totalCount

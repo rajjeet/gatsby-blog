@@ -50,14 +50,7 @@ export const createMockProjects = [
       fields: {
         slug: '/projects/condo-landing-pages/',
       },
-      html: '<ol start=\\"2\\">\n\n'
-        + ' <p>This is sample content for sample project</p>'
-        + '  <li>The build phase of GatsbyJS yields HTML/CSS/JS that\'s production ready.\\nUsing AWS CLI and npm, I copy the build\n'
-        + '    files to an AWS S3 bucket configured as a website.\\nAWS S3 (Simple Storage Service) allows for very cheap web\n'
-        + '    hosting of static content.\n'
-        + '  </li>\n'
-        + '  \n\n'
-        + '</ol>',
+      body: null,
     },
   },
   {
@@ -90,13 +83,7 @@ export const createMockProjects = [
       fields: {
         slug: '/projects/kitchen-quoter/',
       },
-      html: '<ol start=\\"2\\">\n\n'
-        + '  <li>The build phase of GatsbyJS yields HTML/CSS/JS that\'s production ready.\\nUsing AWS CLI and npm, I copy the build\n'
-        + '    files to an AWS S3 bucket configured as a website.\\nAWS S3 (Simple Storage Service) allows for very cheap web\n'
-        + '    hosting of static content.\n'
-        + '  </li>\n'
-        + '  \n\n'
-        + '</ol>',
+      body: null,
     },
   },
 ];
@@ -135,7 +122,7 @@ export const createMockPosts = [
         slug: '/adding-project-section-to-website/',
       },
       excerpt: 'Original Intent My original intent was to connect related blog posts using…',
-      html: '<p>This is blog content 101</p>',
+      body: null,
     },
   },
   {
@@ -157,7 +144,7 @@ export const createMockPosts = [
         slug: '/state-management-react-hooks/',
       },
       excerpt: 'Introduction This blog post is inspired by \n another post , that demonstrates…',
-      html: '<p>This is blog content 102</p>',
+      body: null,
     },
   },
 ];

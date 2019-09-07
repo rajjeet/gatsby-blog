@@ -20,14 +20,14 @@ export default ({ data }) => (
 );
 export const query = graphql`
     {
-        posts: allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 3) {
+        posts: allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 3) {
             edges {
                 node {
                     ...PostListingMarkdownFragment
                 }
             }
         }
-        projects: allMarkdownRemark(limit: 2, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
+        projects: allMdx(limit: 2, sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {contentType: {eq: "project"}}}) {
             edges {
                 node {
                     ...ProjectListingMarkdownFragment

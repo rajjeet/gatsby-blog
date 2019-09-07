@@ -10,7 +10,7 @@ const { getCategorySlug } = require('./src/utils/slugs');
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     let basePath;
     let contentType;
     let slug;
@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
         {
-          allMarkdownRemark(
+          allMdx (
             filter: {frontmatter: {draft: {ne: true}}},
             limit: 500,
             sort: { fields: [frontmatter___date], order: DESC }) {
@@ -70,9 +70,9 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
 
-    const allPosts = result.data.allMarkdownRemark.edges
+    const allPosts = result.data.allMdx.edges
       .filter(({ node }) => node.fields.contentType === 'post');
-    const allProjects = result.data.allMarkdownRemark.edges
+    const allProjects = result.data.allMdx.edges
       .filter(({ node }) => node.fields.contentType === 'project');
 
     allProjects
@@ -158,7 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     uniq(categories).forEach((category) => {
-      const categoryPosts = result.data.allMarkdownRemark.edges
+      const categoryPosts = result.data.allMdx.edges
         .filter(({ node }) => node.frontmatter.category === category);
       const categorySlug = getCategorySlug(category);
       const categoryPageTemplate = path.resolve('./src/templates/category-page/index.js');

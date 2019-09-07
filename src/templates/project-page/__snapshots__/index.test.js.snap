@@ -77,29 +77,6 @@ exports[`ProjectPage should render 1`] = `
         class="sc-htoDjs LtFSS"
       >
         <div>
-          <ol
-            start="\\\\\\"2\\\\\\""
-          >
-            
-
- 
-            <p>
-              This is sample content for sample project
-            </p>
-              
-            <li>
-              The build phase of GatsbyJS yields HTML/CSS/JS that's production ready.\\nUsing AWS CLI and npm, I copy the build
-    files to an AWS S3 bucket configured as a website.\\nAWS S3 (Simple Storage Service) allows for very cheap web
-    hosting of static content.
-  
-            </li>
-            
-  
-
-
-          </ol>
-        </div>
-        <div>
           <div>
             <h3>
               Links

@@ -5,6 +5,7 @@ import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
@@ -77,7 +78,7 @@ class BlogPost extends Component {
           <MainColumn>
             <MainContent>
               <div className="js-toc-content">
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                {post.body && <MDXRenderer>{post.body}</MDXRenderer>}
               </div>
               <br />
               <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
@@ -207,10 +208,10 @@ export default StyledBlogPost;
 
 export const query = graphql`
     query($slug: String!) {
-        post: markdownRemark(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
+        post: mdx(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
             id
             timeToRead
-            html
+            body
             tableOfContents(
                 maxDepth: 4
             )

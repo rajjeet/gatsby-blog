@@ -196,7 +196,7 @@ const StyledPostListing = styled(PostListing)`
 export default StyledPostListing;
 
 export const query = graphql`
-    fragment PostListingMarkdownFragment on MarkdownRemark {
+    fragment PostListingMarkdownFragment on Mdx {
         id
         timeToRead
         frontmatter {

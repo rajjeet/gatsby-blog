@@ -21,7 +21,7 @@ const TagPage = ({
 
 export const query = graphql`
     query($tag: String!, $skip: Int!, $limit: Int!) {
-        posts: allMarkdownRemark (
+        posts: allMdx (
             limit: $limit
             skip: $skip
             sort: {fields: frontmatter___date, order: DESC}
