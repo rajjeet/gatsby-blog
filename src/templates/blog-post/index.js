@@ -5,7 +5,6 @@ import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
@@ -13,6 +12,7 @@ import * as theme from '../../utils/theme';
 import StaticTableOfContentContainer from './StaticTableOfContentContainer';
 import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
 import { getCategorySlug, getTagSlug } from '../../utils/slugs';
+import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
 
 class BlogPost extends Component {
   state = {
@@ -78,7 +78,7 @@ class BlogPost extends Component {
           <MainColumn>
             <MainContent>
               <div className="js-toc-content">
-                {post.body && <MDXRenderer>{post.body}</MDXRenderer>}
+                <MarkdownMDXProvider content={post.body} />
               </div>
               <br />
               <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />

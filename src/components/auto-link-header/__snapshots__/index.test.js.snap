@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorCard /> should render 1`] = `
+<DocumentFragment>
+  <h1
+    id="sample-heading"
+  >
+    <a
+      aria-hidden="true"
+      href="sample-heading"
+    />
+    Sample Heading
+  </h1>
+</DocumentFragment>
+`;
