@@ -5,6 +5,7 @@ import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
+import Prism from 'prismjs';
 import Layout from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
@@ -28,6 +29,7 @@ class BlogPost extends Component {
       hasInnerContainers: false,
       orderedList: false,
     });
+    Prism.highlightAll();
   }
 
   toggleTableOfContentModal = () => {

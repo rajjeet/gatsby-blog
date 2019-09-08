@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
-import Prism from 'prismjs';
+import React from 'react';
 
-class CodeSnippet extends Component {
-  componentDidMount() {
-    Prism.highlightAll();
-  }
-
-  render() {
-    const { children } = this.props;
-    return (
-      <>
-        <pre>
-          <code className="language-javascript">
-            {children.trim()}
-          </code>
-        </pre>
-      </>
-    );
-  }
-}
+const CodeSnippet = ({
+  children, language = 'javascript', dataLine, hasLineNumbers,
+}) => (
+  <pre data-line={dataLine} className={hasLineNumbers || dataLine ? 'line-numbers' : ''}>
+    <code className={`language-${language}`}>
+      {children}
+    </code>
+  </pre>
+);
 
 export default CodeSnippet;

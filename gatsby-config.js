@@ -54,12 +54,6 @@ module.exports = {
         plugins: [
           'gatsby-remark-autolink-headers',
           {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              inlineCodeMarker: '>',
-            },
-          },
-          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
