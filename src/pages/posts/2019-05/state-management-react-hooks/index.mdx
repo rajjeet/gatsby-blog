@@ -71,7 +71,7 @@ export const StateContext = createContext();
 ...
 `}</CodeSnippet>
 
-The next statement wraps the the children components, ```children```, by the globally bound Context Provider. 
+The next statement wraps the the children components, `children`, by the globally bound Context Provider. 
 
 <CodeSnippet>{`
 ...
@@ -81,11 +81,12 @@ The next statement wraps the the children components, ```children```, by the glo
 };
 `}</CodeSnippet>
 
-Now, any component in ```children``` can import this context and get the global state and dispatch using the following statement: 
+Now, any component in `children` can import this context and get the global state and dispatch using the following statement:
 <CodeSnippet>{`
 const [state, dispatch] = useContext(<StateContext>);
 `}</CodeSnippet>
-Here's a really simple reducer we can use for input. The initialState can be ```0```
+
+Here's a really simple reducer we can use for input. The initialState can be
 <CodeSnippet>{`
 export const countReducer = (state, action) => {
     switch (action.type) {
@@ -96,7 +97,8 @@ export const countReducer = (state, action) => {
     }
 };
 `}</CodeSnippet>
-Finally, in our ```<App />``` component, we can wrap our application using ```StateProvider``` and pass in the reducer and initialState. 
+
+Finally, in our `<App />` component, we can wrap our application using `StateProvider` and pass in the reducer and initialState.
 
 <CodeSnippet>{`
 const App = () => {
@@ -105,7 +107,8 @@ const App = () => {
     </StateProvider>
 };
 `}</CodeSnippet>
-Now we import ```StateContext``` anywhere in the app, and get the global state to read data and invoke actions using the global dispatch.
+
+Now we import `StateContext` anywhere in the app, and get the global state to read data and invoke actions using the global dispatch.
 
 <iframe src="https://codesandbox.io/embed/z377nwk433?fontsize=14&module=%2Fsrc%2FStateProvider.js" title="z377nwk433" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
@@ -126,4 +129,4 @@ Here's what it looks like:
 
 ![](ghetto-redux-logger.png)
 
-Note that I've composed the root reducer using the ```countReducer``` specified before, so the state related to this reducer will be contained in a slice called ```count```. Now, every state change will invoke 3 ```console.log```, which will output the before, action, and after information in the dev tools.
+Note that I've composed the root reducer using the `countReducer` specified before, so the state related to this reducer will be contained in a slice called `count`. Now, every state change will invoke 3 `console.log`, which will output the before, action, and after information in the dev tools.

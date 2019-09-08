@@ -102,6 +102,10 @@ module.exports = {
               maxWidth: 650,
             },
           },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: { inlineCodeMarker: '=>' },
+          },
         ],
       },
     },
