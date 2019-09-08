@@ -47,19 +47,16 @@ module.exports = {
     ],
   },
   plugins: [
-    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
             },
           },
-          'gatsby-remark-copy-images',
         ],
       },
     },
@@ -108,5 +105,6 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-webpack-size',
   ],
 };
