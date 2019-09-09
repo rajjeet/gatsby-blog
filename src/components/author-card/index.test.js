@@ -1,15 +1,7 @@
 import React from 'react';
-import { StaticQuery } from 'gatsby';
 import { render, cleanup } from '@testing-library/react';
 import AuthorCard from './index';
-import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
 import { makeProps } from './mock';
-
-beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render: renderQuery }) => renderQuery({
-    file: createMockGatsbyImageSharpFluid.file,
-  }));
-});
 
 afterEach(cleanup);
 

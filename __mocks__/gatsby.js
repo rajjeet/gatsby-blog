@@ -1,5 +1,6 @@
 /* eslint no-undef: 0 */
-const React = require('react');
+import React from 'react';
+import { createMockGatsbyImageSharpFluid } from '../src/utils/testing';
 
 const gatsby = jest.requireActual('gatsby');
 module.exports = {
@@ -23,5 +24,7 @@ module.exports = {
     }),
   ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
+  useStaticQuery: jest.fn().mockImplementation(() => ({
+    file: createMockGatsbyImageSharpFluid.file,
+  })),
 };

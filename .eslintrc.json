@@ -1,40 +1,92 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "plugin:jest/recommended",
+    "plugin:codeceptjs/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "ecmaversion": 2018,
+      "sourceType": "module",
+      "jsx": true,
+      "classes": true
     },
-    "extends": [
-        "airbnb",
-        "plugin:jest/recommended",
-        "plugin:codeceptjs/recommended"
+        "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "jest",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true,
-            "classes": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "jest"
+    "react/jsx-props-no-spreading": [
+      0
     ],
-    "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "react/jsx-props-no-spreading": [0],
-      "react/prop-types": [0],
-      "react/no-danger": [0],
-      "jsx-a11y/click-events-have-key-events": [0],
-      "jsx-a11y/no-static-element-interactions": [0],
-      "no-multiple-empty-lines": [2, {"max": 1}],
-      "import/prefer-default-export": [0],
-      "import/no-extraneous-dependencies": [0],
-      "react/state-in-constructor": [0]
+    "react/prop-types": [
+      0
+    ],
+    "react/no-danger": [
+      0
+    ],
+    "jsx-a11y/click-events-have-key-events": [
+      0
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      0
+    ],
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1
+      }
+    ],
+    "import/prefer-default-export": [
+      0
+    ],
+    "import/no-extraneous-dependencies": [
+      0
+    ],
+    "react/state-in-constructor": [
+      0
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      0
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      0
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     }
+  }
 }

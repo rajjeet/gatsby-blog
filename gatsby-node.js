@@ -1,7 +1,7 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const { uniq } = require('lodash');
 const path = require('path');
 const urlJoin = require('url-join');
-
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { getTagSlug } = require('./src/utils/slugs');

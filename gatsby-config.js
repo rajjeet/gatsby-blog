@@ -1,3 +1,5 @@
+/* eslint @typescript-eslint/camelcase: 0 */
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const secrets = require('./secrets');
 
 module.exports = {
@@ -110,5 +112,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-webpack-size',
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
   ],
 };
