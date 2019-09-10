@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
-import AuthorSocialLinkGroup from '../components/author-social-link-group';
+import AuthorSocialLinkGroup from '../components/author-social-link-group/index';
 import AuthorCard from '../components/author-card';
 import Seo from '../components/seo';
 import { S } from '../components/post-listing';
