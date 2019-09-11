@@ -1,22 +1,9 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import TagPage from './index';
-import { createMockGatsbyImageSharpFluid, createMockGroups } from '../../utils/testing';
-import siteMetadata from '../../../gatsby-config';
 import { makeProps } from './mock';
 
 afterEach(cleanup);
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery(
-    {
-      file: createMockGatsbyImageSharpFluid.file,
-      site: siteMetadata,
-      categoryGrouping: createMockGroups.categoryGrouping,
-    },
-  ));
-});
 
 describe('TagPage', () => {
   it('should render', () => {

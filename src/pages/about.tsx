@@ -1,15 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 import Layout from '../components/layout';
 import AuthorSocialLinkGroup from '../components/author-social-link-group';
 import AuthorCard from '../components/author-card';
-import Seo from '../components/seo';
 import { S } from '../components/post-listing';
+import Seo from '../components/seo';
 
-const AboutPage = ({ className }) => (
+type TProps = {
+  className?: string;
+};
+
+const AboutPage = ({ className }: TProps) => (
   <Layout>
+    <Seo />
     <div className={className}>
-      <Seo />
       <h1>About Me</h1>
       <S.Main>
         <div>
@@ -52,8 +55,4 @@ const AboutPage = ({ className }) => (
   </Layout>
 );
 
-const StyledAboutPage = styled(AboutPage)`
-
-`;
-
-export default StyledAboutPage;
+export default AboutPage;

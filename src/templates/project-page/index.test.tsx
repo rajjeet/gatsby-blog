@@ -1,19 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import ProjectPage from './index';
-import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
-import siteMetadata from '../../../gatsby-config';
 import { makeProps } from './mock';
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery(
-    {
-      file: createMockGatsbyImageSharpFluid.file,
-      site: siteMetadata,
-    },
-  ));
-});
 
 describe('ProjectPage', () => {
   it('should render', () => {
@@ -35,12 +23,6 @@ describe('ProjectPage', () => {
     const { getByText } = render(<ProjectPage {...makeProps()} />);
     expect(getByText('AWS CloudFormation')).toBeDefined();
   });
-
-  // it('should have the html content', () => {
-  //   const { getByText } = render(<ProjectPage {...makeProps()} />);
-  //   expect(getByText('This is sample content for sample project')).toBeDefined();
-  //
-  // });
 
   it('should have a simple link listing section', () => {
     const { getByText } = render(<ProjectPage {...makeProps()} />);

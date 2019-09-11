@@ -15,7 +15,12 @@ import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
 import TableOfContents from '../../components/table-of-contents';
 
-class BlogPost extends Component {
+type TProps = {
+  className: string;
+  data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+}
+
+class BlogPost extends Component<TProps> {
   state = {
     showMobileToc: false,
   };
@@ -53,7 +58,12 @@ class BlogPost extends Component {
     } = this.state;
     return (
       <Layout>
-        <Seo isBlogPost frontmatter={post.frontmatter} postImage={image.publicURL} />
+        <Seo
+          isBlogPost
+          frontmatter={post.frontmatter}
+          postImage={image.publicURL}
+          postData={null}
+        />
         <div className={className}>
           <div className="post-summary">
             <h1>{title}</h1>

@@ -1,23 +1,12 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import IndexPage from '../index';
 import {
-  createMockGatsbyImageSharpFluid, createMockGroups,
   createMockPosts,
   createMockProjects,
 } from '../../utils/testing';
-import siteMetadata from '../../../gatsby-config';
 
 afterEach(cleanup);
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery({
-    file: createMockGatsbyImageSharpFluid.file,
-    site: siteMetadata,
-    categoryGrouping: createMockGroups,
-  }));
-});
 
 const makeProps = () => ({
   projects: {

@@ -54,9 +54,7 @@ exports[`About page should render 1`] = `
         About
       </button>
     </div>
-    <div
-      class="sc-fjdhpX jAxZmM"
-    >
+    <div>
       <h1>
         About Me
       </h1>

@@ -4,9 +4,27 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import SchemaOrg from './SchemaOrg';
 
+type TFrontMatter = {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+};
+
+type TProps = {
+  postData?: {
+    childMarkdownRemark?: {
+      frontmatter: TFrontMatter;
+    };
+  };
+  frontmatter?: TFrontMatter;
+  postImage?: object;
+  isBlogPost?: boolean;
+};
+
 const Seo = ({
-  postData, frontmatter = {}, postImage, isBlogPost,
-}) => {
+  postData, frontmatter, postImage, isBlogPost,
+}: TProps) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
     graphql`
         {
@@ -34,7 +52,12 @@ const Seo = ({
     `,
   );
 
-  const postMeta = frontmatter || postData.childMarkdownRemark.frontmatter || {};
+  const postMeta = frontmatter || (postData && postData.childMarkdownRemark.frontmatter) || {
+    title: '',
+    description: '',
+    slug: '',
+    datePublished: '',
+  };
 
   const title = postMeta.title || seo.title;
   const description = postMeta.description || seo.description;

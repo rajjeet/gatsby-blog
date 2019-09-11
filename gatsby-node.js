@@ -72,7 +72,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
 
   allProjects
     .forEach(({ node }) => {
-      const projectPageTemplate = path.resolve('./src/templates/project-page/index.js');
+      const projectPageTemplate = path.resolve('./src/templates/project-page/index.tsx');
       createPage({
         path: node.fields.slug,
         component: projectPageTemplate,
@@ -85,7 +85,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
   // Posts
   allPosts
     .forEach(({ node }) => {
-      const blogPostTemplate = path.resolve('./src/templates/blog-post/index.js');
+      const blogPostTemplate = path.resolve('./src/templates/blog-post/index.tsx');
       createPage({
         path: node.fields.slug,
         component: blogPostTemplate,
@@ -99,7 +99,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
   // All Posts Listing
   const numOfPostsPerPostListing = allPosts.length;
   const numOfPages = Math.ceil(numOfPostsPerPostListing / POSTS_PER_PAGE);
-  const postListingTemplate = path.resolve('./src/templates/blog-post-listing/index.js');
+  const postListingTemplate = path.resolve('./src/templates/blog-post-listing/index.tsx');
   Array.from({ length: numOfPages }).forEach((_, index) => {
     createPage({
       path: urlJoin('blog', `${index + 1}`),
@@ -128,7 +128,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
     });
     const totalNumOfTaggedPosts = tagPosts.length;
     const numOfPagesPerTag = Math.ceil(totalNumOfTaggedPosts / POSTS_PER_PAGE);
-    const tagPageTemplate = path.resolve('./src/templates/tag-page/index.js');
+    const tagPageTemplate = path.resolve('./src/templates/tag-page/index.tsx');
     Array.from({ length: numOfPagesPerTag }).forEach((_, index) => {
       createPage({
         path: urlJoin(tagSlug, `${index + 1}`),
@@ -156,7 +156,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
     const categoryPosts = result.data.allMdx.edges
       .filter(({ node }) => node.frontmatter.category === category);
     const categorySlug = getCategorySlug(category);
-    const categoryPageTemplate = path.resolve('./src/templates/category-page/index.js');
+    const categoryPageTemplate = path.resolve('./src/templates/category-page/index.tsx');
     const totalNumOfPostsPerCategory = categoryPosts.length;
     const numOfPagesPerCategory = Math.ceil(totalNumOfPostsPerCategory / POSTS_PER_PAGE);
     Array.from({ length: numOfPagesPerCategory }).forEach((_, index) => {

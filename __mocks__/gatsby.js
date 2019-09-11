@@ -24,7 +24,13 @@ module.exports = {
       href: to,
     }),
   ),
-  StaticQuery: jest.fn(),
+  StaticQuery: jest.fn().mockImplementation(() => ({
+    file: createMockGatsbyImageSharpFluid.file,
+    categoryGrouping: createMockGroups.categoryGrouping,
+    site: {
+      siteMetadata,
+    },
+  })),
   useStaticQuery: jest.fn().mockImplementation(() => ({
     file: createMockGatsbyImageSharpFluid.file,
     categoryGrouping: createMockGroups.categoryGrouping,

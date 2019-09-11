@@ -3,11 +3,28 @@ import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import PostListing from '../../components/post-listing';
 
+interface TProps {
+  data: {
+    posts: {
+      edges: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    };
+  };
+  pageContext: {
+    limit: number;
+    skip: number;
+    numOfPages: number;
+    numOfPosts: number;
+    currentPage: number;
+    tag: string;
+    paginationSlug: string;
+  };
+}
+
 const TagPage = ({
   data: { posts: { edges: taggedPosts } }, pageContext: {
     tag, numOfPages, currentPage, paginationSlug,
   },
-}) => (
+}: TProps) => (
   <Layout>
     <PostListing
       posts={taggedPosts}
