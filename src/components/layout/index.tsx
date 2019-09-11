@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../../styles/global.css';
 import styled from 'styled-components';
@@ -22,26 +22,24 @@ const StyledLayout = styled(Layout)`
     }
 `;
 
-export default ({ children }) => (
-  <StaticQuery
-    query={
-      graphql`
-            {
-              site {
-                siteMetadata {
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      {
+          site {
+              siteMetadata {
                   title
-                }
               }
-              file(relativePath: {eq: "images/logo.png"}) {
-                childImageSharp {
+          }
+          file(relativePath: {eq: "images/logo.png"}) {
+              childImageSharp {
                   fluid(maxWidth: 100) {
-                    ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid
                   }
-                }
               }
-            }
-        `
-    }
-    render={(data) => <StyledLayout data={data}>{children}</StyledLayout>}
-  />
-);
+          }
+      }
+  `,
+  );
+  return <StyledLayout data={data}>{children}</StyledLayout>;
+};

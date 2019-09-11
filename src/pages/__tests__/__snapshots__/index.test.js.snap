@@ -336,7 +336,26 @@ exports[`Index Page should render 1`] = `
           </h5>
           <div
             class="sc-bxivhb fXNsAS"
-          />
+          >
+            <span
+              role="link"
+              tabindex="0"
+            >
+              Experience
+              <span>
+                1
+              </span>
+            </span>
+            <span
+              role="link"
+              tabindex="0"
+            >
+              Guide
+              <span>
+                2
+              </span>
+            </span>
+          </div>
         </div>
         <div
           class="sc-ifAKCX faWeYB"
@@ -346,7 +365,26 @@ exports[`Index Page should render 1`] = `
           </h5>
           <div
             class="sc-bxivhb fXNsAS"
-          />
+          >
+            <span
+              role="link"
+              tabindex="0"
+            >
+              Experience
+              <span>
+                1
+              </span>
+            </span>
+            <span
+              role="link"
+              tabindex="0"
+            >
+              Guide
+              <span>
+                2
+              </span>
+            </span>
+          </div>
         </div>
         <br />
         <div

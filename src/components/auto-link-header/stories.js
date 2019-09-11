@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import AutoLinkHeader from './index';
 
-const Header1 = AutoLinkHeader(1);
-const Header2 = AutoLinkHeader(2);
-const Header3 = AutoLinkHeader(3);
-const Header4 = AutoLinkHeader(4);
-const Header5 = AutoLinkHeader(5);
-const Header6 = AutoLinkHeader(6);
+const Header1 = AutoLinkHeader('h1');
+const Header2 = AutoLinkHeader('h2');
+const Header3 = AutoLinkHeader('h3');
+const Header4 = AutoLinkHeader('h4');
+const Header5 = AutoLinkHeader('h5');
+const Header6 = AutoLinkHeader('h6');
 
 storiesOf('AutoLinkHeader', module)
   .add('default', () => (

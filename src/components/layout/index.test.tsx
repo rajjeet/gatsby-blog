@@ -1,21 +1,11 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import Layout from './index';
-import { createMockGatsbyImageSharpFluid } from '../../utils/testing';
-import siteMetadata from '../../../gatsby-config';
 
 afterEach(cleanup);
 
 const makeProps = () => ({
   children: <div>Sample child</div>,
-});
-
-beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render: renderQuery }) => renderQuery({
-    file: createMockGatsbyImageSharpFluid.file,
-    site: siteMetadata,
-  }));
 });
 
 describe('<Layout />', () => {

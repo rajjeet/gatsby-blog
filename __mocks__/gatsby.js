@@ -1,6 +1,7 @@
 /* eslint no-undef: 0 */
 import React from 'react';
-import { createMockGatsbyImageSharpFluid } from '../src/utils/testing';
+import { createMockGatsbyImageSharpFluid, createMockGroups } from '../src/utils/testing';
+import { siteMetadata } from '../gatsby-config';
 
 const gatsby = jest.requireActual('gatsby');
 module.exports = {
@@ -26,5 +27,9 @@ module.exports = {
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn().mockImplementation(() => ({
     file: createMockGatsbyImageSharpFluid.file,
+    categoryGrouping: createMockGroups.categoryGrouping,
+    site: {
+      siteMetadata,
+    },
   })),
 };

@@ -5,7 +5,7 @@ import AutoLinkHeader from './index';
 afterEach(cleanup);
 
 describe('<AuthorCard />', () => {
-  const Component = AutoLinkHeader(1);
+  const Component = AutoLinkHeader('h1');
   it('should render', () => {
     const { asFragment } = render(<Component>Sample Heading</Component>);
     expect(asFragment()).toMatchSnapshot();

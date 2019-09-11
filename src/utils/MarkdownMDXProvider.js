@@ -5,8 +5,8 @@ import AutoLinkHeader from '../components/auto-link-header';
 
 class MarkdownMdxProvider extends React.Component {
   state = {
-    ...[1, 2, 3, 4, 5, 6].reduce((a, v) => {
-      a[`h${v}`] = AutoLinkHeader(v); // eslint-disable-line no-param-reassign
+    ...['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].reduce((a, v) => {
+      a[v] = AutoLinkHeader(v); // eslint-disable-line no-param-reassign
       return a;
     }, {}),
   };

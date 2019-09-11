@@ -1,17 +1,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import TagListing from './index';
-import { createMockGroups } from '../../utils/testing';
 import { makeProps } from './mock';
 
 beforeEach(cleanup);
-
-beforeEach(() => {
-  StaticQuery.mockImplementationOnce(({ render: renderQuery }) => renderQuery(
-    createMockGroups,
-  ));
-});
 
 describe('<TagListing />', () => {
   it('should render', () => {
