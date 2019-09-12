@@ -55,7 +55,7 @@ exports[`BlogPost should render 1`] = `
       </button>
     </div>
     <div
-      class="[object Object] sc-VigVT gNeyZm"
+      class="sc-VigVT gNeyZm"
     >
       <div
         class="post-summary"

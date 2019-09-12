@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import PostListing from '../../components/post-listing';
 
-interface TProps {
+export interface TProps {
   data: {
     posts: {
       edges: any; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -20,11 +20,11 @@ interface TProps {
   };
 }
 
-const TagPage = ({
+const TagPage: React.FC<TProps> = ({
   data: { posts: { edges: taggedPosts } }, pageContext: {
     tag, numOfPages, currentPage, paginationSlug,
   },
-}: TProps) => (
+}) => (
   <Layout>
     <PostListing
       posts={taggedPosts}

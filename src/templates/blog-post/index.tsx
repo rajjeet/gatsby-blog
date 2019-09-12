@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../node_modules/tocbot/dist/tocbot.css';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
@@ -14,18 +14,12 @@ import FloatingMobileButton from '../../components/primitives/floating-mobile-bu
 import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
 import TableOfContents from '../../components/table-of-contents';
+import { TProps } from './types';
 
-type TProps = {
-  className: string;
-  data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-}
+const BlogPost: React.FC<TProps> = (props) => {
+  const [showMobileToc, setShowMobileToc] = useState(false);
 
-class BlogPost extends Component<TProps> {
-  state = {
-    showMobileToc: false,
-  };
-
-  componentDidMount() {
+  useEffect(() => {
     document.getElementById('static-toc').innerHTML = '';
     tocbot.init({
       tocSelector: '.js-toc',
@@ -35,105 +29,98 @@ class BlogPost extends Component<TProps> {
       orderedList: false,
     });
     Prism.highlightAll();
-  }
+  }, []);
 
-  toggleTableOfContentModal = () => {
-    const { showMobileToc } = this.state;
-    this.setState({ showMobileToc: !showMobileToc });
+  const toggleTableOfContentModal = (): void => setShowMobileToc(!showMobileToc);
+
+  const { className, data } = props;
+  const { post } = data;
+  const disqusConfig = {
+    url: `http://ortmesh.com${post.fields.slug}`,
+    identifier: post.id,
+    title: post.frontmatter.title,
   };
+  const {
+    tags, image, title, date, description, category,
+  } = post.frontmatter;
 
-  render() {
-    const { className, data } = this.props;
-    const { post } = data;
-    const disqusConfig = {
-      url: `http://ortmesh.com${post.fields.slug}`,
-      identifier: post.id,
-      title: post.frontmatter.title,
-    };
-    const {
-      tags, image, title, date, description, category,
-    } = post.frontmatter;
-    const {
-      showMobileToc,
-    } = this.state;
-    return (
-      <Layout>
-        <Seo
-          isBlogPost
-          frontmatter={post.frontmatter}
-          postImage={image.publicURL}
-          postData={null}
-        />
-        <div className={className}>
-          <div className="post-summary">
-            <h1>{title}</h1>
-            <span>
-              {date}
-              {' - '}
-              {post.timeToRead}
-              {' min read - '}
-              <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
+  return (
+    <Layout>
+      <Seo
+        isBlogPost
+        frontmatter={post.frontmatter}
+        postImage={image.publicURL}
+        postData={null}
+      />
+      <div className={className}>
+        <div className="post-summary">
+          <h1>{title}</h1>
+          <span>
+            {date}
+            {' - '}
+            {post.timeToRead}
+            {' min read - '}
+            <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
               Comments
-              </Disqus.CommentCount>
-            </span>
-            <p>{description}</p>
-            <TagGroup
-              tags={[{ fieldValue: category }]}
-              getSlug={getCategorySlug}
-            />
-            <TagGroup
-              tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
-              getSlug={getTagSlug}
-            />
-          </div>
-          <br />
-          <MainColumn>
-            <MainContent>
-              <div className="js-toc-content">
-                <MarkdownMDXProvider content={post.body} />
-              </div>
-              <br />
-              <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
-            </MainContent>
-            <SideBar>
-              <TocWrapper>
-                <TableOfContents items={post.tableOfContents.items} />
-                <div className="js-toc" />
-              </TocWrapper>
-              <FloatingButton>
-                <FloatingMobileButton
-                  aria-label="Open table of contents"
-                  icon={faList}
-                  onClick={this.toggleTableOfContentModal}
-                />
-              </FloatingButton>
-            </SideBar>
-          </MainColumn>
-          {
-            showMobileToc && (
-              <div data-testid="mobile-toc">
-                {' '}
-                <MobileTableOfContentsModal
-                  onClick={this.toggleTableOfContentModal}
-                >
-                  <TableOfContents items={post.tableOfContents.items} />
-                  <FloatingButton>
-                    <FloatingMobileButton
-                      aria-label="Close table of contents"
-                      icon={faTimes}
-                      onClick={this.toggleTableOfContentModal}
-                    />
-                  </FloatingButton>
-                </MobileTableOfContentsModal>
-
-              </div>
-            )
-          }
+            </Disqus.CommentCount>
+          </span>
+          <p>{description}</p>
+          <TagGroup
+            tags={[{ fieldValue: category }]}
+            getSlug={getCategorySlug}
+          />
+          <TagGroup
+            tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
+            getSlug={getTagSlug}
+          />
         </div>
-      </Layout>
-    );
-  }
-}
+        <br />
+        <MainColumn>
+          <MainContent>
+            <div className="js-toc-content">
+              <MarkdownMDXProvider content={post.body} />
+            </div>
+            <br />
+            <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
+          </MainContent>
+          <SideBar>
+            <TocWrapper>
+              <TableOfContents items={post.tableOfContents.items} />
+              <div className="js-toc" />
+            </TocWrapper>
+            <FloatingButton>
+              <FloatingMobileButton
+                aria-label="Open table of contents"
+                icon={faList}
+                onClick={toggleTableOfContentModal}
+              />
+            </FloatingButton>
+          </SideBar>
+        </MainColumn>
+        {
+          showMobileToc && (
+            <div data-testid="mobile-toc">
+              {' '}
+              <MobileTableOfContentsModal
+                onClick={toggleTableOfContentModal}
+              >
+                <TableOfContents items={post.tableOfContents.items} />
+                <FloatingButton>
+                  <FloatingMobileButton
+                    aria-label="Close table of contents"
+                    icon={faTimes}
+                    onClick={toggleTableOfContentModal}
+                  />
+                </FloatingButton>
+              </MobileTableOfContentsModal>
+
+            </div>
+          )
+        }
+      </div>
+    </Layout>
+  );
+};
 
 const MobileTableOfContentsModal = styled.div`
   padding: 1rem;

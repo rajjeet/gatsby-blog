@@ -1,6 +1,7 @@
 import { createMockPosts } from '../../utils/testing';
+import { TProps } from './index';
 
-export const makeProps = () => ({
+export const makeProps = (): TProps => ({
   data: {
     posts: {
       edges: createMockPosts,
@@ -13,5 +14,6 @@ export const makeProps = () => ({
     numOfPosts: 10,
     currentPage: 3,
     tag: 'Life Skills',
+    paginationSlug: '',
   },
 });

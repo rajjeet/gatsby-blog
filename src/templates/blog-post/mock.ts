@@ -1,11 +1,9 @@
-import { createMockPosts } from '../../utils/testing';
+import { TProps } from './types';
+import { mockPost } from '../../utils/testing';
 
-export const makeProps = () => ({
-  className: {},
+export const makeProps = (): TProps => ({
+  className: '',
   data: {
-    post: {
-      ...createMockPosts[1].node,
-      tableOfContents: { items: [{ title: 'test', url: '#test-url' }] },
-    },
+    post: mockPost,
   },
 });

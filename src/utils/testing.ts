@@ -148,3 +148,38 @@ export const createMockPosts = [
     },
   },
 ];
+
+export const mockPost = {
+  id: '5f2933ac-25ed-5ae0-84d7-c5d59fc4448e',
+  timeToRead: 4,
+  frontmatter: {
+    title: 'State Management using React Hooks',
+    date: '02 May, 2019',
+    tags: [
+      'React X',
+      'Angular X',
+    ],
+    category: 'Guide X',
+    description: 'I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.',
+    image: {
+      publicURL: '/static/rawpixel-780494-unsplash-e36954fd765f72a96646fa7c3fa89d49.jpg',
+    },
+  },
+  fields: {
+    slug: '/state-management-react-hooks/',
+  },
+  excerpt: 'Introduction This blog post is inspired by \n another post , that demonstrates…',
+  body: null,
+  tableOfContents: {
+    items: [
+      {
+        url: '#overview',
+        title: 'Overview',
+      },
+      {
+        url: '#the-why',
+        title: 'The Why',
+      },
+    ],
+  },
+};

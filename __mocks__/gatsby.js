@@ -1,4 +1,5 @@
 /* eslint no-undef: 0 */
+/* eslint @typescript-eslint/no-unused-vars: 0 */
 import React from 'react';
 import { createMockGatsbyImageSharpFluid, createMockGroups } from '../src/utils/testing';
 import { siteMetadata } from '../gatsby-config';

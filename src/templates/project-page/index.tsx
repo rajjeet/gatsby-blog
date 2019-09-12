@@ -7,8 +7,9 @@ import * as theme from '../../utils/theme';
 import SimplePostListing from '../../components/simple-post-listing';
 import SimpleLinkListing from '../../components/simple-link-listing';
 import TechStackTagListing from '../../components/tech-stack-tag-listing';
+import { TProps } from './types';
 
-export default ({
+const ProjectPage: React.FC<TProps> = ({
   data: {
     project: {
       frontmatter: {
@@ -69,6 +70,8 @@ const S = {
       }
 `,
 };
+
+export default ProjectPage;
 
 export const query = graphql`
     query ($slug: String!) {

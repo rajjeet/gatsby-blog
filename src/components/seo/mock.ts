@@ -1,5 +1,4 @@
 export const makeProps = () => ({
-  postData: '',
-  postImage: null,
-  isBlogPost: 1,
+  postImage: '',
+  isBlogPost: true,
 });

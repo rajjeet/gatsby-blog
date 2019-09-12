@@ -7,8 +7,8 @@ import SchemaOrg from './SchemaOrg';
 type TFrontMatter = {
   title: string;
   description: string;
-  slug: string;
-  datePublished: string;
+  slug?: string;
+  datePublished?: string;
 };
 
 type TProps = {
@@ -18,13 +18,13 @@ type TProps = {
     };
   };
   frontmatter?: TFrontMatter;
-  postImage?: object;
+  postImage?: string;
   isBlogPost?: boolean;
 };
 
-const Seo = ({
+const Seo: React.FC<TProps> = ({
   postData, frontmatter, postImage, isBlogPost,
-}: TProps) => {
+}) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
     graphql`
         {

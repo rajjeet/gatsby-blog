@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import PostListing from '../../components/post-listing';
+import { TProps } from './types';
 
-export default ({ data, pageContext }) => (
+const BlogPostListing: React.FC<TProps> = ({ data, pageContext }) => (
   <Layout>
     <PostListing
       posts={data.posts.edges}
@@ -14,6 +15,8 @@ export default ({ data, pageContext }) => (
     />
   </Layout>
 );
+
+export default BlogPostListing;
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {

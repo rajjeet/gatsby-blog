@@ -21,7 +21,7 @@
       "jsx": true,
       "classes": true
     },
-        "project": "./tsconfig.json"
+    "project": "./tsconfig.json"
   },
   "plugins": [
     "react",
@@ -40,42 +40,18 @@
         ]
       }
     ],
-    "react/jsx-props-no-spreading": [
-      0
-    ],
-    "react/prop-types": [
-      0
-    ],
-    "react/no-danger": [
-      0
-    ],
-    "jsx-a11y/click-events-have-key-events": [
-      0
-    ],
-    "jsx-a11y/no-static-element-interactions": [
-      0
-    ],
-    "no-multiple-empty-lines": [
-      2,
-      {
-        "max": 1
-      }
-    ],
-    "import/prefer-default-export": [
-      0
-    ],
-    "import/no-extraneous-dependencies": [
-      0
-    ],
-    "react/state-in-constructor": [
-      0
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      0
-    ],
-    "@typescript-eslint/explicit-function-return-type": [
-      0
-    ]
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/no-danger": "off",
+    "react/state-in-constructor": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-multiple-empty-lines": ["error", {"max": 1}],
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
   "settings": {
     "import/resolver": {

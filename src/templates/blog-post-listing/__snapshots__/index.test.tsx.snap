@@ -61,7 +61,7 @@ exports[`BlogPostListing should render 1`] = `
         class="sc-gqjmRU fCAPEA"
       >
         <h1>
-          Posts
+          Sample Tag
         </h1>
         <div>
           <p

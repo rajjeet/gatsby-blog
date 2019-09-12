@@ -2,8 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import PostListing from '../../components/post-listing';
+import { TProps } from './types';
 
-export default ({ data, pageContext }) => (
+const CategoryPage: React.FC<TProps> = ({ data, pageContext }) => (
   <Layout>
     <PostListing
       posts={data.posts.edges}
@@ -14,6 +15,8 @@ export default ({ data, pageContext }) => (
     />
   </Layout>
 );
+
+export default CategoryPage;
 
 export const query = graphql`
     query($category: String!, $skip: Int!, $limit: Int!) {

@@ -1,4 +1,4 @@
-
+/* eslint @typescript-eslint/explicit-function-return-type: 0 */
 // in this file you can append custom step methods to 'I' object
 
 module.exports = function defineCustomSteps() {
