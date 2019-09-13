@@ -1,0 +1,50 @@
+---
+title: Refactoring for Breakthroughs 
+date: "2019-09-13"
+draft: false
+author: Rajjeet
+category: Conference Insights
+image: './anthony-tori-9qYKMbBCFjc-unsplash.jpg'
+description: Upfront designing of software is not easy, especially for large unpredictable projects. See the role of that refactoring and testing play in developing complex software that matures over time.    
+tags:
+    - Testing
+---
+### Premature Design
+Even in an agile workplace, senior developers and architects still design software solutions upfront before digging into code. The issue is that there are many problems that can’t be anticipated with planning. They must be handled as they arrive. 
+
+So making big architectural designs before gain working experience of the codebase can lead the dev team down the wrong path, and waste time reverting the changes later on.
+
+### Healthy Organic Software
+So, here is the key insight. Instead of forcing an ideal design upfront, let the codebase evolve organically. This can bring the best result with the least effort.
+
+![](igor-son-FV_PxCqgtwc-unsplash.jpg)
+_I only code organically (image by Igor Son via Unsplash.com)_
+
+Evolve Organically? Is the codebase a plant? No. By Evolving organically, I’m referring to refactoring.  Refactoring is the art of changing structure without touching behaviour. 
+
+### Codebase Veteran
+Development time tends to bounce between writing new code and refactoring old code. We refactor code often because it:
+* makes code easy to understand 
+* prepares code for anticipated changes
+* reduces duplication of logic 
+* improves algorithmic efficiency 
+
+Good refactorings add value and experience. Add up enough experience via refactorings over time and developers naturally connect the dots that lead to breakthrough redesigns. The nuances behind these breakthroughs can happen because many factors. This could include frustrations, conversations, research, repeated exposure, and pattern recognition encountered during the development process. 
+
+![](daniel-ioanu-jjGupGhhqDc-unsplash.jpg)
+_I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)_
+
+### Risky Refactoring
+These refactoring are great and should be encouraged but they entail the risk of regression. Regression is when code breaks that was working before the change. That’s why test-driven development (TDD) is a MUST for safe refactorings. 
+
+### Red Green Refactor
+TDD in a nutshell. Write a little test. Write enough code to make it pass. Refactor the code. Rinse and repeat. 
+
+With good tests, you refactor with confidence and boldness. You play with arrangements until you find one that works best for the moment. These refactorings are quick, simple, and enjoyable. You do this while adding functionality in bite sized pieces.
+
+The tests act as safety nets. When you break code, you’re notified. You know what broke the code, thus avoid countless hours of headache. If you spend the time upfront writing good test, it saves time and cost when the codebase is much larger. 
+
+With a growing codebase, breakthroughs help keep feature additions manageable. A large codebase has many moving parts, so it can be intimidating to change things. Having good tests reassures us that we can develop with a piece of mind. 
+
+### Closing Remarks
+I've summarized these ideas in my own words from [James Shore's](https://www.jamesshore.com/) presentation at AssertJS 2019. From his presentation and my own experience with testing and refactoring, I wrote this blog post. I'm happy to hear your feedback. Thanks for reading.
