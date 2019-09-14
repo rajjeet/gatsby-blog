@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import AboutPage from '../about';
+import AboutPage from './index';
 
 afterEach(cleanup);
 

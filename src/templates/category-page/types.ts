@@ -1,4 +1,4 @@
-type TImage = {
+export type TImage = {
   childImageSharp: {
     fluid: {
       base64: string;

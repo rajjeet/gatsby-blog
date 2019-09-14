@@ -1,11 +1,37 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PostListing from '../components/post-listing';
-import Seo from '../components/seo';
-import ProjectListing from '../components/project-listing';
+import Layout from '../../../components/layout';
+import PostListing from '../../../components/post-listing';
+import Seo from '../../../components/seo';
+import ProjectListing from '../../../components/project-listing';
+import { TEdge, TImage } from '../../../templates/category-page/types';
 
-export default ({ data }) => (
+export type TProps = {
+  data: {
+    posts: {
+      edges: TEdge[];
+    };
+    projects: {
+      edges: {
+        node: {
+          frontmatter: {
+            title: string;
+            description: string;
+            thumbnail: TImage;
+            techStackTags: {label: string; type: string}[];
+            links: {label: string; value: string}[];
+          };
+          fields: {
+            slug: string;
+          };
+          body: string;
+        };
+      }[];
+    };
+  };
+};
+
+const IndexPage: React.FC<TProps> = ({ data }) => (
   <Layout>
     <Seo />
     <ProjectListing
@@ -18,6 +44,9 @@ export default ({ data }) => (
     />
   </Layout>
 );
+
+export default IndexPage;
+
 export const query = graphql`
     {
         posts: allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 3) {

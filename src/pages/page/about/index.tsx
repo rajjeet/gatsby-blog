@@ -1,15 +1,15 @@
 import React from 'react';
-import Layout from '../components/layout';
-import AuthorSocialLinkGroup from '../components/author-social-link-group';
-import AuthorCard from '../components/author-card';
-import { S } from '../components/post-listing';
-import Seo from '../components/seo';
+import Layout from '../../../components/layout';
+import AuthorSocialLinkGroup from '../../../components/author-social-link-group';
+import AuthorCard from '../../../components/author-card';
+import { S } from '../../../components/post-listing';
+import Seo from '../../../components/seo';
 
-type TProps = {
+export type TProps = {
   className?: string;
 };
 
-const AboutPage = ({ className }: TProps) => (
+const AboutPage: React.FC<TProps> = ({ className }) => (
   <Layout>
     <Seo />
     <div className={className}>

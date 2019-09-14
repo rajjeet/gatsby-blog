@@ -35,13 +35,25 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.onCreatePage = ({ page, actions: { deletePage } }) => {
-  if (page.path.match(/^\/(posts|projects)\//)) {
+exports.onCreatePage = ({ page, actions: { createPage, deletePage } }) => {
+  const splitPath = page.path.split('/').filter((i) => i !== '');
+  if (splitPath.length && splitPath[0] === 'page') {
+    if (splitPath.length === 2) {
+      createPage({
+        ...page,
+        path: splitPath[1] === 'index' ? '/' : splitPath[1],
+      });
+    } else {
+      deletePage(page);
+    }
+  }
+  if (page.path.match(/^\/(posts|projects|page)\//)) {
     deletePage(page);
   }
 };
 
-exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+  const result = await graphql(`
         {
           allMdx (
             filter: {frontmatter: {draft: {ne: true}}},
@@ -59,9 +71,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
                 }
               }
             }
-          }
+          }        
         }
-    `).then((result) => {
+    `);
+
   if (result.errors) {
     throw result.errors;
   }
@@ -176,7 +189,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => graphql(`
       });
     });
   });
-});
+};
 
 // Sass and Lodash.
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
