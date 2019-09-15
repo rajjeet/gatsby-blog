@@ -4,14 +4,15 @@ import styled from 'styled-components';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../primitives/button';
+import { TProps } from './mock';
 
-const PaginationButtonGroup = ({
+const PaginationButtonGroup: React.FC<TProps> = ({
   className, currentPage, numOfPages, paginationSlug,
 }) => (
   <div className={className}>
     <Button
       disabled={currentPage <= 1}
-      onClick={() => navigate(`${paginationSlug}${currentPage - 1}`)}
+      onClick={(): void => navigate(`${paginationSlug}${currentPage - 1}`)}
     >
       <FontAwesomeIcon icon={faChevronLeft} />
       &nbsp;
@@ -19,8 +20,7 @@ const PaginationButtonGroup = ({
     </Button>
     <Button
       disabled={currentPage >= numOfPages}
-      onClick={() => navigate(`${paginationSlug}${currentPage + 1}`)}
-      icon={faChevronRight}
+      onClick={(): void => navigate(`${paginationSlug}${currentPage + 1}`)}
     >
       Older Posts
       &nbsp;

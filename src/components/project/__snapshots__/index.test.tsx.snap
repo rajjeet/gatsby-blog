@@ -3,7 +3,7 @@
 exports[`<Project /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-htpNat cDaIEp"
+    class="sc-htpNat cDaIEp"
   >
     <a
       aria-label="See Sample Project"

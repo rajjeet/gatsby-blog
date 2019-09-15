@@ -2,8 +2,9 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-export default ({ posts }) => (
+const SimplePostListing: React.FC<TProps> = ({ posts }) => (
   <div>
     <h3>Blog Posts</h3>
     <S.ul>
@@ -60,3 +61,5 @@ export const S = {
       padding-right: .5rem;
     `,
 };
+
+export default SimplePostListing;

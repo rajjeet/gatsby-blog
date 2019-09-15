@@ -1,1 +1,2 @@
-export const makeProps = () => ({});
+export const makeProps = (): {} => ({
+});

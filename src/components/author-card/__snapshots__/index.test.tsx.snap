@@ -3,7 +3,7 @@
 exports[`<AuthorCard /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH bBObBL"
+    class="sc-bwzfXH bBObBL"
   >
     <div
       class="sc-bdVaJa erGNdq gatsby-image-wrapper"

@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import * as theme from '../../../utils/theme';
 
-const StyledButton = styled.button`
+const StyledButton: React.FC<React.HTMLProps<HTMLButtonElement>> = styled.button`
     background-color: white;
     outline: none;
     border: none;

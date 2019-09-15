@@ -1,12 +1,9 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import Layout from './index';
+import { makeProps } from './mock';
 
 afterEach(cleanup);
-
-const makeProps = () => ({
-  children: <div>Sample child</div>,
-});
 
 describe('<Layout />', () => {
   it('should render', () => {

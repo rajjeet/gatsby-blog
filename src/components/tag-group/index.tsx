@@ -2,8 +2,9 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-const TagGroup = ({ className, tags, getSlug }) => (
+const TagGroup: React.FC<TProps> = ({ className, tags, getSlug }) => (
   <div className={className}>
     {
       tags
@@ -12,7 +13,7 @@ const TagGroup = ({ className, tags, getSlug }) => (
           role="link"
           tabIndex={0}
           key={tag.fieldValue}
-          onClick={() => navigate(`${getSlug(tag.fieldValue)}1`)}
+          onClick={(): void => navigate(`${getSlug(tag.fieldValue)}1`)}
         >
           {tag.fieldValue}
           {tag.totalCount && <span>{tag.totalCount}</span>}
@@ -23,7 +24,7 @@ const TagGroup = ({ className, tags, getSlug }) => (
 );
 
 const StyledTagGroup = styled(TagGroup)`
-  display: ${(props) => (props.inline ? 'inline' : 'inline-block')};
+  display: ${(props): string => (props.inline ? 'inline' : 'inline-block')};
   
   > span {
     padding: .2em .55em;

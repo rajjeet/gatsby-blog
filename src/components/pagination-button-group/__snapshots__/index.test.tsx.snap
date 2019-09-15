@@ -3,7 +3,7 @@
 exports[`<PaginationButtonGroup /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH bFHdpU"
+    class="sc-bwzfXH bFHdpU"
   >
     <button
       class="sc-bdVaJa jCUGPA"

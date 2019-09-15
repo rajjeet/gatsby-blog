@@ -4,29 +4,31 @@ import Layout from '../../../components/layout';
 import PostListing from '../../../components/post-listing';
 import Seo from '../../../components/seo';
 import ProjectListing from '../../../components/project-listing';
-import { TEdge, TImage } from '../../../templates/category-page/types';
+import { TPostEdge, TImage } from '../../../templates/category-page/types';
+
+export type TProjectEdge = {
+  node: {
+    frontmatter: {
+      title: string;
+      description: string;
+      thumbnail: TImage;
+      techStackTags: {label: string; type: string}[];
+      links: {label: string; value: string}[];
+    };
+    fields: {
+      slug: string;
+    };
+    body: string;
+  };
+};
 
 export type TProps = {
   data: {
     posts: {
-      edges: TEdge[];
+      edges: TPostEdge[];
     };
     projects: {
-      edges: {
-        node: {
-          frontmatter: {
-            title: string;
-            description: string;
-            thumbnail: TImage;
-            techStackTags: {label: string; type: string}[];
-            links: {label: string; value: string}[];
-          };
-          fields: {
-            slug: string;
-          };
-          body: string;
-        };
-      }[];
+      edges: TProjectEdge[];
     };
   };
 };

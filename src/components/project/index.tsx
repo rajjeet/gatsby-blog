@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-const Project = ({
+const Project: React.FC<TProps> = ({
   heading, link, description, className, thumbnail,
 }) => (
   <div className={className}>

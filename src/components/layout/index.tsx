@@ -5,24 +5,9 @@ import '../../styles/global.css';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 import TopNavBar from '../top-nav-bar';
+import { TProps } from './types';
 
-const Layout = ({ className, data, children }) => (
-  <div className={className}>
-    <TopNavBar data={data} />
-    {children}
-  </div>
-);
-
-const StyledLayout = styled(Layout)`
-  width: 80%;
-  margin: .5em auto 3em auto;
-  @media (max-width: ${theme.tabletBreakpoint}){
-    width: 95%;
-    margin: 0 auto 1em auto;
-    }
-`;
-
-export default ({ children }) => {
+const Layout: React.FC<TProps> = ({ children, className }) => {
   const data = useStaticQuery(
     graphql`
       {
@@ -41,5 +26,21 @@ export default ({ children }) => {
       }
   `,
   );
-  return <StyledLayout data={data}>{children}</StyledLayout>;
+  return (
+    <div className={className}>
+      <TopNavBar data={data} />
+      {children}
+    </div>
+  );
 };
+
+const StyledLayout = styled(Layout)`
+  width: 80%;
+  margin: .5em auto 3em auto;
+  @media (max-width: ${theme.tabletBreakpoint}){
+    width: 95%;
+    margin: 0 auto 1em auto;
+    }
+`;
+
+export default StyledLayout;

@@ -2,8 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-const SocialLink = ({
+const SocialLink: React.FC<TProps> = ({
   className, link, icon, name,
 }) => (
   <span className={className}>

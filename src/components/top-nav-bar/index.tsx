@@ -4,8 +4,9 @@ import GatsbyImage from 'gatsby-image';
 import React from 'react';
 import Button from '../primitives/button';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-const TopNavBar = ({ className, data }) => (
+const TopNavBar: React.FC<TProps> = ({ className, data }) => (
   <div className={className}>
     <Link to="/" aria-label="See Home">
       <GatsbyImage alt="Ortmesh logo" fluid={data.file.childImageSharp.fluid} style={{ width: '3em' }} />
@@ -18,7 +19,7 @@ const TopNavBar = ({ className, data }) => (
         Write code that matters
       </p>
     </Link>
-    <Button onClick={() => navigate('/about/')}>
+    <Button onClick={(): void => navigate('/about/')}>
       About
     </Button>
   </div>

@@ -3,7 +3,7 @@
 exports[`<TagListing /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH cFXNVJ"
+    class="sc-bwzfXH cFXNVJ"
   >
     <h5>
       Tags

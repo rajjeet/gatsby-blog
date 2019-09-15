@@ -11,8 +11,9 @@ import * as theme from '../../utils/theme';
 import { getCategorySlug, getTagSlug } from '../../utils/slugs';
 import PaginationButtonGroup from '../pagination-button-group';
 import Button from '../primitives/button';
+import { TProps } from './mock';
 
-const PostListing = ({
+const PostListing: React.FC<TProps> = ({
   className, posts, heading, numOfPages, currentPage, paginationSlug,
 }) => {
   const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
@@ -25,7 +26,7 @@ const PostListing = ({
           && (
             <span>
 &emsp;
-              <Button onClick={() => navigate('/blog/1')}>
+              <Button onClick={(): void => navigate('/blog/1')}>
                             See All Posts
               </Button>
             </span>

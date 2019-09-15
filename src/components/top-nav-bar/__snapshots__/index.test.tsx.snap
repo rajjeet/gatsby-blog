@@ -3,7 +3,7 @@
 exports[`<TopNavBar /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH bmdiOC"
+    class="sc-bwzfXH bmdiOC"
   >
     <a
       aria-label="See Home"

@@ -1,6 +1,7 @@
 import React from 'react';
+import { TProps } from './types';
 
-const CodeSnippet = ({
+const CodeSnippet: React.FC<TProps> = ({
   children, language = 'javascript', dataLine, hasLineNumbers,
 }) => (
   <pre data-line={dataLine} className={hasLineNumbers || dataLine ? 'line-numbers' : ''}>

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as theme from '../../../utils/theme';
+import { TProps } from './types';
 
-const FloatingMobileButton = ({ icon, ...rest }) => (
+const FloatingMobileButton: React.FC<TProps> = ({ icon, ...rest }) => (
   <button {...rest} type="button">
     <FontAwesomeIcon icon={icon} color="white" size="2x" />
   </button>

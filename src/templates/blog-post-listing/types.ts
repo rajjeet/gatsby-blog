@@ -1,9 +1,9 @@
-import { TEdge } from '../category-page/types';
+import { TPostEdge } from '../category-page/types';
 
 export interface TProps {
   data: {
     posts: {
-      edges: TEdge[];
+      edges: TPostEdge[];
     };
   };
   pageContext: {

@@ -1,26 +1,9 @@
 import path from 'path';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import SchemaOrg from './SchemaOrg';
-
-type TFrontMatter = {
-  title: string;
-  description: string;
-  slug?: string;
-  datePublished?: string;
-};
-
-type TProps = {
-  postData?: {
-    childMarkdownRemark?: {
-      frontmatter: TFrontMatter;
-    };
-  };
-  frontmatter?: TFrontMatter;
-  postImage?: string;
-  isBlogPost?: boolean;
-};
+import { TProps } from './types';
 
 const Seo: React.FC<TProps> = ({
   postData, frontmatter, postImage, isBlogPost,

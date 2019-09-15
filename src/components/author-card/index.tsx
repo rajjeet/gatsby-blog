@@ -3,12 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-type Props = {
-  className: string;
-};
-
-const AuthorCard: React.FC<Props> = ({ className }) => {
+const AuthorCard: React.FC<TProps> = ({ className }) => {
   const data = useStaticQuery(
     graphql`
         query {

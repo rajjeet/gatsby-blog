@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TProps } from './types';
 
 const ListWrapper = styled.ul`
   list-style: none;
@@ -11,7 +12,7 @@ const StyledLink = styled.a`
    color: black;
 `;
 
-const TableOfContents = ({ items, depth = 0 }) => (
+const TableOfContents: React.FC<TProps> = ({ items, depth = 0 }) => (
   <>
     {!depth && <h4>Outline</h4>}
     <ListWrapper id="static-toc">

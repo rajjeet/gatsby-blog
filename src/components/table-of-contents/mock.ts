@@ -1,4 +1,6 @@
-export const makeProps = () => ({
+import { TProps } from './types';
+
+export const makeProps = (): TProps => ({
   items: [
     {
       url: '#introduction',
@@ -28,3 +30,4 @@ export const makeProps = () => ({
     },
   ],
 });
+

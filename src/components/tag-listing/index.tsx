@@ -3,8 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import TagGroup from '../tag-group';
 import { getTagSlug } from '../../utils/slugs';
+import { TProps } from './types';
 
-const TagListing = ({ className }) => {
+const TagListing: React.FC<TProps> = ({ className }) => {
   const data = useStaticQuery(
     graphql`
         query {

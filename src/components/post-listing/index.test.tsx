@@ -1,20 +1,9 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import { StaticQuery } from 'gatsby';
 import ProjectListing from './index';
-import { createMockGatsbyImageSharpFluid, createMockGroups } from '../../utils/testing';
 import { makeProps } from './mock';
 
 afterEach(cleanup);
-
-beforeEach(() => {
-  StaticQuery.mockImplementation(({ render: renderQuery }) => renderQuery(
-    {
-      categoryGrouping: createMockGroups.categoryGrouping,
-      file: createMockGatsbyImageSharpFluid.file,
-    },
-  ));
-});
 
 describe('<PaginationButtonGroup />', () => {
   it('should render', () => {

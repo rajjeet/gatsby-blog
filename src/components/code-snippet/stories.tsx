@@ -16,7 +16,7 @@ const mainReducer = (state, action) => {
 
 `;
 
-const Container = ({ children }) => {
+const Container = ({ children }): JSX.Element => {
   useEffect(() => Prism.highlightAll(), []);
   return <div>{children}</div>;
 };

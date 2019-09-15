@@ -3,7 +3,7 @@
 exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH louHSu"
+    class="sc-bwzfXH louHSu"
   >
     <h4>
       Links

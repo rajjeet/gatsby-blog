@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Project from '../project';
+import { TProps } from './types';
 
-const ProductListing = ({ className, projects, heading }) => (
+const ProductListing: React.FC<TProps> = ({ className, projects, heading }) => (
   <div className={className}>
     <h1>{heading}</h1>
     {
@@ -13,7 +14,6 @@ const ProductListing = ({ className, projects, heading }) => (
           heading={node.frontmatter.title}
           description={node.frontmatter.description}
           thumbnail={node.frontmatter.thumbnail.childImageSharp.fluid}
-          tags={node.frontmatter.tags}
           link={node.fields.slug}
         />
       ))

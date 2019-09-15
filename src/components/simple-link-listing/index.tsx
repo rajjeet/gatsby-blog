@@ -1,7 +1,8 @@
 import React from 'react';
 import { S } from '../simple-post-listing';
+import { TProps } from './types';
 
-export default ({ links }) => (
+const SimpleLinkListing: React.FC<TProps> = ({ links }) => (
   <div>
     <h3>Links</h3>
     <S.ul>
@@ -18,3 +19,5 @@ export default ({ links }) => (
 
   </div>
 );
+
+export default SimpleLinkListing;

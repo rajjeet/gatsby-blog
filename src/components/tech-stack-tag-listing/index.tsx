@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
+import { TProps } from './types';
 
-const TechStackTagListing = ({ className, tags }) => (
+const TechStackTagListing: React.FC<TProps> = ({ className, tags }) => (
   <div className={className}>
     <span>Tech Tags:</span>
     {

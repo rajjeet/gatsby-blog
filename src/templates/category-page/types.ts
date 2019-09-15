@@ -1,12 +1,14 @@
+export type TFluid = {
+  base64: string;
+  aspectRatio: number;
+  src: string;
+  srcSet: string;
+  sizes: string;
+};
+
 export type TImage = {
   childImageSharp: {
-    fluid: {
-      base64: string;
-      aspectRatio: number;
-      src: string;
-      srcSet: string;
-      sizes: string;
-    };
+    fluid: TFluid;
   };
 };
 
@@ -18,7 +20,7 @@ export type TFrontMatter = {
   description: string;
 };
 
-export type TEdge = {
+export type TPostEdge = {
   node: {
     id: string;
     timeToRead: number;
@@ -34,7 +36,7 @@ export type TEdge = {
 export type TProps = {
   data: {
     posts: {
-      edges: TEdge[];
+      edges: TPostEdge[];
     };
   };
   pageContext: {

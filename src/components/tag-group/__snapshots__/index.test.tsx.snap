@@ -3,7 +3,7 @@
 exports[`<TagGroup /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bdVaJa fdxsEr"
+    class="sc-bdVaJa fdxsEr"
   >
     <span
       role="link"

@@ -3,7 +3,7 @@
 exports[`<CategoryListing /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="[object Object] sc-bwzfXH fbiJJR"
+    class="sc-bwzfXH fbiJJR"
   >
     <h5>
       Categories
