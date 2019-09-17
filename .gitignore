@@ -71,9 +71,6 @@ yarn-error.log
 # Webstorm
 .idea/
 
-# Secrets
-secrets.js
-
 # Storybook
 storybook-static/
 

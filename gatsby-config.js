@@ -1,6 +1,5 @@
 /* eslint @typescript-eslint/camelcase: 0 */
 /* eslint @typescript-eslint/no-var-requires: 0 */
-const secrets = require('./secrets');
 
 module.exports = {
   siteMetadata: {
@@ -89,7 +88,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: secrets.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || '',
         head: false,
         anonymize: true,
       },

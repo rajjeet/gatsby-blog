@@ -1,5 +1,6 @@
-# Gatsby Blog
+# Gatsby Blog [![Build Status](https://travis-ci.org/rajjeet/gatsby-blog.svg?branch=master)](https://travis-ci.org/rajjeet/gatsby-blog)
 The codebase I'm using to run my personal blog at https://ortmesh.com. 
+
 
 ### Setup
 ```
