@@ -22,12 +22,11 @@
     "type-check": "tsc --noEmit",
     "check-all": "npm test && npm run type-check && npm run lint && npm run test:e2e",
     "preversion": "npm run check-all",
-    "version": "npm run build",
     "postversion": "git push && git push --tags"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:fix"
+      "pre-commit": "npm run lint:fix && npm run type-check"
     }
   },
   "lint-staged": {
