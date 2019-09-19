@@ -7,7 +7,6 @@ env:
 cache: npm
 script:
   - npm run check-all
-  - npm run build
 deploy:
   - provider: script
     script: ./scripts/aws-deploy.sh
