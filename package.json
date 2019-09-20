@@ -21,7 +21,6 @@
     "test:e2e": "start-server-and-test start:prod http://localhost:9000 run:codeceptjs",
     "type-check": "tsc --noEmit",
     "check-all": "npm test && npm run type-check && npm run lint && npm run test:e2e",
-    "preversion": "npm run check-all",
     "postversion": "git push && git push --tags"
   },
   "husky": {
