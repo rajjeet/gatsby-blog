@@ -101,6 +101,7 @@ Based on future needs, I can extend this functionality to send users a response 
 production quality HTML/JS/CSS. 
 The components of the landing page are reusable React components, complimented with custom CSS.
 Here are the key components for this particular landing page:
+
 ```javascript
     <HeroBanner/>
     <Specs />
@@ -110,6 +111,7 @@ Here are the key components for this particular landing page:
     <Amenities/>
     <FooterContact/>
 ```
+
 Each component has it's own encapsulated CSS file and they share cross-cutting code (i.e. site theme, simple functions).
 With the functionality of tree shaking, the production build only consist of used code.
 This means that I can continue to evolve the component library for future landing pages, without worrying about inflated JavaScript bundle size.
@@ -128,12 +130,12 @@ When existing components are not suitable, new ones can be created and reused fo
 Lastly, everything is customizable because it's just JavaScript and CSS.
 
 ### Development and Deployment
-In the ```package.json``` file, there are multiple npm commands to streamline the whole process.
-* ```npm start``` starts the development process - includes live updates 
-* ```npm run prod```  produces a production build and serves it on a local port for basic testing
-* ```npm run aws:package``` transform the AWS Serverless CloudFormation template into a deploy friendly version
-* ```npm run aws:deploy``` deploys the serverless AWS infrastructure necessary to serve the website and handle the API calls
-* ```npm run aws:publish``` transfers the production build to S3 bucket
+In the `package.json` file, there are multiple npm commands to streamline the whole process.
+* `npm start` starts the development process - includes live updates 
+* `npm run prod`  produces a production build and serves it on a local port for basic testing
+* `npm run aws:package` transform the AWS Serverless CloudFormation template into a deploy friendly version
+* `npm run aws:deploy` deploys the serverless AWS infrastructure necessary to serve the website and handle the API calls
+* `npm run aws:publish` transfers the production build to S3 bucket
 
 Note: I'm missing the automation code/command for deploying the domain name and SSL certificate. 
 This is needed to serve the CDN content via a domain name using HTTPS.
