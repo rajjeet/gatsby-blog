@@ -6,8 +6,7 @@ const StyledButton: React.FC<React.HTMLProps<HTMLButtonElement>> = styled.button
     background-color: white;
     outline: none;
     border: none;
-    padding: .5em 1em;
-    margin: .2em auto;
+    padding: .5em 1em;    
     box-shadow: ${theme.lightBoxShadow};
     cursor: pointer;
     :hover {

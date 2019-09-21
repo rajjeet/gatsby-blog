@@ -11,7 +11,7 @@ import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';
 import * as theme from '../../utils/theme';
 import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
-import { getCategorySlug, getTagSlug } from '../../utils/slugs';
+import { getTagSlug } from '../../utils/slugs';
 import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
 import TableOfContents from '../../components/table-of-contents';
 import { TProps } from './types';
@@ -41,7 +41,7 @@ const BlogPost: React.FC<TProps> = (props) => {
     title: post.frontmatter.title,
   };
   const {
-    tags, image, title, date, description, category,
+    tags, image, title, date, description,
   } = post.frontmatter;
 
   return (
@@ -65,10 +65,6 @@ const BlogPost: React.FC<TProps> = (props) => {
             </Disqus.CommentCount>
           </span>
           <p>{description}</p>
-          <TagGroup
-            tags={[{ fieldValue: category }]}
-            getSlug={getCategorySlug}
-          />
           <TagGroup
             tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
             getSlug={getTagSlug}

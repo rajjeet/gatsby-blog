@@ -18,7 +18,7 @@ describe('<SimplePostListing />', () => {
 
   it('should a link for each listed post', () => {
     const { getByLabelText, queryAllByRole } = render(<SimplePostListing {...makeProps()} />);
-    expect(queryAllByRole('link')).toHaveLength(2);
+    expect(queryAllByRole('link')).toHaveLength(makeProps().posts.length);
     expect(getByLabelText('See post: Adding a Project Section to My Website')).toBeDefined();
     expect(getByLabelText('See post: State Management using React Hooks')).toBeDefined();
   });

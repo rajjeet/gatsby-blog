@@ -80,7 +80,6 @@ export const makeProps = (): TProps => (
                 tags: [
                   'Gatsby JS X',
                 ],
-                category: 'Side Project X',
                 description: "Over the past year, I truly learned the importance of building side projects as a software developer. Besides building projects, showing them to the world is just as important. That's why I created the project section.",
                 image: createMockGatsbyImageSharpFluid.file,
               },
@@ -102,7 +101,6 @@ export const makeProps = (): TProps => (
                   'React X',
                   'Angular X',
                 ],
-                category: 'Guide X',
                 description: 'I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.',
                 image: createMockGatsbyImageSharpFluid.file,
               },
@@ -122,11 +120,6 @@ export const makeProps = (): TProps => (
 afterEach(cleanup);
 
 describe('Index Page', () => {
-  it('should render', () => {
-    const { asFragment } = render(<IndexPage {...makeProps()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have side projects', () => {
     const { getByText } = render(<IndexPage {...makeProps()} />);
     expect(getByText('Side Projects')).toBeDefined();

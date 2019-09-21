@@ -25,13 +25,13 @@ exports[`<TopNavBar /> should render 1`] = `
             alt="Ortmesh logo"
             loading="lazy"
             sizes=""
-            src=""
+            src="https://via.placeholder.com/250x180"
             srcset=""
             style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
           />
         </picture>
         <noscript>
-          &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="" alt="Ortmesh logo" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+          &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="https://via.placeholder.com/250x180" alt="Ortmesh logo" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
         </noscript>
       </div>
     </a>
@@ -46,7 +46,7 @@ exports[`<TopNavBar /> should render 1`] = `
       </p>
     </a>
     <button
-      class="sc-bdVaJa jCUGPA"
+      class="sc-bdVaJa eSxrIN"
     >
       About
     </button>

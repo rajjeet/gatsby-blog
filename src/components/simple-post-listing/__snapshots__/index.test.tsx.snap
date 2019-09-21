@@ -51,6 +51,27 @@ exports[`<SimplePostListing /> should render 1`] = `
           </div>
         </li>
       </a>
+      <a
+        aria-label="See post: Build A Super Customized and Performant Blog"
+        class="sc-bdVaJa jpiBPE"
+        href="/build-super-customized-performant-blog/"
+      >
+        <li>
+          <h4>
+            Build A Super Customized and Performant Blog
+          </h4>
+          <div>
+            <span
+              class="sc-htpNat bDzDlX"
+            >
+              21 February, 2019
+            </span>
+            <span>
+              3 mins read
+            </span>
+          </div>
+        </li>
+      </a>
     </ul>
   </div>
 </DocumentFragment>

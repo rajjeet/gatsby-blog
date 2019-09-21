@@ -3,7 +3,7 @@
 exports[`<Button /> should render 1`] = `
 <DocumentFragment>
   <button
-    class="sc-bdVaJa jCUGPA"
+    class="sc-bdVaJa eSxrIN"
   >
     Click Me
   </button>
