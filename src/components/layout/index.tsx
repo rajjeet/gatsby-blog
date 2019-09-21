@@ -7,7 +7,7 @@ import * as theme from '../../utils/theme';
 import TopNavBar from '../top-nav-bar';
 import { TProps } from './types';
 
-const Layout: React.FC<TProps> = ({ children, className }) => {
+export const Layout: React.FC<TProps> = ({ children }) => {
   const data = useStaticQuery(
     graphql`
       {
@@ -27,14 +27,14 @@ const Layout: React.FC<TProps> = ({ children, className }) => {
   `,
   );
   return (
-    <div className={className}>
+    <Wrapper>
       <TopNavBar data={data} />
       {children}
-    </div>
+    </Wrapper>
   );
 };
 
-const StyledLayout = styled(Layout)`
+const Wrapper = styled.div`
   width: 80%;
   margin: .5em auto 3em auto;
   @media (max-width: ${theme.tabletBreakpoint}){
@@ -42,5 +42,3 @@ const StyledLayout = styled(Layout)`
     margin: 0 auto 1em auto;
     }
 `;
-
-export default StyledLayout;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import Layout from './index';
+import { Layout } from './index';
 import { makeProps } from './mock';
 
 afterEach(cleanup);
