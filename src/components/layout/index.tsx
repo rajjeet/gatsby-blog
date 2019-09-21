@@ -4,7 +4,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../../styles/global.css';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
-import TopNavBar from '../top-nav-bar';
+import { WebsiteIdentity } from '../website-identity';
 import { TProps } from './types';
 
 export const Layout: React.FC<TProps> = ({ children }) => {
@@ -28,7 +28,7 @@ export const Layout: React.FC<TProps> = ({ children }) => {
   );
   return (
     <Wrapper>
-      <TopNavBar data={data} />
+      <WebsiteIdentity data={data} />
       {children}
     </Wrapper>
   );

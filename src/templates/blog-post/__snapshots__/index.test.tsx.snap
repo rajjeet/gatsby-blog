@@ -3,14 +3,15 @@
 exports[`BlogPost should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-htpNat faJHDz"
+    class="sc-EHOje iEjGfR"
   >
-    <div
-      class="sc-bwzfXH bmdiOC"
+    <a
+      aria-label="See Home"
+      class="sc-bdVaJa hivApq"
+      href="/"
     >
-      <a
-        aria-label="See Home"
-        href="/"
+      <div
+        class="sc-bwzfXH iaYZGO"
       >
         <div
           class=" gatsby-image-wrapper"
@@ -37,25 +38,24 @@ exports[`BlogPost should render 1`] = `
             &lt;picture&gt;&lt;source srcset="" /&gt;&lt;img loading="lazy" src="https://via.placeholder.com/250x180" alt="Ortmesh logo" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
           </noscript>
         </div>
-      </a>
-      <a
-        href="/"
-      >
-        <h2>
-          Ortmesh
-        </h2>
-        <p>
-          Write code that matters
-        </p>
-      </a>
-      <button
-        class="sc-bdVaJa eSxrIN"
-      >
-        About
-      </button>
-    </div>
+        <div
+          class="sc-htpNat dQtbOH"
+        >
+          <h2
+            class="sc-bxivhb mXbnu"
+          >
+            Ortmesh
+          </h2>
+          <p
+            class="sc-ifAKCX dTpjot"
+          >
+             Write code that matters 
+          </p>
+        </div>
+      </div>
+    </a>
     <div
-      class="sc-VigVT gNeyZm"
+      class="sc-jzJRlG czWXbP"
     >
       <div
         class="post-summary"
@@ -77,7 +77,7 @@ exports[`BlogPost should render 1`] = `
           I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.
         </p>
         <div
-          class="sc-bxivhb fXNsAS"
+          class="sc-bZQynM dwDTqL"
         >
           <span
             role="link"
@@ -95,10 +95,10 @@ exports[`BlogPost should render 1`] = `
       </div>
       <br />
       <div
-        class="sc-iwsKbI OzSrb"
+        class="sc-VigVT kWFqRE"
       >
         <div
-          class="sc-gqjmRU fmitny"
+          class="sc-fjdhpX gGPzTy"
         >
           <div
             class="js-toc-content"
@@ -109,16 +109,16 @@ exports[`BlogPost should render 1`] = `
           />
         </div>
         <div
-          class="sc-gZMcBi dzpiJb"
+          class="sc-jTzLTM iwaXZv"
         >
           <div
-            class="sc-dnqmqq gCNeSl"
+            class="sc-gqjmRU knRlYb"
           >
             <h4>
               Outline
             </h4>
             <ul
-              class="sc-EHOje kngaEo"
+              class="sc-htoDjs hQYiKA"
               id="static-toc"
             />
             <div
@@ -126,11 +126,11 @@ exports[`BlogPost should render 1`] = `
             />
           </div>
           <div
-            class="sc-htoDjs eIKyiD"
+            class="sc-gZMcBi cuUFcI"
           >
             <button
               aria-label="Open table of contents"
-              class="sc-ifAKCX hxQEAp"
+              class="sc-gzVnrw erThDS"
               type="button"
             >
               <svg

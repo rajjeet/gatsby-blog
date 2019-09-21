@@ -31,12 +31,6 @@ describe('<Layout />', () => {
     expect(getByText('Ortmesh')).toBeDefined();
   });
 
-  it('should have a button to About', () => {
-    const { getByText, getByRole } = render(<Layout {...makeProps()} />);
-    expect(getByText('About')).toBeDefined();
-    expect(getByRole('button')).toBeDefined();
-  });
-
   it('should have a website caption', () => {
     const { getByText } = render(<Layout {...makeProps()} />);
     expect(getByText('Write code that matters')).toBeDefined();
