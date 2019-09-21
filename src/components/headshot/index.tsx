@@ -23,6 +23,7 @@ export const Headshot: React.FC<{}> = () => {
 
 const GatsbyImageWrapper = styled(GatsbyImage)`
   max-height: 300px;
+  width: 100%;
   max-width: 300px;
   border-radius: 50%;
 `;

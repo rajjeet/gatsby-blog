@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import TagGroup from '../tag-group';
 import TagListing from '../tag-listing';
 import CategoryListing from '../category-listing';
-import AuthorCard from '../author-card';
+import { AuthorCard } from '../author-card';
 import AuthorSocialLinkGroup from '../author-social-link-group';
 import * as theme from '../../utils/theme';
 import { getCategorySlug, getTagSlug } from '../../utils/slugs';

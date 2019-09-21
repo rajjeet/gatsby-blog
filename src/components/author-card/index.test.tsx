@@ -1,29 +1,28 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import AuthorCard from './index';
-import { makeProps } from './mock';
+import { AuthorCard } from './index';
 
 afterEach(cleanup);
 
 describe('<AuthorCard />', () => {
   it('should render', () => {
-    const { asFragment } = render(<AuthorCard {...makeProps()} />);
+    const { asFragment } = render(<AuthorCard />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have an image of author headshot', () => {
-    const { getByAltText } = render(<AuthorCard {...makeProps()} />);
-    expect(getByAltText(/author.*headshot/i)).toBeDefined();
+    const { getByAltText } = render(<AuthorCard />);
+    expect(getByAltText(/Headshot of site author/i)).toBeDefined();
   });
 
   it('should have a heading for author name', () => {
-    const { getByText } = render(<AuthorCard {...makeProps()} />);
+    const { getByText } = render(<AuthorCard />);
     expect(getByText('Rajjeet Phull')).toBeDefined();
   });
 
   it('should have a description specifying occupation of author as software developer', () => {
-    const { getByText } = render(<AuthorCard {...makeProps()} />);
-    expect(getByText(/Software Developer/)).toBeDefined();
+    const { getByText } = render(<AuthorCard />);
+    expect(getByText(/Web Developer/i)).toBeDefined();
   });
 });
 
