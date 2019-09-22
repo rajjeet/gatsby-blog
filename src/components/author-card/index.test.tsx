@@ -24,5 +24,10 @@ describe('<AuthorCard />', () => {
     const { getByText } = render(<AuthorCard />);
     expect(getByText(/Web Developer/i)).toBeDefined();
   });
+
+  it('should have heading called Links', () => {
+    const { getByText } = render(<AuthorCard />);
+    expect(getByText('Links')).toBeDefined();
+  });
 });
 

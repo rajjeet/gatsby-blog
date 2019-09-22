@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       });
     });
 
-  const POSTS_PER_PAGE = 5;
+  const POSTS_PER_PAGE = 6;
   // All Posts Listing
   const numOfPostsPerPostListing = allPosts.length;
   const numOfPages = Math.ceil(numOfPostsPerPostListing / POSTS_PER_PAGE);

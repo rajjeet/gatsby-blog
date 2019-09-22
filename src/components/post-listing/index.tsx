@@ -12,12 +12,12 @@ export const PostListing: React.FC<TProps> = (
   },
 ) => (
   <Wrapper>
-    <PostListingHeader>{heading || 'Posts'}</PostListingHeader>
+    {heading && <PostListingHeader>{heading}</PostListingHeader>}
     <Pagination currentPage={currentPage} numOfPages={numOfPages} paginationSlug={paginationSlug} />
     <PostListingWrapper>
       {
-          posts.map(({ node }) => <Post key={node.id} node={node} />)
-        }
+        posts.map(({ node }) => <Post key={node.id} node={node} />)
+      }
     </PostListingWrapper>
   </Wrapper>
 );
@@ -27,19 +27,18 @@ const PostListingHeader = styled.h1`
   margin-right: 1rem;
 `;
 const PostListingWrapper = styled.div`
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: 300px;
-  grid-gap: 20px;
-  margin: 20px;
-  align-items: flex-start;  
+  grid-gap: 20px;    
+  margin-top: 20px;    
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;  
+  margin: 20px;
   `;
 
 export const query = graphql`

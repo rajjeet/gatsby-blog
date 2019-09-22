@@ -33,16 +33,20 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   height: inherit;
   display: flex;  
   flex-direction: column;
-  justify-content: flex-end; 
+  justify-content: flex-end;    
+  border-radius: ${theme.borderRadius};
+  overflow: auto;  
 `;
 
 const PostWrapper = styled.div`
-  box-shadow: ${theme.hoverBoxShadow};
+  
   background-color: white;
   margin-bottom: 1em;
   display: flex;
   align-items: flex-start;
-  height: 300px;  
+  height: 300px;
+  box-shadow: ${theme.lightBoxShadow};
+  border-radius: ${theme.borderRadius};
 `;
 
 const PostSummary = styled.div`

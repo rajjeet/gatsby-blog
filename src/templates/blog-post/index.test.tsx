@@ -6,11 +6,6 @@ import { makeProps } from './mock';
 afterEach(cleanup);
 
 describe('BlogPost', () => {
-  it('should render', () => {
-    const { asFragment } = render(<BlogPost {...makeProps()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have a table of contents', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText('Outline')).toBeDefined();

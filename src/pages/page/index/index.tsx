@@ -37,7 +37,7 @@ const IndexPage: React.FC<TProps> = ({ data }) => (
     <Seo />
     <PostListing
       posts={data.posts.edges}
-      heading="Latest Posts"
+      heading="Recent Posts"
     />
   </Layout>
 );
@@ -46,7 +46,7 @@ export default IndexPage;
 
 export const query = graphql`
     {
-        posts: allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 10) {
+        posts: allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 6) {
             edges {
                 node {
                     ...PostListingMarkdownFragment

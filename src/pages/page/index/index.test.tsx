@@ -120,8 +120,8 @@ export const makeProps = (): TProps => (
 afterEach(cleanup);
 
 describe('Index Page', () => {
-  it('should have latest posts', () => {
+  it('should have heading called "Recent posts"', () => {
     const { getByText } = render(<IndexPage {...makeProps()} />);
-    expect(getByText('Latest Posts')).toBeDefined();
+    expect(getByText('Recent Posts')).toBeDefined();
   });
 });

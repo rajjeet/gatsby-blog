@@ -185,9 +185,7 @@ const MainContent = styled.div`
 `;
 
 const StyledBlogPost = styled(BlogPost)`
-    @media (max-width: ${theme.bigMobileBreakpoint}){
-      width: 95%;
-    }
+  padding: 20px;
       h1 {
         margin-bottom: 0;    
       }

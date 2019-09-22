@@ -43,18 +43,6 @@ describe('<PostListing />', () => {
     expect(getByText('Sample Posts')).toBeDefined();
   });
 
-  it('should have a generic heading if none provided', () => {
-    const props = makeProps({ heading: '' });
-    const { getByText } = render(<PostListing {...props} />);
-    expect(getByText('Posts')).toBeDefined();
-  });
-
-  it('should show All Posts button if there is a single page', () => {
-    const props = makeProps({ numOfPages: 1 });
-    const { getByText } = render(<PostListing {...props} />);
-    expect(getByText(/all posts/i)).toBeDefined();
-  });
-
   it('should show pagination buttons if there are multiple pages', () => {
     const props = makeProps({ numOfPages: 2 });
     const { queryAllByText } = render(<PostListing {...props} />);
