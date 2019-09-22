@@ -13,7 +13,10 @@ const TagGroup: React.FC<TProps> = ({ className, tags, getSlug }) => (
           role="link"
           tabIndex={0}
           key={tag.fieldValue}
-          onClick={(): void => navigate(`${getSlug(tag.fieldValue)}1`)}
+          onClick={(e): void => {
+            e.preventDefault();
+            navigate(`${getSlug(tag.fieldValue)}1`);
+          }}
         >
           {tag.fieldValue}
           {tag.totalCount && <span>{tag.totalCount}</span>}
