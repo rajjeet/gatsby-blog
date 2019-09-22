@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { AuthorCard } from './index';
+import { Headshot } from './index';
 
-storiesOf('Author Card', module)
+storiesOf('Headshot', module)
   .add('default', () => (
-    <AuthorCard />
+    <Headshot />
   ));

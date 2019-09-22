@@ -1,4 +1,5 @@
+import * as React from 'react';
+
 export type TProps = {
-  className?: string;
-  children: JSX.Element;
+  children: React.ReactNode;
 };

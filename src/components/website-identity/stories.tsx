@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import TechStackTagListing from './index';
+import { WebsiteIdentity } from './index';
 import { makeProps } from './mock';
 
-storiesOf('Top Nav Bar', module)
+storiesOf('Website Identity', module)
   .add('default', () => (
-    <TechStackTagListing {...makeProps()} />
+    <WebsiteIdentity {...makeProps()} />
   ));

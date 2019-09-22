@@ -6,11 +6,6 @@ import { makeProps } from './mock';
 afterEach(cleanup);
 
 describe('TagPage', () => {
-  it('should render', () => {
-    const { asFragment } = render(<TagPage {...makeProps()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have the layout header', () => {
     const { getByText } = render(<TagPage {...makeProps()} />);
     expect(getByText('Ortmesh')).toBeDefined();

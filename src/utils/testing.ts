@@ -4,7 +4,7 @@ export const createMockGatsbyImageSharpFluid = {
       fluid: {
         base64: '',
         aspectRatio: 1,
-        src: '',
+        src: 'https://via.placeholder.com/250x180',
         srcSet: '',
         sizes: '',
       },
@@ -114,7 +114,6 @@ export const createMockPosts = [
         tags: [
           'Gatsby JS X',
         ],
-        category: 'Side Project X',
         description: "Over the past year, I truly learned the importance of building side projects as a software developer. Besides building projects, showing them to the world is just as important. That's why I created the project section.",
         image: createMockGatsbyImageSharpFluid.file,
       },
@@ -136,7 +135,6 @@ export const createMockPosts = [
           'React X',
           'Angular X',
         ],
-        category: 'Guide X',
         description: 'I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.',
         image: createMockGatsbyImageSharpFluid.file,
       },
@@ -144,6 +142,27 @@ export const createMockPosts = [
         slug: '/state-management-react-hooks/',
       },
       excerpt: 'Introduction This blog post is inspired by \n another post , that demonstrates…',
+      body: null,
+    },
+  },
+  {
+    node: {
+      id: 'ea9849ff-7e43-5fe2-88d8-5c441cfb4dad',
+      timeToRead: 3,
+      frontmatter: {
+        title: 'Build A Super Customized and Performant Blog',
+        date: '21 February, 2019',
+        tags: [
+          'Blog',
+          'React',
+        ],
+        description: 'Starting a blog seemed easy to me, but selecting the right tool was not straight forward for my goals. See why I decided to use Gatsby to host Ortmesh, and how you might benefit from doing the same.',
+        image: createMockGatsbyImageSharpFluid.file,
+      },
+      fields: {
+        slug: '/build-super-customized-performant-blog/',
+      },
+      excerpt: 'Humble Beginnings For most of us, a blog is about sharing ideas, helping others…',
       body: null,
     },
   },

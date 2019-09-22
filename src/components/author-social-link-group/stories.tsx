@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import CategoryListing from './index';
-import { makeProps } from './mock';
+import { AuthorSocialLinkGroup } from './index';
 
 storiesOf('Author Social Link Group', module)
   .add('default', () => (
-    <CategoryListing {...makeProps()} />
+    <AuthorSocialLinkGroup />
   ));

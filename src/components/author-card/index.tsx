@@ -1,52 +1,47 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
+import { Headshot } from '../headshot';
 import * as theme from '../../utils/theme';
-import { TProps } from './types';
+import { AuthorSocialLinkGroup } from '../author-social-link-group';
 
-const AuthorCard: React.FC<TProps> = ({ className }) => {
-  const data = useStaticQuery(
-    graphql`
-        query {
-            file(relativePath: {eq: "images/headshot.jpg"}) {
-                childImageSharp {
-                    fluid(maxWidth: 400) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-    `,
-  );
+export const AuthorCard: React.FC<{}> = () => (
+  <Wrapper>
+    <Headshot />
+    <Content>
+      <Header>Rajjeet Phull</Header>
+      <Bio>
+        Welcome to my personal blog, Ortmesh! Here, I journal my
+        journey as a web developer. My aim is to build interesting
+        side projects around cloud computing and web development.
+      </Bio>
+      <AuthorSocialLinkGroup />
+    </Content>
+  </Wrapper>
+);
 
-  return (
-    <div className={className}>
-      <S.GatsbyImage alt="Author headshot" fluid={data.file.childImageSharp.fluid} />
-      <h3>Rajjeet Phull</h3>
-      <p>Software Developer. Specializing in .NET(C#), React, SQL Server, and AWS.</p>
-    </div>
-  );
-};
-
-const S = {
-  GatsbyImage: styled(GatsbyImage)`
-      max-width: 300px;
-      margin: auto;
-      border-radius: 5px;
-  `,
-};
-
-const StyledAuthorCard = styled(AuthorCard)`
-  box-shadow: ${theme.lightBoxShadow} ;
-  border-radius: 5px;
-  padding: 1em;
-  h3 {
-    margin: 0.2em 0 0 0;
-  }
-  p {
-    font-size: .8em;
-  }
+const Content = styled.div`
+  padding: 10px;   
 `;
 
-export default StyledAuthorCard;
+const Bio = styled.div`
+  font-style: italic;  
+`;
+
+const Header = styled.h2`
+  margin-top: 0;
+`;
+
+const Wrapper = styled.div`  
+  display: flex;
+  align-items: center;    
+  flex-direction: column;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  @media screen and (min-width: ${theme.bigMobileBreakpoint}){
+    flex-direction: row;
+  }  
+  @media screen and (min-width: ${theme.computerBreakpoint}){
+    flex-direction: column;
+  } 
+`;

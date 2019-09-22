@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import Layout from './index';
+import { Layout } from './index';
 import { makeProps } from './mock';
 
 afterEach(cleanup);
@@ -29,12 +29,6 @@ describe('<Layout />', () => {
   it('should have heading called Ortmesh', () => {
     const { getByText } = render(<Layout {...makeProps()} />);
     expect(getByText('Ortmesh')).toBeDefined();
-  });
-
-  it('should have a button to About', () => {
-    const { getByText, getByRole } = render(<Layout {...makeProps()} />);
-    expect(getByText('About')).toBeDefined();
-    expect(getByRole('button')).toBeDefined();
   });
 
   it('should have a website caption', () => {

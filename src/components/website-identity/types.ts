@@ -26,7 +26,6 @@ export type TSiteMetadata = {
 };
 
 export type TProps = {
-  className: string;
   data: {
     file: TImage;
     site: {

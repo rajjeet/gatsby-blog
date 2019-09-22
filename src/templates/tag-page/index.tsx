@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../../components/layout';
-import PostListing from '../../components/post-listing';
+import { Layout } from '../../components/layout';
+import { PostListing } from '../../components/post-listing';
 
 export interface TProps {
   data: {

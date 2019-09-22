@@ -67,7 +67,6 @@ const S = {
 };
 
 const StyledProject = styled(Project)`
-        width: 50%;
         display: inline-block;        
         margin-bottom: 1em;
         height: 190px;        
@@ -75,6 +74,7 @@ const StyledProject = styled(Project)`
         @media (max-width: ${theme.tabletBreakpoint}){
             width: 100%;
          }
+         width: 300px;
 `;
 
 export default StyledProject;

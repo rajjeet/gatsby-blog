@@ -6,11 +6,6 @@ import { makeProps } from './mock';
 afterEach(cleanup);
 
 describe('BlogPost', () => {
-  it('should render', () => {
-    const { asFragment } = render(<BlogPost {...makeProps()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should have a table of contents', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText('Outline')).toBeDefined();
@@ -39,11 +34,6 @@ describe('BlogPost', () => {
   it('should show the description', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText(/I was learning about the new React Hooks/)).toBeDefined();
-  });
-
-  it('should show the blog category', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText('Guide X')).toBeDefined();
   });
 
   it('should shows the blog tag', () => {

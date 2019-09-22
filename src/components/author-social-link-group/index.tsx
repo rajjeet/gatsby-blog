@@ -5,11 +5,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import SocialLink from '../social-link';
-import { TProps } from './types';
 
-const AuthorSocialLinkGroup: React.FC<TProps> = ({ className }) => (
-  <div className={className}>
-    <h4>Links</h4>
+export const AuthorSocialLinkGroup: React.FC<{}> = () => (
+  <div>
+    <Header>Links</Header>
     <div>
       <SocialLink name="Email" icon={faEnvelope} link="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:" />
       <SocialLink name="GitHub" icon={faGithub} link="https://github.com/rajjeet" />
@@ -20,10 +19,6 @@ const AuthorSocialLinkGroup: React.FC<TProps> = ({ className }) => (
   </div>
 );
 
-const StyledAuthorSocialLinkGroup = styled(AuthorSocialLinkGroup)`
-  h4 {
-    margin: 1em auto .25em auto;
-  }  
+const Header = styled.h3`
+    margin: 1em auto .25em auto;    
 `;
-
-export default StyledAuthorSocialLinkGroup;

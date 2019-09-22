@@ -2,12 +2,12 @@
 
 exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bwzfXH louHSu"
-  >
-    <h4>
+  <div>
+    <h3
+      class="sc-bwzfXH fhVeJX"
+    >
       Links
-    </h4>
+    </h3>
     <div>
       <span
         class="sc-bdVaJa jcyxoK"
