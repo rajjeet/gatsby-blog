@@ -1,7 +1,7 @@
 {
   "name": "ortmesh-blog",
   "description": "A blog by Rajjeet Phull on software development",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "clean": "gatsby clean",
@@ -80,6 +80,7 @@
     "babel-plugin-remove-graphql-queries": "^2.7.5",
     "babel-plugin-styled-components": "^1.10.0",
     "babel-preset-gatsby": "^0.2.11",
+    "chai": "^4.2.0",
     "codeceptjs": "^2.3.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
