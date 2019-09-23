@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from './index';
+import { Button } from './index';
 import { makeProps } from './mock';
 
 storiesOf('Button', module)

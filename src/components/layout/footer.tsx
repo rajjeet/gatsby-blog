@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../primitives/button';
+import { Button } from '../primitives/button';
 
 export const Footer: React.FC<{}> = () => (
   <Wrapper>

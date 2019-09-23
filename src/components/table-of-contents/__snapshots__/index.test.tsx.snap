@@ -2,17 +2,27 @@
 
 exports[`<TableOfContents /> should render 1`] = `
 <DocumentFragment>
-  <h4>
-    Outline
-  </h4>
+  <div
+    class="sc-htpNat kQuaxz"
+  >
+    <h4
+      class="sc-bxivhb eBNJKg"
+    >
+      Outline
+    </h4>
+    <button
+      class="sc-bdVaJa eSxrIN"
+    >
+      Back to Top
+    </button>
+  </div>
   <ul
-    class="sc-bdVaJa cSwstg"
+    class="sc-bwzfXH hovirx"
     id="static-toc"
   >
     <div>
       <a
-        class="sc-bwzfXH dLeDxw"
-        href="#introduction"
+        class="sc-ifAKCX fzfpPT"
       >
         <li>
           Introduction
@@ -21,21 +31,19 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bwzfXH dLeDxw"
-        href="#the-basics"
+        class="sc-ifAKCX fzfpPT"
       >
         <li>
           The Basics
         </li>
       </a>
       <ul
-        class="sc-bdVaJa cSwstg"
+        class="sc-bwzfXH hovirx"
         id="static-toc"
       >
         <div>
           <a
-            class="sc-bwzfXH dLeDxw"
-            href="#state-management-redux"
+            class="sc-ifAKCX fzfpPT"
           >
             <li>
               State Management (Redux)
@@ -44,8 +52,7 @@ exports[`<TableOfContents /> should render 1`] = `
         </div>
         <div>
           <a
-            class="sc-bwzfXH dLeDxw"
-            href="#context-api"
+            class="sc-ifAKCX fzfpPT"
           >
             <li>
               Context API
@@ -56,8 +63,7 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bwzfXH dLeDxw"
-        href="#manage-global-state-in-react-hooks"
+        class="sc-ifAKCX fzfpPT"
       >
         <li>
           Manage Global State in React Hooks
@@ -66,8 +72,7 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bwzfXH dLeDxw"
-        href="#middleware-logger"
+        class="sc-ifAKCX fzfpPT"
       >
         <li>
           Middleware: Logger
