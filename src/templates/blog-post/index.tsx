@@ -13,7 +13,7 @@ import * as theme from '../../utils/theme';
 import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
 import { getTagSlug } from '../../utils/slugs';
 import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
-import TableOfContents from '../../components/table-of-contents';
+import { TableOfContents } from '../../components/table-of-contents';
 import { TProps } from './types';
 
 const BlogPost: React.FC<TProps> = (props) => {

@@ -2,7 +2,7 @@ import { navigate } from 'gatsby-link';
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import Button from '../primitives/button';
+import { Button } from '../primitives/button';
 import { WebsiteIdentity } from '../website-identity';
 
 export const Header: React.FC<{}> = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from '../primitives/button';
+import { Button } from '../primitives/button';
 import { TProps } from './mock';
 
 const PaginationButtonGroup: React.FC<TProps> = ({
