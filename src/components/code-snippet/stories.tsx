@@ -1,20 +1,8 @@
 import React, { useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import Prism from 'prismjs';
-import CodeSnippet from './index';
-
-const code = `
-const mainReducer = (state, action) => {
-  console.log('Before', state);
-  console.log('Action', action);
-  let result = {
-    count: countReducer(state.count, action)      
-  };
-  console.log('After', result);
-  return result
-};      
-
-`;
+import { CodeSnippet } from './index';
+import { makeProps } from './mock';
 
 const Container = ({ children }): JSX.Element => {
   useEffect(() => Prism.highlightAll(), []);
@@ -24,15 +12,11 @@ const Container = ({ children }): JSX.Element => {
 storiesOf('Code Snippet', module)
   .add('default', () => (
     <Container>
-      <CodeSnippet className="language-javascript">
-        {code}
-      </CodeSnippet>
+      <CodeSnippet {...makeProps()} />
     </Container>
   ))
   .add('line numbers and highlight', () => (
     <Container>
-      <CodeSnippet dataLine="2-4">
-        {code}
-      </CodeSnippet>
+      <CodeSnippet dataLine="2-4" {...makeProps()} />
     </Container>
   ));

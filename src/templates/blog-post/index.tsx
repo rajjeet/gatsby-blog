@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Prism from 'prismjs';
+// import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import { Layout } from '../../components/layout';
 import TagGroup from '../../components/tag-group';
 import Seo from '../../components/seo';

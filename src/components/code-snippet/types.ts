@@ -4,4 +4,5 @@ export type TProps = {
   dataLine?: string;
   hasLineNumbers?: boolean;
   className?: string;
+  fileName?: string;
 }

@@ -9,7 +9,7 @@ description: I was learning about the new React Hooks, when I came across a blog
 tags:
     - React
 ---
-import CodeSnippet from '../../../../components/code-snippet';
+import { CodeSnippet }  from '../../../../components/code-snippet';
 
 <iframe style="width:100%;height:60vmin;@media (max-width: 350px) {height:250px};background-color:white;" src="https://www.youtube-nocookie.com/embed/f37cS7DjYV8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -50,11 +50,9 @@ With a Redux implementation, a provider wraps the entry level components. Simila
 
 Here is implementation of the provider object using React Hooks:
 
-<CodeSnippet>{`
-import React, {createContext, useReducer} from 'react';
-\n
-export let StateContext = createContext();
-\n
+<CodeSnippet fileName="StateProvider.js">{`
+import React, {createContext, useReducer} from 'react';\n
+export let StateContext = createContext();\n
 export const StateProvider = ({children, reducer, initialState}) => {
     let mainReducer = useReducer(reducer, initialState);
     return <StateContext.Provider value={mainReducer}>
@@ -65,16 +63,24 @@ export const StateProvider = ({children, reducer, initialState}) => {
 
 Here, we are creating and exporting the context using React's createContext API. 
 
-<CodeSnippet>{`
-...
-export const StateContext = createContext();
-...
+<CodeSnippet fileName="StateProvider.js" dataLine="3">{`
+import React, {createContext, useReducer} from 'react';\n
+export let StateContext = createContext();\n
+export const StateProvider = ({children, reducer, initialState}) => {
+    let mainReducer = useReducer(reducer, initialState);
+    return <StateContext.Provider value={mainReducer}>
+        {children}
+        </StateContext.Provider>
+};
 `}</CodeSnippet>
 
 The next statement wraps the the children components, `children`, by the globally bound Context Provider. 
 
-<CodeSnippet>{`
-...
+<CodeSnippet fileName="StateProvider.js" dataLine="7-9">{`
+import React, {createContext, useReducer} from 'react';\n
+export let StateContext = createContext();\n
+export const StateProvider = ({children, reducer, initialState}) => {
+    let mainReducer = useReducer(reducer, initialState);
     return <StateContext.Provider value={mainReducer}>
         {children}
         </StateContext.Provider>
@@ -100,7 +106,7 @@ export const countReducer = (state, action) => {
 
 Finally, in our `<App />` component, we can wrap our application using `StateProvider` and pass in the reducer and initialState.
 
-<CodeSnippet>{`
+<CodeSnippet fileName="App.js">{`
 const App = () => {
     return <StateProvider reducer={countReducer} initialState={0}>
 	    /* code */

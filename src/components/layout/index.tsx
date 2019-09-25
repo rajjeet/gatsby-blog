@@ -1,5 +1,4 @@
 import React from 'react';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 import { TProps } from './types';
