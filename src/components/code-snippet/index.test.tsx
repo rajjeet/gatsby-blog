@@ -1,11 +1,9 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { CodeSnippet } from './index';
 import { makeProps } from './mock';
 
-afterEach(cleanup);
-
-describe('<CategoryListing />', () => {
+describe('<CodeSnippet />', () => {
   it('should render', () => {
     const { asFragment } = render(<CodeSnippet {...makeProps()} />);
     expect(asFragment()).toMatchSnapshot();
@@ -25,4 +23,12 @@ describe('<CategoryListing />', () => {
     const { getByText } = render(<CodeSnippet {...makeProps()} />);
     expect(getByText(/mainReducer/)).toBeDefined();
   });
+
+  // TODO: right a valid test
+  // it('should display Copied after clicking on the copy button', () => {
+  //   const { getByText, debug } = render(<CodeSnippet {...makeProps()} />);
+  //   fireEvent.click(getByText('Copy'));
+  //
+  //   // expect(getByText('Copied')).toBeDefined();
+  // });
 });
