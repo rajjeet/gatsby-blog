@@ -6,8 +6,8 @@ import SchemaOrg from './SchemaOrg';
 import { TProps } from './types';
 
 const Seo: React.FC<TProps> = ({
-  postData, frontmatter, postImage, isBlogPost,
-}) => {
+                                 postData, frontmatter, postImage, isBlogPost,
+                               }) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
     graphql`
         {
@@ -57,6 +57,7 @@ const Seo: React.FC<TProps> = ({
         <html lang="en" />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
+        <meta name="robots" content="index, follow" />
 
         {/* OpenGraph tags */}
         <meta property="og:url" content={url} />
