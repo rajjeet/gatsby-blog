@@ -6,8 +6,8 @@ import SchemaOrg from './SchemaOrg';
 import { TProps } from './types';
 
 const Seo: React.FC<TProps> = ({
-                                 postData, frontmatter, postImage, isBlogPost,
-                               }) => {
+  postData, frontmatter, postImage, isBlogPost,
+}) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
     graphql`
         {
@@ -60,19 +60,21 @@ const Seo: React.FC<TProps> = ({
         <meta name="robots" content="index, follow" />
 
         {/* OpenGraph tags */}
-        <meta property="og:url" content={url} />
-        {isBlogPost ? <meta property="og:type" content="article" /> : null}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:url" content={url} />
+        {isBlogPost ? <meta property="og:type" content="article" /> : null}
+        <meta property="og:site_name" content={seo.organization.name} />
         <meta property="fb:app_id" content={seo.social.fbAppID} />
 
         {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={seo.social.twitter} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content={seo.social.twitter} />
+        <meta name="twitter:site" content={seo.social.twitter} />
       </Helmet>
       <SchemaOrg
         isBlogPost={isBlogPost}
