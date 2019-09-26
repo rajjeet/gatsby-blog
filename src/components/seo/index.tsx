@@ -1,4 +1,3 @@
-import path from 'path';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -46,7 +45,7 @@ const Seo: React.FC<TProps> = ({
   const description = postMeta.description || seo.description;
   const image = postImage ? `${seo.canonicalUrl}${postImage}` : seo.image;
   const url = postMeta.slug
-    ? `${seo.canonicalUrl}${path.sep}${postMeta.slug}`
+    ? `${seo.canonicalUrl}${postMeta.slug}`
     : seo.canonicalUrl;
   const datePublished = isBlogPost ? postMeta.datePublished : false;
   return (

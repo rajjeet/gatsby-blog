@@ -49,7 +49,7 @@ const BlogPost: React.FC<TProps> = (props) => {
     <Layout>
       <Seo
         isBlogPost
-        frontmatter={post.frontmatter}
+        frontmatter={{ ...post.frontmatter, slug: post.fields.slug }}
         postImage={image.publicURL}
         postData={null}
       />
