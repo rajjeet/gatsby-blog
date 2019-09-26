@@ -5,7 +5,7 @@ import SchemaOrg from './SchemaOrg';
 import { TProps } from './types';
 
 const Seo: React.FC<TProps> = ({
-  postData, frontmatter, postImage, isBlogPost,
+  frontmatter, postImage, isBlogPost,
 }) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
     graphql`
@@ -34,11 +34,11 @@ const Seo: React.FC<TProps> = ({
     `,
   );
 
-  const postMeta = frontmatter || (postData && postData.childMarkdownRemark.frontmatter) || {
+  const postMeta = frontmatter || {
     title: '',
     description: '',
     slug: '',
-    datePublished: '',
+    date: '',
   };
 
   const title = postMeta.title || seo.title;
@@ -47,7 +47,7 @@ const Seo: React.FC<TProps> = ({
   const url = postMeta.slug
     ? `${seo.canonicalUrl}${postMeta.slug}`
     : seo.canonicalUrl;
-  const datePublished = isBlogPost ? postMeta.datePublished : false;
+  const datePublished = isBlogPost ? postMeta.date : '';
   return (
     <>
       <Helmet>
@@ -82,6 +82,7 @@ const Seo: React.FC<TProps> = ({
         image={image}
         description={description}
         datePublished={datePublished}
+        dateModified={datePublished}
         canonicalUrl={seo.canonicalUrl}
         author={seo.author}
         organization={seo.organization}

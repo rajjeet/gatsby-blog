@@ -51,7 +51,6 @@ const BlogPost: React.FC<TProps> = (props) => {
         isBlogPost
         frontmatter={{ ...post.frontmatter, slug: post.fields.slug }}
         postImage={image.publicURL}
-        postData={null}
       />
       <div className={className}>
         <div className="post-summary">
