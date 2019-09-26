@@ -54,6 +54,7 @@ const Seo: React.FC<TProps> = ({
       <Helmet>
         {/* General tags */}
         <title>{title}</title>
+        <html lang="en" />
         <meta name="description" content={description} />
         <meta name="image" content={image} />
 
