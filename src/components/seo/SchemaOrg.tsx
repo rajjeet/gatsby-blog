@@ -1,11 +1,32 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+type TProps = {
+  author: {
+    name: string;
+  };
+  canonicalUrl: string;
+  datePublished: string;
+  dateModified: string;
+  defaultTitle: string;
+  description: string;
+  image: string;
+  isBlogPost: boolean;
+  organization: {
+    url: string;
+    logo: string;
+    name: string;
+  };
+  title: string;
+  url: string;
+}
+
 export default React.memo(
   ({
     author,
     canonicalUrl,
     datePublished,
+    dateModified,
     defaultTitle,
     description,
     image,
@@ -13,7 +34,7 @@ export default React.memo(
     organization,
     title,
     url,
-  }) => {
+  }: TProps) => {
     const baseSchema = [
       {
         '@context': 'http://schema.org',
@@ -69,6 +90,7 @@ export default React.memo(
             '@id': canonicalUrl,
           },
           datePublished,
+          dateModified,
         },
       ]
       : baseSchema;
