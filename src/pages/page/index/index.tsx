@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Layout } from '../../../components/layout';
 import { PostListing } from '../../../components/post-listing';
 import { Seo } from '../../../components/seo';
-import { TPostEdge, TImage } from '../../../templates/category-page/types';
+import { TImage, TPostEdge } from '../../../templates/blog-post-listing/types';
 
 export type TProjectEdge = {
   node: {
