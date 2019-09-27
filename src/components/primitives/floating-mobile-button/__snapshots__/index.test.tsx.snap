@@ -3,7 +3,7 @@
 exports[`<RoundIconButton /> should render 1`] = `
 <DocumentFragment>
   <button
-    class="sc-bdVaJa dNkrXb"
+    class="sc-bdVaJa bPEsrE"
     type="button"
   >
     <svg
