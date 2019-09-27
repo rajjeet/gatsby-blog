@@ -1,7 +1,6 @@
 import { TFrontMatter } from '../blog-post-listing/types';
 
 export type TProps = {
-  className: string;
   data: {
     post: {
       tableOfContents: {

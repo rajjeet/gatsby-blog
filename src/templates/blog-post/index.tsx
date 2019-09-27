@@ -7,14 +7,14 @@ import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Prism from 'prismjs';
 import { Layout } from '../../components/layout';
-import { TagGroup } from '../../components/tag-group';
 import { Seo } from '../../components/seo';
 import * as theme from '../../utils/theme';
 import { RoundIconButton } from '../../components/primitives/floating-mobile-button';
-import { getTagSlug } from '../../utils/slugs';
+
 import { MarkdownMdxProvider } from '../../utils/MarkdownMDXProvider';
 import { TableOfContents } from '../../components/table-of-contents';
 import { TProps } from './types';
+import { PostSummary } from './post-summary';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
@@ -33,7 +33,7 @@ const BlogPost: React.FC<TProps> = (props) => {
 
   const toggleTableOfContentModal = (): void => setShowMobileToc(!showMobileToc);
 
-  const { className, data } = props;
+  const { data } = props;
   const { post } = data;
   const disqusConfig = {
     url: `http://ortmesh.com${post.fields.slug}`,
@@ -51,25 +51,15 @@ const BlogPost: React.FC<TProps> = (props) => {
         frontmatter={{ ...post.frontmatter, slug: post.fields.slug }}
         postImage={image.publicURL}
       />
-      <Wrapper className={className}>
-        <div>
-          <Header>{title}</Header>
-          <PostInfo>
-            {date}
-            {' - '}
-            {post.timeToRead}
-            {' min read - '}
-            <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
-              Comments
-            </Disqus.CommentCount>
-          </PostInfo>
-          <p>{description}</p>
-          <TagGroup
-            tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
-            getSlug={getTagSlug}
-          />
-        </div>
-        <br />
+      <Wrapper>
+        <PostSummary
+          description={description}
+          date={date}
+          title={title}
+          timeToRead={post.timeToRead}
+          disqusConfig={disqusConfig}
+          tags={tags}
+        />
         <MainColumn>
           <MainContent>
             <div className="js-toc-content">
@@ -183,16 +173,8 @@ const MainContent = styled.div`
   min-width: 0;
 `;
 
-const Header = styled.h1`
-  margin-bottom: 0;    
-`;
-
 const Wrapper = styled.div`
   padding: 20px;         
-`;
-
-const PostInfo = styled.span`
-  font-size: .9em;      
 `;
 
 export const query = graphql`
