@@ -1,4 +1,4 @@
-import { TFrontMatter } from '../category-page/types';
+import { TFrontMatter } from '../blog-post-listing/types';
 
 export type TProps = {
   className: string;

@@ -1,4 +1,4 @@
-import { TPostEdge, TPostNode } from '../../templates/category-page/types';
+import { TPostEdge, TPostNode } from '../../templates/blog-post-listing/types';
 
 export type TProps = {
   posts: TPostEdge[];

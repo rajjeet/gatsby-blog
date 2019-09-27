@@ -1,4 +1,4 @@
-import { TImage } from '../../templates/category-page/types';
+import { TImage } from '../../templates/blog-post-listing/types';
 
 export type TSiteMetadata = {
   title: string;

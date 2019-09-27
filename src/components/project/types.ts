@@ -1,4 +1,4 @@
-import { TFluid } from '../../templates/category-page/types';
+import { TFluid } from '../../templates/blog-post-listing/types';
 
 export type TProps = {
   heading: string;
