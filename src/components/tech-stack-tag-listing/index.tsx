@@ -3,29 +3,29 @@ import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
-const TechStackTagListing: React.FC<TProps> = ({ className, tags }) => (
-  <div className={className}>
+export const TechStackTagListing: React.FC<TProps> = ({ tags }) => (
+  <Wrapper>
     <span>Tech Tags:</span>
     {
       tags.map((tag) => (
-        <div key={tag.label}>{tag.label}</div>
+        <Tag key={tag.label}>{tag.label}</Tag>
       ))
     }
-  </div>
+  </Wrapper>
 );
 
-const StyledTechStackTagListing = styled(TechStackTagListing)`
-  margin: .5em auto;
-   div {
-   display: inline-block;
-   background-color: ${theme.primaryColor};
-    color: white;
-    border-radius: 5px;
-    font-size: .8em;
-    font-weight: bolder;
-    padding: .2em .5em;
-    margin: .2em .2em;
-   }
+const Wrapper = styled.div`
+  margin: .5em auto;   
 `;
 
-export default StyledTechStackTagListing;
+const Tag = styled.div`
+  display: inline-block;
+  background-color: ${theme.primaryColor};
+  color: white;
+  border-radius: 5px;
+  font-size: .8em;
+  font-weight: bolder;
+  padding: .2em .5em;
+  margin: .2em .2em;
+`;
+

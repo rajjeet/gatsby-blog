@@ -6,14 +6,13 @@ import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Prism from 'prismjs';
-// import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import { Layout } from '../../components/layout';
-import TagGroup from '../../components/tag-group';
-import Seo from '../../components/seo';
+import { TagGroup } from '../../components/tag-group';
+import { Seo } from '../../components/seo';
 import * as theme from '../../utils/theme';
-import FloatingMobileButton from '../../components/primitives/floating-mobile-button';
+import { RoundIconButton } from '../../components/primitives/floating-mobile-button';
 import { getTagSlug } from '../../utils/slugs';
-import MarkdownMDXProvider from '../../utils/MarkdownMDXProvider';
+import { MarkdownMdxProvider } from '../../utils/MarkdownMDXProvider';
 import { TableOfContents } from '../../components/table-of-contents';
 import { TProps } from './types';
 
@@ -52,10 +51,10 @@ const BlogPost: React.FC<TProps> = (props) => {
         frontmatter={{ ...post.frontmatter, slug: post.fields.slug }}
         postImage={image.publicURL}
       />
-      <div className={className}>
-        <div className="post-summary">
-          <h1>{title}</h1>
-          <span>
+      <Wrapper className={className}>
+        <div>
+          <Header>{title}</Header>
+          <PostInfo>
             {date}
             {' - '}
             {post.timeToRead}
@@ -63,7 +62,7 @@ const BlogPost: React.FC<TProps> = (props) => {
             <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
               Comments
             </Disqus.CommentCount>
-          </span>
+          </PostInfo>
           <p>{description}</p>
           <TagGroup
             tags={tags ? tags.map((tag) => ({ fieldValue: tag })) : null}
@@ -74,7 +73,7 @@ const BlogPost: React.FC<TProps> = (props) => {
         <MainColumn>
           <MainContent>
             <div className="js-toc-content">
-              <MarkdownMDXProvider content={post.body} />
+              <MarkdownMdxProvider content={post.body} />
             </div>
             <br />
             <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
@@ -85,7 +84,7 @@ const BlogPost: React.FC<TProps> = (props) => {
               <div className="js-toc" />
             </TocWrapper>
             <FloatingButton>
-              <FloatingMobileButton
+              <RoundIconButton
                 aria-label="Open table of contents"
                 icon={faList}
                 onClick={toggleTableOfContentModal}
@@ -102,7 +101,7 @@ const BlogPost: React.FC<TProps> = (props) => {
               >
                 <TableOfContents items={post.tableOfContents.items} />
                 <FloatingButton>
-                  <FloatingMobileButton
+                  <RoundIconButton
                     aria-label="Close table of contents"
                     icon={faTimes}
                     onClick={toggleTableOfContentModal}
@@ -113,7 +112,7 @@ const BlogPost: React.FC<TProps> = (props) => {
             </div>
           )
         }
-      </div>
+      </Wrapper>
     </Layout>
   );
 };
@@ -184,19 +183,17 @@ const MainContent = styled.div`
   min-width: 0;
 `;
 
-const StyledBlogPost = styled(BlogPost)`
-  padding: 20px;
-      h1 {
-        margin-bottom: 0;    
-      }
-      .post-summary {
-        span {
-          font-size: .9em;      
-        }
-      }      
+const Header = styled.h1`
+  margin-bottom: 0;    
 `;
 
-export default StyledBlogPost;
+const Wrapper = styled.div`
+  padding: 20px;         
+`;
+
+const PostInfo = styled.span`
+  font-size: .9em;      
+`;
 
 export const query = graphql`
     query($slug: String!) {
@@ -223,3 +220,5 @@ export const query = graphql`
         }
     }
 `;
+
+export default BlogPost;

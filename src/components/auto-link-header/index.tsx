@@ -2,7 +2,7 @@ import React from 'react';
 import { kebabCase } from 'lodash';
 import { TProps } from './types';
 
-const AutoLinkHeader = (HeaderTag): React.FC<TProps> => ({ children }): JSX.Element => {
+export const AutoLinkHeader = (HeaderTag): React.FC<TProps> => ({ children }): JSX.Element => {
   const identifier = `${kebabCase(children)}`;
   return (
     <HeaderTag id={identifier}>
@@ -12,5 +12,3 @@ const AutoLinkHeader = (HeaderTag): React.FC<TProps> => ({ children }): JSX.Elem
     </HeaderTag>
   );
 };
-
-export default AutoLinkHeader;

@@ -3,15 +3,19 @@
 exports[`<TechStackTagListing /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa kDwnaI"
+    class="sc-bdVaJa tbeKX"
   >
     <span>
       Tech Tags:
     </span>
-    <div>
+    <div
+      class="sc-bwzfXH bIsFyt"
+    >
       React
     </div>
-    <div>
+    <div
+      class="sc-bwzfXH bIsFyt"
+    >
       GatsbyJS
     </div>
   </div>

@@ -3,7 +3,7 @@
 exports[`<AuthorCard /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bZQynM kKubAz"
+    class="sc-gzVnrw jzjLUS"
   >
     <div
       class="sc-bdVaJa ffyvHX gatsby-image-wrapper"
@@ -31,30 +31,31 @@ exports[`<AuthorCard /> should render 1`] = `
       </noscript>
     </div>
     <div
-      class="sc-bxivhb kgjubx"
+      class="sc-ifAKCX XTSRe"
     >
       <h2
-        class="sc-EHOje eXyQQA"
+        class="sc-bZQynM hqJPtL"
       >
         Rajjeet Phull
       </h2>
       <div
-        class="sc-ifAKCX djLIaa"
+        class="sc-EHOje gWvNNT"
       >
         Welcome to my personal blog, Ortmesh! Here, I journal my journey as a web developer. My aim is to build interesting side projects around cloud computing and web development.
       </div>
       <div>
         <h3
-          class="sc-htpNat gUkjVr"
+          class="sc-bxivhb gLxXrF"
         >
           Links
         </h3>
         <div>
           <span
-            class="sc-bwzfXH OwaVE"
+            class="sc-bwzfXH eGCSeB"
           >
             <a
               aria-label="See Email (opens new tab)"
+              class="sc-htpNat dlvVjy"
               href="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
               rel="noopener noreferrer"
               target="_blank"
@@ -77,10 +78,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH OwaVE"
+            class="sc-bwzfXH eGCSeB"
           >
             <a
               aria-label="See GitHub (opens new tab)"
+              class="sc-htpNat dlvVjy"
               href="https://github.com/rajjeet"
               rel="noopener noreferrer"
               target="_blank"
@@ -103,10 +105,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH OwaVE"
+            class="sc-bwzfXH eGCSeB"
           >
             <a
               aria-label="See LinkedIn (opens new tab)"
+              class="sc-htpNat dlvVjy"
               href="https://www.linkedin.com/in/rajjeetphull/"
               rel="noopener noreferrer"
               target="_blank"
@@ -129,10 +132,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH OwaVE"
+            class="sc-bwzfXH eGCSeB"
           >
             <a
               aria-label="See Facebook (opens new tab)"
+              class="sc-htpNat dlvVjy"
               href="https://www.facebook.com/ortmesh/"
               rel="noopener noreferrer"
               target="_blank"
@@ -155,10 +159,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH OwaVE"
+            class="sc-bwzfXH eGCSeB"
           >
             <a
               aria-label="See Twitter (opens new tab)"
+              class="sc-htpNat dlvVjy"
               href="https://twitter.com/ortmesh"
               rel="noopener noreferrer"
               target="_blank"

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PaginationButtonGroup from '../pagination-button-group';
+import { PaginationButtonGroup } from '../pagination-button-group';
 import { TPaginationProps } from './types';
 
 export const Pagination: React.FC<TPaginationProps> = (

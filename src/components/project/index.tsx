@@ -5,16 +5,16 @@ import GatsbyImage from 'gatsby-image';
 import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
-const Project: React.FC<TProps> = ({
-  heading, link, description, className, thumbnail,
+export const Project: React.FC<TProps> = ({
+  heading, link, description, thumbnail,
 }) => (
-  <div className={className}>
+  <Wrapper>
     <S.Link aria-label={`See ${heading}`} to={link}>
       <h3>{heading}</h3>
       <S.GatsbyImage alt={heading} fluid={thumbnail} />
       <p>{description}</p>
     </S.Link>
-  </div>
+  </Wrapper>
 );
 
 const S = {
@@ -66,7 +66,7 @@ const S = {
   `,
 };
 
-const StyledProject = styled(Project)`
+const Wrapper = styled.div`
         display: inline-block;        
         margin-bottom: 1em;
         height: 190px;        
@@ -77,4 +77,3 @@ const StyledProject = styled(Project)`
          width: 300px;
 `;
 
-export default StyledProject;

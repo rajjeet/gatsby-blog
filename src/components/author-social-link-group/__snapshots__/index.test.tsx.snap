@@ -4,16 +4,17 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 <DocumentFragment>
   <div>
     <h3
-      class="sc-bwzfXH fhVeJX"
+      class="sc-htpNat gUkjVr"
     >
       Links
     </h3>
     <div>
       <span
-        class="sc-bdVaJa jcyxoK"
+        class="sc-bdVaJa eTDaYl"
       >
         <a
           aria-label="See Email (opens new tab)"
+          class="sc-bwzfXH ccADRz"
           href="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
           rel="noopener noreferrer"
           target="_blank"
@@ -36,10 +37,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa jcyxoK"
+        class="sc-bdVaJa eTDaYl"
       >
         <a
           aria-label="See GitHub (opens new tab)"
+          class="sc-bwzfXH ccADRz"
           href="https://github.com/rajjeet"
           rel="noopener noreferrer"
           target="_blank"
@@ -62,10 +64,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa jcyxoK"
+        class="sc-bdVaJa eTDaYl"
       >
         <a
           aria-label="See LinkedIn (opens new tab)"
+          class="sc-bwzfXH ccADRz"
           href="https://www.linkedin.com/in/rajjeetphull/"
           rel="noopener noreferrer"
           target="_blank"
@@ -88,10 +91,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa jcyxoK"
+        class="sc-bdVaJa eTDaYl"
       >
         <a
           aria-label="See Facebook (opens new tab)"
+          class="sc-bwzfXH ccADRz"
           href="https://www.facebook.com/ortmesh/"
           rel="noopener noreferrer"
           target="_blank"
@@ -114,10 +118,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa jcyxoK"
+        class="sc-bdVaJa eTDaYl"
       >
         <a
           aria-label="See Twitter (opens new tab)"
+          class="sc-bwzfXH ccADRz"
           href="https://twitter.com/ortmesh"
           rel="noopener noreferrer"
           target="_blank"

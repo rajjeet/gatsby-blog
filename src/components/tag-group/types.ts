@@ -1,5 +1,5 @@
 export type TProps = {
-  className: string;
-  tags: {fieldValue: string; totalCount: number}[];
+  tags: {fieldValue: string; totalCount?: number}[];
   getSlug: (string) => string;
+  inline?: boolean;
 };

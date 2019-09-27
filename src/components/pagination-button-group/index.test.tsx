@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import PaginationButtonGroup from './index';
+import { PaginationButtonGroup } from './index';
 import { makeProps } from './mock';
 import '@testing-library/jest-dom/extend-expect';
 

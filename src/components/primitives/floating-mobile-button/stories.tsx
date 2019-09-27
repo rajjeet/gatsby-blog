@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import FloatingMobileButton from './index';
+import { RoundIconButton } from './index';
 import { makeProps } from './mock';
 
-storiesOf('FloatingMobileButton', module)
+storiesOf('RoundIconButton', module)
   .add('default', () => (
-    <FloatingMobileButton {...makeProps()}>Button</FloatingMobileButton>
+    <RoundIconButton {...makeProps()}>Button</RoundIconButton>
   ));

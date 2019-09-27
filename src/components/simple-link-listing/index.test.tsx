@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import SimpleLinkListing from './index';
+import { SimpleLinkListing } from './index';
 import { makeProps } from './mock';
 
 afterEach(cleanup);

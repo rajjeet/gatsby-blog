@@ -2,10 +2,10 @@
 
 exports[`<ProjectListing /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bxivhb nYNVZ"
-  >
-    <h1>
+  <div>
+    <h1
+      class="sc-bxivhb ezFTID"
+    >
       List of Projects
     </h1>
     <div
