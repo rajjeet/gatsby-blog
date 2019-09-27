@@ -5,13 +5,13 @@ const { uniq } = require('lodash');
 const path = require('path');
 const urlJoin = require('url-join');
 const { getTagSlug } = require('../src/utils/slugs');
-const { getCategorySlug } = require('../src/utils/slugs');
 
 module.exports = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
         {
           allMdx(filter: {frontmatter: {draft: {ne: true}}}, limit: 500, sort: {fields: [frontmatter___date], order: DESC}) {
-            nodes {
+            edges {
+            node {
               fields {
                 slug
                 contentType
@@ -21,6 +21,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
                 category
               }
             }
+            }
           }
         }
     `);
@@ -29,9 +30,9 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
     throw result.errors;
   }
 
-  const allPosts = result.data.allMdx
+  const allPosts = result.data.allMdx.edges
     .filter(({ node }) => node.fields.contentType === 'post');
-  const allProjects = result.data.allMdx
+  const allProjects = result.data.allMdx.edges
     .filter(({ node }) => node.fields.contentType === 'project');
 
   allProjects
@@ -105,36 +106,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
           currentPage: index + 1,
           tag,
           paginationSlug: tagSlug,
-        },
-      });
-    });
-  });
-
-  // Category
-  let categories = [];
-  allPosts.forEach(({ node }) => {
-    categories = categories.concat(node.frontmatter.category);
-  });
-
-  uniq(categories).forEach((category) => {
-    const categoryPosts = result.data.allMdx
-      .filter(({ node }) => node.frontmatter.category === category);
-    const categorySlug = getCategorySlug(category);
-    const categoryPageTemplate = path.resolve('./src/templates/category-page/index.tsx');
-    const totalNumOfPostsPerCategory = categoryPosts.length;
-    const numOfPagesPerCategory = Math.ceil(totalNumOfPostsPerCategory / POSTS_PER_PAGE);
-    Array.from({ length: numOfPagesPerCategory }).forEach((_, index) => {
-      createPage({
-        path: urlJoin(categorySlug, `${index + 1}`),
-        component: categoryPageTemplate,
-        context: {
-          limit: POSTS_PER_PAGE,
-          skip: index * POSTS_PER_PAGE,
-          numOfPages: numOfPagesPerCategory,
-          numOfPosts: totalNumOfPostsPerCategory,
-          currentPage: index + 1,
-          category,
-          paginationSlug: categorySlug,
         },
       });
     });

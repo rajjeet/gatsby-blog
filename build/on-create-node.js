@@ -2,6 +2,12 @@
 /* eslint @typescript-eslint/explicit-function-return-type: 0 */
 const { createFilePath } = require('gatsby-source-filesystem');
 
+const CONTENT_TYPE_POST = 'post';
+const CONTENT_TYPE_PROJECT = 'project';
+
+exports.CONTENT_TYPE_POST = CONTENT_TYPE_POST;
+exports.CONTENT_TYPE_PROJECT = CONTENT_TYPE_PROJECT;
+
 module.exports = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -13,14 +19,14 @@ module.exports = ({ node, getNode, actions }) => {
 
     if (node.fileAbsolutePath.includes('src/pages/posts')) {
       basePath = 'pages/posts';
-      contentType = 'post';
+      contentType = CONTENT_TYPE_POST;
       rawSlug = createFilePath({ node, getNode, basePath });
       slug = rawSlug.substring(rawSlug.indexOf('/', 1), rawSlug.length);
     }
 
     if (node.fileAbsolutePath.includes('src/pages/projects')) {
       basePath = 'pages/projects';
-      contentType = 'project';
+      contentType = CONTENT_TYPE_PROJECT;
       slug = createFilePath({ node, getNode, basePath });
     }
 
