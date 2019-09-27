@@ -5,5 +5,5 @@ const _ = require('lodash');
 module.exports = {
   getTagSlug(tag) {
     return `/tags/${_.kebabCase(tag)}/`;
-  }
+  },
 };
