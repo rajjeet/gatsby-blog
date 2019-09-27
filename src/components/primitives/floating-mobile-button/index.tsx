@@ -12,15 +12,13 @@ export const RoundIconButton: React.FC<TProps> = ({ icon, ...rest }) => (
 
 const StyledButton = styled.button`
     border-radius: 100%;
-    outline: none;
     border: none;    
-    padding: 1rem;
-    min-width: 55px;
+    width: 55px;
+    height: 55px;
     margin: 1rem;
     background-color: ${theme.primaryColor};
-    box-shadow: ${theme.hoverBoxShadow};
     cursor: pointer;
-    :active {
+    :active, :hover {
       background-color: ${theme.secondaryColor};
     }
 `;
