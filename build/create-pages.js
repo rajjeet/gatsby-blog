@@ -86,6 +86,16 @@ function createProjects(allProjects, createPage) {
     });
 }
 
+function getAllPosts(result) {
+  return result.data.allMdx.nodes
+    .filter(({ fields }) => fields.contentType === 'post');
+}
+
+function getAllProjects(result) {
+  return result.data.allMdx.nodes
+    .filter(({ fields }) => fields.contentType === 'project');
+}
+
 module.exports = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
         {
@@ -107,15 +117,13 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   if (result.errors) {
     throw result.errors;
   }
-  const allPosts = result.data.allMdx.nodes
-    .filter(({ fields }) => fields.contentType === 'post');
-  const allProjects = result.data.allMdx.nodes
-    .filter(({ fields }) => fields.contentType === 'project');
+  const posts = getAllPosts(result);
+  const projects = getAllProjects(result);
 
-  createProjects(allProjects, createPage);
-  createPosts(allPosts, createPage);
+  createProjects(projects, createPage);
+  createPosts(posts, createPage);
 
   const POSTS_PER_PAGE = 6;
-  createPostListing(allPosts, POSTS_PER_PAGE, createPage);
-  createPostListingByTags(allPosts, POSTS_PER_PAGE, createPage);
+  createPostListing(posts, POSTS_PER_PAGE, createPage);
+  createPostListingByTags(posts, POSTS_PER_PAGE, createPage);
 };
