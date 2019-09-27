@@ -3,21 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { TagGroup } from '../../components/tag-group';
 import { getTagSlug } from '../../utils/slugs';
+import { TPostSummary } from './types';
 
-type TProps = {
-  title: string;
-  date: string;
-  timeToRead: number;
-  disqusConfig: {
-    url: string;
-    identifier: string;
-    title: string;
-  };
-  description: string;
-  tags: string[];
-};
-
-export const PostSummary: React.FC<TProps> = ({
+export const PostSummary: React.FC<TPostSummary> = ({
   title, date, timeToRead, disqusConfig, description, tags,
 }) => (
   <Wrapper>

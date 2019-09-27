@@ -4,17 +4,15 @@ import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
-import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Prism from 'prismjs';
 import { Layout } from '../../components/layout';
 import { Seo } from '../../components/seo';
-import * as theme from '../../utils/theme';
-import { RoundIconButton } from '../../components/primitives/floating-mobile-button';
 
 import { MarkdownMdxProvider } from '../../utils/MarkdownMDXProvider';
-import { TableOfContents } from '../../components/table-of-contents';
 import { TProps } from './types';
 import { PostSummary } from './post-summary';
+import { PostNavigation } from './post-navigation';
+import { siteMetadata } from '../../../gatsby-config';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
@@ -36,7 +34,7 @@ const BlogPost: React.FC<TProps> = (props) => {
   const { data } = props;
   const { post } = data;
   const disqusConfig = {
-    url: `http://ortmesh.com${post.fields.slug}`,
+    url: `${siteMetadata.canonicalUrl}${post.fields.slug}`,
     identifier: post.id,
     title: post.frontmatter.title,
   };
@@ -60,112 +58,26 @@ const BlogPost: React.FC<TProps> = (props) => {
           disqusConfig={disqusConfig}
           tags={tags}
         />
-        <MainColumn>
+        <Post>
           <MainContent>
             <div className="js-toc-content">
               <MarkdownMdxProvider content={post.body} />
             </div>
-            <br />
-            <Disqus.DiscussionEmbed shortname="ortmesh" config={disqusConfig} />
+            <Disqus.DiscussionEmbed shortname={siteMetadata.title} config={disqusConfig} />
           </MainContent>
-          <SideBar>
-            <TocWrapper>
-              <TableOfContents items={post.tableOfContents.items} />
-              <div className="js-toc" />
-            </TocWrapper>
-            <FloatingButton>
-              <RoundIconButton
-                aria-label="Open table of contents"
-                icon={faList}
-                onClick={toggleTableOfContentModal}
-              />
-            </FloatingButton>
-          </SideBar>
-        </MainColumn>
-        {
-          showMobileToc && (
-            <div data-testid="mobile-toc">
-              {' '}
-              <MobileTableOfContentsModal
-                onClick={toggleTableOfContentModal}
-              >
-                <TableOfContents items={post.tableOfContents.items} />
-                <FloatingButton>
-                  <RoundIconButton
-                    aria-label="Close table of contents"
-                    icon={faTimes}
-                    onClick={toggleTableOfContentModal}
-                  />
-                </FloatingButton>
-              </MobileTableOfContentsModal>
-
-            </div>
-          )
-        }
+          <PostNavigation
+            items={post.tableOfContents.items}
+            handleButtonClick={toggleTableOfContentModal}
+            showMobileToc={showMobileToc}
+          />
+        </Post>
       </Wrapper>
     </Layout>
   );
 };
 
-const MobileTableOfContentsModal = styled.div`
-  padding: 1rem;
-  z-index: 2;
-  position: fixed;
-  background-color: white;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-`;
-
-const FloatingButton = styled.div`
-  display: none;
-  @media (max-width: ${theme.bigMobileBreakpoint}){
-    display: block;
-  }
-  position: fixed;
-  bottom: 0;
-  right: 0;
-`;
-
-const TocWrapper = styled.div`  
-  @media (max-width: ${theme.bigMobileBreakpoint}){
-      display: none;
-    }
-  position: sticky;
-  top: 1rem;
-  .toc-list-item {
-    a {
-      text-decoration: none;
-      left: 1px;
-    }    
-  } 
-  .toc-list {
-    list-style: none;    
-  } 
-  .is-active-link {
-    color: ${theme.primaryColor};    
-    &:before {
-    background-color: ${theme.primaryColor}
-    }
-  }
-  overflow: hidden;
-  font-size: 1rem;
-`;
-
-const MainColumn = styled.div`
-  display: flex;
-  flex-direction: row;    
-`;
-
-const SideBar = styled.div`
-  flex: 1;
-    @media (max-width: ${theme.bigMobileBreakpoint}){
-     flex: 0;
-     padding: 0;
-    }
-  padding-left: 1rem;
-  min-width: 0;
+const Wrapper = styled.div`
+  padding: 20px;         
 `;
 
 const MainContent = styled.div`
@@ -173,8 +85,9 @@ const MainContent = styled.div`
   min-width: 0;
 `;
 
-const Wrapper = styled.div`
-  padding: 20px;         
+const Post = styled.div`
+  display: flex;
+  flex-direction: row;    
 `;
 
 export const query = graphql`
