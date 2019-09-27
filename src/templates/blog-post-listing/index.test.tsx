@@ -1,9 +1,7 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import BlogPostListing from './index';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 describe('BlogPostListing', () => {
   it('should have the layout header', () => {

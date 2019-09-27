@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Headshot } from './index';
-
-afterEach(cleanup);
 
 describe('Headshot', () => {
   it('should render', () => {

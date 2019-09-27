@@ -1,11 +1,9 @@
 import React from 'react';
 import {
-  render, cleanup, fireEvent, RenderResult,
+  render, fireEvent, RenderResult,
 } from '@testing-library/react';
 import { TableOfContents } from './index';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 function renderTableOfContents(): RenderResult {
   return render(<TableOfContents {...makeProps()} />);

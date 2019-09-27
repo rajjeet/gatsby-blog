@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { TagListing } from './index';
-
-beforeEach(cleanup);
 
 describe('<TagListing />', () => {
   it('should render', () => {

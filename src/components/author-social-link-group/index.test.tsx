@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { AuthorSocialLinkGroup } from './index';
-
-afterEach(cleanup);
 
 describe('<AuthorSocialLinkGroup />', () => {
   it('should render', () => {

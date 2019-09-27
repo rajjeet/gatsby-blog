@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { PostListing } from './index';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 describe('<PostListing />', () => {
   it('should show the post titles', () => {
