@@ -40,7 +40,7 @@
     "@mdx-js/react": "^1.4.4",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
-    "disqus-react": "^1.0.5",
+    "disqus-react": "^1.0.7",
     "gatsby": "^2.1.2",
     "gatsby-background-image": "^0.8.12",
     "intersection-observer": "^0.7.0",
