@@ -4,7 +4,7 @@ import {
   faFacebook, faGithub, faLinkedin, faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import SocialLink from '../social-link';
+import { SocialLink } from '../social-link';
 
 export const AuthorSocialLinkGroup: React.FC<{}> = () => (
   <div>

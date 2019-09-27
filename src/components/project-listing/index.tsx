@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Project from '../project';
+import { Project } from '../project';
 import { TProps } from './types';
 
-const ProductListing: React.FC<TProps> = ({ className, projects, heading }) => (
-  <div className={className}>
-    <h1>{heading}</h1>
+export const ProjectListing: React.FC<TProps> = ({ projects, heading }) => (
+  <div>
+    <Header>{heading}</Header>
     {
       projects.map(({ node }) => (
         <Project
@@ -41,10 +41,7 @@ export const query = graphql`
     }
 `;
 
-const StyledProjectListing = styled(ProductListing)`
-  h1 {
+const Header = styled.h1`
    margin-bottom: 0; 
-  }
 `;
 
-export default StyledProjectListing;

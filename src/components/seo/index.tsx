@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import SchemaOrg from './SchemaOrg';
 import { TProps } from './types';
 
-const Seo: React.FC<TProps> = ({
+export const Seo: React.FC<TProps> = ({
   frontmatter, postImage, isBlogPost,
 }) => {
   const { site: { siteMetadata: seo } } = useStaticQuery(
@@ -92,4 +92,3 @@ const Seo: React.FC<TProps> = ({
   );
 };
 
-export default Seo;

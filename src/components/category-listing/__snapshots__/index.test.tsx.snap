@@ -3,29 +3,37 @@
 exports[`<CategoryListing /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bwzfXH fbiJJR"
+    class=""
   >
-    <h5>
+    <h5
+      class="sc-bxivhb ljezfu"
+    >
       Categories
     </h5>
     <div
-      class="sc-bdVaJa fdxsEr"
+      class="sc-bdVaJa bSrzPW"
     >
       <span
+        class="sc-bwzfXH bipwci"
         role="link"
         tabindex="0"
       >
         Experience
-        <span>
+        <span
+          class="sc-htpNat ixabce"
+        >
           1
         </span>
       </span>
       <span
+        class="sc-bwzfXH bipwci"
         role="link"
         tabindex="0"
       >
         Guide
-        <span>
+        <span
+          class="sc-htpNat ixabce"
+        >
           2
         </span>
       </span>

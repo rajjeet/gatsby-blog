@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import AutoLinkHeader from './index';
+import { AutoLinkHeader } from './index';
 
 const Header1 = AutoLinkHeader('h1');
 const Header2 = AutoLinkHeader('h2');

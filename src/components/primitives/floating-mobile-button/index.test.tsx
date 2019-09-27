@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import FloatingMobileButton from './index';
+import { RoundIconButton } from './index';
 import { makeProps } from './mock';
 
 afterEach(cleanup);
 
-describe('<FloatingMobileButton />', () => {
+describe('<RoundIconButton />', () => {
   it('should render', () => {
     const { asFragment } = render(
-      <FloatingMobileButton {...makeProps()} />,
+      <RoundIconButton {...makeProps()} />,
     );
     expect(asFragment()).toMatchSnapshot();
   });

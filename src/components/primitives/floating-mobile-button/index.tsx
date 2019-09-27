@@ -4,13 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as theme from '../../../utils/theme';
 import { TProps } from './types';
 
-const FloatingMobileButton: React.FC<TProps> = ({ icon, ...rest }) => (
-  <button {...rest} type="button">
+export const RoundIconButton: React.FC<TProps> = ({ icon, ...rest }) => (
+  <StyledButton {...rest} type="button">
     <FontAwesomeIcon icon={icon} color="white" size="2x" />
-  </button>
+  </StyledButton>
 );
 
-const StyledFloatingMobileButton = styled(FloatingMobileButton)`
+const StyledButton = styled.button`
     border-radius: 100%;
     outline: none;
     border: none;    
@@ -24,5 +24,3 @@ const StyledFloatingMobileButton = styled(FloatingMobileButton)`
       background-color: ${theme.secondaryColor};
     }
 `;
-
-export default StyledFloatingMobileButton;

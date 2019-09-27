@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
-import TagGroup from '../tag-group';
+import { TagGroup } from '../tag-group';
 import { getTagSlug } from '../../utils/slugs';
-import { TProps } from './types';
 
-const TagListing: React.FC<TProps> = ({ className }) => {
+export const TagListing: React.FC<{}> = () => {
   const data = useStaticQuery(
     graphql`
         query {
@@ -19,17 +18,14 @@ const TagListing: React.FC<TProps> = ({ className }) => {
     `,
   );
   return (
-    <div className={className}>
-      <h5>Tags</h5>
+    <div>
+      <Header>Tags</Header>
       <TagGroup tags={data.categoryGrouping.group} getSlug={getTagSlug} />
     </div>
   );
 };
 
-const StyledTagListing = styled(TagListing)`
-  h5 {
-    margin: .5em auto;
-  }
+const Header = styled.h5`
+  margin: .5em auto;
 `;
 
-export default StyledTagListing;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import AutoLinkHeader from './index';
+import { AutoLinkHeader } from './index';
 
 afterEach(cleanup);
 

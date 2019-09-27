@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Layout } from '../../../components/layout';
 import { PostListing } from '../../../components/post-listing';
-import Seo from '../../../components/seo';
+import { Seo } from '../../../components/seo';
 import { TPostEdge, TImage } from '../../../templates/category-page/types';
 
 export type TProjectEdge = {

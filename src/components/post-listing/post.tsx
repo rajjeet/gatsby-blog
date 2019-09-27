@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import * as theme from '../../utils/theme';
-import TagGroup from '../tag-group';
+import { TagGroup } from '../tag-group';
 import { getTagSlug } from '../../utils/slugs';
 import { TPostProps } from './types';
 

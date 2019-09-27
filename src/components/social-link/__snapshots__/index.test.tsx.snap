@@ -3,10 +3,11 @@
 exports[`<SocialLink /> should render 1`] = `
 <DocumentFragment>
   <span
-    class="sc-bdVaJa jcyxoK"
+    class="sc-bdVaJa eTDaYl"
   >
     <a
       aria-label="See facebook (opens new tab)"
+      class="sc-bwzfXH ccADRz"
       href=""
       rel="noopener noreferrer"
       target="_blank"

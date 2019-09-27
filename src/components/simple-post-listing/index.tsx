@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
-const SimplePostListing: React.FC<TProps> = ({ posts }) => (
+export const SimplePostListing: React.FC<TProps> = ({ posts }) => (
   <div>
     <h3>Blog Posts</h3>
     <S.ul>
@@ -62,4 +62,3 @@ export const S = {
     `,
 };
 
-export default SimplePostListing;

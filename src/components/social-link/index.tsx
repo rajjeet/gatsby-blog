@@ -4,25 +4,24 @@ import styled from 'styled-components';
 import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
-const SocialLink: React.FC<TProps> = ({
-  className, link, icon, name,
+export const SocialLink: React.FC<TProps> = ({
+  link, icon, name,
 }) => (
-  <span className={className}>
-    <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`See ${name} (opens new tab)`}>
+  <StyledSpan>
+    <StyledLink href={link} target="_blank" rel="noopener noreferrer" aria-label={`See ${name} (opens new tab)`}>
       <FontAwesomeIcon size="2x" icon={icon} />
-    </a>
-  </span>
+    </StyledLink>
+  </StyledSpan>
 );
 
-const StyledSocialLink = styled(SocialLink)`
-  margin-right: 1em;
-  a {
-    vertical-align: center;
-    color: ${theme.primaryColor};
-    :hover {
-      color: ${theme.secondaryColor};
-    }
-  }
+const StyledSpan = styled.span`
+  margin-right: 1em;  
 `;
 
-export default StyledSocialLink;
+const StyledLink = styled.a`
+  vertical-align: center;
+  color: ${theme.primaryColor};
+  :hover {
+    color: ${theme.secondaryColor};
+  }
+`;

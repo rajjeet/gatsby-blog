@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FloatingMobileButton /> should render 1`] = `
+exports[`<RoundIconButton /> should render 1`] = `
 <DocumentFragment>
   <button
     class="sc-bdVaJa dNkrXb"
