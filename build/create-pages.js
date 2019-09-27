@@ -100,8 +100,8 @@ function getAllProjects(result) {
     .filter(({ fields }) => fields.contentType === 'project');
 }
 
-module.exports = async ({ graphql, actions: { createPage } }) => {
-  const result = await graphql(`
+async function query(graphql) {
+  return graphql(`
         {
           allMdx(filter: {frontmatter: {draft: {ne: true}}}, limit: 500, 
               sort: {fields: [frontmatter___date], order: DESC}) {
@@ -118,10 +118,15 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
           }
         }
     `);
+}
+
+module.exports = async ({ graphql, actions: { createPage } }) => {
+  const result = await query(graphql);
 
   if (result.errors) {
     throw result.errors;
   }
+
   const posts = getAllPosts(result);
   const projects = getAllProjects(result);
 
