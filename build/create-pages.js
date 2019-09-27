@@ -7,16 +7,15 @@ const urlJoin = require('url-join');
 const { getTagSlug } = require('../src/utils/slugs');
 
 function createPostListingByTags(allPosts, POSTS_PER_PAGE, createPage) {
-// Tags
   let allTags = [];
-  allPosts.forEach(({ node }) => {
-    allTags = allTags.concat(node.frontmatter.tags);
+  allPosts.forEach(({ frontmatter }) => {
+    allTags = allTags.concat(frontmatter.tags);
   });
   const uniqueTags = uniq(allTags);
   uniqueTags.forEach((tag) => {
     const tagSlug = getTagSlug(tag);
-    const tagPosts = allPosts.filter(({ node }) => {
-      const { tags } = node.frontmatter;
+    const tagPosts = allPosts.filter(({ frontmatter }) => {
+      const { tags } = frontmatter;
       return tags && tags.find((blogTag) => blogTag === tag);
     });
     const totalNumOfTaggedPosts = tagPosts.length;
@@ -61,13 +60,13 @@ function createPostListing(allPosts, POSTS_PER_PAGE, createPage) {
 
 function createPosts(allPosts, createPage) {
   allPosts
-    .forEach(({ node }) => {
+    .forEach(({ fields }) => {
       const blogPostTemplate = path.resolve('./src/templates/blog-post/index.tsx');
       createPage({
-        path: node.fields.slug,
+        path: fields.slug,
         component: blogPostTemplate,
         context: {
-          slug: node.fields.slug,
+          slug: fields.slug,
         },
       });
     });
@@ -75,13 +74,13 @@ function createPosts(allPosts, createPage) {
 
 function createProjects(allProjects, createPage) {
   allProjects
-    .forEach(({ node }) => {
+    .forEach(({ fields }) => {
       const projectPageTemplate = path.resolve('./src/templates/project-page/index.tsx');
       createPage({
-        path: node.fields.slug,
+        path: fields.slug,
         component: projectPageTemplate,
         context: {
-          slug: node.fields.slug,
+          slug: fields.slug,
         },
       });
     });
@@ -91,8 +90,7 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
         {
           allMdx(filter: {frontmatter: {draft: {ne: true}}}, limit: 500, sort: {fields: [frontmatter___date], order: DESC}) {
-            edges {
-            node {
+            nodes {
               fields {
                 slug
                 contentType
@@ -102,7 +100,6 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
                 category
               }
             }
-            }
           }
         }
     `);
@@ -110,11 +107,10 @@ module.exports = async ({ graphql, actions: { createPage } }) => {
   if (result.errors) {
     throw result.errors;
   }
-
-  const allPosts = result.data.allMdx.edges
-    .filter(({ node }) => node.fields.contentType === 'post');
-  const allProjects = result.data.allMdx.edges
-    .filter(({ node }) => node.fields.contentType === 'project');
+  const allPosts = result.data.allMdx.nodes
+    .filter(({ fields }) => fields.contentType === 'post');
+  const allProjects = result.data.allMdx.nodes
+    .filter(({ fields }) => fields.contentType === 'project');
 
   createProjects(allProjects, createPage);
   createPosts(allPosts, createPage);
