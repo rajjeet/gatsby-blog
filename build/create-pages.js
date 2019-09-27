@@ -6,28 +6,32 @@ const path = require('path');
 const urlJoin = require('url-join');
 const { getTagSlug } = require('../src/utils/slugs');
 
-function createPostListingByTags(allPosts, POSTS_PER_PAGE, createPage) {
+function createPostListingByTags(posts, postsPerPage, createPage) {
   let allTags = [];
-  allPosts.forEach(({ frontmatter }) => {
+  posts.forEach(({ frontmatter }) => {
     allTags = allTags.concat(frontmatter.tags);
   });
   const uniqueTags = uniq(allTags);
+
   uniqueTags.forEach((tag) => {
+    const blogHasTag = ({ frontmatter: { tags } }) => {
+      if (tags) {
+        return tags.find((blogTag) => blogTag === tag);
+      }
+      return false;
+    };
+    const totalNumOfTaggedPosts = posts.filter(blogHasTag).length;
     const tagSlug = getTagSlug(tag);
-    const tagPosts = allPosts.filter(({ frontmatter }) => {
-      const { tags } = frontmatter;
-      return tags && tags.find((blogTag) => blogTag === tag);
-    });
-    const totalNumOfTaggedPosts = tagPosts.length;
-    const numOfPagesPerTag = Math.ceil(totalNumOfTaggedPosts / POSTS_PER_PAGE);
+    const numOfPagesPerTag = Math.ceil(totalNumOfTaggedPosts / postsPerPage);
     const tagPageTemplate = path.resolve('./src/templates/tag-page/index.tsx');
+
     Array.from({ length: numOfPagesPerTag }).forEach((_, index) => {
       createPage({
         path: urlJoin(tagSlug, `${index + 1}`),
         component: tagPageTemplate,
         context: {
-          limit: POSTS_PER_PAGE,
-          skip: index * POSTS_PER_PAGE,
+          limit: postsPerPage,
+          skip: index * postsPerPage,
           numOfPages: numOfPagesPerTag,
           numOfPosts: totalNumOfTaggedPosts,
           currentPage: index + 1,
@@ -99,7 +103,8 @@ function getAllProjects(result) {
 module.exports = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
         {
-          allMdx(filter: {frontmatter: {draft: {ne: true}}}, limit: 500, sort: {fields: [frontmatter___date], order: DESC}) {
+          allMdx(filter: {frontmatter: {draft: {ne: true}}}, limit: 500, 
+              sort: {fields: [frontmatter___date], order: DESC}) {
             nodes {
               fields {
                 slug
