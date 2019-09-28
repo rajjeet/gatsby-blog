@@ -12,7 +12,8 @@ export type TImage = {
 };
 export type TFrontMatter = {
   title: string;
-  date: string;
+  dateCreated: string;
+  dateModified: string;
   tags: string[];
   description: string;
 };

@@ -41,7 +41,7 @@ export const query = graphql`
         posts: allMdx (
             limit: $limit
             skip: $skip
-            sort: {fields: frontmatter___date, order: DESC}
+            sort: {fields: frontmatter___dateCreated, order: DESC}
             filter: {frontmatter: {tags: {in: [$tag] }, draft: {ne: true} }, fields: { contentType: { eq: "post" } } }
         ) {
             edges {

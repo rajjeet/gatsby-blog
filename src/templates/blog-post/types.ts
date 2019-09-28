@@ -36,13 +36,9 @@ export type TModalToggleButton = {
 };
 export type TPostSummary = {
   title: string;
-  date: string;
+  dateCreated: string;
+  dateModified?: string;
   timeToRead: number;
-  disqusConfig: {
-    url: string;
-    identifier: string;
-    title: string;
-  };
   description: string;
   tags: string[];
 };

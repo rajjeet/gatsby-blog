@@ -46,7 +46,7 @@ export default IndexPage;
 
 export const query = graphql`
     {
-        posts: allMdx(sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 6) {
+        posts: allMdx(sort: {fields: [frontmatter___dateCreated], order: DESC}, filter: {frontmatter: {draft: {ne: true}}, fields: {contentType: {eq: "post"}}}, limit: 6) {
             edges {
                 node {
                     ...PostListingMarkdownFragment

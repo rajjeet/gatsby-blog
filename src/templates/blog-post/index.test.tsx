@@ -9,34 +9,41 @@ describe('BlogPost', () => {
     expect(getByText('Outline')).toBeDefined();
   });
 
-  it('should show the post title', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText('State Management using React Hooks')).toBeDefined();
-  });
+  describe('post summary', () => {
+    it('should show the post title', () => {
+      const { getByText } = render(<BlogPost {...makeProps()} />);
+      expect(getByText('State Management using React Hooks')).toBeDefined();
+    });
 
-  it('should show the post date', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText(/02 May, 2019/)).toBeDefined();
-  });
+    it('should show the post date created', () => {
+      const { getByText } = render(<BlogPost {...makeProps()} />);
+      expect(getByText(/02 May, 2019/)).toBeDefined();
+    });
 
-  it('should show the time to read', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText(/4 min read/)).toBeDefined();
-  });
+    it('should show the time to read', () => {
+      const { getByText } = render(<BlogPost {...makeProps()} />);
+      expect(getByText(/4 mins/)).toBeDefined();
+    });
 
-  it('should show comments', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText(/comments/i)).toBeDefined();
-  });
+    it('should show the description', () => {
+      const { getByText } = render(<BlogPost {...makeProps()} />);
+      expect(getByText(/I was learning about the new React Hooks/)).toBeDefined();
+    });
 
-  it('should show the description', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText(/I was learning about the new React Hooks/)).toBeDefined();
-  });
+    it('should shows the blog tag', () => {
+      const { getByText } = render(<BlogPost {...makeProps()} />);
+      expect(getByText('React X')).toBeDefined();
+      expect(getByText('Angular X')).toBeDefined();
+    });
 
-  it('should shows the blog tag', () => {
-    const { getByText } = render(<BlogPost {...makeProps()} />);
-    expect(getByText('React X')).toBeDefined();
-    expect(getByText('Angular X')).toBeDefined();
+    it('should not show Updated detail when dateModified is not specified', () => {
+      const { queryByText } = render(<BlogPost {...makeProps({ dateModified: null })} />);
+      expect(queryByText('Updated')).toBeNull();
+    });
+
+    it('should show Updated detail when dateModified is specified', () => {
+      const { queryByText } = render(<BlogPost {...makeProps({ dateModified: '2020-01-01' })} />);
+      expect(queryByText('Updated')).not.toBeNull();
+    });
   });
 });
