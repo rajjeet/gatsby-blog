@@ -9,12 +9,14 @@ export const SimplePostListing: React.FC<TProps> = ({ posts }) => (
     <h3>Blog Posts</h3>
     <S.ul>
       {
-        posts.map(({ node: { fields: { slug }, frontmatter: { title, date }, timeToRead } }) => (
+        posts.map((
+          { node: { fields: { slug }, frontmatter: { title, dateCreated }, timeToRead } },
+        ) => (
           <S.Link aria-label={`See post: ${title}`} key={slug} to={slug}>
             <li>
               <h4>{title}</h4>
               <div>
-                <S.Date>{date}</S.Date>
+                <S.Date>{dateCreated}</S.Date>
                 <span>
                   {timeToRead}
                   {' '}

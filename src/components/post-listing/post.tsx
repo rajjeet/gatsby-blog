@@ -10,7 +10,7 @@ import { TPostProps } from './types';
 export const Post: React.FC<TPostProps> = ({ node }) => {
   const { fields, timeToRead, frontmatter } = node;
   const {
-    title, tags, image, date, description,
+    title, tags, image, dateCreated, description,
   } = frontmatter;
   const processedTags = tags && tags.map((tag) => ({ fieldValue: tag }));
   return (
@@ -19,7 +19,7 @@ export const Post: React.FC<TPostProps> = ({ node }) => {
         <StyledBackgroundImage fluid={[image.childImageSharp.fluid]}>
           <PostSummary>
             <PostTitle>{title}</PostTitle>
-            <PostDetails>{`${date} - ${timeToRead} min read`}</PostDetails>
+            <PostDetails>{`${dateCreated} - ${timeToRead} min read`}</PostDetails>
             <PostDescription>{description}</PostDescription>
             <TagGroup tags={processedTags} getSlug={getTagSlug} inline />
           </PostSummary>

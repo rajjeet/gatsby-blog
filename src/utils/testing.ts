@@ -110,7 +110,8 @@ export const createMockPosts = [
       timeToRead: 2,
       frontmatter: {
         title: 'Adding a Project Section to My Website',
-        date: '11 May, 2019',
+        dateCreated: '11 May, 2019',
+        dateModified: undefined,
         tags: [
           'Gatsby JS X',
         ],
@@ -130,7 +131,8 @@ export const createMockPosts = [
       timeToRead: 4,
       frontmatter: {
         title: 'State Management using React Hooks',
-        date: '02 May, 2019',
+        dateCreated: '02 May, 2019',
+        dateModified: undefined,
         tags: [
           'React X',
           'Angular X',
@@ -151,7 +153,8 @@ export const createMockPosts = [
       timeToRead: 3,
       frontmatter: {
         title: 'Build A Super Customized and Performant Blog',
-        date: '21 February, 2019',
+        dateCreated: '21 February, 2019',
+        dateModified: undefined,
         tags: [
           'Blog',
           'React',
@@ -173,7 +176,8 @@ export const mockPost = {
   timeToRead: 4,
   frontmatter: {
     title: 'State Management using React Hooks',
-    date: '02 May, 2019',
+    dateCreated: '02 May, 2019',
+    dateModified: undefined,
     tags: [
       'React X',
       'Angular X',

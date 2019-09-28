@@ -2,7 +2,7 @@ type TFrontMatter = {
   title: string;
   description: string;
   slug?: string;
-  date?: string;
+  dateCreated?: string;
 };
 
 export type TProps = {

@@ -14,7 +14,7 @@ describe('BlogPost', () => {
     expect(getByText('State Management using React Hooks')).toBeDefined();
   });
 
-  it('should show the post date', () => {
+  it('should show the post date created', () => {
     const { getByText } = render(<BlogPost {...makeProps()} />);
     expect(getByText(/02 May, 2019/)).toBeDefined();
   });

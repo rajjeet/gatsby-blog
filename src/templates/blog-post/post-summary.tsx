@@ -6,12 +6,12 @@ import { getTagSlug } from '../../utils/slugs';
 import { TPostSummary } from './types';
 
 export const PostSummary: React.FC<TPostSummary> = ({
-  title, date, timeToRead, disqusConfig, description, tags,
+  title, dateCreated, timeToRead, disqusConfig, description, tags,
 }) => (
   <Wrapper>
     <Header>{title}</Header>
     <PostDetails>
-      {`${date} - ${timeToRead} min read - `}
+      {`${dateCreated} - ${timeToRead} min read - `}
       <Disqus.CommentCount shortname="ortmesh" config={disqusConfig}>
         Comments
       </Disqus.CommentCount>

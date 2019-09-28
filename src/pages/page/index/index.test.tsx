@@ -76,7 +76,8 @@ export const makeProps = (): TProps => (
               timeToRead: 2,
               frontmatter: {
                 title: 'Adding a Project Section to My Website',
-                date: '11 May, 2019',
+                dateCreated: '11 May, 2019',
+                dateModified: undefined,
                 tags: [
                   'Gatsby JS X',
                 ],
@@ -96,7 +97,8 @@ export const makeProps = (): TProps => (
               timeToRead: 4,
               frontmatter: {
                 title: 'State Management using React Hooks',
-                date: '02 May, 2019',
+                dateCreated: '02 May, 2019',
+                dateModified: undefined,
                 tags: [
                   'React X',
                   'Angular X',
