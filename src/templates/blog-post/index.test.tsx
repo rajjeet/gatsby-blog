@@ -1,9 +1,7 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import BlogPost from './index';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 describe('BlogPost', () => {
   it('should have a table of contents', () => {

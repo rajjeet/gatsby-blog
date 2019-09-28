@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import IndexPage, { TProps } from './index';
 import { createMockGatsbyImageSharpFluid } from '../../../utils/testing';
 
@@ -116,8 +116,6 @@ export const makeProps = (): TProps => (
     },
   }
 );
-
-afterEach(cleanup);
 
 describe('Index Page', () => {
   it('should have heading called "Recent posts"', () => {

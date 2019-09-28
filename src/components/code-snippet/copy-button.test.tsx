@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { CopyButton } from './copy-button';
-
-afterEach(cleanup);
 
 describe('CopyButton', () => {
   it('should show Copy when copyStatus is false', () => {

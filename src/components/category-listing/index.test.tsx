@@ -1,10 +1,8 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { CategoryListing } from './index';
 import { createMockGroups } from '../../utils/testing';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 describe('<CategoryListing />', () => {
   it('should render', () => {

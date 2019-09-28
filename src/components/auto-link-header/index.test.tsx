@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { AutoLinkHeader } from './index';
-
-afterEach(cleanup);
 
 describe('<AuthorCard />', () => {
   const Component = AutoLinkHeader('h1');

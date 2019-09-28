@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { ProjectListing } from './index';
 import { makeProps } from './mock';
-
-afterEach(cleanup);
 
 describe('<ProjectListing />', () => {
   it('should render', () => {
