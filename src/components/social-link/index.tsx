@@ -16,6 +16,9 @@ export const SocialLink: React.FC<TProps> = ({
 
 const StyledSpan = styled.span`
   margin-right: 1em;  
+  svg {
+    max-width: 32px;
+  }
 `;
 
 const StyledLink = styled.a`
