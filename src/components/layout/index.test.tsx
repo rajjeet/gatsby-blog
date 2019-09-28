@@ -6,11 +6,6 @@ import { version } from '../../../package.json';
 import { Footer } from './footer';
 
 describe('<Layout />', () => {
-  it('should render', () => {
-    const { asFragment } = render(<Layout {...makeProps()} />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render the pass in children', () => {
     const { getByText } = render(<Layout {...makeProps()} />);
     expect(getByText('Sample child')).toBeDefined();
