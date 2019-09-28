@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  render, fireEvent, RenderResult,
+  render, RenderResult,
 } from '@testing-library/react';
 import { TableOfContents } from './index';
 import { makeProps } from './mock';
@@ -30,25 +30,8 @@ describe('<TableOfContents />', () => {
     expect(getByText('Outline')).toBeDefined();
   });
 
-  it('should change the pathname to the blog post slug', () => {
-    const { getByText } = renderTableOfContents();
-    window.location.assign = jest.fn();
-    fireEvent.click(getByText('Introduction'));
-    expect(window.location.assign).toHaveBeenCalledWith('#introduction');
-  });
-
   it('should show a "Back to Top" button', () => {
     const { getByText } = renderTableOfContents();
-    expect(getByText('Back to Top')).toBeDefined();
-  });
-
-  describe('"Back to Top" button', () => {
-    it('should change the window location to page start when "Back to Top" button is clicked ', () => {
-      const { getByText } = renderTableOfContents();
-      window.location.assign = jest.fn();
-      fireEvent.click(getByText('Introduction'));
-      fireEvent.click(getByText('Back to Top'));
-      expect(window.location.assign).toHaveBeenLastCalledWith('#');
-    });
+    expect(getByText('Top')).toBeDefined();
   });
 });

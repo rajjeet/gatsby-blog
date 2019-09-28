@@ -10,7 +10,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
     </h3>
     <div>
       <span
-        class="sc-bdVaJa eTDaYl"
+        class="sc-bdVaJa kqDxnu"
       >
         <a
           aria-label="See Email (opens new tab)"
@@ -37,7 +37,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa eTDaYl"
+        class="sc-bdVaJa kqDxnu"
       >
         <a
           aria-label="See GitHub (opens new tab)"
@@ -64,7 +64,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa eTDaYl"
+        class="sc-bdVaJa kqDxnu"
       >
         <a
           aria-label="See LinkedIn (opens new tab)"
@@ -91,7 +91,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa eTDaYl"
+        class="sc-bdVaJa kqDxnu"
       >
         <a
           aria-label="See Facebook (opens new tab)"
@@ -118,7 +118,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa eTDaYl"
+        class="sc-bdVaJa kqDxnu"
       >
         <a
           aria-label="See Twitter (opens new tab)"

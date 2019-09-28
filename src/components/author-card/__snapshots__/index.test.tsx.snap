@@ -51,7 +51,7 @@ exports[`<AuthorCard /> should render 1`] = `
         </h3>
         <div>
           <span
-            class="sc-bwzfXH eGCSeB"
+            class="sc-bwzfXH hmdztD"
           >
             <a
               aria-label="See Email (opens new tab)"
@@ -78,7 +78,7 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH eGCSeB"
+            class="sc-bwzfXH hmdztD"
           >
             <a
               aria-label="See GitHub (opens new tab)"
@@ -105,7 +105,7 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH eGCSeB"
+            class="sc-bwzfXH hmdztD"
           >
             <a
               aria-label="See LinkedIn (opens new tab)"
@@ -132,7 +132,7 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH eGCSeB"
+            class="sc-bwzfXH hmdztD"
           >
             <a
               aria-label="See Facebook (opens new tab)"
@@ -159,7 +159,7 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH eGCSeB"
+            class="sc-bwzfXH hmdztD"
           >
             <a
               aria-label="See Twitter (opens new tab)"
