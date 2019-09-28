@@ -39,7 +39,7 @@ const BlogPost: React.FC<TProps> = (props) => {
     title: post.frontmatter.title,
   };
   const {
-    tags, image, title, dateCreated, description,
+    tags, image, title, dateCreated, dateModified, description,
   } = post.frontmatter;
 
   return (
@@ -53,9 +53,9 @@ const BlogPost: React.FC<TProps> = (props) => {
         <PostSummary
           description={description}
           dateCreated={dateCreated}
+          dateModified={dateModified}
           title={title}
           timeToRead={post.timeToRead}
-          disqusConfig={disqusConfig}
           tags={tags}
         />
         <Post>
@@ -105,8 +105,8 @@ export const query = graphql`
             frontmatter {
                 title
                 tags
-                dateCreated
-                dateModified
+                dateCreated(formatString: "DD MMM, YYYY")
+                dateModified(formatString: "DD MMM, YYYY")
                 category
                 description
                 image {

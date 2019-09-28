@@ -47,7 +47,7 @@ export const query = graphql`
         timeToRead
         frontmatter {
             title
-            dateCreated(formatString: "DD MMMM, YYYY")
+            dateCreated(formatString: "DD MMM, YYYY")
             tags
             description
             image {
