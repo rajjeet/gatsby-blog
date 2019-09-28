@@ -39,6 +39,7 @@ export const Seo: React.FC<TProps> = ({
     description: '',
     slug: '',
     dateCreated: '',
+    dateModified: '',
   };
 
   const title = postMeta.title || seo.title;
@@ -48,6 +49,8 @@ export const Seo: React.FC<TProps> = ({
     ? `${seo.canonicalUrl}${postMeta.slug}`
     : seo.canonicalUrl;
   const datePublished = isBlogPost ? postMeta.dateCreated : '';
+  const dateModified = isBlogPost ? postMeta.dateModified || postMeta.dateCreated : '';
+
   return (
     <>
       <Helmet>
@@ -82,7 +85,7 @@ export const Seo: React.FC<TProps> = ({
         image={image}
         description={description}
         datePublished={datePublished}
-        dateModified={datePublished}
+        dateModified={dateModified}
         canonicalUrl={seo.canonicalUrl}
         author={seo.author}
         organization={seo.organization}

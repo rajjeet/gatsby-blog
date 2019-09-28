@@ -106,6 +106,7 @@ export const query = graphql`
                 title
                 tags
                 dateCreated
+                dateModified
                 category
                 description
                 image {
