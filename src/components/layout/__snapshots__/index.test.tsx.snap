@@ -274,7 +274,7 @@ exports[`<Layout /> should render 1`] = `
       <button
         class="sc-htoDjs sc-fjdhpX fRYSMJ"
       >
-        See this website's code
+        v1.2.1
         <svg
           aria-hidden="true"
           class="svg-inline--fa fa-github fa-w-16 fa-2x "

@@ -3,12 +3,13 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../primitives/button';
+import { version } from '../../../package.json';
 
 export const Footer: React.FC<{}> = () => (
   <Wrapper>
     <span>&copy; Ortmesh 2019.</span>
     <StyledButton onClick={(): Window => window.open('https://github.com/rajjeet/gatsby-blog')}>
-      {'See this website\'s code'}
+      {`v${version}`}
       <FontAwesomeIcon size="2x" style={{ paddingLeft: '.5rem' }} icon={faGithub} />
     </StyledButton>
   </Wrapper>
