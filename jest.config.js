@@ -14,6 +14,8 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: '',
   },
+  coverageDirectory: './coverage/',
+  collectCoverage: true,
   testURL: 'http://localhost',
   setupFiles: ['<rootDir>/loadershim.js'],
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.js'],

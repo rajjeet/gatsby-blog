@@ -5,8 +5,12 @@ env:
   global:
     - PATH=$HOME/.local/bin:$PATH
 cache: npm
+install:
+  - npm install
+  - npm install -g codecov jest
 script:
   - npm run check-all
+  - codecov
 deploy:
   - provider: script
     script: ./scripts/aws-deploy.sh
