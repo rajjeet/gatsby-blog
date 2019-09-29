@@ -64,10 +64,10 @@ The first landing page I built was for Charisma Condos Phase 3 near Vaughan Metr
 <a target="_blank" href="https://dgftd2qqywjy1.cloudfront.net/">Here's the link to the site on a CDN.</a>
 
 For the infrastructure, here's the reference architecture from AWS CloudFormation:
-![](template1-designer.png)
-_**Yellow** is the AWS API gateway that handled POST requests from form submissions. 
-**Orange** is the function that processes the request and sends an email with the data to the site owner
-**Red** is the storage for statically hosting the web pages and media assets._
+![Yellow is the AWS API gateway that handled POST requests from form submissions. 
+  Orange is the function that processes the request and sends an email with the data to the site owner
+  Red is the storage for statically hosting the web pages and media assets.](template1-designer.png)
+
 <a href="https://github.com/rajjeet/charismacondos/blob/master/aws/template.yaml" 
 target="_blank">Here's the link to AWS CloudFormation yaml script corresponding to the diagram above</a>
 
@@ -78,14 +78,13 @@ CloudFront provides edge caching. This meaning it copies the content from S3 (or
 redundant servers all over North America and Europe. 
 Using a CDN to serve the content saves cost (avoid hitting S3), reduces latency, boosts security, and 
 protection against Denial of Service (DoS) attacks. 
-<span style="background-color:lightyellow;">The website is deployed on a _S3 Bucket_ and 
-provided through the _CloudFront Distribution_.</span> 
+<span style="background-color:lightyellow;">The website is deployed on a <em>S3 Bucket</em> and 
+provided through the <em>CloudFront Distribution</em>.</span> 
 
 ### Backend
 The website allows users to register for VIP access to get floor plans and pricing details from realtors via a register form.
 This is the registration form: 
-![](register-form.png)
-_Registration Form for VIP Access_
+![Registration Form for VIP Access](register-form.png)
 
 Once the user submits this form, a HTTP POST request is fired to the AWS API Gateway, a serverless API access point.
 The request is routed to a AWS Lambda, a serverless function that processes the request.
@@ -94,7 +93,7 @@ This includes:
 2. Sending an email to the realtors with the submitter's info  
 
 <a target="_blank" href="https://github.com/rajjeet/charismacondos/blob/master/aws/index.js">
-Here's the Lambda code written in JavaScript.</a>
+Here's the Lambda code written in JavaScript.</a> 
 Based on future needs, I can extend this functionality to send users a response email/document and to persist the data.
 
 ### User Interface

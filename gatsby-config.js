@@ -57,6 +57,8 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
+              showCaptions: true,
+              markdownCaptions: true,
             },
           },
         ],
@@ -102,6 +104,8 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 650,
+              showCaptions: true,
+              markdownCaptions: true,
             },
           },
           {
