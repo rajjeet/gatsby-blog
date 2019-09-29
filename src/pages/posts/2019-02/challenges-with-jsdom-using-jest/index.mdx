@@ -28,8 +28,7 @@ After adding a few, I realized my tests would start failing unpredictably. Out o
 set of tests failing when I reordered them. 
 Changing the order shouldn't affect the results, unless there was a common dependency.   
 
- ![](jest-random-tests-fail.jpg)
- _Reordered my tests. Got different result. What?_
+ ![Reordered my tests. Got different result. What?](jest-random-tests-fail.jpg)
 
 ## The Solution
 After searching the web, I found a <a href='https://github.com/facebook/jest/issues/1224' target='_blank'>Github issue</a> 
@@ -96,7 +95,7 @@ beforeEach(() => {
 
 With that in place, my integration test all pass when they're run together.
  
- ![](jest-test-passing.jpg)
+ ![All passing now](jest-test-passing.jpg)
  
 ## Conclusion
 So far, I've chosen to clean up the JSDOM exclusively rather than separate out the tests into multiple files.
