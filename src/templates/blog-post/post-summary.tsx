@@ -7,7 +7,7 @@ import { ShareLinks } from './share-links';
 import * as theme from '../../utils/theme';
 
 export const PostSummary: React.FC<TPostSummary> = ({
-  title, dateCreated, dateModified, timeToRead, description, tags,
+  title, dateCreated, dateModified, timeToRead, description, tags, url,
 }) => (
   <Wrapper>
     <Header>{title}</Header>
@@ -39,7 +39,7 @@ export const PostSummary: React.FC<TPostSummary> = ({
       )
     }
     <ShareLinksWrapper>
-      <ShareLinks isInline />
+      <ShareLinks isInline url={url} />
     </ShareLinksWrapper>
   </Wrapper>
 );

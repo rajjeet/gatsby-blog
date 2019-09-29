@@ -41,4 +41,5 @@ export type TPostSummary = {
   timeToRead: number;
   description: string;
   tags: string[];
+  url: string;
 };

@@ -61,10 +61,11 @@ const BlogPost: React.FC<TProps> = (props) => {
           title={title}
           timeToRead={post.timeToRead}
           tags={tags}
+          url={postUrl}
         />
         <Post>
           <ShareLinksWrapper>
-            <ShareLinks />
+            <ShareLinks url={postUrl} />
           </ShareLinksWrapper>
           <MainContent>
             <div className="js-toc-content">

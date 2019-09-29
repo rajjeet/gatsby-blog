@@ -10,5 +10,6 @@ storiesOf('Blog Post', module)
       timeToRead={10}
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis venenatis diam, eu ali."
       tags={['React']}
+      url=""
     />
   ));
