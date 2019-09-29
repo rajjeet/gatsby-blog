@@ -23,14 +23,18 @@ export const Layout: React.FC<TProps> = ({ children }) => (
 
 const Wrapper = styled.div`
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  @media screen and (min-width: ${theme.tabletBreakpoint}){
+    font-size: 1rem;
+  }
 `;
 
 const Aside = styled.aside`
   @media screen and (min-width: ${theme.computerBreakpoint}){    
     flex-direction: row;
-    max-width: 220px;
-  }      
-  background-color: whitesmoke;    
+    max-width: 250px;
+  }            
 `;
 
 const Main = styled.main`
@@ -38,12 +42,12 @@ const Main = styled.main`
   flex-direction: column-reverse;
   @media screen and (min-width: ${theme.computerBreakpoint}){    
     flex-direction: row;
-  }
+  }  
 `;
 
 const Content = styled.div`
   width: 100%;
-  margin: auto;
+  margin: 10px auto 20px;
   @media screen and (min-width: ${theme.tabletBreakpoint}){
     width: 80%;
   }  

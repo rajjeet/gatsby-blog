@@ -3,10 +3,10 @@
 exports[`<AuthorCard /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-gzVnrw jzjLUS"
+    class="sc-gzVnrw kYKGPL"
   >
     <div
-      class="sc-bdVaJa ffyvHX gatsby-image-wrapper"
+      class="sc-bdVaJa jOLdEc gatsby-image-wrapper"
       style="position: relative; overflow: hidden;"
     >
       <div
@@ -39,7 +39,7 @@ exports[`<AuthorCard /> should render 1`] = `
         Rajjeet Phull
       </h2>
       <div
-        class="sc-EHOje gWvNNT"
+        class="sc-EHOje cjqGBd"
       >
         Welcome to my personal blog, Ortmesh! Here, I journal my journey as a web developer. My aim is to build interesting side projects around cloud computing and web development.
       </div>

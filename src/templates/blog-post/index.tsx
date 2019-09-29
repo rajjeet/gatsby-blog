@@ -87,7 +87,7 @@ const MainContent = styled.div`
 
 const Post = styled.div`
   display: flex;
-  flex-direction: row;    
+  flex-direction: row;  
 `;
 
 export const query = graphql`

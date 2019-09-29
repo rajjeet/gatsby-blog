@@ -31,7 +31,7 @@ mins
           )
         }
     </PostDetails>
-    <p>{description}</p>
+    <Description>{description}</Description>
     {
         tags && (
           <TagGroup
@@ -42,6 +42,11 @@ mins
       }
   </Wrapper>
 );
+
+const Description = styled.p`
+  color: dimgrey;
+  font-weight: bolder;
+`;
 
 const Detail = styled.div`
   margin-right: .5rem;

@@ -24,7 +24,7 @@ const Content = styled.div`
 `;
 
 const Bio = styled.div`
-  font-style: italic;  
+  color: #333;
 `;
 
 const Header = styled.h2`
@@ -37,11 +37,15 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 20px;
   position: sticky;
-  top: 0;
+  top: 20px;
   @media screen and (min-width: ${theme.bigMobileBreakpoint}){
     flex-direction: row;
   }  
   @media screen and (min-width: ${theme.computerBreakpoint}){
     flex-direction: column;
   } 
+  background-color: #d0eaff;
+  border-radius: ${theme.borderRadius};
+  margin: 20px;
+  box-shadow: ${theme.lightBoxShadow};
 `;

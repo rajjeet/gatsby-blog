@@ -4,6 +4,7 @@ import { Layout } from '../../../components/layout';
 import { PostListing } from '../../../components/post-listing';
 import { Seo } from '../../../components/seo';
 import { TImage, TPostEdge } from '../../../templates/blog-post-listing/types';
+import { TagListing } from '../../../components/tag-listing';
 
 export type TProjectEdge = {
   node: {
@@ -39,6 +40,7 @@ const IndexPage: React.FC<TProps> = ({ data }) => (
       posts={data.posts.edges}
       heading="Recent Posts"
     />
+    <TagListing />
   </Layout>
 );
 
