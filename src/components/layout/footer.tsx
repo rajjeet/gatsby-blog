@@ -21,9 +21,8 @@ const StyledButton = styled(Button)`
 `;
 
 const Wrapper = styled.footer`
-  background-color: gray;
+  background-color: whitesmoke;
   padding: 1em 2em;
-  color: white;
   font-weight: bold;
   display: flex;
   align-items: center;

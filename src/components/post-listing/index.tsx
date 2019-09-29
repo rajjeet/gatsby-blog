@@ -23,22 +23,19 @@ export const PostListing: React.FC<TProps> = (
 );
 
 const PostListingHeader = styled.h1`
-  margin-bottom: 0;
-  margin-right: 1rem;
 `;
+
 const PostListingWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: 300px;
   grid-gap: 20px;    
-  margin-top: 20px;    
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;  
-  margin: 20px;
   `;
 
 export const query = graphql`

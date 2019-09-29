@@ -4,15 +4,15 @@ exports[`<WebsiteIdentity /> should render 1`] = `
 <DocumentFragment>
   <a
     aria-label="See Home"
-    class="sc-bdVaJa hivApq"
+    class="sc-bwzfXH bMIwLZ"
     href="/"
   >
     <div
-      class="sc-bwzfXH iaYZGO"
+      class="sc-htpNat bHIzSD"
     >
       <div
-        class=" gatsby-image-wrapper"
-        style="position: relative; overflow: hidden; width: 3em;"
+        class="sc-bdVaJa jAbZKO gatsby-image-wrapper"
+        style="position: relative; overflow: hidden;"
       >
         <div
           style="width: 100%; padding-bottom: 100%;"
@@ -36,15 +36,15 @@ exports[`<WebsiteIdentity /> should render 1`] = `
         </noscript>
       </div>
       <div
-        class="sc-htpNat dQtbOH"
+        class="sc-bxivhb dzPXKO"
       >
         <h2
-          class="sc-bxivhb mXbnu"
+          class="sc-ifAKCX dUegje"
         >
           Ortmesh
         </h2>
         <p
-          class="sc-ifAKCX dTpjot"
+          class="sc-EHOje gZCzjc"
         >
            Write code that matters 
         </p>

@@ -25,7 +25,7 @@ export const TagListing: React.FC<{}> = () => {
   );
 };
 
-const Header = styled.h5`
+const Header = styled.h1`
   margin: .5em auto;
 `;
 

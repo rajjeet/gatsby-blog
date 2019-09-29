@@ -8,7 +8,7 @@ export const Pagination: React.FC<TPaginationProps> = (
 ) => {
   const showPostNavigationButtons = currentPage && numOfPages && numOfPages > 1;
   return showPostNavigationButtons ? (
-    <>
+    <Wrapper>
       <PaginationLabel>
         {`${currentPage} of ${numOfPages} Pages`}
       </PaginationLabel>
@@ -17,9 +17,14 @@ export const Pagination: React.FC<TPaginationProps> = (
         numOfPages={numOfPages}
         paginationSlug={paginationSlug}
       />
-    </>
+    </Wrapper>
   ) : null;
 };
+
+const Wrapper = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
 
 const PaginationLabel = styled.div`
   color: #888;

@@ -3,11 +3,11 @@
 exports[`<TagListing /> should render 1`] = `
 <DocumentFragment>
   <div>
-    <h5
+    <h1
       class="sc-bxivhb gvTtOs"
     >
       Tags
-    </h5>
+    </h1>
     <div
       class="sc-bdVaJa bSrzPW"
     >
