@@ -1,14 +1,15 @@
 ---
 title: Takeaways from a JavaScript Testing Conference 
 dateCreated: "2019-09-19"
-dateModified: "2019-09-22"
+dateModified: "2019-09-29"
 draft: false
 author: Rajjeet
 category: Insights
 image: './lewis-ngugi-f5pTwLHCsAg-unsplash.jpg'
-description: Here’s a quick summary of the key nuggets of knowledge from my favourite JavaScript testing conference, AssertJS 2019.    
+description: Key nuggets of knowledge from my favourite JavaScript testing conference, AssertJS 2019.    
 tags:
     - Testing
+    - Conference
 --- 
 ### Breakthroughs
 Making upfront architectural decisions can be costly for developer productivity, especially in the later stages of the software development lifecycle. Hard lessons are learned through implementation and failure. The root cause? Unable to predict the future. 
@@ -71,9 +72,9 @@ E2E tests can sporadically pass or fail because they require many dependencies t
     * reliance on large amount of dependencies 
     * write more integration than E2E tests.
 
-Flakiness can be measured and tracked. This helps developers reduce the root cause for failing builds. It helps to differentiate build failure between infrastructure issues and  poorly  written code
+Flakiness can be measured and tracked. This helps developers reduce the root cause for failing builds. It helps to differentiate build failure between infrastructure issues and poorly written code
 
-Flakiness detection techniques  can include:
+Flakiness detection techniques can include:
 * (most okay) recording the percentage of fixed number of passed tests vs. executed runs
 * (most intense) doing the above scenario many times
 * (most interesting) measuring the delta between code coverage to delete variations in code flow
