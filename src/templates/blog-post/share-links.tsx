@@ -26,18 +26,17 @@ const socialMediaLinks = [
 
 type TProps = {
   isInline?: boolean;
+  url: string;
 }
 
-export const ShareLinks: React.FC<TProps> = ({ isInline }) => {
-  const url = 'https://ortmesh.com/takeaways-from-javascript-testing-conference/';
-  return (
-    <Wrapper>
-      <StickyContainer isInline={isInline}>
-        {
+export const ShareLinks: React.FC<TProps> = ({ isInline, url }) => (
+  <Wrapper>
+    <StickyContainer isInline={isInline}>
+      {
           isInline ? <InlineHeader>Share</InlineHeader> : <Header>Share</Header>
         }
-        <LinksWrapper isInline={isInline}>
-          {
+      <LinksWrapper isInline={isInline}>
+        {
             socialMediaLinks.map(({ Component, name, icon }) => (
               <ShareButtonWrapper key={name} isInline={isInline}>
                 <Component url={url}>
@@ -46,11 +45,10 @@ export const ShareLinks: React.FC<TProps> = ({ isInline }) => {
               </ShareButtonWrapper>
             ))
           }
-        </LinksWrapper>
-      </StickyContainer>
-    </Wrapper>
-  );
-};
+      </LinksWrapper>
+    </StickyContainer>
+  </Wrapper>
+);
 
 const Header = styled.h4`
 `;

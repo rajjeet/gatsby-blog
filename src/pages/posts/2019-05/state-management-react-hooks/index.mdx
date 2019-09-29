@@ -1,12 +1,11 @@
 ---
 title: State Management using React Hooks
-dateCreated: "2019-05-02"
-dateModified:
+dateCreated: 2019-05-02
+dateModified: 2019-09-29
 draft: false
 author: Rajjeet
-category: Guide
 image: './tobias-fischer-185901-unsplash.jpg'
-description: I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.
+description: Mimicking Redux-like state management using React Hooks API
 tags:
     - React
 ---
@@ -16,8 +15,7 @@ import { CodeSnippet }  from '../../../../components/code-snippet';
 
 ## Introduction
 This blog post is inspired by <a href="https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c"
-target="_blank">another post</a>, that demonstrates the 10 line approach to building a state management system using React Hooks. 
-Not that you should have an basic understanding of state management and context API within React to fully benefit from this post. 
+target="_blank">another post</a>, that demonstrates the 10 line approach to building a state management system using React Hooks. You should have some understanding of state management and context API within React to proceed. 
 
 ## The Basics
 ### State Management (Redux)
@@ -27,7 +25,7 @@ Redux uses actions from UI components to invoke change to the "global" applicati
 The action object flows through all the reducers in the application.
 Different reducers listen for certain actions, consume the action object, and perform an operation on the globally shared state. 
 
-When the global state changes, all components listening to the state, receive the change via props and re-render to reflect the change. 
+When the global state changes, all components listening to the state, receive the change via props and re-render to reflect the change, if necessary.
 Redux has a lots of support in terms of dev tools, middlewares, and extensions.
 What I'm presenting is a simplification of using a state management system like  Redux but built entirely using React Hooks. 
 
@@ -43,11 +41,10 @@ Hence, Context API is suited for deeply nested component trees, as it reduces th
 A single context consist of a single provider and any number of consumers. 
 The provider wraps a component higher in the component tree and broadcasts a value down the component tree from the provider. 
 The consumer is located lower in the component tree and accesses the provider's value. 
-The provider holds no state of its own, but acts as a backdoor to pass data from higher up in the component tree to all the components underneath it. 
-Adding the Context API can reduce reuse if the provider isn't high enough in the component tree. Also, it adds more complexity to the application. 
+The provider holds no state of its own, but acts as a backdoor to pass data from higher up in the component tree to all the components underneath it.  
 
 ## Manage Global State in React Hooks
-With a Redux implementation, a provider wraps the entry level components. Similarily, we can create our own implmentation of the Provider, that is really the React Context API in disguise. The value of this React Context API is the result of the *useReducer* React hook, which acts the global state and dispatch. 
+With a Redux implementation, a provider wraps the entry level components. Similarity, we can create our own implementation of the Provider, that is really the React Context API in disguise. The value of this React Context API is the result of the *useReducer* React hook, which acts the global state and dispatch. 
 
 Here is implementation of the provider object using React Hooks:
 
@@ -90,7 +87,7 @@ export const StateProvider = ({children, reducer, initialState}) => {
 
 Now, any component in `children` can import this context and get the global state and dispatch using the following statement:
 <CodeSnippet>{`
-const [state, dispatch] = useContext(<StateContext>);
+const [state, dispatch] = useContext(StateContext);
 `}</CodeSnippet>
 
 Here's a really simple reducer we can use for input. The initialState can be
@@ -118,9 +115,10 @@ const App = () => {
 Now we import `StateContext` anywhere in the app, and get the global state to read data and invoke actions using the global dispatch.
 
 <iframe src="https://codesandbox.io/embed/z377nwk433?fontsize=14&module=%2Fsrc%2FStateProvider.js" title="z377nwk433" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<figcaption>Putting it all together in a sandbox</figcaption>
 
 ## Middleware: Logger
-If you're interested in building middleware for reducers (i.e. adding cross-cutting logic to all actions and state changes), you can simply add code to the main root reducer. Here's my example of mimicing the redux logger using our example from above:
+If you're interested in building middleware for reducers (i.e. adding cross-cutting logic to all actions and state changes), you can simply add code to the main root reducer. Here's my example of mimicking the redux logger using our example from above:
 <CodeSnippet>{`
 const mainReducer = (state, action) => {
     console.log('Before', state);

@@ -61,10 +61,11 @@ const BlogPost: React.FC<TProps> = (props) => {
           title={title}
           timeToRead={post.timeToRead}
           tags={tags}
+          url={postUrl}
         />
         <Post>
           <ShareLinksWrapper>
-            <ShareLinks />
+            <ShareLinks url={postUrl} />
           </ShareLinksWrapper>
           <MainContent>
             <div className="js-toc-content">
@@ -90,6 +91,7 @@ const Wrapper = styled.div`
 const MainContent = styled.div`
   flex: 3;  
   min-width: 0;
+  font-size: 1.2rem;
 `;
 
 const Post = styled.div`
