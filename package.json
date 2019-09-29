@@ -13,7 +13,7 @@
     "deploy": "npm run test:e2e && npm run deploy:aws-s3",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --silent",
+    "test": "jest --silent --collectCoverage",
     "test:watch": "jest --watch",
     "storybook": "NODE_ENV=production start-storybook -p 6006 -s public",
     "build-storybook": "NODE_ENV=production build-storybook -s public",
