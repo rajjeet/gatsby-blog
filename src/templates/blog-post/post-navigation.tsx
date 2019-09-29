@@ -38,14 +38,14 @@ export const PostNavigation: React.FC<TPostNavigation> = (
   </Wrapper>
 );
 
-const Wrapper = styled.div`
-  flex: 1;
-  @media (max-width: ${theme.bigMobileBreakpoint}){
-   flex: 0;
-   padding: 0;
+const Wrapper = styled.div`  
+  flex: 0;
+  margin: 1em 0;
+  @media screen and (min-width: ${theme.bigMobileBreakpoint}){
+    flex: 1; 
+    margin-left: 1rem;
+    min-width: 0; 
   }
-  padding-left: 1rem;
-  min-width: 0;
 `;
 
 const MobileTableOfContentsModal = styled.div`

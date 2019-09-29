@@ -34,7 +34,7 @@ const Aside = styled.aside`
   @media screen and (min-width: ${theme.computerBreakpoint}){    
     flex-direction: row;
     max-width: 250px;
-  }            
+  }
 `;
 
 const Main = styled.main`
@@ -43,13 +43,14 @@ const Main = styled.main`
   @media screen and (min-width: ${theme.computerBreakpoint}){    
     flex-direction: row;
   }  
-`;
-
-const Content = styled.div`
   width: 100%;
   margin: 10px auto 20px;
   @media screen and (min-width: ${theme.tabletBreakpoint}){
-    width: 80%;
+    width: 90%;
   }  
+`;
+
+const Content = styled.div`
+ 
 `;
 

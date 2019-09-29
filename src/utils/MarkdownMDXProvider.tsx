@@ -3,10 +3,19 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import styled from 'styled-components';
 import { AutoLinkHeader } from '../components/auto-link-header';
+import * as theme from './theme';
 
 type TProps = {
   content: React.ReactNode;
 }
+
+const Wrapper = styled.div`
+  background-color: whitesmoke;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: ${theme.borderRadius};
+  box-shadow: ${theme.lightBoxShadow};  
+`;
 
 const FigCaption = styled.figcaption`
   font-style: italic;
@@ -24,6 +33,7 @@ export const MarkdownMdxProvider: React.FC<TProps> = ({ content }) => {
         return a;
       }, {}),
       figcaption: FigCaption,
+      wrapper: Wrapper,
     },
   );
 

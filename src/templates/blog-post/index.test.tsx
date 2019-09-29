@@ -9,6 +9,11 @@ describe('BlogPost', () => {
     expect(getByText('Outline')).toBeDefined();
   });
 
+  it('should show a Share links section', () => {
+    const { queryAllByText } = render(<BlogPost {...makeProps()} />);
+    expect(queryAllByText('Share').length).toBeGreaterThan(0);
+  });
+
   describe('post summary', () => {
     it('should show the post title', () => {
       const { getByText } = render(<BlogPost {...makeProps()} />);

@@ -5,5 +5,6 @@ export const makeProps = (): TProps => ({
   link: '',
   icon: faFacebook,
   name: 'facebook',
+  color: 'black',
 });
 
