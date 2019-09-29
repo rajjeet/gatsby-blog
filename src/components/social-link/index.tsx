@@ -5,17 +5,16 @@ import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
 export const SocialLink: React.FC<TProps> = ({
-  link, icon, name,
+  link, icon, name, color, labelPrefix,
 }) => (
   <StyledSpan>
-    <StyledLink href={link} target="_blank" rel="noopener noreferrer" aria-label={`See ${name} (opens new tab)`}>
+    <StyledLink href={link} target="_blank" rel="noopener noreferrer" aria-label={`${labelPrefix} ${name}`} color={color}>
       <FontAwesomeIcon size="2x" icon={icon} />
     </StyledLink>
   </StyledSpan>
 );
 
 const StyledSpan = styled.span`
-  margin-right: 1em;  
   svg {
     max-width: 32px;
   }
@@ -23,8 +22,9 @@ const StyledSpan = styled.span`
 
 const StyledLink = styled.a`
   vertical-align: center;
-  color: ${theme.primaryColor};
+  color: ${(props): string => props.color};
   :hover {
-    color: ${theme.secondaryColor};
+    color: ${theme.default.secondaryColor};
   }
+  cursor: pointer;
 `;

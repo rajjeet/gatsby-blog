@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { TagGroup } from '../../components/tag-group';
 import { getTagSlug } from '../../utils/slugs';
 import { TPostSummary } from './types';
+import { ShareLinks } from './share-links';
+import * as theme from '../../utils/theme';
 
 export const PostSummary: React.FC<TPostSummary> = ({
   title, dateCreated, dateModified, timeToRead, description, tags,
@@ -16,32 +18,38 @@ export const PostSummary: React.FC<TPostSummary> = ({
       </Detail>
       <Detail>
         <Label>Read Time</Label>
-        <Value>
-          {timeToRead}
-          {' '}
-mins
-        </Value>
+        <Value>{`${timeToRead} mins`}</Value>
       </Detail>
       {
-          dateModified && (
+        dateModified && (
           <Detail>
             <Label>Updated</Label>
             <Value>{dateModified}</Value>
           </Detail>
-          )
-        }
+        )
+      }
     </PostDetails>
     <Description>{description}</Description>
     {
-        tags && (
-          <TagGroup
-            tags={tags.map((tag) => ({ fieldValue: tag }))}
-            getSlug={getTagSlug}
-          />
-        )
-      }
+      tags && (
+        <TagGroup
+          tags={tags.map((tag) => ({ fieldValue: tag }))}
+          getSlug={getTagSlug}
+        />
+      )
+    }
+    <ShareLinksWrapper>
+      <ShareLinks isInline />
+    </ShareLinksWrapper>
   </Wrapper>
 );
+
+const ShareLinksWrapper = styled.div`
+  display: block;
+  @media screen and (min-width: ${theme.tabletBreakpoint}){
+  display: none;
+  }
+`;
 
 const Description = styled.p`
   color: dimgrey;
@@ -65,7 +73,7 @@ const Value = styled.span`
 `;
 
 const Wrapper = styled.div`
-
+  margin-bottom: 1em;
 `;
 
 const PostDetails = styled.span`

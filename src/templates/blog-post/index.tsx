@@ -5,6 +5,7 @@ import Disqus from 'disqus-react';
 import styled from 'styled-components';
 import * as tocbot from 'tocbot';
 import Prism from 'prismjs';
+
 import { Layout } from '../../components/layout';
 import { Seo } from '../../components/seo';
 
@@ -13,6 +14,8 @@ import { TProps } from './types';
 import { PostSummary } from './post-summary';
 import { PostNavigation } from './post-navigation';
 import { siteMetadata } from '../../../gatsby-config';
+import { ShareLinks } from './share-links';
+import * as theme from '../../utils/theme';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
@@ -33,8 +36,9 @@ const BlogPost: React.FC<TProps> = (props) => {
 
   const { data } = props;
   const { post } = data;
+  const postUrl = `${siteMetadata.canonicalUrl}${post.fields.slug}`;
   const disqusConfig = {
-    url: `${siteMetadata.canonicalUrl}${post.fields.slug}`,
+    url: `${postUrl}`,
     identifier: post.id,
     title: post.frontmatter.title,
   };
@@ -59,6 +63,9 @@ const BlogPost: React.FC<TProps> = (props) => {
           tags={tags}
         />
         <Post>
+          <ShareLinksWrapper>
+            <ShareLinks />
+          </ShareLinksWrapper>
           <MainContent>
             <div className="js-toc-content">
               <MarkdownMdxProvider content={post.body} />
@@ -88,6 +95,13 @@ const MainContent = styled.div`
 const Post = styled.div`
   display: flex;
   flex-direction: row;  
+`;
+
+const ShareLinksWrapper = styled.div`
+  display: none;
+  @media screen and (min-width: ${theme.tabletBreakpoint}){
+    display: block;
+  }
 `;
 
 export const query = graphql`

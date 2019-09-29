@@ -9,15 +9,52 @@ import { SocialLink } from '../social-link';
 export const AuthorSocialLinkGroup: React.FC<{}> = () => (
   <div>
     <Header>Links</Header>
-    <div>
-      <SocialLink name="Email" icon={faEnvelope} link="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:" />
-      <SocialLink name="GitHub" icon={faGithub} link="https://github.com/rajjeet" />
-      <SocialLink name="LinkedIn" icon={faLinkedin} link="https://www.linkedin.com/in/rajjeetphull/" />
-      <SocialLink name="Facebook" icon={faFacebook} link="https://www.facebook.com/ortmesh/" />
-      <SocialLink name="Twitter" icon={faTwitter} link="https://twitter.com/ortmesh" />
-    </div>
+    <LinksWrapper>
+      <SocialLink
+        name="Email"
+        icon={faEnvelope}
+        link="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
+        color="gray"
+        labelPrefix="See"
+      />
+      <SocialLink
+        name="GitHub"
+        icon={faGithub}
+        link="https://github.com/rajjeet"
+        color="gray"
+        labelPrefix="See"
+      />
+      <SocialLink
+        name="LinkedIn"
+        icon={faLinkedin}
+        link="https://www.linkedin.com/in/rajjeetphull/"
+        color="gray"
+        labelPrefix="See"
+      />
+      <SocialLink
+        name="Facebook"
+        icon={faFacebook}
+        link="https://www.facebook.com/ortmesh/"
+        color="gray"
+        labelPrefix="See"
+      />
+      <SocialLink
+        name="Twitter"
+        icon={faTwitter}
+        link="https://twitter.com/ortmesh"
+        color="gray"
+        labelPrefix="See"
+      />
+    </LinksWrapper>
   </div>
 );
+
+const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
 
 const Header = styled.h3`
     margin: 1em auto .25em auto;    
