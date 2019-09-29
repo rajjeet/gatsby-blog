@@ -90,6 +90,7 @@ const Wrapper = styled.div`
 const MainContent = styled.div`
   flex: 3;  
   min-width: 0;
+  font-size: 1.2rem;
 `;
 
 const Post = styled.div`
