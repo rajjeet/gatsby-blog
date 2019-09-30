@@ -9,11 +9,11 @@ exports[`<ProjectListing /> should render 1`] = `
       List of Projects
     </h1>
     <div
-      class="sc-htpNat dPlZrY"
+      class="sc-htpNat fjEtFy"
     >
       <a
         aria-label="See Condo Landing Pages"
-        class="sc-bwzfXH kTyWdp"
+        class="sc-bwzfXH foniet"
         href="/projects/condo-landing-pages/"
       >
         <h3>
@@ -50,11 +50,11 @@ exports[`<ProjectListing /> should render 1`] = `
       </a>
     </div>
     <div
-      class="sc-htpNat dPlZrY"
+      class="sc-htpNat fjEtFy"
     >
       <a
         aria-label="See Kitchen Quoter"
-        class="sc-bwzfXH kTyWdp"
+        class="sc-bwzfXH foniet"
         href="/projects/kitchen-quoter/"
       >
         <h3>
