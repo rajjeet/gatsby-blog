@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import * as theme from '../../utils/theme';
 
 import { TProps } from './types';
 import { Pagination } from './pagination';
@@ -28,7 +29,10 @@ const PostListingHeader = styled.h1`
 const PostListingWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 300px;
+  @media screen and (min-width: ${theme.bigMobileBreakpoint}){
+    grid-auto-rows: 380px;
+  }
+  grid-auto-rows: 450px;
   grid-gap: 20px;    
 `;
 
