@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import IndexPage, { TProps } from './index';
-import { createMockGatsbyImageSharpFluid } from '../../../utils/testing';
+import { mockGatsbyImageSharpFluid } from '../../../utils/testing';
 
 export const makeProps = (): TProps => (
   {
@@ -13,7 +13,7 @@ export const makeProps = (): TProps => (
               frontmatter: {
                 title: 'Condo Landing Pages',
                 description: 'An automated process for building fast, responsive landing pages for pre-construction condos.',
-                thumbnail: createMockGatsbyImageSharpFluid.file,
+                thumbnail: mockGatsbyImageSharpFluid.file,
                 techStackTags: [
                   {
                     type: 'AWS',
@@ -38,7 +38,7 @@ export const makeProps = (): TProps => (
               frontmatter: {
                 title: 'Kitchen Quoter',
                 description: 'A do-it-yourself calculator that generates dollar quotes based on user-specified fields and formula.',
-                thumbnail: createMockGatsbyImageSharpFluid.file,
+                thumbnail: mockGatsbyImageSharpFluid.file,
                 techStackTags: [
                   {
                     type: 'JavaScript',
@@ -82,7 +82,7 @@ export const makeProps = (): TProps => (
                   'Gatsby JS X',
                 ],
                 description: "Over the past year, I truly learned the importance of building side projects as a software developer. Besides building projects, showing them to the world is just as important. That's why I created the project section.",
-                image: createMockGatsbyImageSharpFluid.file,
+                image: mockGatsbyImageSharpFluid.file,
               },
               fields: {
                 slug: '/adding-project-section-to-website/',
@@ -104,7 +104,7 @@ export const makeProps = (): TProps => (
                   'Angular X',
                 ],
                 description: 'I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.',
-                image: createMockGatsbyImageSharpFluid.file,
+                image: mockGatsbyImageSharpFluid.file,
               },
               fields: {
                 slug: '/state-management-react-hooks/',

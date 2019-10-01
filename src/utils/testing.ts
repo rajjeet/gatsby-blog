@@ -1,4 +1,4 @@
-export const createMockGatsbyImageSharpFluid = {
+export const mockGatsbyImageSharpFluid = {
   file: {
     childImageSharp: {
       fluid: {
@@ -12,7 +12,7 @@ export const createMockGatsbyImageSharpFluid = {
   },
 };
 
-export const createMockGroups = {
+export const mockGroups = {
   categoryGrouping: {
     group: [
       {
@@ -27,13 +27,13 @@ export const createMockGroups = {
   },
 };
 
-export const createMockProjects = [
+export const mockProjects = [
   {
     node: {
       frontmatter: {
         title: 'Condo Landing Pages',
         description: 'An automated process for building fast, responsive landing pages for pre-construction condos.',
-        thumbnail: createMockGatsbyImageSharpFluid.file,
+        thumbnail: mockGatsbyImageSharpFluid.file,
         techStackTags: [
           {
             type: 'AWS',
@@ -78,7 +78,7 @@ export const createMockProjects = [
             value: 'https://d1n2vqbqyes277.cloudfront.net',
           },
         ],
-        thumbnail: createMockGatsbyImageSharpFluid.file,
+        thumbnail: mockGatsbyImageSharpFluid.file,
       },
       fields: {
         slug: '/projects/kitchen-quoter/',
@@ -88,7 +88,7 @@ export const createMockProjects = [
   },
 ];
 
-export const createMockProjectLinks = [
+export const mockProjectLinks = [
   {
     label: 'ex. CharismaCondos.net',
     value: 'https://dgftd2qqywjy1.cloudfront.net',
@@ -103,7 +103,7 @@ export const createMockProjectLinks = [
   },
 ];
 
-export const createMockPosts = [
+export const mockPosts = [
   {
     node: {
       id: '13cd14f6-36e9-55cd-8a4e-4bf1aea2c9e6',
@@ -116,7 +116,7 @@ export const createMockPosts = [
           'Gatsby JS X',
         ],
         description: "Over the past year, I truly learned the importance of building side projects as a software developer. Besides building projects, showing them to the world is just as important. That's why I created the project section.",
-        image: createMockGatsbyImageSharpFluid.file,
+        image: mockGatsbyImageSharpFluid.file,
       },
       fields: {
         slug: '/adding-project-section-to-website/',
@@ -138,7 +138,7 @@ export const createMockPosts = [
           'Angular X',
         ],
         description: 'I was learning about the new React Hooks, when I came across a blog post that claims to build state management, like Redux, using React Hooks. I decided to try it out and found it surprisingly simple and effective.',
-        image: createMockGatsbyImageSharpFluid.file,
+        image: mockGatsbyImageSharpFluid.file,
       },
       fields: {
         slug: '/state-management-react-hooks/',
@@ -160,7 +160,7 @@ export const createMockPosts = [
           'React',
         ],
         description: 'Starting a blog seemed easy to me, but selecting the right tool was not straight forward for my goals. See why I decided to use Gatsby to host Ortmesh, and how you might benefit from doing the same.',
-        image: createMockGatsbyImageSharpFluid.file,
+        image: mockGatsbyImageSharpFluid.file,
       },
       fields: {
         slug: '/build-super-customized-performant-blog/',

@@ -1,8 +1,8 @@
-import { createMockPosts } from '../../utils/testing';
+import { mockPosts } from '../../utils/testing';
 import { TProps } from './types';
 
 export const makeProps = ({
-  posts = createMockPosts,
+  posts = mockPosts,
   heading = 'Post Listing',
   numOfPages = 5,
   currentPage = 1,

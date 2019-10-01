@@ -1,10 +1,10 @@
-import { createMockPosts } from '../../utils/testing';
+import { mockPosts } from '../../utils/testing';
 import { TProps } from './types';
 
 export const makeProps = (): TProps => ({
   data: {
     posts: {
-      edges: createMockPosts,
+      edges: mockPosts,
     },
   },
   pageContext: {
