@@ -44,13 +44,13 @@ const Main = styled.main`
     flex-direction: row;
   }  
   width: 100%;
-  margin: 10px auto 20px;
+  margin: 1rem auto 1rem;
   @media screen and (min-width: ${theme.tabletBreakpoint}){
     width: 90%;
   }  
 `;
 
 const Content = styled.div`
- 
+  width: 100%;
 `;
 
