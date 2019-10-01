@@ -2,21 +2,56 @@
 
 exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 <DocumentFragment>
-  <div>
+  .c2 svg {
+  max-width: 32px;
+}
+
+.c3 {
+  vertical-align: center;
+  color: gray;
+  cursor: pointer;
+}
+
+.c3:hover {
+  color: #f3711c;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c0 {
+  margin: 1em auto .25em auto;
+}
+
+<div>
     <h3
-      class="sc-bxivhb gLxXrF"
+      class="c0"
     >
       Links
     </h3>
     <div
-      class="sc-htpNat dNTwXQ"
+      class="c1"
     >
       <span
-        class="sc-bdVaJa gDJuLs"
+        class="c2"
       >
         <a
           aria-label="See Email"
-          class="sc-bwzfXH jxipYx"
+          class="c3"
           color="gray"
           href="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
           rel="noopener noreferrer"
@@ -40,11 +75,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa gDJuLs"
+        class="c2"
       >
         <a
           aria-label="See GitHub"
-          class="sc-bwzfXH jxipYx"
+          class="c3"
           color="gray"
           href="https://github.com/rajjeet"
           rel="noopener noreferrer"
@@ -68,11 +103,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa gDJuLs"
+        class="c2"
       >
         <a
           aria-label="See LinkedIn"
-          class="sc-bwzfXH jxipYx"
+          class="c3"
           color="gray"
           href="https://www.linkedin.com/in/rajjeetphull/"
           rel="noopener noreferrer"
@@ -96,11 +131,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa gDJuLs"
+        class="c2"
       >
         <a
           aria-label="See Facebook"
-          class="sc-bwzfXH jxipYx"
+          class="c3"
           color="gray"
           href="https://www.facebook.com/ortmesh/"
           rel="noopener noreferrer"
@@ -124,11 +159,11 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
         </a>
       </span>
       <span
-        class="sc-bdVaJa gDJuLs"
+        class="c2"
       >
         <a
           aria-label="See Twitter"
-          class="sc-bwzfXH jxipYx"
+          class="c3"
           color="gray"
           href="https://twitter.com/ortmesh"
           rel="noopener noreferrer"

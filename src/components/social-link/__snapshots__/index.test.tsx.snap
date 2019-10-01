@@ -2,12 +2,26 @@
 
 exports[`<SocialLink /> should render 1`] = `
 <DocumentFragment>
-  <span
-    class="sc-bdVaJa gDJuLs"
+  .c0 svg {
+  max-width: 32px;
+}
+
+.c1 {
+  vertical-align: center;
+  color: black;
+  cursor: pointer;
+}
+
+.c1:hover {
+  color: #f3711c;
+}
+
+<span
+    class="c0"
   >
     <a
       aria-label="undefined facebook"
-      class="sc-bwzfXH blPgTM"
+      class="c1"
       color="black"
       href=""
       rel="noopener noreferrer"

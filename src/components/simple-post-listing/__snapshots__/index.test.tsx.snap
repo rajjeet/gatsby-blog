@@ -2,16 +2,59 @@
 
 exports[`<SimplePostListing /> should render 1`] = `
 <DocumentFragment>
-  <div>
+  .c1 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+}
+
+.c1 h4 {
+  margin: 0 auto;
+}
+
+.c1 div {
+  font-size: .8em;
+}
+
+.c0 {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.c0 li {
+  margin-bottom: .25em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: .7em;
+  border-radius: 5px;
+}
+
+.c0 li:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+  -webkit-transition: ease .3s;
+  transition: ease .3s;
+}
+
+.c0 a {
+  color: black;
+}
+
+.c2 {
+  padding-right: .5rem;
+}
+
+<div>
     <h3>
       Blog Posts
     </h3>
     <ul
-      class="sc-bwzfXH HtuBo"
+      class="c0"
     >
       <a
         aria-label="See post: Adding a Project Section to My Website"
-        class="sc-bdVaJa jpiBPE"
+        class="c1"
         href="/adding-project-section-to-website/"
       >
         <li>
@@ -20,7 +63,7 @@ exports[`<SimplePostListing /> should render 1`] = `
           </h4>
           <div>
             <span
-              class="sc-htpNat bDzDlX"
+              class="c2"
             >
               11 May, 2019
             </span>
@@ -32,7 +75,7 @@ exports[`<SimplePostListing /> should render 1`] = `
       </a>
       <a
         aria-label="See post: State Management using React Hooks"
-        class="sc-bdVaJa jpiBPE"
+        class="c1"
         href="/state-management-react-hooks/"
       >
         <li>
@@ -41,7 +84,7 @@ exports[`<SimplePostListing /> should render 1`] = `
           </h4>
           <div>
             <span
-              class="sc-htpNat bDzDlX"
+              class="c2"
             >
               02 May, 2019
             </span>
@@ -53,7 +96,7 @@ exports[`<SimplePostListing /> should render 1`] = `
       </a>
       <a
         aria-label="See post: Build A Super Customized and Performant Blog"
-        class="sc-bdVaJa jpiBPE"
+        class="c1"
         href="/build-super-customized-performant-blog/"
       >
         <li>
@@ -62,7 +105,7 @@ exports[`<SimplePostListing /> should render 1`] = `
           </h4>
           <div>
             <span
-              class="sc-htpNat bDzDlX"
+              class="c2"
             >
               21 February, 2019
             </span>

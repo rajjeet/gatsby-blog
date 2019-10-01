@@ -2,8 +2,23 @@
 
 exports[`<RoundIconButton /> should render 1`] = `
 <DocumentFragment>
-  <button
-    class="sc-bdVaJa bPEsrE"
+  .c0 {
+  border-radius: 100%;
+  border: none;
+  width: 55px;
+  height: 55px;
+  margin: 1rem;
+  background-color: #2185d0;
+  cursor: pointer;
+}
+
+.c0:active,
+.c0:hover {
+  background-color: #186199;
+}
+
+<button
+    class="c0"
     type="button"
   >
     <svg

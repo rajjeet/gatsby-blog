@@ -2,8 +2,18 @@
 
 exports[`Headshot should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdVaJa jOLdEc gatsby-image-wrapper"
+  .c0 {
+  margin: 10px;
+  width: 100%;
+  max-width: 180px;
+  min-width: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.15);
+}
+
+<div
+    class="c0 gatsby-image-wrapper"
     style="position: relative; overflow: hidden;"
   >
     <div

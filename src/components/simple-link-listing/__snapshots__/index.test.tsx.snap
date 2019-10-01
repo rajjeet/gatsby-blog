@@ -2,12 +2,37 @@
 
 exports[`<SimpleLinkListing /> should render 1`] = `
 <DocumentFragment>
-  <div>
+  .c0 {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.c0 li {
+  margin-bottom: .25em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: .7em;
+  border-radius: 5px;
+}
+
+.c0 li:hover {
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+  -webkit-transition: ease .3s;
+  transition: ease .3s;
+}
+
+.c0 a {
+  color: black;
+}
+
+<div>
     <h3>
       Links
     </h3>
     <ul
-      class="sc-bwzfXH HtuBo"
+      class="c0"
     >
       <a
         aria-label="ex. CharismaCondos.net"
