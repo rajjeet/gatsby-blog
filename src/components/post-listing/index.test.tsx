@@ -44,15 +44,15 @@ describe('<PostListing />', () => {
   it('should show pagination buttons if there are multiple pages', () => {
     const props = makeProps({ numOfPages: 2 });
     const { queryAllByText } = render(<PostListing {...props} />);
-    expect(queryAllByText(/newer/i)).toHaveLength(1);
-    expect(queryAllByText(/older/i)).toHaveLength(1);
+    expect(queryAllByText('Newer Posts')).toHaveLength(1);
+    expect(queryAllByText('Older Posts')).toHaveLength(1);
   });
 
   it('should not show pagination buttons if there is a single page', () => {
     const props = makeProps({ numOfPages: 1 });
     const { queryAllByText } = render(<PostListing {...props} />);
-    expect(queryAllByText(/newer/i)).toHaveLength(0);
-    expect(queryAllByText(/older/i)).toHaveLength(0);
+    expect(queryAllByText('Newer Posts')).toHaveLength(0);
+    expect(queryAllByText('Older Posts')).toHaveLength(0);
   });
 
   it('should show current page number', () => {
