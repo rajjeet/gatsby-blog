@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
 export const SimplePostListing: React.FC<TProps> = ({ posts }) => (
@@ -39,17 +38,17 @@ export const S = {
             margin: 0 auto;        
         }
         div {
-           font-size: .8em;
+           font-size: .8rem;
         }`,
   ul: styled.ul`
         list-style: none;
         margin-left: 0;
         padding-left: 0;
         li {
-            margin-bottom: .25em;
-            box-shadow: ${theme.boxShadow};
-            padding: .7em;
-            border-radius: 5px;
+            margin-bottom: .25rem;
+            box-shadow: ${(props): string => props.theme.boxShadow};
+            padding: .7rem;
+            border-radius: ${(props): string => props.theme.borderRadius};
             :hover {
               transform: translateY(-3px);
               transition: ease .3s;

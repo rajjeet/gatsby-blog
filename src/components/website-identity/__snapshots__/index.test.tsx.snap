@@ -43,15 +43,15 @@ exports[`<WebsiteIdentity /> should render 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c5 {
+  font-size: 0.8rem;
   margin: 0;
-  color: #2185d0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.c5 {
-  font-size: 0.8em;
+.c4 {
   margin: 0;
-  color: #186199;
 }
 
 <a

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
 export const TechStackTagListing: React.FC<TProps> = ({ tags }) => (
@@ -20,12 +19,12 @@ const Wrapper = styled.div`
 
 const Tag = styled.div`
   display: inline-block;
-  background-color: ${theme.primaryColor};
+  background-color: ${(props): string => props.theme.primaryColor};
   color: white;
-  border-radius: 5px;
-  font-size: .8em;
+  border-radius: ${(props): string => props.theme.borderRadius};
+  font-size: .8rem;
   font-weight: bolder;
-  padding: .2em .5em;
-  margin: .2em .2em;
+  padding: .2rem .5rem;
+  margin: .2rem .2rem;
 `;
 

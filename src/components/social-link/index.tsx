@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
 export const SocialLink: React.FC<TProps> = ({
@@ -24,7 +23,7 @@ const StyledLink = styled.a`
   vertical-align: center;
   color: ${(props): string => props.color};
   :hover {
-    color: ${theme.default.secondaryColor};
+    color: ${(props): string => props.theme.secondaryColor};
   }
   cursor: pointer;
 `;

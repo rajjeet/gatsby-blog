@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 import { TProps } from './types';
 import { Pagination } from './pagination';
@@ -23,22 +23,19 @@ export const PostListing: React.FC<TProps> = (
   </Wrapper>
 );
 
-const PostListingHeader = styled.h1`
-`;
+const PostListingHeader = styled.h1``;
 
 const PostListingWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  @media screen and (min-width: ${theme.tabletBreakpoint}){
+  @media screen and ${theme.deviceSize.tablet}{
     grid-auto-rows: 320px;
   }
   grid-auto-rows: 400px;
-  grid-gap: 1em;    
+  grid-gap: 1rem;    
 `;
 
-const Wrapper = styled.div`
-  
-  `;
+const Wrapper = styled.div``;
 
 export const query = graphql`
     fragment PostListingMarkdownFragment on Mdx {

@@ -12,10 +12,6 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
   cursor: pointer;
 }
 
-.c3:hover {
-  color: #f3711c;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -34,7 +30,7 @@ exports[`<AuthorSocialLinkGroup /> should render 1`] = `
 }
 
 .c0 {
-  margin: 1em auto .25em auto;
+  margin: 1rem auto .25rem auto;
 }
 
 <div>

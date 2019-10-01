@@ -12,10 +12,6 @@ exports[`<SocialLink /> should render 1`] = `
   cursor: pointer;
 }
 
-.c1:hover {
-  color: #f3711c;
-}
-
 <span
     class="c0"
   >

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../primitives/button';
 import { WebsiteIdentity } from '../website-identity';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 export const Header: React.FC<{}> = () => (
   <Wrapper>
@@ -19,8 +19,8 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em .5rem;
-  @media screen and (min-width: ${theme.tabletBreakpoint}){
-    padding: 1em 2em;  
+  padding: 1rem .5rem;
+  @media screen and ${theme.deviceSize.tablet}{
+    padding: 1rem 2rem;  
   }
 `;

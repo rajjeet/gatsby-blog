@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableOfContents /> should render 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1 span {
+  margin-right: .5rem;
+}
+
+.c1 svg {
+  max-width: 1.5rem;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h4
+      class=""
+    >
+      Outline
+    </h4>
+    <a
+      class="c1"
+      href="#"
+    >
+      <span>
+        Top
+      </span>
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-arrow-alt-circle-up fa-w-16 "
+        data-icon="arrow-alt-circle-up"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm292 116V256h70.9c10.7 0 16.1-13 8.5-20.5L264.5 121.2c-4.7-4.7-12.2-4.7-16.9 0l-115 114.3c-7.6 7.6-2.2 20.5 8.5 20.5H212v116c0 6.6 5.4 12 12 12h64c6.6 0 12-5.4 12-12z"
+          fill="currentColor"
+        />
+      </svg>
+    </a>
+  </div>
+  .c0 {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+.c1 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-bottom: .5rem;
+}
+
+<ul
+    class="c0"
+    id="static-toc"
+  >
+    <div>
+      <a
+        class="c1"
+        href="#introduction"
+      >
+        <li>
+          Introduction
+        </li>
+      </a>
+    </div>
+    <div>
+      <a
+        class="c1"
+        href="#the-basics"
+      >
+        <li>
+          The Basics
+        </li>
+      </a>
+      <ul
+        class="c0"
+        id="static-toc"
+      >
+        <div>
+          <a
+            class="c1"
+            href="#state-management-redux"
+          >
+            <li>
+              State Management (Redux)
+            </li>
+          </a>
+        </div>
+        <div>
+          <a
+            class="c1"
+            href="#context-api"
+          >
+            <li>
+              Context API
+            </li>
+          </a>
+        </div>
+      </ul>
+    </div>
+    <div>
+      <a
+        class="c1"
+        href="#manage-global-state-in-react-hooks"
+      >
+        <li>
+          Manage Global State in React Hooks
+        </li>
+      </a>
+    </div>
+    <div>
+      <a
+        class="c1"
+        href="#middleware-logger"
+      >
+        <li>
+          Middleware: Logger
+        </li>
+      </a>
+    </div>
+  </ul>
+</DocumentFragment>
+`;

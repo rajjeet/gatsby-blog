@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { TProps } from './types';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 export const TableOfContents: React.FC<TProps> = ({ items, depth = 0 }) => (
   <>
@@ -36,14 +36,14 @@ export const TableOfContents: React.FC<TProps> = ({ items, depth = 0 }) => (
 
 const ListWrapper = styled.ul`
   list-style: none;
-  padding-left: 10px;
+  padding-left: .5rem;
 `;
 
 const HeadingWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;  
-  @media screen and (min-width: ${theme.computerBreakpoint}){    
+  @media screen and ${theme.deviceSize.laptop}{    
     flex-direction: row;
     align-items: center;  
     justify-content: space-between;
@@ -56,29 +56,25 @@ const Header = styled.h4`
 const StyledLink = styled.a`
    text-decoration: none;
    color: black;
-   margin-bottom: .3rem;
+   margin-bottom: .5rem;
 `;
 
 const StyledTopLink = styled.a`
     display: flex;
     justify-content: center;
-    background-color: white;
     border: none;
-    padding: .5em 1em;    
-    box-shadow: ${theme.lightBoxShadow};
+    padding: .5rem 1rem;    
+    box-shadow: ${(props): string => props.theme.lightBoxShadow};
     cursor: pointer;
      text-decoration: none;
-     color: ${theme.primaryColor};
-    :hover {
-      background-color: whitesmoke;
-    }
-    :disabled {
-      background-color: whitesmoke;
+     color: ${(props): string => props.theme.primaryColor};
+    :hover, :disabled {
+      background-color: ${(props): string => props.theme.lightBackgroundColor};
     }
     span {
       margin-right: .5rem;
     }
     svg {
-      max-width: 15px;
+      max-width: 1.5rem;
     }  
 `;

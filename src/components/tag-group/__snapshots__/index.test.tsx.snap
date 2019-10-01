@@ -3,29 +3,24 @@
 exports[`<TagGroup /> should render 1`] = `
 <DocumentFragment>
   .c0 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c1 {
-  padding: .2em .55em;
-  margin-right: .5em;
-  margin-bottom: .5em;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.15);
-  display: inline-block;
-  border-radius: 5px;
-  color: white;
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  margin-top: .25rem;
   font-weight: bolder;
-  font-size: .8em;
-  background-color: #2185d0;
+  font-size: .8rem;
 }
 
 .c1:hover {
-  box-shadow: 0 4px 9px 0 rgba(0,0,0,0.6);
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  -webkit-transition: ease .3s;
-  transition: ease .3s;
   cursor: pointer;
 }
 

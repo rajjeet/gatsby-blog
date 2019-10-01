@@ -15,7 +15,7 @@ import { PostSummary } from './post-summary';
 import { PostNavigation } from './post-navigation';
 import { siteMetadata } from '../../../gatsby-config';
 import { ShareLinks } from './share-links';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
@@ -85,7 +85,7 @@ const BlogPost: React.FC<TProps> = (props) => {
 };
 
 const Wrapper = styled.div`
-  padding: 20px;         
+  padding: 1rem;         
 `;
 
 const MainContent = styled.div`
@@ -101,7 +101,7 @@ const Post = styled.div`
 
 const ShareLinksWrapper = styled.div`
   display: none;
-  @media screen and (min-width: ${theme.tabletBreakpoint}){
+  @media screen and ${theme.deviceSize.tablet}{
     display: block;
   }
 `;

@@ -8,13 +8,11 @@ exports[`<TechStackTagListing /> should render 1`] = `
 
 .c1 {
   display: inline-block;
-  background-color: #2185d0;
   color: white;
-  border-radius: 5px;
-  font-size: .8em;
+  font-size: .8rem;
   font-weight: bolder;
-  padding: .2em .5em;
-  margin: .2em .2em;
+  padding: .2rem .5rem;
+  margin: .2rem .2rem;
 }
 
 <div

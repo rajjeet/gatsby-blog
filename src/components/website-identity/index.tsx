@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import React from 'react';
-import * as theme from '../../utils/theme';
 
 export const WebsiteIdentity: React.FC<{}> = () => {
   const data = useStaticQuery(
@@ -59,13 +58,14 @@ const WebsiteHeadingWrapper = styled.div`
   justify-content: center;
 `;
 
-const Heading = styled.h2`
+const Caption = styled.p`
+  font-size: 0.8rem;
   margin: 0;
-  color: ${theme.primaryColor}
+  text-decoration: none;
+  color: ${(props): string => props.theme.lightTextColor};
 `;
 
-const Caption = styled.p`
-  font-size: 0.8em;
+const Heading = styled.h2`
   margin: 0;
-  color: ${theme.secondaryColor}
+  color: ${(props): string => props.theme.primaryColor}
 `;

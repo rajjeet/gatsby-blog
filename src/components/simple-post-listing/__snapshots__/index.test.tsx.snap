@@ -13,7 +13,7 @@ exports[`<SimplePostListing /> should render 1`] = `
 }
 
 .c1 div {
-  font-size: .8em;
+  font-size: .8rem;
 }
 
 .c0 {
@@ -23,10 +23,8 @@ exports[`<SimplePostListing /> should render 1`] = `
 }
 
 .c0 li {
-  margin-bottom: .25em;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: .7em;
-  border-radius: 5px;
+  margin-bottom: .25rem;
+  padding: .7rem;
 }
 
 .c0 li:hover {

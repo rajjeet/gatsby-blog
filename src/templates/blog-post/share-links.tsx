@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { SocialLink } from '../../components/social-link';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 const socialMediaLinks = [
   { Component: FacebookShareButton, name: 'Facebook', icon: faFacebook },
@@ -55,7 +55,7 @@ const Header = styled.h4`
 
 const InlineHeader = styled.span`
   font-weight: bold;
-  margin-right: 1em;
+  margin-right: 1rem;
 `;
 
 const ShareButtonWrapper = styled.div`
@@ -78,7 +78,7 @@ const StickyContainer = styled.div`
 `;
 
 const Wrapper = styled.div`
-  margin: 1em 1em 1em 0;
+  margin: 1rem 1rem 1rem 0;
   position: sticky;
-  top: 1em;
+  top: 1rem;
 `;

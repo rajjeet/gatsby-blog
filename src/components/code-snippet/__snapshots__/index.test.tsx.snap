@@ -2,29 +2,21 @@
 
 exports[`<CodeSnippet /> should render 1`] = `
 <DocumentFragment>
-  .c4 {
-  margin-right: .5em;
-}
-
-.c0 {
-  background-color: rgba(33,133,208,.1);
-  border-radius: 5px;
-}
-
-.c2 {
-  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-}
-
-.c3 {
-  background-color: white;
-  border: none;
-  padding: .5em 1em;
-  border-radius: 5px;
+  .c3 {
+  margin-right: .5rem;
 }
 
 .c1 {
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+}
+
+.c2 {
+  border: none;
+  padding: .5rem 1rem;
+}
+
+.c0 {
   padding: .5rem .5rem 0 1rem;
-  border-radius: 5px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,18 +32,18 @@ exports[`<CodeSnippet /> should render 1`] = `
 }
 
 <div
-    class="c0"
+    class=""
   >
     <div
-      class="c1"
+      class="c0"
     >
       <span
-        class="c2"
+        class="c1"
       >
         index.js
       </span>
       <button
-        class="c3"
+        class="c2"
         data-clipboard-text="
 const mainReducer = (state, action) => {
   console.log('Before', state);
@@ -67,7 +59,7 @@ const mainReducer = (state, action) => {
         type="button"
       >
         <span
-          class="c4"
+          class="c3"
         >
           Copy
         </span>

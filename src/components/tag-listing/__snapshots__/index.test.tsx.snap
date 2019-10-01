@@ -2,70 +2,61 @@
 
 exports[`<TagListing /> should render 1`] = `
 <DocumentFragment>
-  .c1 {
-  display: inline-block;
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.c2 {
-  padding: .2em .55em;
-  margin-right: .5em;
-  margin-bottom: .5em;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.15);
-  display: inline-block;
-  border-radius: 5px;
-  color: white;
+.c1 {
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  margin-top: .25rem;
   font-weight: bolder;
-  font-size: .8em;
-  background-color: #2185d0;
+  font-size: .8rem;
 }
 
-.c2:hover {
-  box-shadow: 0 4px 9px 0 rgba(0,0,0,0.6);
-  -webkit-transform: translateY(-2px);
-  -ms-transform: translateY(-2px);
-  transform: translateY(-2px);
-  -webkit-transition: ease .3s;
-  transition: ease .3s;
+.c1:hover {
   cursor: pointer;
 }
 
-.c3 {
+.c2 {
   margin-left: 1em;
-}
-
-.c0 {
-  margin: .5em auto;
 }
 
 <div>
     <h1
-      class="c0"
+      class=""
     >
       Tags
     </h1>
     <div
-      class="c1"
+      class="c0"
     >
       <span
-        class="c2"
+        class="c1"
         role="link"
         tabindex="0"
       >
         Experience
         <span
-          class="c3"
+          class="c2"
         >
           1
         </span>
       </span>
       <span
-        class="c2"
+        class="c1"
         role="link"
         tabindex="0"
       >
         Guide
         <span
-          class="c3"
+          class="c2"
         >
           2
         </span>

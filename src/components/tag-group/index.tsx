@@ -1,7 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
 import { TProps } from './types';
 
 export const TagGroup: React.FC<TProps> = ({ tags, getSlug, inline }) => (
@@ -27,25 +26,23 @@ export const TagGroup: React.FC<TProps> = ({ tags, getSlug, inline }) => (
 );
 
 const Wrapper = styled.div`
-  display: ${(props): string => (props.inline ? 'inline' : 'inline-block')};
+  display: flex;
+  flex-wrap: wrap;  
 `;
 
 const StyledSpan = styled.span`
-  padding: .2em .55em;
-  margin-right: .5em;
-  margin-bottom: .5em;
-  box-shadow: ${theme.lightBoxShadow};
-  display: inline-block;
-  border-radius: 5px;
-  color: white;
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  margin-top: .25rem;
+  box-shadow: ${(props): string => props.theme.lightBoxShadow};
+  border-radius: ${(props): string => props.theme.borderRadius};
+  color: ${(props): string => props.theme.white};
   font-weight: bolder;    
-  font-size: .8em;
-  background-color: ${theme.primaryColor};
+  font-size: .8rem;
+  background-color: ${(props): string => props.theme.primaryColor};
   :hover {
-    box-shadow: ${theme.hoverBoxShadow};
-    transform: translateY(-2px);
-    transition: ease .3s;
     cursor: pointer;
+    background-color: ${(props): string => props.theme.secondaryColor};
   }
 `;
 

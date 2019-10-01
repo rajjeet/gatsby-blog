@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
-import * as theme from '../../utils/theme';
 import { TagGroup } from '../tag-group';
 import { getTagSlug } from '../../utils/slugs';
 import { TPostProps } from './types';
@@ -33,18 +32,18 @@ const PostWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-end;    
   background-color: white;
-  margin-bottom: 1em;
-  border-radius: ${theme.borderRadius};
+  margin-bottom: 1rem;
+  border-radius: ${(props): string => props.theme.borderRadius};
   overflow: hidden;
-  box-shadow: ${theme.boxShadow};
-  border-radius: ${theme.borderRadius};
+  box-shadow: ${(props): string => props.theme.boxShadow};
+  border-radius: ${(props): string => props.theme.borderRadius};
 `;
 
 const StyledGatsbyImage = styled(GatsbyImage)`
 `;
 
 const PostSummary = styled.div`
-padding: 1em;
+  padding: 1rem;
 `;
 
 const StyledLink = styled(Link)`
@@ -60,11 +59,11 @@ const PostTitle = styled.h3`
 
 const PostDetails = styled.div`
   font-weight: bolder;
-  font-size: .8em;
-  margin-bottom: .5em;
+  font-size: .8rem;
+  color: ${(props): string => props.theme.lightTextColor};
 `;
 
 const PostDescription = styled.div`
-  font-size: .8em;  
-  margin-bottom: .5em;
+  font-size: .8rem;  
+  margin-bottom: .25rem;
 `;

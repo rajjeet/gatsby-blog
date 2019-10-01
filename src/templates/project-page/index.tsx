@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../../components/layout';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 import { SimplePostListing } from '../../components/simple-post-listing';
 import { SimpleLinkListing } from '../../components/simple-link-listing';
 import { TechStackTagListing } from '../../components/tech-stack-tag-listing';
@@ -43,28 +43,28 @@ const StyledProject = styled.div`
 const S = {
   ContentContainer: styled.div`          
       > div:first-child {        
-        padding: .7em;
-        background-color: whitesmoke;
-        margin: .7em;
-        border-radius: 5px;
+        padding: .7rem;
+        background-color: ${(props): string => props.theme.lightBackgroundColor};
+        margin: .7rem;
+        border-radius: ${(props): string => props.theme.borderRadius};
         display: inline-block;    
         width: 67%;
-        box-shadow: ${theme.boxShadow};
+        box-shadow: ${(props): string => props.theme.boxShadow};
         box-sizing: border-box;        
-        @media (max-width: ${theme.tabletBreakpoint}) {
+        @media screen and ${theme.deviceSize.tablet} {
           width: 100%;          
         }
       }
       > div:not(:first-child) {
-        padding: .7em;        
+        padding: .7rem;        
         display: inline-block;
         vertical-align: top;                
         width: 29%;
         box-sizing: border-box;
         > div {
-          margin-bottom: 2em;
+          margin-bottom: 2rem;
         }
-        @media (max-width: ${theme.tabletBreakpoint}) {
+        @media screen and ${theme.deviceSize.tablet} {
           width: 100%;          
         }
       }

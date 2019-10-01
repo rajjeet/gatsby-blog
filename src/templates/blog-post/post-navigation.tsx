@@ -1,7 +1,7 @@
 import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 import { TableOfContents } from '../../components/table-of-contents';
 import { RoundIconButton } from '../../components/primitives/floating-mobile-button';
 import { TModalToggleButton, TPostNavigation } from './types';
@@ -40,8 +40,8 @@ export const PostNavigation: React.FC<TPostNavigation> = (
 
 const Wrapper = styled.div`  
   flex: 0;
-  margin: 1em 0;
-  @media screen and (min-width: ${theme.bigMobileBreakpoint}){
+  margin: 1rem 0;
+  @media screen and ${theme.deviceSize.mobileL}{
     flex: 1; 
     margin-left: 1rem;
     min-width: 0; 
@@ -52,7 +52,7 @@ const MobileTableOfContentsModal = styled.div`
   padding: 1rem;
   z-index: 2;
   position: fixed;
-  background-color: white;
+  background-color: ${(props): string => props.theme.white};
   top: 0;
   left: 0;
   bottom: 0;
@@ -60,7 +60,7 @@ const MobileTableOfContentsModal = styled.div`
 `;
 const FloatingButton = styled.div`
   display: none;
-  @media (max-width: ${theme.bigMobileBreakpoint}){
+  @media screen and ${theme.deviceSize.mobileL}{
     display: block;
   }
   position: fixed;
@@ -68,7 +68,7 @@ const FloatingButton = styled.div`
   right: 0;
 `;
 const TableOfContentWrapper = styled.div`  
-  @media (max-width: ${theme.bigMobileBreakpoint}){
+  @media screen and ${theme.deviceSize.mobileL}{
       display: none;
     }
   position: sticky;
@@ -83,9 +83,9 @@ const TableOfContentWrapper = styled.div`
     list-style: none;    
   } 
   .is-active-link {
-    color: ${theme.primaryColor};    
+    color: ${(props): string => props.theme.primaryColor};    
     &:before {
-    background-color: ${theme.primaryColor}
+    background-color: ${(props): string => props.theme.primaryColor}
     }
   }
   overflow: hidden;
