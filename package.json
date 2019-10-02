@@ -19,17 +19,20 @@
     "build-storybook": "NODE_ENV=production build-storybook -s public",
     "codeceptjs": "npx codeceptjs run",
     "test:e2e": "start-server-and-test prod http://localhost:9000 codeceptjs",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --project ./tsconfig.json --noEmit",
     "check-all": "npm test && npm run type-check && npm run lint && npm run test:e2e",
     "postversion": "git push && git push --tags"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:fix && npm run type-check"
+      "pre-commit": "lint-staged && npm run type-check"
     }
   },
   "lint-staged": {
-    "*": "eslint"
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
