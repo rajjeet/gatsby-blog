@@ -1,4 +1,4 @@
-import { mockGatsbyImageSharpFluid } from "./gatsby-images";
+import { mockGatsbyImageSharpFluid } from './gatsby-images';
 
 export const mockProjects = [
   {

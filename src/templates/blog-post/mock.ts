@@ -1,5 +1,5 @@
 import { TProps } from './types';
-import { mockPost } from "../../fixtures/posts";
+import { mockPost } from '../../fixtures/posts';
 
 export const makeProps = ({ dateModified = null } = {}): TProps => {
   if (dateModified) {

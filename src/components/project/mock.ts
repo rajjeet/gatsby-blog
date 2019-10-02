@@ -1,5 +1,5 @@
 import { TProps } from './types';
-import { mockGatsbyImageSharpFluid } from "../../fixtures/gatsby-images";
+import { mockGatsbyImageSharpFluid } from '../../fixtures/gatsby-images';
 
 export const makeProps = (): TProps => ({
   heading: 'Sample Project',
