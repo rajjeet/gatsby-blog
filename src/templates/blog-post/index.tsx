@@ -9,7 +9,7 @@ import Prism from 'prismjs';
 import { Layout } from '../../components/layout';
 import { Seo } from '../../components/seo';
 
-import { MarkdownMdxProvider } from '../../utils/MarkdownMDXProvider';
+import { MarkdownMdxProvider } from '../../utils/markdown-mdx-provider';
 import { TProps } from './types';
 import { PostSummary } from './post-summary';
 import { PostNavigation } from './post-navigation';

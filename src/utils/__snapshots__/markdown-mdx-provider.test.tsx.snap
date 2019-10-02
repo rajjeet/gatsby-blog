@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownMdxProvider should render 1`] = `
+<DocumentFragment>
+  .c0 {
+  background-color: whitesmoke;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.c1 {
+  font-style: italic;
+  color: dimgrey;
+  margin: .5em 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+<div
+    class="c0"
+  >
+    <h3
+      id="premature-design"
+    >
+      <a
+        aria-hidden="true"
+        href="premature-design"
+      />
+      Premature Design
+    </h3>
+    <div>
+      Even in an agile workplace, senior developers and architects still design software solutions upfront before digging into code. There are many problems that can’t be anticipated with planning. They must be handled as they arrive. 
+    </div>
+    <div>
+      Big architectural designs made before gain working experience of the codebase can lead teams down the wrong path. Time is wasted reverting the changes later on.
+    </div>
+    <h3
+      id="healthy-organic-software"
+    >
+      <a
+        aria-hidden="true"
+        href="healthy-organic-software"
+      />
+      Healthy Organic Software
+    </h3>
+    <div>
+      So, here is the key insight. Instead of forcing an ideal design upfront, let the codebase evolve organically. This can bring the best result with the least effort.
+    </div>
+    <div>
+      <figure
+        class="gatsby-resp-image-figure"
+      >
+        
+    
+        <span
+          class="gatsby-resp-image-wrapper"
+          style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 459px;"
+        >
+          
+      
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg"
+            rel="noopener"
+            style="display: block;"
+            target="_blank"
+          >
+            
+    
+            <span
+              class="gatsby-resp-image-background-image"
+              style="padding-bottom: 74.94553376906319%; position: relative; bottom: 0px; left: 0px; background-image: url(data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHcXZIPJF//xAAaEAACAgMAAAAAAAAAAAAAAAAAAQIDEiEx/9oACAEBAAEFAiM8mPar6f/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAEQABEhYf/aAAgBAQAGPwKVRB68OL//xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQMVFh/9oACAEBAAE/ITASU5jQqd4Sro91/9oADAMBAAIAAwAAABB/D//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMWFBgbH/2gAIAQEAAT8QHiBYDYpr3wxIeHitU+bEtl6Kba7La7i7P//Z); background-size: cover; display: block;"
+            />
+            
+  
+            <img
+              alt="I only code organically (image by Igor Son via Unsplash.com)"
+              class="gatsby-resp-image-image"
+              loading="lazy"
+              sizes="(max-width: 459px) 100vw, 459px"
+              src="/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg"
+              srcset="/static/d3f947606ca63e33c1cee34079a486a2/3cfb5/igor-son-FV_PxCqgtwc-unsplash.jpg 175w,/static/d3f947606ca63e33c1cee34079a486a2/3a2a3/igor-son-FV_PxCqgtwc-unsplash.jpg 350w,/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg 459w"
+              title="I only code organically (image by Igor Son via Unsplash.com)"
+            />
+            
+  
+          </a>
+          
+    
+        </span>
+        
+    
+        <figcaption
+          class="gatsby-resp-image-figcaption c1"
+        >
+          I only code organically (image by Igor Son via Unsplash.com)
+        </figcaption>
+        
+  
+      </figure>
+    </div>
+    <div>
+      Evolve Organically? Is the codebase a plant? No. By Evolving organically, I’m referring to progressive refactoring. Refactoring is the art of changing structure without touching behaviour. 
+    </div>
+    <h3
+      id="codebase-veteran"
+    >
+      <a
+        aria-hidden="true"
+        href="codebase-veteran"
+      />
+      Codebase Veteran
+    </h3>
+    <div>
+      Development time tends to bounce between writing new code and refactoring old code. We refactor code because it:
+    </div>
+    <ul>
+      <li>
+        makes code easy to understand 
+      </li>
+      <li>
+        prepares code for anticipated changes
+      </li>
+      <li>
+        reduces duplication of logic 
+      </li>
+      <li>
+        improves algorithmic efficiency 
+      </li>
+    </ul>
+    <div>
+      Good refactorings add value and experience. Add up enough experience via refactorings over time and developers naturally connect the dots that lead to breakthrough redesigns. The nuances behind these breakthroughs happen due to many factors. This  include frustrations, conversations, research, repeated exposure, and pattern recognition encountered during the development process. 
+    </div>
+    <div>
+      <figure
+        class="gatsby-resp-image-figure"
+      >
+        
+    
+        <span
+          class="gatsby-resp-image-wrapper"
+          style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px;"
+        >
+          
+      
+          <a
+            class="gatsby-resp-image-link"
+            href="/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg"
+            rel="noopener"
+            style="display: block;"
+            target="_blank"
+          >
+            
+    
+            <span
+              class="gatsby-resp-image-background-image"
+              style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0px; left: 0px; background-image: url(data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEAv/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABy41hqIRv/8QAGxAAAgMAAwAAAAAAAAAAAAAAAQIDERMAISL/2gAIAQEAAQUC09bHkczooc3duej/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/AYf/xAAcEAACAQUBAAAAAAAAAAAAAAABEQACEBITYXH/2gAIAQEABj8CWI9mtRCkHqjv/8QAHRABAQEAAAcAAAAAAAAAAAAAAREAITFBUWFxkf/aAAgBAQABPyEaZ7klXheR80bUcekcA6ZdXtmwu//aAAwDAQACAAMAAAAQjP8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAABFB/9oACAEDAQE/EMV//8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxCNKf/EAB0QAQEAAgIDAQAAAAAAAAAAAAERACFBcVFhgZH/2gAIAQEAAT8QIhak09s5wRt2wYDz0y0uNlXuY1qEw6Btn7jxFfLFxTPmf//Z); background-size: cover; display: block;"
+            />
+            
+  
+            <img
+              alt="I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)"
+              class="gatsby-resp-image-image"
+              loading="lazy"
+              sizes="(max-width: 600px) 100vw, 600px"
+              src="/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg"
+              srcset="/static/26e734dd8d0922402beb586c56b2bb9f/3cfb5/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 175w,/static/26e734dd8d0922402beb586c56b2bb9f/3a2a3/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 350w,/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 600w"
+              title="I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)"
+            />
+            
+  
+          </a>
+          
+    
+        </span>
+        
+    
+        <figcaption
+          class="gatsby-resp-image-figcaption c1"
+        >
+          I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)
+        </figcaption>
+        
+  
+      </figure>
+    </div>
+    <h3
+      id="risky-refactoring"
+    >
+      <a
+        aria-hidden="true"
+        href="risky-refactoring"
+      />
+      Risky Refactoring
+    </h3>
+    <div>
+      These refactoring are great and should be encouraged but they entail the risk of regression, when previously working code breaks. That’s why test-driven development (TDD) is a MUST for safe refactorings. 
+    </div>
+    <h3
+      id="red-green-refactor"
+    >
+      <a
+        aria-hidden="true"
+        href="red-green-refactor"
+      />
+      Red Green Refactor
+    </h3>
+    <div>
+      TDD in a nutshell. Write a little test. Write enough code to make it pass. Refactor the code. Rinse and repeat. 
+    </div>
+    <div>
+      With good tests, you refactor with confidence and boldness. You play with arrangements until you find one that works best for the moment. These refactorings are quick, simple, and enjoyable. You do this while adding functionality in bite sized pieces.
+    </div>
+    <div>
+      The tests act as safety nets. When you break code, you’re notified. You know what broke the code, thus avoid countless hours of headache. If you spend the time upfront writing good test, it saves time and cost when the codebase is much larger. 
+    </div>
+    <div>
+      With a growing codebase, breakthroughs help keep feature additions manageable. A large codebase has many moving parts, so it can be intimidating to change things. Having good tests reassures us that we can develop with piece of mind. 
+    </div>
+    <h3
+      id="closing-remarks"
+    >
+      <a
+        aria-hidden="true"
+        href="closing-remarks"
+      />
+      Closing Remarks
+    </h3>
+    <div>
+      I've summarized these ideas in my own words from 
+      <a
+        href="https://www.jamesshore.com/"
+      >
+        James Shore's
+      </a>
+       presentation at AssertJS 2019. From his presentation and my own experience with testing and refactoring, I wrote this blog post. I'm happy to hear your feedback. Thanks for reading.
+    </div>
+  </div>
+</DocumentFragment>
+`;

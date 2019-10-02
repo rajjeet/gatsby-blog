@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import IndexPage, { TProps } from './index';
-import { mockPosts } from '../../../utils/testing';
+import { mockPosts } from '../../../fixtures/testing';
 
 export const makeProps = (): TProps => (
   {

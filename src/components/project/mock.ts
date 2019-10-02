@@ -1,4 +1,4 @@
-import { mockGatsbyImageSharpFluid } from '../../utils/testing';
+import { mockGatsbyImageSharpFluid } from '../../fixtures/testing';
 import { TProps } from './types';
 
 export const makeProps = (): TProps => ({

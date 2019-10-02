@@ -24,6 +24,8 @@ const FigCaption = styled.figcaption`
   font-size: 1rem;
 `;
 
+const Paragraph = ({ children }): JSX.Element => <div>{children}</div>;
+
 export const MarkdownMdxProvider: React.FC<TProps> = ({ content }) => {
   const [components] = useState(
     {
@@ -33,6 +35,7 @@ export const MarkdownMdxProvider: React.FC<TProps> = ({ content }) => {
       }, {}),
       figcaption: FigCaption,
       wrapper: Wrapper,
+      p: Paragraph,
     },
   );
 
