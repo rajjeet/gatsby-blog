@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { CategoryListing } from './index';
-import { createMockGroups } from '../../utils/testing';
+import { mockGroups } from '../../utils/testing';
 import { makeProps } from './mock';
 
 describe('<CategoryListing />', () => {
@@ -22,7 +22,7 @@ describe('<CategoryListing />', () => {
 
   it('should show categories by name and count', () => {
     const { getByText } = render(<CategoryListing {...makeProps()} />);
-    const groups = createMockGroups.categoryGrouping.group;
+    const groups = mockGroups.categoryGrouping.group;
     groups.forEach((group) => {
       expect(getByText(group.fieldValue)).toBeDefined();
       expect(getByText(group.totalCount.toString())).toBeDefined();

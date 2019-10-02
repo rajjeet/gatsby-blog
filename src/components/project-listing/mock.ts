@@ -1,8 +1,8 @@
-import { createMockProjects } from '../../utils/testing';
+import { mockProjects } from '../../utils/testing';
 import { TProps } from './types';
 
 export const makeProps = (): TProps => ({
-  projects: createMockProjects,
+  projects: mockProjects,
   heading: 'List of Projects',
 });
 

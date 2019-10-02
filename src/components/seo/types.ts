@@ -1,13 +1,7 @@
-type TFrontMatter = {
-  title: string;
-  description: string;
-  slug?: string;
-  dateCreated?: string;
-  dateModified?: string;
-};
+import { TFrontMatter } from '../../templates/blog-post-listing/types';
 
 export type TProps = {
-  frontmatter?: TFrontMatter;
+  frontmatter?: TFrontMatter & {slug?: string};
   postImage?: string;
   isBlogPost?: boolean;
 };

@@ -27,9 +27,6 @@ export type TProps = {
     posts: {
       edges: TPostEdge[];
     };
-    projects: {
-      edges: TProjectEdge[];
-    };
   };
 };
 

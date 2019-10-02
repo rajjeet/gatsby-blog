@@ -1,3 +1,5 @@
+import { TPostEdge } from '../blog-post-listing/types';
+
 export interface TProps {
   data: {
     project: {
@@ -16,7 +18,7 @@ export interface TProps {
       body: string;
     };
     posts: {
-      edges: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+      edges: TPostEdge[];
     };
   };
 }
