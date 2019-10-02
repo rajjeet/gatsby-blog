@@ -2,23 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Layout } from '../../components/layout';
 import { PostListing } from '../../components/post-listing';
-
-export interface TProps {
-  data: {
-    posts: {
-      edges: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-    };
-  };
-  pageContext: {
-    limit: number;
-    skip: number;
-    numOfPages: number;
-    numOfPosts: number;
-    currentPage: number;
-    tag: string;
-    paginationSlug: string;
-  };
-}
+import { TProps } from './types';
 
 const TagPage: React.FC<TProps> = ({
   data: { posts: { edges: taggedPosts } }, pageContext: {

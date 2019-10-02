@@ -1,5 +1,5 @@
 import { mockPosts } from '../../utils/testing';
-import { TProps } from './index';
+import { TProps } from './types';
 
 export const makeProps = (): TProps => ({
   data: {
