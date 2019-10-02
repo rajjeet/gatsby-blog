@@ -26,5 +26,5 @@ export const CopyButton: React.FC<TProps> = ({ copyStatus }) => (
 );
 
 const CopyText = styled.span`
-  margin-right: .5em;
+  margin-right: .5rem;
 `;

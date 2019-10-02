@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 import styled from 'styled-components';
-import * as theme from '../../utils/theme';
 
 export const Headshot: React.FC<{}> = () => {
   const data = useStaticQuery(
@@ -23,11 +22,9 @@ export const Headshot: React.FC<{}> = () => {
 };
 
 const GatsbyImageWrapper = styled(GatsbyImage)`
-  margin: 10px;
-  width: 100%;
-  max-width: 180px;
-  min-width: 150px;
+  margin: 1rem;
+  width: 170px;
   border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: ${theme.lightBoxShadow};
+  border: .33rem solid white;
+  box-shadow: ${(props): string => props.theme.lightBoxShadow};
 `;

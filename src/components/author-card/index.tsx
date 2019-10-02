@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Headshot } from '../headshot';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 import { AuthorSocialLinkGroup } from '../author-social-link-group';
 
 export const AuthorCard: React.FC<{}> = () => (
@@ -20,7 +20,7 @@ export const AuthorCard: React.FC<{}> = () => (
 );
 
 const Content = styled.div`
-  padding: 10px;   
+  padding: 1rem;   
 `;
 
 const Bio = styled.div`
@@ -35,17 +35,17 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;    
   flex-direction: column;
-  padding: 20px;
+  padding: 1rem;
   position: sticky;
-  top: 20px;
-  @media screen and (min-width: ${theme.bigMobileBreakpoint}){
+  top: 1rem;
+  @media screen and (${theme.deviceSize.mobileL}){
     flex-direction: row;
   }  
-  @media screen and (min-width: ${theme.computerBreakpoint}){
+  @media screen and (${theme.deviceSize.laptop}){
     flex-direction: column;
   } 
-  background-color: #d0eaff;
-  border-radius: ${theme.borderRadius};
-  margin: 20px;
-  box-shadow: ${theme.lightBoxShadow};
+  background-color: ${(props): string => props.theme.softPrimaryColor};
+  border-radius: ${(props): string => props.theme.borderRadius};
+  margin: 1rem;
+  box-shadow: ${(props): string => props.theme.lightBoxShadow};
 `;

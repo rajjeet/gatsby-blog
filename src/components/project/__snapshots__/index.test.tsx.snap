@@ -2,19 +2,86 @@
 
 exports[`<Project /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-htpNat fjEtFy"
+  .c2 {
+  width: 40%;
+  position: relative;
+  float: left;
+  max-height: 80%;
+  overflow: hidden;
+}
+
+.c1 {
+  display: inline-block;
+  padding: .7rem;
+  box-sizing: border-box;
+  margin: 1rem auto;
+  width: 95%;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 90%;
+}
+
+.c1:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  -webkit-transition: ease .3s;
+  transition: ease .3s;
+  pointer: cursor;
+}
+
+.c1 h3 {
+  margin: .3rem auto .3rem auto;
+}
+
+.c1 p {
+  display: inline-block;
+  max-width: 50%;
+  float: left;
+  margin-top: .5rem;
+  padding-left: 1rem;
+  vertical-align: text-top;
+}
+
+.c0 {
+  display: inline-block;
+  margin-bottom: 1rem;
+  height: 190px;
+  width: 300px;
+}
+
+@media screen and (min-width:768px) {
+  .c1 {
+    margin: .5rem 2.5%;
+  }
+}
+
+@media screen and (min-width:425px) {
+  .c1 p {
+    font-size: .7rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
+<div
+    class="c0"
   >
     <a
       aria-label="See Sample Project"
-      class="sc-bwzfXH foniet"
+      class="c1"
       href=""
     >
       <h3>
         Sample Project
       </h3>
       <div
-        class="sc-bdVaJa cBDXGb gatsby-image-wrapper"
+        class="c2 gatsby-image-wrapper"
         style="position: relative; overflow: hidden;"
       >
         <div

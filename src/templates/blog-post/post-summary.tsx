@@ -4,7 +4,7 @@ import { TagGroup } from '../../components/tag-group';
 import { getTagSlug } from '../../utils/slugs';
 import { TPostSummary } from './types';
 import { ShareLinks } from './share-links';
-import * as theme from '../../utils/theme';
+import { theme } from '../../utils/theme';
 
 export const PostSummary: React.FC<TPostSummary> = ({
   title, dateCreated, dateModified, timeToRead, description, tags, url,
@@ -46,13 +46,13 @@ export const PostSummary: React.FC<TPostSummary> = ({
 
 const ShareLinksWrapper = styled.div`
   display: block;
-  @media screen and (min-width: ${theme.tabletBreakpoint}){
-  display: none;
+  @media screen and ${theme.deviceSize.tablet}{
+    display: none;
   }
 `;
 
 const Description = styled.p`
-  color: dimgrey;
+  color: ${(props): string => props.theme.darkerTextColor};
   font-weight: bolder;
 `;
 
@@ -61,7 +61,7 @@ const Detail = styled.div`
 `;
 
 const Label = styled.span`
-  color: #888888;
+  color: ${(props): string => props.theme.lightTextColor};
   font-weight: bolder;
   :after {
     content: ': '
@@ -73,11 +73,11 @@ const Value = styled.span`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 `;
 
 const PostDetails = styled.span`
-  font-size: .9em;    
+  font-size: .9rem;    
   display: flex;
   flex-wrap: wrap;
 `;

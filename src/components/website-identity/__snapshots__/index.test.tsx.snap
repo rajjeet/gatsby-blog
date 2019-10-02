@@ -2,16 +2,68 @@
 
 exports[`<WebsiteIdentity /> should render 1`] = `
 <DocumentFragment>
-  <a
+  .c2 {
+  width: 3rem;
+}
+
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-text-decoration-color: inherit;
+  text-decoration-color: inherit;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 190px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  font-size: 0.8rem;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4 {
+  margin: 0;
+}
+
+<a
     aria-label="See Home"
-    class="sc-bwzfXH bMIwLZ"
+    class="c0"
     href="/"
   >
     <div
-      class="sc-htpNat bHIzSD"
+      class="c1"
     >
       <div
-        class="sc-bdVaJa jAbZKO gatsby-image-wrapper"
+        class="c2 gatsby-image-wrapper"
         style="position: relative; overflow: hidden;"
       >
         <div
@@ -36,15 +88,15 @@ exports[`<WebsiteIdentity /> should render 1`] = `
         </noscript>
       </div>
       <div
-        class="sc-bxivhb dzPXKO"
+        class="c3"
       >
         <h2
-          class="sc-ifAKCX dUegje"
+          class="c4"
         >
           Ortmesh
         </h2>
         <p
-          class="sc-EHOje gZCzjc"
+          class="c5"
         >
            Write code that matters 
         </p>

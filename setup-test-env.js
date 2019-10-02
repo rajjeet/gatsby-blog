@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint @typescript-eslint/explicit-function-return-type: 0 */
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-styled-components';
 
 const originalError = console.error;
 

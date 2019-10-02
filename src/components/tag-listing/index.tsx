@@ -26,6 +26,5 @@ export const TagListing: React.FC<{}> = () => {
 };
 
 const Header = styled.h1`
-  margin: .5em auto;
 `;
 

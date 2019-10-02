@@ -28,5 +28,5 @@ export const CategoryListing: React.FC<TProps> = ({ className }) => {
 };
 
 const Header = styled.h5`
-    margin: .5em auto;
+    margin: .5rem auto;
 `;

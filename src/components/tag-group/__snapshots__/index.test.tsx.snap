@@ -2,29 +2,55 @@
 
 exports[`<TagGroup /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdVaJa bSrzPW"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  margin-top: .25rem;
+  font-weight: bolder;
+  font-size: .8rem;
+}
+
+.c1:hover {
+  cursor: pointer;
+}
+
+.c2 {
+  margin-left: 1em;
+}
+
+<div
+    class="c0"
   >
     <span
-      class="sc-bwzfXH bipwci"
+      class="c1"
       role="link"
       tabindex="0"
     >
       Experience
       <span
-        class="sc-htpNat ixabce"
+        class="c2"
       >
         1
       </span>
     </span>
     <span
-      class="sc-bwzfXH bipwci"
+      class="c1"
       role="link"
       tabindex="0"
     >
       Guide
       <span
-        class="sc-htpNat ixabce"
+        class="c2"
       >
         2
       </span>

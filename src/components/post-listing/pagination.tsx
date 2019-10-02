@@ -27,5 +27,6 @@ const Wrapper = styled.div`
 `;
 
 const PaginationLabel = styled.div`
-  color: #888;
+  color: ${(props): string => props.theme.lightTextColor};
+  margin-bottom: .5rem;
 `;

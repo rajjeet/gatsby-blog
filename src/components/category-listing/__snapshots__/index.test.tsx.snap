@@ -2,37 +2,67 @@
 
 exports[`<CategoryListing /> should render 1`] = `
 <DocumentFragment>
-  <div
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c2 {
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  margin-top: .25rem;
+  font-weight: bolder;
+  font-size: .8rem;
+}
+
+.c2:hover {
+  cursor: pointer;
+}
+
+.c3 {
+  margin-left: 1em;
+}
+
+.c0 {
+  margin: .5rem auto;
+}
+
+<div
     class=""
   >
     <h5
-      class="sc-bxivhb ljezfu"
+      class="c0"
     >
       Categories
     </h5>
     <div
-      class="sc-bdVaJa bSrzPW"
+      class="c1"
     >
       <span
-        class="sc-bwzfXH bipwci"
+        class="c2"
         role="link"
         tabindex="0"
       >
         Experience
         <span
-          class="sc-htpNat ixabce"
+          class="c3"
         >
           1
         </span>
       </span>
       <span
-        class="sc-bwzfXH bipwci"
+        class="c2"
         role="link"
         tabindex="0"
       >
         Guide
         <span
-          class="sc-htpNat ixabce"
+          class="c3"
         >
           2
         </span>

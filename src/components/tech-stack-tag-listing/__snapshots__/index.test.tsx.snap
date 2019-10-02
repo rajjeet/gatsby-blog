@@ -2,19 +2,32 @@
 
 exports[`<TechStackTagListing /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdVaJa tbeKX"
+  .c0 {
+  margin: .5em auto;
+}
+
+.c1 {
+  display: inline-block;
+  color: white;
+  font-size: .8rem;
+  font-weight: bolder;
+  padding: .2rem .5rem;
+  margin: .2rem .2rem;
+}
+
+<div
+    class="c0"
   >
     <span>
       Tech Tags:
     </span>
     <div
-      class="sc-bwzfXH bIsFyt"
+      class="c1"
     >
       React
     </div>
     <div
-      class="sc-bwzfXH bIsFyt"
+      class="c1"
     >
       GatsbyJS
     </div>

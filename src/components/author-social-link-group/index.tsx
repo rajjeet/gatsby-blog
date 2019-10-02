@@ -57,5 +57,5 @@ const LinksWrapper = styled.div`
 `;
 
 const Header = styled.h3`
-    margin: 1em auto .25em auto;    
+    margin: 1rem auto .25rem auto;    
 `;

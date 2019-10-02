@@ -1,18 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as theme from '../../../utils/theme';
 
 export const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = styled.button`
     background-color: white;
-    outline: none;
     border: none;
-    padding: .5em 1em;    
-    box-shadow: ${theme.lightBoxShadow};
+    padding: .5rem 1rem;    
+    box-shadow: ${(props): string => props.theme.lightBoxShadow};
     cursor: pointer;
-    :hover {
-      background-color: whitesmoke;
-    }
-    :disabled {
-      background-color: whitesmoke;
-    }
+    :hover, :disabled {
+      background-color: ${(props): string => props.theme.lightBackgroundColor};
+    }             
 `;

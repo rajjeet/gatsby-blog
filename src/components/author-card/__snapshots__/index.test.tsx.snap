@@ -2,11 +2,96 @@
 
 exports[`<AuthorCard /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-htoDjs kEhjpx"
+  .c1 {
+  margin: 1rem;
+  width: 170px;
+  border-radius: 50%;
+  border: .33rem solid white;
+}
+
+.c7 svg {
+  max-width: 32px;
+}
+
+.c8 {
+  vertical-align: center;
+  color: gray;
+  cursor: pointer;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  margin: 1rem auto .25rem auto;
+}
+
+.c2 {
+  padding: 1rem;
+}
+
+.c4 {
+  color: #333;
+}
+
+.c3 {
+  margin-top: 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  margin: 1rem;
+}
+
+@media screen and ((min-width:425px)) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and ((min-width:1024px)) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+<div
+    class="c0"
   >
     <div
-      class="sc-bdVaJa jOLdEc gatsby-image-wrapper"
+      class="c1 gatsby-image-wrapper"
       style="position: relative; overflow: hidden;"
     >
       <div
@@ -31,33 +116,33 @@ exports[`<AuthorCard /> should render 1`] = `
       </noscript>
     </div>
     <div
-      class="sc-EHOje dGocVb"
+      class="c2"
     >
       <h2
-        class="sc-gzVnrw jUuqtv"
+        class="c3"
       >
         Rajjeet Phull
       </h2>
       <div
-        class="sc-bZQynM jmeFXk"
+        class="c4"
       >
         Welcome to my personal blog, Ortmesh! Here, I journal my journey as a web developer. My aim is to build interesting side projects around cloud computing and web development.
       </div>
       <div>
         <h3
-          class="sc-ifAKCX iBOmri"
+          class="c5"
         >
           Links
         </h3>
         <div
-          class="sc-bxivhb gVFkNP"
+          class="c6"
         >
           <span
-            class="sc-bwzfXH gurXoc"
+            class="c7"
           >
             <a
               aria-label="See Email"
-              class="sc-htpNat fJbPlq"
+              class="c8"
               color="gray"
               href="mailto:rajjeet.phull@gmail.com?subject=Via Ortmesh:"
               rel="noopener noreferrer"
@@ -81,11 +166,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH gurXoc"
+            class="c7"
           >
             <a
               aria-label="See GitHub"
-              class="sc-htpNat fJbPlq"
+              class="c8"
               color="gray"
               href="https://github.com/rajjeet"
               rel="noopener noreferrer"
@@ -109,11 +194,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH gurXoc"
+            class="c7"
           >
             <a
               aria-label="See LinkedIn"
-              class="sc-htpNat fJbPlq"
+              class="c8"
               color="gray"
               href="https://www.linkedin.com/in/rajjeetphull/"
               rel="noopener noreferrer"
@@ -137,11 +222,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH gurXoc"
+            class="c7"
           >
             <a
               aria-label="See Facebook"
-              class="sc-htpNat fJbPlq"
+              class="c8"
               color="gray"
               href="https://www.facebook.com/ortmesh/"
               rel="noopener noreferrer"
@@ -165,11 +250,11 @@ exports[`<AuthorCard /> should render 1`] = `
             </a>
           </span>
           <span
-            class="sc-bwzfXH gurXoc"
+            class="c7"
           >
             <a
               aria-label="See Twitter"
-              class="sc-htpNat fJbPlq"
+              class="c8"
               color="gray"
               href="https://twitter.com/ortmesh"
               rel="noopener noreferrer"

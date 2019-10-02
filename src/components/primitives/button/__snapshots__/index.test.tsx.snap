@@ -2,8 +2,15 @@
 
 exports[`<Button /> should render 1`] = `
 <DocumentFragment>
-  <button
-    class="sc-bdVaJa eSxrIN"
+  .c0 {
+  background-color: white;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+<button
+    class="c0"
   >
     Click Me
   </button>

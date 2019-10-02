@@ -2,16 +2,70 @@
 
 exports[`<TableOfContents /> should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bwzfXH jFCYEt"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1 span {
+  margin-right: .5rem;
+}
+
+.c1 svg {
+  max-width: 1.5rem;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+<div
+    class="c0"
   >
     <h4
-      class="sc-htpNat hHtpcc"
+      class=""
     >
       Outline
     </h4>
     <a
-      class="sc-ifAKCX dutTtV"
+      class="c1"
       href="#"
     >
       <span>
@@ -34,13 +88,25 @@ exports[`<TableOfContents /> should render 1`] = `
       </svg>
     </a>
   </div>
-  <ul
-    class="sc-bdVaJa cSwstg"
+  .c0 {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+.c1 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-bottom: .5rem;
+}
+
+<ul
+    class="c0"
     id="static-toc"
   >
     <div>
       <a
-        class="sc-bxivhb lmzons"
+        class="c1"
         href="#introduction"
       >
         <li>
@@ -50,7 +116,7 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bxivhb lmzons"
+        class="c1"
         href="#the-basics"
       >
         <li>
@@ -58,12 +124,12 @@ exports[`<TableOfContents /> should render 1`] = `
         </li>
       </a>
       <ul
-        class="sc-bdVaJa cSwstg"
+        class="c0"
         id="static-toc"
       >
         <div>
           <a
-            class="sc-bxivhb lmzons"
+            class="c1"
             href="#state-management-redux"
           >
             <li>
@@ -73,7 +139,7 @@ exports[`<TableOfContents /> should render 1`] = `
         </div>
         <div>
           <a
-            class="sc-bxivhb lmzons"
+            class="c1"
             href="#context-api"
           >
             <li>
@@ -85,7 +151,7 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bxivhb lmzons"
+        class="c1"
         href="#manage-global-state-in-react-hooks"
       >
         <li>
@@ -95,7 +161,7 @@ exports[`<TableOfContents /> should render 1`] = `
     </div>
     <div>
       <a
-        class="sc-bxivhb lmzons"
+        class="c1"
         href="#middleware-logger"
       >
         <li>

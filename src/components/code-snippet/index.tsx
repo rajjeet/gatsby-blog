@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Clipboard from 'react-clipboard.js';
 import { TProps } from './types';
 import { CopyButton } from './copy-button';
-import * as theme from '../../utils/theme';
 
 export const CodeSnippet: React.FC<TProps> = ({
   children, language = 'javascript', dataLine, hasLineNumbers, fileName,
@@ -33,8 +32,8 @@ export const CodeSnippet: React.FC<TProps> = ({
 };
 
 const Wrapper = styled.div`
-  background-color: rgba(33,133,208, .1);  
-  border-radius: 5px;
+  background-color: ${(props): string => props.theme.softPrimaryColor};  
+  border-radius: ${(props): string => props.theme.borderRadius};
 `;
 
 const FileNameText = styled.span`  
@@ -42,17 +41,16 @@ const FileNameText = styled.span`
 `;
 
 const StyledClipboard = styled(Clipboard)`
-  background-color: white;
+  background-color: ${(props): string => props.theme.lightBackgroundColor}; 
   border: none;
-  padding: .5em 1em;
-  border-radius: ${theme.borderRadius};
+  padding: .5rem 1rem;
+  border-radius: ${(props): string => props.theme.borderRadius};
 `;
 
 const TopBar = styled.div`  
   padding: .5rem .5rem 0 1rem;
-  border-radius: 5px;
+  border-radius: ${(props): string => props.theme.borderRadius};
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  
+  justify-content: space-between;  
 `;
