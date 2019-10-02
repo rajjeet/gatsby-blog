@@ -1,8 +1,9 @@
 /* eslint no-undef: 0 */
 /* eslint @typescript-eslint/no-unused-vars: 0 */
 import React from 'react';
-import { mockGatsbyImageSharpFluid, mockGroups } from '../src/fixtures/testing';
+import { mockGroups } from '../src/fixtures/tags';
 import { siteMetadata } from '../gatsby-config';
+import { mockGatsbyImageSharpFluid } from '../src/fixtures/gatsby-images';
 
 const gatsby = jest.requireActual('gatsby');
 module.exports = {

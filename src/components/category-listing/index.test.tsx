@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { CategoryListing } from './index';
-import { mockGroups } from '../../fixtures/testing';
+import { mockGroups } from '../../fixtures/tags';
 import { makeProps } from './mock';
 
 describe('<CategoryListing />', () => {

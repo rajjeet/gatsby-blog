@@ -1,4 +1,4 @@
-import { mockGroups } from '../../fixtures/testing';
+import { mockGroups } from '../../fixtures/tags';
 import { TProps } from './types';
 
 export const makeProps = (): TProps => ({
