@@ -6,6 +6,8 @@ type TItems = {
   url: string;
 };
 
+type TTag = string;
+
 export type TProps = {
   data: {
     post: {
@@ -18,10 +20,13 @@ export type TProps = {
       fields: {
         slug: string;
       };
-      frontmatter: TFrontMatter & {
+      frontmatter: TFrontMatter
+        & {
         image: {
           publicURL: string;
         };
+      } & {
+        tags: TTag[];
       };
     };
   };
@@ -40,6 +45,6 @@ export type TPostSummary = {
   dateModified?: string;
   timeToRead: number;
   description: string;
-  tags: string[];
+  tags: TTag[];
   url: string;
 };

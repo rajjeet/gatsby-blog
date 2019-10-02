@@ -14,13 +14,12 @@ export type TFrontMatter = {
   title: string;
   dateCreated: string;
   dateModified: string;
-  tags: string[];
   description: string;
 };
 export type TPostNode = {
   id: string;
   timeToRead: number;
-  frontmatter: TFrontMatter & {image: TImage};
+  frontmatter: TFrontMatter & {image: TImage; tags: string[]};
   fields: {
     slug: string;
   };
