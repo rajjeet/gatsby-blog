@@ -59,17 +59,18 @@ const MobileTableOfContentsModal = styled.div`
   right: 0;
 `;
 const FloatingButton = styled.div`
-  display: none;
+  display: block;
   @media screen and ${theme.deviceSize.mobileL}{
-    display: block;
+    display: none;
   }
   position: fixed;
   bottom: 0;
   right: 0;
 `;
-const TableOfContentWrapper = styled.div`  
+const TableOfContentWrapper = styled.div`
+  display: none;  
   @media screen and ${theme.deviceSize.mobileL}{
-      display: none;
+      display: block;
     }
   position: sticky;
   top: 1rem;
