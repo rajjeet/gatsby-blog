@@ -1,8 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import { navigate } from 'gatsby';
 import { PaginationButtonGroup } from './index';
 import { makeProps } from './mock';
 import '@testing-library/jest-dom/extend-expect';
+
+jest.mock('gatsby', () => ({
+  navigate: jest.fn(),
+}));
 
 describe('<PaginationButtonGroup />', () => {
   it('should render', () => {
@@ -37,6 +42,15 @@ describe('<PaginationButtonGroup />', () => {
       const { getByText } = render(<PaginationButtonGroup {...props} />);
       expect(getByText(/older/i).closest('button')).toHaveAttribute('disabled');
     });
+
+    it('should navigate to the older page when clicked', () => {
+      const props = makeProps();
+      props.paginationSlug = '/slug/';
+      props.currentPage = 2;
+      const { getByText } = render(<PaginationButtonGroup {...props} />);
+      fireEvent.click(getByText(/older/i));
+      expect(navigate).toHaveBeenLastCalledWith('/slug/3');
+    });
   });
 
   describe('newer posts button', () => {
@@ -50,6 +64,17 @@ describe('<PaginationButtonGroup />', () => {
       const props = makeProps({ currentPage: 1, numOfPages: 2 });
       const { getByText } = render(<PaginationButtonGroup {...props} />);
       expect(getByText(/newer/i).closest('button')).toHaveAttribute('disabled');
+    });
+
+    it('should navigate to the newer page when clicked', () => {
+      const props = makeProps();
+      props.paginationSlug = '/slug/';
+      props.currentPage = 2;
+      const { getByText } = render(<PaginationButtonGroup {...props} />);
+
+      fireEvent.click(getByText(/newer/i));
+
+      expect(navigate).toHaveBeenLastCalledWith('/slug/1');
     });
   });
 });

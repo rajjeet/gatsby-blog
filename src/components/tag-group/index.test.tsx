@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import * as GatsbyLink from 'gatsby-link';
 import { TagGroup } from './index';
 import { makeProps } from './mock';
 
@@ -24,5 +25,13 @@ describe('<TagGroup />', () => {
     const { getByText } = render(<TagGroup {...makeProps()} />);
     expect(getByText('1')).toBeDefined();
     expect(getByText('2')).toBeDefined();
+  });
+
+  it('should navigate to the tag page when clicked', () => {
+    const spyInstance = jest.spyOn(GatsbyLink, 'navigate').mockImplementation(jest.fn);
+    const { getByText } = render(<TagGroup {...makeProps()} />);
+    fireEvent.click(getByText('Experience'));
+    expect(spyInstance).toHaveBeenCalledTimes(1);
+    expect(spyInstance).toHaveBeenCalledWith('/Experience/1');
   });
 });

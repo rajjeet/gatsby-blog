@@ -1,5 +1,5 @@
-import { mockPosts } from '../../utils/testing';
 import { TProps } from './types';
+import { mockPosts } from '../../fixtures/posts';
 
 export const makeProps = ({
   posts = mockPosts,

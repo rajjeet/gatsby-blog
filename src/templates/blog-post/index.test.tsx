@@ -1,5 +1,7 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
+import prismjs from 'prismjs';
+import tocbot from 'tocbot';
 import BlogPost from './index';
 import { makeProps } from './mock';
 
@@ -49,6 +51,35 @@ describe('BlogPost', () => {
     it('should show Updated detail when dateModified is specified', () => {
       const { queryByText } = render(<BlogPost {...makeProps({ dateModified: '2020-01-01' })} />);
       expect(queryByText('Updated')).not.toBeNull();
+    });
+
+    it('should initialize tocbot on load', () => {
+      const spyInstance = jest.spyOn(tocbot, 'init');
+      jest.spyOn(document, 'getElementById').mockImplementation(() => document.createElement('div'));
+      render(<BlogPost {...makeProps({})} />);
+      expect(spyInstance).toHaveBeenCalledTimes(1);
+    });
+
+    it('should load prism highlights on load', () => {
+      const spyInstance = jest.spyOn(prismjs, 'highlightAll');
+      jest.spyOn(document, 'getElementById').mockImplementation(() => document.createElement('div'));
+      render(<BlogPost {...makeProps({})} />);
+      expect(spyInstance).toHaveBeenCalledTimes(1);
+    });
+
+    it('should empties the static table of contents on load', () => {
+      jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
+      const { queryAllByTestId } = render(<BlogPost {...makeProps({})} />);
+      expect(queryAllByTestId('static-toc').length).toBe(0);
+    });
+
+    it('should toggles the mobile table of contents', () => {
+      const { getByLabelText, queryAllByTestId } = render(<BlogPost {...makeProps()} />);
+      expect(queryAllByTestId('mobile-toc').length).toBe(0);
+      act(() => {
+        fireEvent.click(getByLabelText('Open table of contents'));
+      });
+      expect(queryAllByTestId('mobile-toc').length).toBe(1);
     });
   });
 });

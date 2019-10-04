@@ -1,5 +1,6 @@
-import { mockPosts } from '../../utils/testing';
 import { TProps } from './types';
+import { mockPosts } from '../../fixtures/posts';
+import { mdxBody } from '../../fixtures/mdx';
 
 export const makeProps = (): TProps => ({
   data: {
@@ -20,7 +21,7 @@ export const makeProps = (): TProps => ({
           },
         ],
       },
-      body: null,
+      body: mdxBody,
     },
     posts: {
       edges: mockPosts,

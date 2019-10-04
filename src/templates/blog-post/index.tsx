@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../../../node_modules/tocbot/dist/tocbot.css';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
-import * as tocbot from 'tocbot';
+import tocbot from 'tocbot';
 import Prism from 'prismjs';
 
 import { Layout } from '../../components/layout';
 import { Seo } from '../../components/seo';
 
-import { MarkdownMdxProvider } from '../../utils/MarkdownMDXProvider';
+import { MarkdownMdxProvider } from '../../utils/markdown-mdx-provider';
 import { TProps } from './types';
 import { PostSummary } from './post-summary';
 import { PostNavigation } from './post-navigation';
@@ -19,9 +19,10 @@ import { theme } from '../../utils/theme';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
+  const isCSR = useRef(false);
 
-  useEffect(() => {
-    document.getElementById('static-toc').innerHTML = '';
+  React.useEffect(() => {
+    isCSR.current = true;
     tocbot.init({
       tocSelector: '.js-toc',
       contentSelector: '.js-toc-content',
@@ -77,6 +78,7 @@ const BlogPost: React.FC<TProps> = (props) => {
             items={post.tableOfContents.items}
             handleButtonClick={toggleTableOfContentModal}
             showMobileToc={showMobileToc}
+            isCSR={isCSR.current}
           />
         </Post>
       </Wrapper>

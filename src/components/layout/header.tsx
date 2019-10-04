@@ -1,6 +1,7 @@
-import { navigate } from 'gatsby-link';
+
 import React from 'react';
 import styled from 'styled-components';
+import { navigate } from 'gatsby-link';
 import { Button } from '../primitives/button';
 import { WebsiteIdentity } from '../website-identity';
 import { theme } from '../../utils/theme';

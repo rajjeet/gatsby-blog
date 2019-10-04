@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigate } from 'gatsby';
+import { navigate } from 'gatsby-link';
 import styled from 'styled-components';
 import { TProps } from './types';
 
@@ -8,7 +8,7 @@ export const TagGroup: React.FC<TProps> = ({ tags, getSlug, inline }) => (
     {
       tags
       && tags.map((tag) => (
-        <StyledSpan
+        <Tag
           role="link"
           tabIndex={0}
           key={tag.fieldValue}
@@ -19,7 +19,7 @@ export const TagGroup: React.FC<TProps> = ({ tags, getSlug, inline }) => (
         >
           {tag.fieldValue}
           {tag.totalCount && <TagCount>{tag.totalCount}</TagCount>}
-        </StyledSpan>
+        </Tag>
       ))
     }
   </Wrapper>
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;  
 `;
 
-const StyledSpan = styled.span`
+const Tag = styled.span`
   padding: .2rem .5rem;
   margin-right: .5rem;
   margin-top: .25rem;

@@ -17,11 +17,13 @@ const ModalToggleButton: React.FC<TModalToggleButton> = ({ label, icon, onClick 
 );
 
 export const PostNavigation: React.FC<TPostNavigation> = (
-  { items, handleButtonClick, showMobileToc },
+  {
+    items, handleButtonClick, showMobileToc, isCSR,
+  },
 ) => (
   <Wrapper>
     <TableOfContentWrapper>
-      <TableOfContents items={items} />
+      <TableOfContents items={items} isCSR={isCSR} />
       <div className="js-toc" />
     </TableOfContentWrapper>
     <ModalToggleButton icon={faList} onClick={handleButtonClick} label="Open table of contents" />
@@ -29,7 +31,7 @@ export const PostNavigation: React.FC<TPostNavigation> = (
       showMobileToc && (
         <div data-testid="mobile-toc">
           <MobileTableOfContentsModal onClick={handleButtonClick}>
-            <TableOfContents items={items} />
+            <TableOfContents items={items} isCSR={false} />
             <ModalToggleButton icon={faTimes} onClick={handleButtonClick} label="Close table of contents" />
           </MobileTableOfContentsModal>
         </div>
