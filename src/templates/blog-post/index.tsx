@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../../node_modules/tocbot/dist/tocbot.css';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
 import styled from 'styled-components';
-import * as tocbot from 'tocbot';
+import tocbot from 'tocbot';
 import Prism from 'prismjs';
 
 import { Layout } from '../../components/layout';
@@ -20,7 +20,7 @@ import { theme } from '../../utils/theme';
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.getElementById('static-toc').innerHTML = '';
     tocbot.init({
       tocSelector: '.js-toc',

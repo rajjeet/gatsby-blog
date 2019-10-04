@@ -19,7 +19,7 @@ export const TableOfContents: React.FC<TProps> = ({ items, depth = 0 }) => (
       </HeadingWrapper>
       )
     }
-    <ListWrapper id="static-toc">
+    <ListWrapper id="static-toc" data-testid="static-toc">
       {
         items.map((item) => (
           <div key={item.url}>
