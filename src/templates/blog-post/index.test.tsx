@@ -68,12 +68,9 @@ describe('BlogPost', () => {
     });
 
     it('should empties the static table of contents on load', () => {
-      const { getByTestId } = render(<BlogPost {...makeProps({})} />);
-      expect(getByTestId('static-toc').textContent).toEqual('');
-    });
-
-    it('should empty the static table of contents on load', () => {
-      render(<BlogPost {...makeProps({})} />);
+      jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
+      const { queryAllByTestId } = render(<BlogPost {...makeProps({})} />);
+      expect(queryAllByTestId('static-toc').length).toBe(0);
     });
   });
 });

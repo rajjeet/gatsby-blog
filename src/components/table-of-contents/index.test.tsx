@@ -34,4 +34,11 @@ describe('<TableOfContents />', () => {
     const { getByText } = renderTableOfContents();
     expect(getByText('Top')).toBeDefined();
   });
+
+  it('should not render if CSR flag is true', () => {
+    const props = makeProps();
+    props.isCSR = true;
+    const { queryByTestId } = render(<TableOfContents {...props} />);
+    expect(queryByTestId('static-toc')).toBeNull();
+  });
 });

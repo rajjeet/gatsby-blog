@@ -102,6 +102,7 @@ exports[`<TableOfContents /> should render 1`] = `
 
 <ul
     class="c0"
+    data-testid="static-toc"
     id="static-toc"
   >
     <div>
@@ -125,6 +126,7 @@ exports[`<TableOfContents /> should render 1`] = `
       </a>
       <ul
         class="c0"
+        data-testid="static-toc"
         id="static-toc"
       >
         <div>

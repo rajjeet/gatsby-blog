@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostNavigation /> should render 1`] = `
+<DocumentFragment>
+  .c4 {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c5 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-bottom: .5rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 span {
+  margin-right: .5rem;
+}
+
+.c3 svg {
+  max-width: 1.5rem;
+}
+
+.c7 {
+  border-radius: 100%;
+  border: none;
+  width: 55px;
+  height: 55px;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.c0 {
+  -webkit-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+  margin: 1rem 0;
+}
+
+.c8 {
+  padding: 1rem;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c6 {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.c1 {
+  display: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  overflow: hidden;
+  font-size: 1rem;
+}
+
+.c1 .toc-list-item a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  left: 1px;
+}
+
+.c1 .toc-list {
+  list-style: none;
+}
+
+@media screen and (min-width:1024px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width:425px) {
+  .c0 {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 1rem;
+    min-width: 0;
+  }
+}
+
+@media screen and (min-width:425px) {
+  .c6 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:425px) {
+  .c1 {
+    display: block;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <h4
+          class=""
+        >
+          Outline
+        </h4>
+        <a
+          class="c3"
+          href="#"
+        >
+          <span>
+            Top
+          </span>
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-alt-circle-up fa-w-16 "
+            data-icon="arrow-alt-circle-up"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm292 116V256h70.9c10.7 0 16.1-13 8.5-20.5L264.5 121.2c-4.7-4.7-12.2-4.7-16.9 0l-115 114.3c-7.6 7.6-2.2 20.5 8.5 20.5H212v116c0 6.6 5.4 12 12 12h64c6.6 0 12-5.4 12-12z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </div>
+      <ul
+        class="c4"
+        data-testid="static-toc"
+        id="static-toc"
+      >
+        <div>
+          <a
+            class="c5"
+            href="url"
+          >
+            <li>
+              title
+            </li>
+          </a>
+        </div>
+      </ul>
+      <div
+        class="js-toc"
+      />
+    </div>
+    <div
+      class="c6"
+    >
+      <button
+        aria-label="Open table of contents"
+        class="c7"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-list fa-w-16 fa-2x "
+          color="white"
+          data-icon="list"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M80 368H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 64v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16zm0 160H16a16 16 0 0 0-16 16v64a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-64a16 16 0 0 0-16-16zm416 176H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      data-testid="mobile-toc"
+    >
+      <div
+        class="c8"
+      >
+        <div
+          class="c2"
+        >
+          <h4
+            class=""
+          >
+            Outline
+          </h4>
+          <a
+            class="c3"
+            href="#"
+          >
+            <span>
+              Top
+            </span>
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-arrow-alt-circle-up fa-w-16 "
+              data-icon="arrow-alt-circle-up"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm292 116V256h70.9c10.7 0 16.1-13 8.5-20.5L264.5 121.2c-4.7-4.7-12.2-4.7-16.9 0l-115 114.3c-7.6 7.6-2.2 20.5 8.5 20.5H212v116c0 6.6 5.4 12 12 12h64c6.6 0 12-5.4 12-12z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+        <ul
+          class="c4"
+          data-testid="static-toc"
+          id="static-toc"
+        >
+          <div>
+            <a
+              class="c5"
+              href="url"
+            >
+              <li>
+                title
+              </li>
+            </a>
+          </div>
+        </ul>
+        <div
+          class="c6"
+        >
+          <button
+            aria-label="Close table of contents"
+            class="c7"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-times fa-w-11 fa-2x "
+              color="white"
+              data-icon="times"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 352 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

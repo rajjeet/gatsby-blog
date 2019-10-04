@@ -33,7 +33,10 @@ export type TProps = {
 }
 
 export type TPostNavigation = {
-  items: TItems[]; handleButtonClick: () => void; showMobileToc: boolean;
+  items: TItems[];
+  handleButtonClick: () => void;
+  showMobileToc: boolean;
+  isCSR?: boolean;
 };
 
 export type TModalToggleButton = {

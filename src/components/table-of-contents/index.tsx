@@ -5,34 +5,37 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { TProps } from './types';
 import { theme } from '../../utils/theme';
 
-export const TableOfContents: React.FC<TProps> = ({ items, depth = 0 }) => (
-  <>
-    {
-      !depth
-      && (
-      <HeadingWrapper>
-        <Header>Outline</Header>
-        <StyledTopLink href="#">
-          <span>Top</span>
-          <FontAwesomeIcon icon={faArrowAltCircleUp} />
-        </StyledTopLink>
-      </HeadingWrapper>
-      )
-    }
-    <ListWrapper id="static-toc" data-testid="static-toc">
+export const TableOfContents: React.FC<TProps> = ({ items, depth = 0, isCSR }) => {
+  if (isCSR) return null;
+  return (
+    <>
       {
-        items.map((item) => (
-          <div key={item.url}>
-            <StyledLink href={item.url}>
-              <li>{item.title}</li>
-            </StyledLink>
-            {item.items && <TableOfContents items={item.items} depth={depth + 1} />}
-          </div>
-        ))
+        !depth
+        && (
+          <HeadingWrapper>
+            <Header>Outline</Header>
+            <StyledTopLink href="#">
+              <span>Top</span>
+              <FontAwesomeIcon icon={faArrowAltCircleUp} />
+            </StyledTopLink>
+          </HeadingWrapper>
+        )
       }
-    </ListWrapper>
-  </>
-);
+      <ListWrapper id="static-toc" data-testid="static-toc">
+        {
+          items.map((item) => (
+            <div key={item.url}>
+              <StyledLink href={item.url}>
+                <li>{item.title}</li>
+              </StyledLink>
+              {item.items && <TableOfContents items={item.items} depth={depth + 1} />}
+            </div>
+          ))
+        }
+      </ListWrapper>
+    </>
+  );
+};
 
 const ListWrapper = styled.ul`
   list-style: none;
