@@ -13,4 +13,5 @@ const mainReducer = (state, action) => {
 };      
 `,
   fileName: 'index.js',
+  language: 'javascript',
 });

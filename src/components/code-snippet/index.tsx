@@ -4,8 +4,14 @@ import Clipboard from 'react-clipboard.js';
 import { TProps } from './types';
 import { CopyButton } from './copy-button';
 
+export const getSyntaxClassname = (language) => `language-${language || 'javascript'}`;
+
 export const CodeSnippet: React.FC<TProps> = ({
-  children, language = 'javascript', dataLine, hasLineNumbers, fileName,
+  children,
+  language,
+  dataLine,
+  hasLineNumbers,
+  fileName,
 }) => {
   const [copyStatus, setCopyStatus] = useState(false);
 
@@ -13,17 +19,16 @@ export const CodeSnippet: React.FC<TProps> = ({
     setCopyStatus(true);
     setTimeout(() => setCopyStatus(false), 5000);
   };
-
   return (
     <Wrapper>
       <TopBar>
         <FileNameText>{fileName}</FileNameText>
-        <StyledClipboard data-clipboard-text={children} onSuccess={handleClipboardCopy}>
+        <StyledClipboard data-clipboard-text={children} onClick={handleClipboardCopy}>
           <CopyButton copyStatus={copyStatus} />
         </StyledClipboard>
       </TopBar>
       <pre data-line={dataLine} className={hasLineNumbers || dataLine ? 'line-numbers' : ''}>
-        <code className={`language-${language}`}>
+        <code className={getSyntaxClassname(language)}>
           {children}
         </code>
       </pre>
