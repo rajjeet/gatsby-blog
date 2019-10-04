@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import * as GatsbyLink from 'gatsby-link';
 import { Layout } from './index';
 import { makeProps } from './mock';
 import { version } from '../../../package.json';
@@ -31,6 +32,14 @@ describe('<Layout />', () => {
       const { getByText } = render(<Layout {...makeProps()} />);
       expect(getByText('Write code that matters')).toBeDefined();
     });
+
+    it('should invoke navigate to first blog page when Blog is clicked', () => {
+      const spyInstance = jest.spyOn(GatsbyLink, 'navigate').mockImplementationOnce(jest.fn);
+      const { getByText } = render(<Layout {...makeProps()} />);
+      fireEvent.click(getByText('Blog'));
+      expect(spyInstance).toHaveBeenCalledTimes(1);
+      expect(spyInstance).toHaveBeenCalledWith('/blog/1');
+    });
   });
 
   describe('footer', () => {
@@ -38,6 +47,18 @@ describe('<Layout />', () => {
       const { getByText } = render(<Footer />);
       expect(getByText(`v${version}`)).toBeDefined();
     });
+
+    it('should have a copyright label with current year on it', () => {
+      const { getByText } = render(<Footer />);
+      expect(getByText(/Ortmesh 2019/)).toBeDefined();
+    });
+
+    it('should open a link to blog source code when version number is clicked', () => {
+      const globalAny: any = global;
+      globalAny.open = jest.fn();
+      const { getByText } = render(<Footer />);
+      fireEvent.click(getByText(`v${version}`));
+      expect(globalAny.open).toHaveBeenCalledWith('https://github.com/rajjeet/gatsby-blog');
+    });
   });
 });
-
