@@ -24,7 +24,7 @@ const ProjectPage: React.FC<TProps> = ({
       <div>{description}</div>
       {techStackTags && <TechStackTagListing tags={techStackTags} />}
       <S.ContentContainer>
-        {body && <MDXRenderer>{body}</MDXRenderer>}
+        <MDXRenderer>{body}</MDXRenderer>
         <div>
           {links && <SimpleLinkListing links={links} />}
           {linkedPosts && <SimplePostListing posts={linkedPosts} />}
