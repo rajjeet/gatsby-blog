@@ -54,7 +54,9 @@ describe('<Layout />', () => {
     });
 
     it('should open a link to blog source code when version number is clicked', () => {
-      const globalAny: any = global;
+      const globalAny: NodeJS.Global & {
+        open?: () => void;
+      } = global;
       globalAny.open = jest.fn();
       const { getByText } = render(<Footer />);
       fireEvent.click(getByText(`v${version}`));

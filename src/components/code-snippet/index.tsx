@@ -4,7 +4,7 @@ import Clipboard from 'react-clipboard.js';
 import { TProps } from './types';
 import { CopyButton } from './copy-button';
 
-export const getSyntaxClassname = (language) => `language-${language || 'javascript'}`;
+export const getSyntaxClassname = (language: string): string => `language-${language || 'javascript'}`;
 
 export const CodeSnippet: React.FC<TProps> = ({
   children,
