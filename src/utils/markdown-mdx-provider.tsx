@@ -24,7 +24,21 @@ const FigCaption = styled.figcaption`
   font-size: 1rem;
 `;
 
-const Paragraph = ({ children }): JSX.Element => <div>{children}</div>;
+const Paragraph = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const Anchor = ({ children, href, className }): JSX.Element => (
+  <a className={className} href={href} target="_blank" rel="noopener noreferrer">{children}</a>
+);
+
+const StyledAnchor = styled(Anchor)`
+  color: ${(props): string => props.theme.primaryColor};
+  text-decoration: none;
+  &:hover, &:active {
+    color: ${(props): string => props.theme.secondaryColor};
+  }
+`;
 
 export const MarkdownMdxProvider: React.FC<TProps> = ({ content }) => {
   const [components] = useState(
@@ -36,6 +50,7 @@ export const MarkdownMdxProvider: React.FC<TProps> = ({ content }) => {
       figcaption: FigCaption,
       wrapper: Wrapper,
       p: Paragraph,
+      a: StyledAnchor,
     },
   );
 
