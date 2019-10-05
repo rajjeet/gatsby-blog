@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../node_modules/tocbot/dist/tocbot.css';
 import { graphql } from 'gatsby';
 import Disqus from 'disqus-react';
@@ -19,10 +19,10 @@ import { theme } from '../../utils/theme';
 
 const BlogPost: React.FC<TProps> = (props) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
-  const isCSR = useRef(false);
+  const [isCSR, setIsCSR] = useState(false);
 
-  React.useEffect(() => {
-    isCSR.current = true;
+  useEffect(() => {
+    setIsCSR(true);
     tocbot.init({
       tocSelector: '.js-toc',
       contentSelector: '.js-toc-content',
@@ -78,7 +78,7 @@ const BlogPost: React.FC<TProps> = (props) => {
             items={post.tableOfContents.items}
             handleButtonClick={toggleTableOfContentModal}
             showMobileToc={showMobileToc}
-            isCSR={isCSR.current}
+            isCSR={isCSR}
           />
         </Post>
       </Wrapper>

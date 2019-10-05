@@ -2,7 +2,7 @@
 
 exports[`<PostNavigation /> should render 1`] = `
 <DocumentFragment>
-  .c4 {
+  .c7 {
   list-style: none;
   padding-left: .5rem;
 }
@@ -21,7 +21,7 @@ exports[`<PostNavigation /> should render 1`] = `
   align-items: flex-start;
 }
 
-.c5 {
+.c8 {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: black;
@@ -52,7 +52,7 @@ exports[`<PostNavigation /> should render 1`] = `
   max-width: 1.5rem;
 }
 
-.c7 {
+.c5 {
   border-radius: 100%;
   border: none;
   width: 55px;
@@ -68,7 +68,7 @@ exports[`<PostNavigation /> should render 1`] = `
   margin: 1rem 0;
 }
 
-.c8 {
+.c6 {
   padding: 1rem;
   z-index: 2;
   position: fixed;
@@ -78,7 +78,7 @@ exports[`<PostNavigation /> should render 1`] = `
   right: 0;
 }
 
-.c6 {
+.c4 {
   display: block;
   position: fixed;
   bottom: 0;
@@ -131,7 +131,7 @@ exports[`<PostNavigation /> should render 1`] = `
 }
 
 @media screen and (min-width:425px) {
-  .c6 {
+  .c4 {
     display: none;
   }
 }
@@ -180,32 +180,16 @@ exports[`<PostNavigation /> should render 1`] = `
           </svg>
         </a>
       </div>
-      <ul
-        class="c4"
-        data-testid="static-toc"
-        id="static-toc"
-      >
-        <div>
-          <a
-            class="c5"
-            href="url"
-          >
-            <li>
-              title
-            </li>
-          </a>
-        </div>
-      </ul>
       <div
         class="js-toc"
       />
     </div>
     <div
-      class="c6"
+      class="c4"
     >
       <button
         aria-label="Open table of contents"
-        class="c7"
+        class="c5"
         type="button"
       >
         <svg
@@ -230,7 +214,7 @@ exports[`<PostNavigation /> should render 1`] = `
       data-testid="mobile-toc"
     >
       <div
-        class="c8"
+        class="c6"
       >
         <div
           class="c2"
@@ -265,13 +249,13 @@ exports[`<PostNavigation /> should render 1`] = `
           </a>
         </div>
         <ul
-          class="c4"
+          class="c7"
           data-testid="static-toc"
           id="static-toc"
         >
           <div>
             <a
-              class="c5"
+              class="c8"
               href="url"
             >
               <li>
@@ -281,11 +265,11 @@ exports[`<PostNavigation /> should render 1`] = `
           </div>
         </ul>
         <div
-          class="c6"
+          class="c4"
         >
           <button
             aria-label="Close table of contents"
-            class="c7"
+            class="c5"
             type="button"
           >
             <svg

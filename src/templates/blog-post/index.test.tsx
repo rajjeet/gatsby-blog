@@ -67,13 +67,12 @@ describe('BlogPost', () => {
       expect(spyInstance).toHaveBeenCalledTimes(1);
     });
 
-    it('should empties the static table of contents on load', () => {
-      jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
+    it('should empty the static table of contents on load', () => {
       const { queryAllByTestId } = render(<BlogPost {...makeProps({})} />);
       expect(queryAllByTestId('static-toc').length).toBe(0);
     });
 
-    it('should toggles the mobile table of contents', () => {
+    it('should toggle the mobile table of contents', () => {
       const { getByLabelText, queryAllByTestId } = render(<BlogPost {...makeProps()} />);
       expect(queryAllByTestId('mobile-toc').length).toBe(0);
       act(() => {

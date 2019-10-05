@@ -5,11 +5,9 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { TProps } from './types';
 import { theme } from '../../utils/theme';
 
-export const TableOfContents: React.FC<TProps> = ({ items, depth = 0, isCSR }) => {
-  if (isCSR) return null;
-  return (
-    <>
-      {
+export const TableOfContents: React.FC<TProps> = ({ items, depth = 0, isCSR = true }) => (
+  <>
+    {
         !depth
         && (
           <HeadingWrapper>
@@ -21,6 +19,7 @@ export const TableOfContents: React.FC<TProps> = ({ items, depth = 0, isCSR }) =
           </HeadingWrapper>
         )
       }
+    {!isCSR && (
       <ListWrapper id="static-toc" data-testid="static-toc">
         {
           items.map((item) => (
@@ -28,14 +27,14 @@ export const TableOfContents: React.FC<TProps> = ({ items, depth = 0, isCSR }) =
               <StyledLink href={item.url}>
                 <li>{item.title}</li>
               </StyledLink>
-              {item.items && <TableOfContents items={item.items} depth={depth + 1} />}
+              {item.items && <TableOfContents items={item.items} depth={depth + 1} isCSR={isCSR} />}
             </div>
           ))
         }
       </ListWrapper>
-    </>
-  );
-};
+    )}
+  </>
+);
 
 const ListWrapper = styled.ul`
   list-style: none;
