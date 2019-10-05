@@ -8,6 +8,10 @@ exports[`MarkdownMdxProvider should render 1`] = `
   margin-bottom: 1em;
 }
 
+.c1 {
+  margin-bottom: 1rem;
+}
+
 <div
     class="c0"
   >
@@ -20,13 +24,19 @@ exports[`MarkdownMdxProvider should render 1`] = `
       />
       Breakthroughs
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       Making upfront architectural decisions can be costly for developer productivity, especially in the later stages of the software development lifecycle. Hard lessons are learned through implementation and failure. The root cause? Unable to predict the future. 
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       Solution? Start simple. Build incrementally. Refactor rather than over-engineer prematurely. Each refactor should add value and come from the developer better understanding the nuances of the codebase. Breakthroughs, that bring massive value to codebases, come after several small refactorings. Over these small refactors, good developers intuitively understand the flow of changes and anticipate the future direction to make large profitable changes.
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       As good as refactorings are, they introduce the risk of regression. In regression, previously working code breaks due to newer changes. Constant refactoring are critical for breakthroughs. For codebases to remain antifragile to refactorings, they must be built on a solid foundation of tests. Test driven development, because of the Red-Green-Refactor approach, make refactoring baked into the developer’s workflow. Thus, large downstream breakthroughs result from many small cycles of writing tests and refactorings.
     </div>
     <h3
@@ -38,20 +48,28 @@ exports[`MarkdownMdxProvider should render 1`] = `
       />
       A Culture of 800 Deployments per Day
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       Shopify, multi-channel ecommerce platform, is deploying to production 800 times a day with 83k requests per day using state-of-the-art devops tools and processes. Despite that, they emphasized that their tools and processes don’t matter. 
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       Tools and processes help get the job done but the real driver for this magnitude of velocity is 
       <strong>
         culture
       </strong>
       . Shopify has a culture that gives developers high autonomy and responsibility for their work. 
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       They have no QA teams, because QA is the responsibility of the developer. Once the pull request gets the green light, the developer ensures the change makes it to production without breaking. They follow their changes closely via automated monitoring tools. Everyday, 3 developers in Shopify, stop their regular duties to monitor for anomalies in operation.
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       The company heavily relies on automation techniques to empower developers to take ownership of their codebase from development to production to operations.  This all stems from the fact Shopify expects its developers to be fully responsible for their decisions and actions. 
     </div>
     <h3
@@ -63,11 +81,15 @@ exports[`MarkdownMdxProvider should render 1`] = `
       />
       High Intensity Interval Testing
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       Humans are creatures of habit. They do most things in life subconsciously, even the complicated things if they become regular enough. Test-driven development (TDD) is a habit that must be developed, with exercise, practice, and understanding.
 TDD has to become an automatic and natural way of coding. It should just happen. 
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       Here’s an exercise to master TDD in 3 steps. Write a small codebase to solve some trivial problem (i.e. build a calculator).
     </div>
     <ol>
@@ -81,7 +103,9 @@ TDD has to become an automatic and natural way of coding. It should just happen.
         Now, spend another 3 minutes to refactor the code. 
       </li>
     </ol>
-    <div>
+    <div
+      class="c1"
+    >
       Do these steps in a loop until all features are complete. 
     </div>
     <h3
@@ -93,10 +117,14 @@ TDD has to become an automatic and natural way of coding. It should just happen.
       />
       The Power of 100%
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       Aiming for 100% test coverage can pressure developers to write testable code. It reveals dark corners of the codebase where bugs are more likely to stem from.
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       This green colored 3 digit percentage shown after every commit in a devops pipeline becomes a social contract for the team to write testable code. Coupled with code reviews to maintain high test quality, 100% test coverage forces a way of thinking that yields robust software. The team, even new developers, become highly confident in modifying it for newer features and refactorings.
     </div>
     <h3
@@ -108,7 +136,9 @@ TDD has to become an automatic and natural way of coding. It should just happen.
       />
       Integration Testing are Underrated
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       Integration testing is the grey area between unit tests and end-2-end (E2E) test. 
     </div>
     <ul>
@@ -122,11 +152,15 @@ TDD has to become an automatic and natural way of coding. It should just happen.
         Integration testing tests two or more connected parts of a system 
       </li>
     </ul>
-    <div>
+    <div
+      class="c1"
+    >
       Unit tests are cheap and fast to write and test but offer least confidence.
 E2E are expensive to write, test, and maintain but offer most confidence. Integration testing may seem like it’s right in the middle, but it provides the most value. 
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       Here’s why integration testing is so valuable (especially against E2E): 
     </div>
     <ul>
@@ -143,7 +177,9 @@ E2E are expensive to write, test, and maintain but offer most confidence. Integr
         offers great balance between test flakiness and confidence
       </li>
     </ul>
-    <div>
+    <div
+      class="c1"
+    >
       Side node: it’s very productive to record or capture actual test fixtures for integration testing. 
     </div>
     <h3
@@ -155,7 +191,9 @@ E2E are expensive to write, test, and maintain but offer most confidence. Integr
       />
       Science of Flakiness
     </h3>
-    <div>
+    <div
+      class="c1"
+    >
       E2E tests can sporadically pass or fail because they require many dependencies to work together in harmony to function. This sporadic behaviour referred to as flakiness. Flakiness can be caused by: 
     </div>
     <ul>
@@ -198,10 +236,14 @@ E2E are expensive to write, test, and maintain but offer most confidence. Integr
         </ul>
       </li>
     </ul>
-    <div>
+    <div
+      class="c1"
+    >
       Flakiness can be measured and tracked. This helps developers reduce the root cause for failing builds. It helps to differentiate build failure between infrastructure issues and poorly written code
     </div>
-    <div>
+    <div
+      class="c1"
+    >
       Flakiness detection techniques can include:
     </div>
     <ul>
