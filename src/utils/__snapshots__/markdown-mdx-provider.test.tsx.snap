@@ -8,233 +8,213 @@ exports[`MarkdownMdxProvider should render 1`] = `
   margin-bottom: 1em;
 }
 
-.c1 {
-  font-style: italic;
-  color: dimgrey;
-  margin: .5em 0;
-  text-align: center;
-  font-size: 1rem;
-}
-
 <div
     class="c0"
   >
     <h3
-      id="premature-design"
+      id="breakthroughs"
     >
       <a
         aria-hidden="true"
-        href="premature-design"
+        href="breakthroughs"
       />
-      Premature Design
+      Breakthroughs
     </h3>
     <div>
-      Even in an agile workplace, senior developers and architects still design software solutions upfront before digging into code. There are many problems that can’t be anticipated with planning. They must be handled as they arrive. 
+      Making upfront architectural decisions can be costly for developer productivity, especially in the later stages of the software development lifecycle. Hard lessons are learned through implementation and failure. The root cause? Unable to predict the future. 
     </div>
     <div>
-      Big architectural designs made before gain working experience of the codebase can lead teams down the wrong path. Time is wasted reverting the changes later on.
+      Solution? Start simple. Build incrementally. Refactor rather than over-engineer prematurely. Each refactor should add value and come from the developer better understanding the nuances of the codebase. Breakthroughs, that bring massive value to codebases, come after several small refactorings. Over these small refactors, good developers intuitively understand the flow of changes and anticipate the future direction to make large profitable changes.
+    </div>
+    <div>
+      As good as refactorings are, they introduce the risk of regression. In regression, previously working code breaks due to newer changes. Constant refactoring are critical for breakthroughs. For codebases to remain antifragile to refactorings, they must be built on a solid foundation of tests. Test driven development, because of the Red-Green-Refactor approach, make refactoring baked into the developer’s workflow. Thus, large downstream breakthroughs result from many small cycles of writing tests and refactorings.
     </div>
     <h3
-      id="healthy-organic-software"
+      id="a-culture-of-800-deployments-per-day"
     >
       <a
         aria-hidden="true"
-        href="healthy-organic-software"
+        href="a-culture-of-800-deployments-per-day"
       />
-      Healthy Organic Software
+      A Culture of 800 Deployments per Day
     </h3>
     <div>
-      So, here is the key insight. Instead of forcing an ideal design upfront, let the codebase evolve organically. This can bring the best result with the least effort.
+      Shopify, multi-channel ecommerce platform, is deploying to production 800 times a day with 83k requests per day using state-of-the-art devops tools and processes. Despite that, they emphasized that their tools and processes don’t matter. 
     </div>
     <div>
-      <figure
-        class="gatsby-resp-image-figure"
-      >
-        
-    
-        <span
-          class="gatsby-resp-image-wrapper"
-          style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 459px;"
-        >
-          
-      
-          <a
-            class="gatsby-resp-image-link"
-            href="/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg"
-            rel="noopener"
-            style="display: block;"
-            target="_blank"
-          >
-            
-    
-            <span
-              class="gatsby-resp-image-background-image"
-              style="padding-bottom: 74.94553376906319%; position: relative; bottom: 0px; left: 0px; background-image: url(data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHcXZIPJF//xAAaEAACAgMAAAAAAAAAAAAAAAAAAQIDEiEx/9oACAEBAAEFAiM8mPar6f/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAEQABEhYf/aAAgBAQAGPwKVRB68OL//xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQMVFh/9oACAEBAAE/ITASU5jQqd4Sro91/9oADAMBAAIAAwAAABB/D//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMWFBgbH/2gAIAQEAAT8QHiBYDYpr3wxIeHitU+bEtl6Kba7La7i7P//Z); background-size: cover; display: block;"
-            />
-            
-  
-            <img
-              alt="I only code organically (image by Igor Son via Unsplash.com)"
-              class="gatsby-resp-image-image"
-              loading="lazy"
-              sizes="(max-width: 459px) 100vw, 459px"
-              src="/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg"
-              srcset="/static/d3f947606ca63e33c1cee34079a486a2/3cfb5/igor-son-FV_PxCqgtwc-unsplash.jpg 175w,/static/d3f947606ca63e33c1cee34079a486a2/3a2a3/igor-son-FV_PxCqgtwc-unsplash.jpg 350w,/static/d3f947606ca63e33c1cee34079a486a2/a381c/igor-son-FV_PxCqgtwc-unsplash.jpg 459w"
-              title="I only code organically (image by Igor Son via Unsplash.com)"
-            />
-            
-  
-          </a>
-          
-    
-        </span>
-        
-    
-        <figcaption
-          class="gatsby-resp-image-figcaption c1"
-        >
-          I only code organically (image by Igor Son via Unsplash.com)
-        </figcaption>
-        
-  
-      </figure>
+      Tools and processes help get the job done but the real driver for this magnitude of velocity is 
+      <strong>
+        culture
+      </strong>
+      . Shopify has a culture that gives developers high autonomy and responsibility for their work. 
     </div>
     <div>
-      Evolve Organically? Is the codebase a plant? No. By Evolving organically, I’m referring to progressive refactoring. Refactoring is the art of changing structure without touching behaviour. 
+      They have no QA teams, because QA is the responsibility of the developer. Once the pull request gets the green light, the developer ensures the change makes it to production without breaking. They follow their changes closely via automated monitoring tools. Everyday, 3 developers in Shopify, stop their regular duties to monitor for anomalies in operation.
+    </div>
+    <div>
+      The company heavily relies on automation techniques to empower developers to take ownership of their codebase from development to production to operations.  This all stems from the fact Shopify expects its developers to be fully responsible for their decisions and actions. 
     </div>
     <h3
-      id="codebase-veteran"
+      id="high-intensity-interval-testing"
     >
       <a
         aria-hidden="true"
-        href="codebase-veteran"
+        href="high-intensity-interval-testing"
       />
-      Codebase Veteran
+      High Intensity Interval Testing
     </h3>
     <div>
-      Development time tends to bounce between writing new code and refactoring old code. We refactor code because it:
+      Humans are creatures of habit. They do most things in life subconsciously, even the complicated things if they become regular enough. Test-driven development (TDD) is a habit that must be developed, with exercise, practice, and understanding.
+TDD has to become an automatic and natural way of coding. It should just happen. 
+    </div>
+    <div>
+      Here’s an exercise to master TDD in 3 steps. Write a small codebase to solve some trivial problem (i.e. build a calculator).
+    </div>
+    <ol>
+      <li>
+        Set a countdown timer for 3 minutes. Within 3 minutes, write a failing test and check it in. If one fails to write the test, reset the git branch and repeat this step. Test should show the correct failing message. 
+      </li>
+      <li>
+        Start another 3 minute timer to pass the test.
+      </li>
+      <li>
+        Now, spend another 3 minutes to refactor the code. 
+      </li>
+    </ol>
+    <div>
+      Do these steps in a loop until all features are complete. 
+    </div>
+    <h3
+      id="the-power-of-100"
+    >
+      <a
+        aria-hidden="true"
+        href="the-power-of-100"
+      />
+      The Power of 100%
+    </h3>
+    <div>
+      Aiming for 100% test coverage can pressure developers to write testable code. It reveals dark corners of the codebase where bugs are more likely to stem from.
+    </div>
+    <div>
+      This green colored 3 digit percentage shown after every commit in a devops pipeline becomes a social contract for the team to write testable code. Coupled with code reviews to maintain high test quality, 100% test coverage forces a way of thinking that yields robust software. The team, even new developers, become highly confident in modifying it for newer features and refactorings.
+    </div>
+    <h3
+      id="integration-testing-are-underrated"
+    >
+      <a
+        aria-hidden="true"
+        href="integration-testing-are-underrated"
+      />
+      Integration Testing are Underrated
+    </h3>
+    <div>
+      Integration testing is the grey area between unit tests and end-2-end (E2E) test. 
     </div>
     <ul>
       <li>
-        makes code easy to understand 
+        Unit tests validate small components in full isolation
       </li>
       <li>
-        prepares code for anticipated changes
+        E2E test run the full running app with all its dependencies to test
       </li>
       <li>
-        reduces duplication of logic 
-      </li>
-      <li>
-        improves algorithmic efficiency 
+        Integration testing tests two or more connected parts of a system 
       </li>
     </ul>
     <div>
-      Good refactorings add value and experience. Add up enough experience via refactorings over time and developers naturally connect the dots that lead to breakthrough redesigns. The nuances behind these breakthroughs happen due to many factors. This  include frustrations, conversations, research, repeated exposure, and pattern recognition encountered during the development process. 
+      Unit tests are cheap and fast to write and test but offer least confidence.
+E2E are expensive to write, test, and maintain but offer most confidence. Integration testing may seem like it’s right in the middle, but it provides the most value. 
     </div>
     <div>
-      <figure
-        class="gatsby-resp-image-figure"
-      >
-        
-    
-        <span
-          class="gatsby-resp-image-wrapper"
-          style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px;"
-        >
-          
-      
-          <a
-            class="gatsby-resp-image-link"
-            href="/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg"
-            rel="noopener"
-            style="display: block;"
-            target="_blank"
-          >
-            
-    
-            <span
-              class="gatsby-resp-image-background-image"
-              style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0px; left: 0px; background-image: url(data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEAv/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABy41hqIRv/8QAGxAAAgMAAwAAAAAAAAAAAAAAAQIDERMAISL/2gAIAQEAAQUC09bHkczooc3duej/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/AYf/xAAcEAACAQUBAAAAAAAAAAAAAAABEQACEBITYXH/2gAIAQEABj8CWI9mtRCkHqjv/8QAHRABAQEAAAcAAAAAAAAAAAAAAREAITFBUWFxkf/aAAgBAQABPyEaZ7klXheR80bUcekcA6ZdXtmwu//aAAwDAQACAAMAAAAQjP8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAABFB/9oACAEDAQE/EMV//8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxCNKf/EAB0QAQEAAgIDAQAAAAAAAAAAAAERACFBcVFhgZH/2gAIAQEAAT8QIhak09s5wRt2wYDz0y0uNlXuY1qEw6Btn7jxFfLFxTPmf//Z); background-size: cover; display: block;"
-            />
-            
-  
-            <img
-              alt="I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)"
-              class="gatsby-resp-image-image"
-              loading="lazy"
-              sizes="(max-width: 600px) 100vw, 600px"
-              src="/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg"
-              srcset="/static/26e734dd8d0922402beb586c56b2bb9f/3cfb5/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 175w,/static/26e734dd8d0922402beb586c56b2bb9f/3a2a3/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 350w,/static/26e734dd8d0922402beb586c56b2bb9f/82472/daniel-ioanu-jjGupGhhqDc-unsplash.jpg 600w"
-              title="I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)"
-            />
-            
-  
-          </a>
-          
-    
-        </span>
-        
-    
-        <figcaption
-          class="gatsby-resp-image-figcaption c1"
-        >
-          I've been with this codebase for years. I'll lead the charge. (image by Daniel Ioanu via unsplash.com)
-        </figcaption>
-        
-  
-      </figure>
+      Here’s why integration testing is so valuable (especially against E2E): 
+    </div>
+    <ul>
+      <li>
+        written in TDD style while developing
+      </li>
+      <li>
+        logically split to focus on different areas of architecture (i.e. third-party API, databases, front-end or any combinations)
+      </li>
+      <li>
+        catches large issues earlier in the development lifecycle and faster to fix
+      </li>
+      <li>
+        offers great balance between test flakiness and confidence
+      </li>
+    </ul>
+    <div>
+      Side node: it’s very productive to record or capture actual test fixtures for integration testing. 
     </div>
     <h3
-      id="risky-refactoring"
+      id="science-of-flakiness"
     >
       <a
         aria-hidden="true"
-        href="risky-refactoring"
+        href="science-of-flakiness"
       />
-      Risky Refactoring
+      Science of Flakiness
     </h3>
     <div>
-      These refactoring are great and should be encouraged but they entail the risk of regression, when previously working code breaks. That’s why test-driven development (TDD) is a MUST for safe refactorings. 
+      E2E tests can sporadically pass or fail because they require many dependencies to work together in harmony to function. This sporadic behaviour referred to as flakiness. Flakiness can be caused by: 
     </div>
-    <h3
-      id="red-green-refactor"
-    >
-      <a
-        aria-hidden="true"
-        href="red-green-refactor"
-      />
-      Red Green Refactor
-    </h3>
+    <ul>
+      <li>
+        <em>
+          inconsistent assertion timing
+        </em>
+         
+        <ul>
+          <li>
+            race conditions between assertions and the rest of the test
+          </li>
+          <li>
+            add waits to asynchronous code before assertions
+          </li>
+        </ul>
+      </li>
+      <li>
+        <em>
+          test depend on each other
+        </em>
+        <ul>
+          <li>
+            recreate or build test fixtures between each test
+          </li>
+        </ul>
+      </li>
+      <li>
+        <em>
+          E2E tests are flaky
+        </em>
+         
+        <ul>
+          <li>
+            reliance on large amount of dependencies 
+          </li>
+          <li>
+            write more integration than E2E tests.
+          </li>
+        </ul>
+      </li>
+    </ul>
     <div>
-      TDD in a nutshell. Write a little test. Write enough code to make it pass. Refactor the code. Rinse and repeat. 
+      Flakiness can be measured and tracked. This helps developers reduce the root cause for failing builds. It helps to differentiate build failure between infrastructure issues and poorly written code
     </div>
     <div>
-      With good tests, you refactor with confidence and boldness. You play with arrangements until you find one that works best for the moment. These refactorings are quick, simple, and enjoyable. You do this while adding functionality in bite sized pieces.
+      Flakiness detection techniques can include:
     </div>
-    <div>
-      The tests act as safety nets. When you break code, you’re notified. You know what broke the code, thus avoid countless hours of headache. If you spend the time upfront writing good test, it saves time and cost when the codebase is much larger. 
-    </div>
-    <div>
-      With a growing codebase, breakthroughs help keep feature additions manageable. A large codebase has many moving parts, so it can be intimidating to change things. Having good tests reassures us that we can develop with piece of mind. 
-    </div>
-    <h3
-      id="closing-remarks"
-    >
-      <a
-        aria-hidden="true"
-        href="closing-remarks"
-      />
-      Closing Remarks
-    </h3>
-    <div>
-      I've summarized these ideas in my own words from 
-      <a
-        href="https://www.jamesshore.com/"
-      >
-        James Shore's
-      </a>
-       presentation at AssertJS 2019. From his presentation and my own experience with testing and refactoring, I wrote this blog post. I'm happy to hear your feedback. Thanks for reading.
-    </div>
+    <ul>
+      <li>
+        (most okay) recording the percentage of fixed number of passed tests vs. executed runs
+      </li>
+      <li>
+        (most intense) doing the above scenario many times
+      </li>
+      <li>
+        (most interesting) measuring the delta between code coverage to delete variations in code flow
+      </li>
+    </ul>
   </div>
 </DocumentFragment>
 `;

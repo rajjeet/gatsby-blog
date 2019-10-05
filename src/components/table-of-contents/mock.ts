@@ -1,6 +1,7 @@
 import { TProps } from './types';
 
 export const makeProps = (): TProps => ({
+  isCSR: false,
   items: [
     {
       url: '#introduction',
