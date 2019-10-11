@@ -1,0 +1,79 @@
+---
+title: Experimentation for the Ultra-Learning Software Developer
+dateCreated: 2019-10-11
+dateModified: 
+draft: false
+author: Rajjeet
+image: './ramon-cordeiro-ZsHqFTWynv8-unsplash.jpg'
+description: Boost your expertise by systematically trying out new things
+tags:
+    - Ultra-Learning
+    - Learning Strategies
+---
+
+### Why Experiment?
+
+The principle of experimentation is about trying many new things and keeping what (1) works or (2) provides the best learning opportunity. It's about stepping outside your comfort zone by doing what you have't done in the past. Doing this requires that you adopt a growth mindset. This mindset is when you believe that your capabilities are changeable through effort and hard work. 
+
+With experimentation, your career can keep growing with time. Not only you learn what works best, you know why it works the best, and you discover a larger range of solutions and their tradeoffs. 
+
+### 3 Levels of Experimentation
+
+As you go from amateur to pro in a particular subject, what you experiment with tends to change. This is described as _levels_ here. Knowing the _levels_ explicitly is helpful in planning the logistics of learning. The 3 _levels_ of experimentation are:   
+
+1. #### Learning Resources
+* trying different sources such as training videos, blogs, bootcamps, courses, books, projects etc.
+* the nature of the topic, the availability, and your preferences along with some trial and error will help you decide what provides the best learning experience
+* for me, I discovered that building my own blog site was the fast-track way for learning to build performant static websites. I followed the `Gatsby` tutorial and guides as my learning resource.
+        
+2. #### Sub-topics and Strategies
+* as you progress in learning a new topic, many sub-topics and strategies become visible for learning at greater depth 
+* you should pick one and learn it intensely for a pre-determined time, step back to evaluate the overall progress on the topic before continuing or switching to a new one
+* in order to build my `Gatsby` blog website, I dove deep in learning markdown renderers, code block stylers, various CSS approaches, CSS libraries, cloud providers, testing frameworks, component organization strategies, coding standards, CI/CD tooling and much more. I didn't adopt everything I tried, but it allowed me to pick and choose from many options, expand my overall knowledge, and weigh key tradeoffs when building quality static websites.
+    
+3. #### Styles
+* there are many ways of developing software, each with their own tradeoffs and characteristics
+* as you tinker with different possibilities, you learn how to build synergy with different tools and strategies in relation to the context of the problem
+* with my website's codebase, my unique style of building reusable React component was to group all of the component's related files for fixtures, testing, types, and JSX in the same directory named after the component itself, with each file having a standardized name such as `index.test.tsx` for testing and `mock.ts` for fixtures. 
+
+These levels of experimentation occur interchangeability depending on subject and level of abstraction, but tend to shift from the first to last as you build overall expertise. Again, knowing these experiment types help better plan for projects in advance.
+
+### 5 Ways to Experiment
+
+How exactly can you experiment to improve learning? Here are 5 ways to get started:
+
+1. #### Copy Existing Work
+* recreate examples, tutorials, and finished products on your own
+* great starting point for a new subjects
+* forces you to deconstruct the work into commendable pieces and map their relation to one another in context of the overall solution 
+* clearly contrasts the missing gap of needed knowledge and skills
+* I applied _copycatting_ by mimicking features, such as post tagging, layouts, and navigation techniques, from other blog sites exactly at the project's start and customizing later for staying consistent with the website theming.
+
+2. #### Add New Constraints
+* Established way of operating may not be best
+* Intentionally add hard limitations to boost new ways of thinking and move outside of establish habits
+* Promotes exploration to meet the requirements
+* One way I applied this rule to my website is by strictly adhering to 100% code coverage. This pushed me to write only testable code, practice test-driven development, adapt existing code to be testable, explore testing libraries, and write test in ways I was unfamiliar with before starting this exercise.  
+
+3. #### Perform A/B Testing
+* try two identical situations with one situation having an experimental change
+* gain understanding of the change's effectiveness, tradeoffs, and style preference 
+* compare with the copy without implemented change
+* try many variations and keep what works
+* I applied _A/B Testing_ with my website's home page. I regularly try different looks, such as styling of each post's `Card` component, and only proceed with the change to the `master` (production) branch if it improves the design and adheres to my personal taste. Each change is a separate branch or pull request.     
+
+4. #### Combining Non-overlapping Skills
+* you may not be the best in two different standalone skills but if you can learn to apply them together, the resulting work can be creative and special
+* multiple skills learnt over projects and jobs can build on top on another
+* My application of this rule is the integration of my skills in cloud architecture & automation and React-based web development to build my personal website that is fast, cheap, reliable, and fully customizable. If I focus my blog on skills outside of technology, that would make it even more unique and promising amongst all others on the web. 
+
+5. #### Exploring the Extremes   
+* your work have many dimensions for change along an axis with two extremes
+* useful applications may exist across the dimension's axis
+* dabbling with the extremes can help discover new way of working with that dimension in the context of your work
+* I practiced the _exploring of the extremes_ by committing to the strict use of `TypeScript` for enforcing typing to all _non-Gatsby_ JavaScript code, without using the `any` type. This forced me to dig deep into 3rd party libraries for the understanding and application of the external types. This ultimately made my codebase much more comprehensible.  
+        
+### Closing Remarks
+ I hope this post help expand your outlook on the role of experimentation in software development. This discipline is vast and complex. It puts tremendous pressure on you to learn the right stuff self-sufficiently, especially at an experienced level. Experimentation is vital to keep your skill set relevant for the changing markets and adaptive for constant growth. It pushes you outside your fixed habits by exploring new areas. Many things will not work, but the ones that do will be worth the effort and help build the type of expertise that is legendary. 
+ 
+ If you want to be best software engineer possible, it's not enough just to any given problem. You must be able to select and apply the most appropriate solution in the given context. Experimentation is the way of attaining the breathe of experience needed to come up with the best solution possible in a manner that's original to you.       
