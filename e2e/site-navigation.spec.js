@@ -37,4 +37,3 @@ Scenario('Open tag listing page from blog posts page', async (I) => {
   await I.retry(3).click(locate(tags).first());
   await I.retry(3).see(tagName, 'h1');
 });
-
