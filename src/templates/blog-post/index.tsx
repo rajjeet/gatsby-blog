@@ -16,8 +16,9 @@ import { PostNavigation } from './post-navigation';
 import { siteMetadata } from '../../../gatsby-config';
 import { ShareLinks } from './share-links';
 import { theme } from '../../utils/theme';
+import { AdjacentPostLink } from '../../components/adjacent-post-link';
 
-const BlogPost: React.FC<TProps> = (props) => {
+const BlogPost: React.FC<TProps> = ({ data: { post, previousPost, nextPost } }) => {
   const [showMobileToc, setShowMobileToc] = useState(false);
   const [isCSR, setIsCSR] = useState(false);
 
@@ -35,8 +36,6 @@ const BlogPost: React.FC<TProps> = (props) => {
 
   const toggleTableOfContentModal = (): void => setShowMobileToc(!showMobileToc);
 
-  const { data } = props;
-  const { post } = data;
   const postUrl = `${siteMetadata.canonicalUrl}${post.fields.slug}`;
   const disqusConfig = {
     url: `${postUrl}`,
@@ -72,6 +71,8 @@ const BlogPost: React.FC<TProps> = (props) => {
             <div className="js-toc-content">
               <MarkdownMdxProvider content={post.body} />
             </div>
+            <AdjacentPostLink previous={previousPost} next={nextPost} />
+            <br />
             <Disqus.DiscussionEmbed shortname={siteMetadata.title} config={disqusConfig} />
           </MainContent>
           <PostNavigation
@@ -109,30 +110,48 @@ const ShareLinksWrapper = styled.div`
 `;
 
 export const query = graphql`
-    query($slug: String!) {
-        post: mdx(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
-            id
-            timeToRead
-            body
-            tableOfContents(
-                maxDepth: 4
-            )
-            fields {
-                slug
-            }
-            frontmatter {
-                title
-                tags
-                dateCreated(formatString: "DD MMM, YYYY")
-                dateModified(formatString: "DD MMM, YYYY")
-                category
-                description
-                image {
-                    publicURL
-                }
-            }
+  query($slug: String!, $previous: String, $next: String) {
+    post: mdx(fields: { slug: { eq: $slug }, contentType: { eq: "post" } } ) {
+      id
+      timeToRead
+      body
+      tableOfContents(
+        maxDepth: 4
+      )
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        tags
+        dateCreated(formatString: "DD MMM, YYYY")
+        dateModified(formatString: "DD MMM, YYYY")
+        category
+        description
+        image {
+          publicURL
         }
+        previous
+        next
+      }
     }
+    previousPost: mdx(fields: { slug: { eq: $previous } } ){
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    nextPost: mdx(fields: {slug: { eq: $next } } ){
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+  }
 `;
 
 export default BlogPost;

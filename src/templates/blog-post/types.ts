@@ -1,5 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { TFrontMatter } from '../blog-post-listing/types';
+import { TAdjacentPostLink } from '../../components/adjacent-post-link';
 
 type TItems = {
   title: string;
@@ -29,6 +30,8 @@ export type TProps = {
         tags: TTag[];
       };
     };
+    previousPost?: TAdjacentPostLink;
+    nextPost?: TAdjacentPostLink;
   };
 }
 

@@ -15,6 +15,8 @@ export type TFrontMatter = {
   dateCreated: string;
   dateModified: string;
   description: string;
+  previous?: string;
+  next?: string;
 };
 export type TPostNode = {
   id: string;
