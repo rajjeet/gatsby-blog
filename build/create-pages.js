@@ -64,14 +64,13 @@ function createPostListing(allPosts, POSTS_PER_PAGE, createPage) {
 
 function createPosts(allPosts, createPage) {
   allPosts
-    .forEach(({ fields }) => {
+    .forEach(({ fields: { slug }, frontmatter: { previous, next } }) => {
       const blogPostTemplate = path.resolve('./src/templates/blog-post/index.tsx');
+
       createPage({
-        path: fields.slug,
+        path: slug,
         component: blogPostTemplate,
-        context: {
-          slug: fields.slug,
-        },
+        context: { slug, previous, next },
       });
     });
 }
@@ -113,6 +112,8 @@ async function query(graphql) {
               frontmatter {
                 tags
                 category
+                next
+                previous
               }
             }
           }
