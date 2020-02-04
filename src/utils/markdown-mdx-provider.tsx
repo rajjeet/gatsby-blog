@@ -10,8 +10,8 @@ type TProps = {
 
 const Wrapper = styled.div`
   background-color: whitesmoke;
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: ${(props): string => props.theme.borderRadius};
   box-shadow: ${(props): string => props.theme.lightBoxShadow};  
 `;
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const FigCaption = styled.figcaption`
   font-style: italic;
   color: dimgrey;
-  margin: .5em 0; 
+  margin: .5rem 0; 
   text-align: center;
   font-size: 1rem;
 `;
