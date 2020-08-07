@@ -48,7 +48,7 @@
     "gatsby-background-image": "^0.8.12",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.11",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "react": "^16.8.6",
     "react-clipboard.js": "^2.0.16",
     "react-dom": "^16.8.6",
